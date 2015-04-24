@@ -51,13 +51,15 @@ def authors_name_extraction(pjt_name):
 		mail_address_start_point = line.rfind("<")
 		author_name = line[:mail_address_start_point]
 		author_name = author_name[:-1] # eliminate a space
+		"""
 		author_mail_address = line[mail_address_start_point:]
 		author_mail_address = author_mail_address.replace("<", "")
 		author_mail_address = author_mail_address.replace(">", "")
+		"""
 		#author_role = author_role_identification(pjt_name, author_name) # identify the author's role
 		author_info = []
 		author_info.append(author_name)
-		author_info.append(author_mail_address)
+		#author_info.append(author_mail_address)
 		"""
 		author_info.append(author_role["test"])
 		author_info.append(author_role["product"])
@@ -80,7 +82,7 @@ def authors_role_extraction(pjt_name):
 	result_file_name = pjt_name + "_authors_with_roles.csv"
 	f_write = open(result_file_name, "w")
 	csvWriter = csv.writer(f_write, lineterminator="\n")
-	title = ["author_name", "author_address", "num_of_test_modification", "num_of_product_modification", "author_role"]
+	title = ["author_name", "num_of_test_modification", "num_of_product_modification", "author_role"]
 	csvWriter.writerow(title)
 	pjt_file_name = pjt_name + ".csv"
 	tmp_file_name1 = "tmp1.csv"
@@ -102,7 +104,8 @@ def authors_role_extraction(pjt_name):
 		os.system("cut -d ',' -f 7 " + tmp_file_name1 + " > " + tmp_file_name2) # eliminate redundant info.
 		file_size = os.path.getsize(tmp_file_name2)
 		if file_size == 0:
-			sys.exit("author " + author_name + " has not wrote any codes")
+			print "author " + author_name + " has not wrote any codes"
+			time.sleep(3)
 		# count how much the author have commited test coded and product codes
 		else:
 			role_dict = {"test":0, "product":0}
@@ -127,7 +130,7 @@ def authors_role_extraction(pjt_name):
 				sys.exit("file count errror: the author didn't commited neither test nor product code")
 			author_info = []
 			author_info.append(line_author_list.split(",")[0])
-			author_info.append(line_author_list.split(",")[1])
+			#author_info.append(line_author_list.split(",")[1])
 			author_info.append(author_role["test"])
 			author_info.append(author_role["product"])
 			author_info.append(author_role["role"])
