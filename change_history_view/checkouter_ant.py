@@ -6,13 +6,27 @@ import os
 import subprocess
 import sys
 
+"""
+description:
+assumed directory structure:    this script -> .
+                                git repository of the target project -> ./
+files and dirs required:        revision_(pjt name).csv
+                                (pjt_name) <- git repository of the target project
+files and dirs created:         files_main_checkstyle(revision).txt
+                                files_test_chechstyle(revision).txt
+                                linkdata(revision).txt
+                                data_(pjt name)_(revision) <- directory
+caller:                         auto_top.sh
+callee:                         auto.sh
+"""
+
 filename = "ant"
 start_date = "20061026"
 end_date = "20140831"
 f = open('revision_' + filename + '.csv', 'r')
 flag = 0
 for info in f:
-    if flag == 0:
+    if flag == 0: # pass here only the first loop
         flag += 1
         continue
     date = info.split(',')[0]

@@ -1,10 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-指定されたディレクトリとそのサブディレクトリを巡回し，
-保存されているファイルの名前を抽出するスクリプト．
-argvs[1]: 検索対象ディレクトリの絶対パス(エスケープを避けるため，パスの区切りはヌル文字ではなくスラッシュにすること．)
-argvs[2]: ファイル名のリストを格納するファイルの名前．
+description:                    指定されたディレクトリとそのサブディレクトリを巡回し，
+                                保存されているファイルの名前を抽出するスクリプト．
+                                argvs[1]: 検索対象ディレクトリの絶対パス(エスケープを避けるため，パスの区切りはヌル文字ではなくスラッシュにすること．)
+                                argvs[2]: プロダクトコードのファイル名のリストを格納するファイルの名前．
+                                argvs[3]: テストコードのファイル名のリストを格納するファイルの名前．
+assumed directory structure:    this script -> .
+                                directory of the target project -> (full path)/
+files and dirs required:        directory of the target project
+files and dirs created:         (argvs[2]) <- list of product code
+                                (argvs[3]) <- list of test code
+caller:                         auto.sh
+callee:                         none
 """
+
 import os
 import sys
 
@@ -20,12 +29,9 @@ f_test = open(argvs[3], "w")
 for file in fild_all_files(argvs[1]):
 	if '.' in file: # ディレクトリ名を省き，ファイル名だけが抽出されるようフィルタリングする．
             file = file.replace('\\', '/')
-            #file = file.split('/')[-1]
-            #if ("test" in file) or ("Test" in file) or ("TEST" in file):
             if file.startswith("C:/Users/hideshi/git/ant/src/tests") or file.startswith("C:/Users/hideshi/git/ant/src/testcases"):
                 file = file.split('/')[-1]
                 f_test.write(file+"\n")
-            #else:
             elif file.startswith("C:/Users/hideshi/git/ant/src/main"):
                 file = file.split('/')[-1]
                 f_product.write(file+"\n")
