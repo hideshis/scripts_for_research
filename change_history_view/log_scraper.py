@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+the log file is extracted by the following command:
+	git log --pretty=format:"%nauthor:%an %ndate:%at" --name-only > log_(project_name).txt
+"""
 import re
+import sys
 import csv
 import os.path
 import os
+import datetime
 
-
-def csv_writer(filename, date, author, files):
-	f = open(filename + '.csv', 'a')
+def csv_writer(pjt_name, date, author, files):
+	f = open(pjt_name + '.csv', 'a')
 	csvWriter = csv.writer(f, lineterminator="\n")
-	size = os.path.getsize(filename + '.csv')
+	size = os.path.getsize(pjt_name + '.csv')
 	if size == 0:
 		title = ["Date", "Author", "File"]
 		csvWriter.writerow(title)
@@ -21,55 +26,31 @@ def csv_writer(filename, date, author, files):
 	f.close()
 	return
 
-def log_scraper(filename):
-	f = open("log_"+filename+".txt", 'r')
+def log_scraper(pjt_name):
+	f = open("log_"+pjt_name+".txt", 'r')
 	line = f.readline()
 	while line:
-		if line.startswith("commit "):	# コミット
+		while not line.startswith("author:"):
 			line = f.readline()
-		if line.startswith("Merge: "):	# マージ
-			line = f.readline()
-		if line.startswith("Author: "):	# 開発者名
-			author = line.split(' ')[-1]
+			if not line:
+				break
+		if line.startswith("author:"):
+			author = line.split("author:")[-1]
 			author = author.replace("\n", "")
-			#print author
 			line = f.readline()
-		if line.startswith("Date: "):	# 変更日
-			tmp = (line.split('   ')[-1]).split('-')
-			date = tmp[0] + tmp[1] + tmp[2]
-			date = date.replace("\n", "")
-			#print date
+		if line.startswith("date:"):
+			utime = line.split("date:")[-1]
+			utime = utime.replace("\n", "")
+			date = str(datetime.datetime.fromtimestamp(int(utime)))
+			date = date.split(" ")[0]
 			line = f.readline()
+		file_list = []
+		while (not line == "\n") and (line):
+			file_list.append(line.replace("\n", ""))
 			line = f.readline()
-			if not line:
-				break
-		while line != "\n":	# コメント
-			line = f.readline()
-			if not line:
-				break
+		if len(file_list) > 0:
+			print pjt_name, date, author, str(file_list)
+        	csv_writer(pjt_name, date, author, file_list)
 		line = f.readline()
-		if not line:
-			break
-		elif line.startswith("commit "):
-			continue
-		files = []
-		while (line != "\n") and line:	# 変更されたファイル一覧
-			line = line.replace("\n", "")
-			### view描画用の変更：ここから ###
-			if line.startswith("src/main/"):
-                                line = line.split("/")[-1]
-                                files.append(line)
-			if line.startswith("src/tests") or line.startswith("src/testcases"):
-                                line = line.split("/")[-1]
-                                files.append(line)
-			### view描画用の変更：ここまで ###
-			#files.append(line)
-			line = f.readline()
-		#for file in files:
-			#print file
-		if len(files) > 0:
-        		csv_writer(filename, date, author, files)
-		if line:
-        		line = f.readline()
-		
-log_scraper("ant")
+
+log_scraper("eclipse_jdt")
