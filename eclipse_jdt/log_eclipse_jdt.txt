@@ -1,0 +1,106 @@
+
+author:Jay Arthanareeswaran 
+date:1433322924
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/BatchCompilerTest.java
+
+
+author:Jay Arthanareeswaran 
+date:1433248968
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/messages.properties
+
+
+author:Sergey Prigogin 
+date:1433181214
+org.eclipse.jdt.apt.pluggable.tests/src/org/eclipse/jdt/apt/pluggable/tests/BuilderTests.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/Compiler.java
+
+
+author:Sasikanth Bharadwaj 
+date:1432546963
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/LambdaExpressionsTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/AllocationExpression.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/QualifiedAllocationExpression.java
+
+
+author:Stephan Herrmann 
+date:1432220316
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/AssignmentTest.java
+
+
+author:Jay Arthanareeswaran 
+date:1432118572
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTests18.java
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/CompletionEngine.java
+
+
+author:Sasikanth Bharadwaj 
+date:1432145659
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/Scope.java
+
+
+author:Jay Arthanareeswaran 
+date:1431950504
+org.eclipse.jdt.apt.core/src/org/eclipse/jdt/apt/core/internal/AptCompilationParticipantExtensionFactory.java
+
+
+author:Jay Arthanareeswaran 
+date:1431700610
+org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/FileManagerTests.java
+
+
+author:Stephan Herrmann 
+date:1431548524
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/NullTypeAnnotationTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/UnresolvedReferenceBinding.java
+
+
+author:Jay Arthanareeswaran 
+date:1431578054
+org.eclipse.jdt.core.tests.builder/META-INF/MANIFEST.MF
+org.eclipse.jdt.core.tests.builder/pom.xml
+
+
+author:Igor Fedorenko 
+date:1431461648
+org.eclipse.jdt.compiler.apt.tests/resources/targets/filemanager/classes/dirresource.txt
+org.eclipse.jdt.compiler.apt.tests/resources/targets/filemanager/dependency.zip
+org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/FileManagerTests.java
+org.eclipse.jdt.compiler.apt/src/org/eclipse/jdt/internal/compiler/apt/util/EclipseFileManager.java
+
+
+author:Jay Arthanareeswaran 
+date:1431548451
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTests18.java
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTestsRequestor2.java
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTests_1_5.java
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/InternalCompletionProposal.java
+
+
+author:Mateusz Matela 
+date:1431516602
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/formatter/FormatterBugsTests.java
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/linewrap/WrapExecutor.java
+
+
+author:Jay Arthanareeswaran 
+date:1431539569
+org.eclipse.jdt.compiler.apt.tests/lib/apttestprocessors.jar
+org.eclipse.jdt.compiler.apt.tests/processors/org/eclipse/jdt/compiler/apt/tests/processors/messager/MessagerProc.java
+org.eclipse.jdt.compiler.apt.tests/resources/targets/errors/pa/Nested.java
+org.eclipse.jdt.compiler.apt.tests/resources/targets/errors/pa/Outer.java
+org.eclipse.jdt.compiler.apt.tests/resources/targets/errors/pb/D.java
+org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/MessagerTests.java
+org.eclipse.jdt.compiler.tool/src/org/eclipse/jdt/internal/compiler/tool/EclipseCompilerImpl.java
+
+
+author:Stefan Ocke 
+date:1410697950
+org.eclipse.jdt.compiler.apt/src/org/eclipse/jdt/internal/compiler/apt/dispatch/BaseMessagerImpl.java
+
+
+author:Sasikanth 
+date:1431337946
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/AmbiguousMethodTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/PolyParameterizedGenericMethodBinding.java
+
+
