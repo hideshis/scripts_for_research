@@ -1,66 +1,78 @@
 
-author:Jay Arthanareeswaran 
+revision:66a32f1
+author:Jay Arthanareeswaran
 date:1433322924
 org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/BatchCompilerTest.java
 
 
-author:Jay Arthanareeswaran 
+revision:07f3553
+author:Jay Arthanareeswaran
 date:1433248968
 org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/messages.properties
 
 
-author:Sergey Prigogin 
+revision:7a6bf77
+author:Sergey Prigogin
 date:1433181214
 org.eclipse.jdt.apt.pluggable.tests/src/org/eclipse/jdt/apt/pluggable/tests/BuilderTests.java
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/Compiler.java
 
 
-author:Sasikanth Bharadwaj 
+revision:d447d64
+author:Sasikanth Bharadwaj
 date:1432546963
 org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/LambdaExpressionsTest.java
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/AllocationExpression.java
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/QualifiedAllocationExpression.java
 
 
-author:Stephan Herrmann 
+revision:beded9a
+author:Stephan Herrmann
 date:1432220316
 org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/AssignmentTest.java
 
 
-author:Jay Arthanareeswaran 
+revision:1007a02
+author:Jay Arthanareeswaran
 date:1432118572
 org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTests18.java
 org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/CompletionEngine.java
 
 
-author:Sasikanth Bharadwaj 
+revision:6478e2e
+author:Sasikanth Bharadwaj
 date:1432145659
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/Scope.java
 
 
-author:Jay Arthanareeswaran 
+revision:2b2b731
+author:Jay Arthanareeswaran
 date:1431950504
 org.eclipse.jdt.apt.core/src/org/eclipse/jdt/apt/core/internal/AptCompilationParticipantExtensionFactory.java
 
 
-author:Jay Arthanareeswaran 
+revision:07b9b07
+author:Jay Arthanareeswaran
 date:1431700610
 org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/FileManagerTests.java
 
 
-author:Stephan Herrmann 
+revision:7b78c83
+author:Stephan Herrmann
 date:1431548524
 org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/NullTypeAnnotationTest.java
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/UnresolvedReferenceBinding.java
 
 
-author:Jay Arthanareeswaran 
+revision:906a701
+author:Jay Arthanareeswaran
 date:1431578054
 org.eclipse.jdt.core.tests.builder/META-INF/MANIFEST.MF
 org.eclipse.jdt.core.tests.builder/pom.xml
 
 
-author:Igor Fedorenko 
+revision:adc0605
+author:Igor Fedorenko
 date:1431461648
 org.eclipse.jdt.compiler.apt.tests/resources/targets/filemanager/classes/dirresource.txt
 org.eclipse.jdt.compiler.apt.tests/resources/targets/filemanager/dependency.zip
@@ -68,7 +80,8 @@ org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/FileMa
 org.eclipse.jdt.compiler.apt/src/org/eclipse/jdt/internal/compiler/apt/util/EclipseFileManager.java
 
 
-author:Jay Arthanareeswaran 
+revision:699f85d
+author:Jay Arthanareeswaran
 date:1431548451
 org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTests18.java
 org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/CompletionTestsRequestor2.java
@@ -76,13 +89,15 @@ org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/model/Completion
 org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/InternalCompletionProposal.java
 
 
-author:Mateusz Matela 
+revision:fa568df
+author:Mateusz Matela
 date:1431516602
 org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/formatter/FormatterBugsTests.java
 org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/linewrap/WrapExecutor.java
 
 
-author:Jay Arthanareeswaran 
+revision:42f7a75
+author:Jay Arthanareeswaran
 date:1431539569
 org.eclipse.jdt.compiler.apt.tests/lib/apttestprocessors.jar
 org.eclipse.jdt.compiler.apt.tests/processors/org/eclipse/jdt/compiler/apt/tests/processors/messager/MessagerProc.java
@@ -93,14 +108,99 @@ org.eclipse.jdt.compiler.apt.tests/src/org/eclipse/jdt/compiler/apt/tests/Messag
 org.eclipse.jdt.compiler.tool/src/org/eclipse/jdt/internal/compiler/tool/EclipseCompilerImpl.java
 
 
-author:Stefan Ocke 
+revision:7c18a97
+author:Stefan Ocke
 date:1410697950
 org.eclipse.jdt.compiler.apt/src/org/eclipse/jdt/internal/compiler/apt/dispatch/BaseMessagerImpl.java
 
 
-author:Sasikanth 
+revision:5ad2fcc
+author:Sasikanth
 date:1431337946
 org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/AmbiguousMethodTest.java
 org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/PolyParameterizedGenericMethodBinding.java
 
+
+revision:dc6be4d
+author:Olivier Thomann
+date:1431442695
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/MethodHandleTest.java
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/TestAll.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ASTNode.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/codegen/ConstantPool.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/TagBits.java
+
+
+revision:5121302
+author:Stephan Herrmann
+date:1431016168
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/NullTypeAnnotationTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/AbstractMethodDeclaration.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/Argument.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ArrayTypeReference.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/InstanceOfExpression.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/MethodDeclaration.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ParameterizedQualifiedTypeReference.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ParameterizedSingleTypeReference.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ReferenceExpression.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/TypeReference.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/MethodBinding.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/SourceTypeBinding.java
+
+
+revision:27f0a8b
+author:Markus Keller
+date:1431079374
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/GenericsRegressionTest_1_8.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ClassFile.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/util/Util.java
+
+
+revision:5639522
+author:Stephan Herrmann
+date:1430855398
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/NullTypeAnnotationTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/LookupEnvironment.java
+
+
+revision:9361352
+author:Stephan Herrmann
+date:1430784776
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/dom/ASTConverterBugsTest.java
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/dom/ASTModelBridgeTests.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/lookup/LocalVariableBinding.java
+org.eclipse.jdt.core/dom/org/eclipse/jdt/core/dom/VariableBinding.java
+org.eclipse.jdt.core/model/org/eclipse/jdt/internal/core/LocalVariable.java
+org.eclipse.jdt.core/model/org/eclipse/jdt/internal/core/util/BindingKeyParser.java
+org.eclipse.jdt.core/model/org/eclipse/jdt/internal/core/util/BindingKeyResolver.java
+org.eclipse.jdt.core/model/org/eclipse/jdt/internal/core/util/KeyKind.java
+
+
+revision:6a618f5
+author:Sasikanth Bharadwaj
+date:1431077833
+org.eclipse.jdt.core.tests.compiler/src/org/eclipse/jdt/core/tests/compiler/regression/LambdaRegressionTest.java
+org.eclipse.jdt.core/compiler/org/eclipse/jdt/internal/compiler/ast/ReferenceExpression.java
+
+
+revision:655943c
+author:Stephan Herrmann
+date:1430772017
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/dom/ASTModelBridgeTests.java
+org.eclipse.jdt.core/dom/org/eclipse/jdt/core/dom/CompilationUnitResolver.java
+org.eclipse.jdt.core/model/org/eclipse/jdt/internal/core/TypeParameter.java
+
+
+revision:871cac4
+author:Mateusz Matela
+date:1430295047
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/RunFormatterTests.java
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/formatter/FormatterBugs18Tests.java
+org.eclipse.jdt.core.tests.model/src/org/eclipse/jdt/core/tests/formatter/FormatterBugsTests.java
+org.eclipse.jdt.core/eclipse.jdt.ui.patch.txt
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/DefaultCodeFormatter.java
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/LineBreaksPreparator.java
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/SpacePreparator.java
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/linewrap/WrapExecutor.java
+org.eclipse.jdt.core/formatter/org/eclipse/jdt/internal/formatter/linewrap/WrapPreparator.java
 
