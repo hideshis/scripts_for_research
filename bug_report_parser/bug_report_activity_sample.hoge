@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Changes made to bug 370001</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="https://bugs.eclipse.org/bugs/">
+
+
+
+
+
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=370001&amp;hide_resolved=1">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=370001">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=370001">
+
+
+
+    <link rel="Saved&nbsp;Searches" title="My Bugs"
+          href="buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=oss.wakayama%40gmail.com&emailtype1=exact&emailassigned_to1=1&emailreporter1=1">
+
+
+
+
+
+    <link href="skins/standard/global.css?1334781167"
+          rel="alternate stylesheet"
+          title="Classic"><link href="skins/standard/global.css?1334781167" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+
+
+
+
+  <link href="skins/standard/IE-fixes.css?1334781167" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+
+<link href="skins/contrib/Dusk/global.css?1334781167" rel="alternate stylesheet"
+        type="text/css" title="Dusk">
+
+
+
+
+
+
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1334781167"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1334781167"></script><script type="text/javascript" src="js/global.js?1334781167"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload",
+                                           YAHOO.util.Event._unload);
+        }
+
+        function unhide_language_selector() {
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            );
+        }
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/bugs',
+                maxusermatches: 10
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    // -->
+    </script>
+
+
+
+
+
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-eclipse-org-bugs yui-skin-sam">
+
+
+
+<div id="header">
+<!-- 1.0@bugzilla.org -->
+
+
+
+
+<link media="screen" href="/bz.css" type="text/css" rel="stylesheet">
+<div id="banner">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-image: url(/header_bg.jpg);"><tr><td><img src="/header_logo.gif" width="240" height="68" border="0" /></td>
+<td width="360" valign="top" align="right" style="background-image: url(/header_right_bg.jpg); background-repeat: no-repeat;">
+<a href="http://www.eclipse.org/org/foundation/contact.php" class="header-global-links" style="color: #3D4A68;">Contact</a> &#160; <img src="/eclipse.org-common/themes/Phoenix/images/global_links_divider.gif" height="10" width="3" /> &#160; <a href="http://www.eclipse.org/legal/" class="header-global-links" style="color: #3D4A68;">Legal</a> &#160; &#160; &#160;</td></tr></table>
+<div id="header-icons"><a href="http://www.eclipse.org/"><img src="/eclipse_home_icon.png" width="28" height="28" alt="Eclipse Home" title="Eclipse Home"/></a><a href="http://wiki.eclipse.org/"><img src="/eclipse.org-common/themes/Phoenix/images/Icon_wiki.png" width="28" height="28" alt="Eclipse Wiki"/></a><a href="http://marketplace.eclipse.org/"><img src="/plugin_icon.png" width="28" height="28" alt="Eclipse Marketplace" title="Eclipse Marketplace"/></a></div></div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Activity log for bug 370001: Review group not refreshed causing a null pointer</p>
+    </td>
+
+
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch"
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search"
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi?requester=oss.wakayama%40gmail.com&amp;requestee=oss.wakayama%40gmail.com&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        oss.wakayama&#64;gmail.com</li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+</ul>
+</div>
+
+<div id="bugzilla-body">
+
+<p><a class="bz_bug_link
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Review group not refreshed causing a null pointer"
+   href="show_bug.cgi?id=370001">Back to bug 370001</a>
+</p>
+<table border cellpadding="4">
+  <tr>
+    <th>Who</th>
+    <th>When</th>
+    <th>What</th>
+    <th>Removed</th>
+    <th>Added</th>
+  </tr>
+  <tr>
+    <td rowspan="1" valign="top">sebastien.dubois&#64;ericsson.com
+    </td>
+    <td rowspan="1" valign="top">2012-04-04 15:11:55 EDT
+    </td>
+    <td>Status</td>
+    <td>NEW</td>
+    <td>ASSIGNED</td>
+  </tr>
+  <tr>
+    <td rowspan="2" valign="top">sebastien.dubois&#64;ericsson.com
+    </td>
+    <td rowspan="2" valign="top">2012-04-04 15:12:24 EDT
+    </td>
+    <td>Status</td>
+    <td>ASSIGNED</td>
+    <td>RESOLVED</td>
+  </tr>
+  <tr>
+    <td>Resolution</td>
+    <td>---</td>
+    <td>FIXED</td>
+  </tr>
+</table>
+
+  <p><a class="bz_bug_link
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED FIXED - Review group not refreshed causing a null pointer"
+   href="show_bug.cgi?id=370001">Back to bug 370001</a>
+  </p>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch"
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search"
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi?requester=oss.wakayama%40gmail.com&amp;requestee=oss.wakayama%40gmail.com&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        oss.wakayama&#64;gmail.com</li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+</ul>
+  </li>
+
+
+
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=oss.wakayama%40gmail.com&emailtype1=exact&emailassigned_to1=1&emailreporter1=1">My Bugs</a></li>
+
+      </ul>
+    </li>
+
+
+<li id="links-special">
+    <script type="text/javascript">
+      <!--
+      function update_text() {
+        // 'lob' means list_of_bugs.
+        var lob_action = document.getElementById('lob_action');
+        var action = lob_action.options[lob_action.selectedIndex].value;
+        var text = document.getElementById('lob_direction');
+        var new_query_text = document.getElementById('lob_new_query_text');
+
+        if (action == "add") {
+          text.innerHTML = "to";
+          new_query_text.style.display = 'inline';
+        }
+        else {
+          text.innerHTML = "from";
+          new_query_text.style.display = 'none';
+        }
+      }
+
+      function manage_old_lists() {
+        var old_lists = document.getElementById('lob_oldqueryname');
+        // If there is no saved searches available, returns.
+        if (!old_lists) return;
+
+        var new_query = document.getElementById('lob_newqueryname').value;
+
+        if (new_query != "") {
+          old_lists.disabled = true;
+        }
+        else {
+          old_lists.disabled = false;
+        }
+      }
+      //-->
+    </script>
+
+    <div class="label"></div>
+    <ul class="links"><li class="form">
+      <form id="list_of_bugs" action="buglist.cgi" method="get">
+        <input type="hidden" name="cmdtype" value="doit">
+        <input type="hidden" name="remtype" value="asnamed">
+        <input type="hidden" name="list_of_bugs" value="1">
+        <input type="hidden" name="token" value="1350522667-d22596775383a9f11c42b33d93dac6a6">
+        <select id="lob_action" name="action" onchange="update_text();">
+          <option value="add">Add</option>
+        </select>
+
+          <a href="http://www.bugzilla.org/docs/4.2/en/html/query.html#individual-buglists">the named tag</a>
+
+        <span id="lob_new_query_text">
+          <input class="txt" type="text" id="lob_newqueryname"
+                 size="20" maxlength="64" name="newqueryname"
+                 onkeyup="manage_old_lists();">
+        </span>
+        <span id="lob_direction">to</span>
+        bugs
+        <input type="text" name="bug_ids" size="12" maxlength="80">
+        <input type="submit" value="Commit" id="commit_list_of_bugs">
+      </form>
+    </li></ul>
+  </li>
+
+
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>

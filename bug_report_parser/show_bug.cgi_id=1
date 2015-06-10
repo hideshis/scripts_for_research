@@ -1,0 +1,1704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <title>Bug 1 &ndash; Usability issue with external editors (1GE6IRL)</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="https://bugs.eclipse.org/bugs/">
+
+
+
+
+
+    <link rel="Show" title="Dependency Tree"
+          href="showdependencytree.cgi?id=1&amp;hide_resolved=1">
+
+      <link rel="Show" title="Bug Activity"
+            href="show_activity.cgi?id=1">
+      <link rel="Show" title="Printer-Friendly Version"
+            href="show_bug.cgi?format=multiple&amp;id=1">
+
+
+
+    <link rel="Saved&nbsp;Searches" title="My Bugs"
+          href="buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=oss.wakayama%40gmail.com&emailtype1=exact&emailassigned_to1=1&emailreporter1=1">
+
+
+
+
+
+    <link href="skins/standard/global.css?1334781167"
+          rel="alternate stylesheet"
+          title="Classic"><link href="js/yui/assets/skins/sam/autocomplete.css?1334781167" rel="stylesheet"
+        type="text/css" ><link href="js/yui/assets/skins/sam/calendar.css?1334781167" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/global.css?1334781167" rel="stylesheet"
+        type="text/css" ><link href="skins/standard/show_bug.css?1334781167" rel="stylesheet"
+        type="text/css" ><link href="extensions/Voting/web/style.css?1334781167" rel="stylesheet"
+        type="text/css" ><!--[if lte IE 7]>
+
+
+
+
+  <link href="skins/standard/IE-fixes.css?1334781167" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+
+<link href="skins/contrib/Dusk/global.css?1334781167" rel="alternate stylesheet"
+        type="text/css" title="Dusk">
+
+
+
+
+
+
+<script type="text/javascript" src="js/yui/yahoo-dom-event/yahoo-dom-event.js?1334781167"></script><script type="text/javascript" src="js/yui/cookie/cookie-min.js?1334781167"></script><script type="text/javascript" src="js/yui/datasource/datasource-min.js?1334781167"></script><script type="text/javascript" src="js/yui/connection/connection-min.js?1334781167"></script><script type="text/javascript" src="js/yui/json/json-min.js?1334781167"></script><script type="text/javascript" src="js/yui/autocomplete/autocomplete-min.js?1334781167"></script><script type="text/javascript" src="js/yui/calendar/calendar-min.js?1334781167"></script><script type="text/javascript" src="js/global.js?1334781167"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload",
+                                           YAHOO.util.Event._unload);
+        }
+
+        function unhide_language_selector() {
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            );
+        }
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/bugs',
+                maxusermatches: 10
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+
+
+                attach_desc_required:
+                    'You must enter a Description for this attachment.',
+                component_required:
+                    'You must select a Component for this bug.',
+                description_required:
+                    'You must enter a Description for this bug.',
+                short_desc_required:
+                    'You must enter a Summary for this bug.',
+                version_required:
+                    'You must select a Version for this bug.'
+            }
+        };
+
+    if( !document.location.href.match(/show_bug\.cgi/) && history && history.replaceState ) {
+      history.replaceState( null,
+                         "Bug 1 – Usability issue with external editors (1GE6IRL)",
+                         "show_bug.cgi?id=1" );
+      document.title = "Bug 1 – Usability issue with external editors (1GE6IRL)";
+    }
+    // -->
+    </script>
+<script type="text/javascript" src="js/util.js?1334781167"></script><script type="text/javascript" src="js/field.js?1334781167"></script>
+
+
+
+
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+    <link rel="shortcut icon" href="images/favicon.ico" >
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-eclipse-org-bugs bz_bug bz_status_CLOSED bz_product_Platform bz_component_Team bz_bug_1 yui-skin-sam">
+
+
+
+<div id="header">
+<!-- 1.0@bugzilla.org -->
+
+
+
+
+<link media="screen" href="/bz.css" type="text/css" rel="stylesheet">
+<div id="banner">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-image: url(/header_bg.jpg);"><tr><td><img src="/header_logo.gif" width="240" height="68" border="0" /></td>
+<td width="360" valign="top" align="right" style="background-image: url(/header_right_bg.jpg); background-repeat: no-repeat;">
+<a href="http://www.eclipse.org/org/foundation/contact.php" class="header-global-links" style="color: #3D4A68;">Contact</a> &#160; <img src="/eclipse.org-common/themes/Phoenix/images/global_links_divider.gif" height="10" width="3" /> &#160; <a href="http://www.eclipse.org/legal/" class="header-global-links" style="color: #3D4A68;">Legal</a> &#160; &#160; &#160;</td></tr></table>
+<div id="header-icons"><a href="http://www.eclipse.org/"><img src="/eclipse_home_icon.png" width="28" height="28" alt="Eclipse Home" title="Eclipse Home"/></a><a href="http://wiki.eclipse.org/"><img src="/eclipse.org-common/themes/Phoenix/images/Icon_wiki.png" width="28" height="28" alt="Eclipse Wiki"/></a><a href="http://marketplace.eclipse.org/"><img src="/plugin_icon.png" width="28" height="28" alt="Eclipse Marketplace" title="Eclipse Marketplace"/></a></div></div>
+
+<table border="0" cellspacing="0" cellpadding="0" id="titles">
+<tr>
+    <td id="title">
+      <p>Bugzilla &ndash; Bug&nbsp;1</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Usability issue with external editors (1GE6IRL)</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Last modified: 2012-02-09 15:57:47 EST</p>
+    </td>
+</tr>
+</table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"
+       class="bz_default_hidden"><tr><td>
+</td></tr></table>
+<ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_top" name="quicksearch"
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search"
+           id="find_top"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi?requester=oss.wakayama%40gmail.com&amp;requestee=oss.wakayama%40gmail.com&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+<li>
+        <span class="separator">| </span>
+        <a href="http://www.bugzilla.org/docs/4.2/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        oss.wakayama&#64;gmail.com</li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+</ul>
+</div>
+
+<div id="bugzilla-body">
+
+<div class="navigation">
+
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+<script type="text/javascript">
+  <!--
+
+  /* Outputs a link to call replyToComment(); used to reduce HTML output */
+  function addReplyLink(id, real_id) {
+      /* XXX this should really be updated to use the DOM Core's
+       * createElement, but finding a container isn't trivial.
+       */
+        document.write('[<a href="#add_comment" onclick="replyToComment(' +
+                       id + ',' + real_id + '); return false;">reply<' + '/a>]');
+  }
+
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id) {
+      var prefix = "(In reply to comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      textarea.value += replytext;
+
+      textarea.focus();
+  }
+
+  if (typeof Node == 'undefined') {
+      /* MSIE doesn't define Node, so provide a compatibility object */
+      window.Node = {
+          TEXT_NODE: 3,
+          ENTITY_REFERENCE_NODE: 5
+      };
+  }
+
+  /* Concatenates all text from element's childNodes. This is used
+   * instead of innerHTML because we want the actual text (and
+   * innerText is non-standard).
+   */
+  function getText(element) {
+      var child, text = "";
+      for (var i=0; i < element.childNodes.length; i++) {
+          child = element.childNodes[i];
+          var type = child.nodeType;
+          if (type == Node.TEXT_NODE || type == Node.ENTITY_REFERENCE_NODE) {
+              text += child.nodeValue;
+          } else {
+              /* recurse into nodes of other types */
+              text += getText(child);
+          }
+      }
+      return text;
+  }
+
+
+  /* Index all classifications so we can keep track of the classification
+   * for the selected product, which could control field visibility.
+   */
+  var all_classifications = new Array(193);
+      all_classifications['ACTF'] = 'Technology';
+      all_classifications['Aether'] = 'Technology';
+      all_classifications['AJDT'] = 'Tools';
+      all_classifications['Amalgam'] = 'Modeling';
+      all_classifications['AMP'] = 'Modeling';
+      all_classifications['Apricot'] = 'RT';
+      all_classifications['AspectJ'] = 'Tools';
+      all_classifications['ATF'] = 'Tools';
+      all_classifications['Babel'] = 'Technology';
+      all_classifications['BIRT'] = 'BIRT';
+      all_classifications['BPEL'] = 'SOA';
+      all_classifications['BPMN2Modeler'] = 'SOA';
+      all_classifications['Buckminster'] = 'Tools';
+      all_classifications['CBI'] = 'Eclipse Foundation';
+      all_classifications['CDT'] = 'Tools';
+      all_classifications['Community'] = 'Eclipse Foundation';
+      all_classifications['Dali JPA Tools'] = 'WebTools';
+      all_classifications['Damos'] = 'Tools';
+      all_classifications['Dash'] = 'Technology';
+      all_classifications['Data Tools'] = 'DataTools';
+      all_classifications['DLTK'] = 'Technology';
+      all_classifications['e4'] = 'Eclipse';
+      all_classifications['eBAM'] = 'SOA';
+      all_classifications['eBPM'] = 'SOA';
+      all_classifications['ECF'] = 'RT';
+      all_classifications['EclipseLink'] = 'RT';
+      all_classifications['EDT'] = 'Tools';
+      all_classifications['EGit'] = 'Technology';
+      all_classifications['EMF'] = 'Modeling';
+      all_classifications['EMF.Diffmerge'] = 'Modeling';
+      all_classifications['EMF.EGF'] = 'Modeling';
+      all_classifications['EMFT'] = 'Modeling';
+      all_classifications['EMFT.b3'] = 'Modeling';
+      all_classifications['EMFT.Doc2Model'] = 'Modeling';
+      all_classifications['EMFT.emf-store'] = 'Modeling';
+      all_classifications['EMFT.emfclient'] = 'Modeling';
+      all_classifications['EMFT.Epsilon'] = 'Modeling';
+      all_classifications['EMFT.facet'] = 'Modeling';
+      all_classifications['EMFT.Featuremodel'] = 'Modeling';
+      all_classifications['EMFT.Henshin'] = 'Modeling';
+      all_classifications['EMFT.js4emf'] = 'Modeling';
+      all_classifications['EMFT.MTF'] = 'Modeling';
+      all_classifications['EMFT.Refactor'] = 'Modeling';
+      all_classifications['EMFT.Wazaabi'] = 'Modeling';
+      all_classifications['EPF'] = 'Technology';
+      all_classifications['EPP'] = 'Technology';
+      all_classifications['Equinox'] = 'RT';
+      all_classifications['ERCP'] = 'RT';
+      all_classifications['Examples'] = 'Technology';
+      all_classifications['gEclipse'] = 'Technology';
+      all_classifications['GEF'] = 'Tools';
+      all_classifications['GEF3D'] = 'Technology';
+      all_classifications['Gemini'] = 'RT';
+      all_classifications['Gemini.Blueprint'] = 'RT';
+      all_classifications['Gemini.DBaccess'] = 'RT';
+      all_classifications['Gemini.JPA'] = 'RT';
+      all_classifications['Gemini.Management'] = 'RT';
+      all_classifications['Gemini.Naming'] = 'RT';
+      all_classifications['Gemini.Web'] = 'RT';
+      all_classifications['GMF-Tooling'] = 'Modeling';
+      all_classifications['GMP'] = 'Modeling';
+      all_classifications['GMT'] = 'Modeling';
+      all_classifications['Gyrex'] = 'RT';
+      all_classifications['Higgins'] = 'Technology';
+      all_classifications['Hudson'] = 'Technology';
+      all_classifications['IDE4EDU'] = 'Technology';
+      all_classifications['IMP'] = 'Technology';
+      all_classifications['Incubator'] = 'Eclipse';
+      all_classifications['Java EE Config'] = 'WebTools';
+      all_classifications['Java Server Faces'] = 'WebTools';
+      all_classifications['JDT'] = 'Eclipse';
+      all_classifications['Jetty'] = 'RT';
+      all_classifications['JGit'] = 'Technology';
+      all_classifications['JSDT'] = 'WebTools';
+      all_classifications['Jubula'] = 'Technology';
+      all_classifications['JWT'] = 'SOA';
+      all_classifications['Koneki'] = 'Technology';
+      all_classifications['Libra'] = 'WebTools';
+      all_classifications['Linux Tools'] = 'Tools';
+      all_classifications['LTS'] = 'Eclipse Foundation';
+      all_classifications['Lyo'] = 'Technology';
+      all_classifications['m2e'] = 'Technology';
+      all_classifications['M2E-WTP'] = 'Technology';
+      all_classifications['M2T'] = 'Modeling';
+      all_classifications['Magrove'] = 'SOA';
+      all_classifications['MAT'] = 'Tools';
+      all_classifications['MDT'] = 'Modeling';
+      all_classifications['MDT.BPMN2'] = 'Modeling';
+      all_classifications['MDT.Etrice'] = 'Modeling';
+      all_classifications['MDT.MoDisco'] = 'Modeling';
+      all_classifications['MDT.OCL'] = 'Modeling';
+      all_classifications['MDT.Papyrus'] = 'Modeling';
+      all_classifications['MDT.RMF'] = 'Modeling';
+      all_classifications['MDT.Sphinx'] = 'Modeling';
+      all_classifications['MDT.UML2'] = 'Modeling';
+      all_classifications['MDT.XSD'] = 'Modeling';
+      all_classifications['MMT'] = 'Modeling';
+      all_classifications['MMT.ATL'] = 'Modeling';
+      all_classifications['MMT.QVTd'] = 'Modeling';
+      all_classifications['MMT.QVTo'] = 'Modeling';
+      all_classifications['Modeling'] = 'Modeling';
+      all_classifications['MPC'] = 'Technology';
+      all_classifications['MTJ'] = 'Tools';
+      all_classifications['Mylyn'] = 'Mylyn';
+      all_classifications['Mylyn Builds'] = 'Mylyn';
+      all_classifications['Mylyn Commons'] = 'Mylyn';
+      all_classifications['Mylyn Context'] = 'Mylyn';
+      all_classifications['Mylyn Context MFT'] = 'Mylyn';
+      all_classifications['Mylyn Docs'] = 'Mylyn';
+      all_classifications['Mylyn Docs Intent'] = 'Mylyn';
+      all_classifications['Mylyn Docs Vex'] = 'Mylyn';
+      all_classifications['Mylyn Incubator'] = 'Mylyn';
+      all_classifications['Mylyn Reviews'] = 'Mylyn';
+      all_classifications['Mylyn Reviews R4E'] = 'Mylyn';
+      all_classifications['Mylyn Tasks'] = 'Mylyn';
+      all_classifications['Mylyn Versions'] = 'Mylyn';
+      all_classifications['NatTable'] = 'Technology';
+      all_classifications['Nebula'] = 'Technology';
+      all_classifications['Objectteams'] = 'Tools';
+      all_classifications['Orbit'] = 'Tools';
+      all_classifications['Orion'] = 'Eclipse';
+      all_classifications['OSEE'] = 'Technology';
+      all_classifications['Paho'] = 'Technology';
+      all_classifications['Pave'] = 'WebTools';
+      all_classifications['PDE'] = 'Eclipse';
+      all_classifications['PDT'] = 'Tools';
+      all_classifications['PDT.Incubator'] = 'Tools';
+      all_classifications['Phoenix'] = 'Technology';
+      all_classifications['Platform'] = 'Eclipse';
+      all_classifications['PMF'] = 'Modeling';
+      all_classifications['PTP'] = 'Tools';
+      all_classifications['RAP'] = 'RT';
+      all_classifications['Recommenders'] = 'Technology';
+      all_classifications['Recommenders.Incubator'] = 'Technology';
+      all_classifications['Remus'] = 'Technology';
+      all_classifications['Riena'] = 'RT';
+      all_classifications['RTP'] = 'Technology';
+      all_classifications['RTSC'] = 'Technology';
+      all_classifications['Sapphire'] = 'Technology';
+      all_classifications['SCA'] = 'SOA';
+      all_classifications['Scout'] = 'Technology';
+      all_classifications['Sequoyah'] = 'Tools';
+      all_classifications['Sisu'] = 'Technology';
+      all_classifications['Skalli'] = 'Technology';
+      all_classifications['Sketch'] = 'Technology';
+      all_classifications['Smila'] = 'RT';
+      all_classifications['SOA'] = 'STP';
+      all_classifications['SOA Platform'] = 'SOA';
+      all_classifications['Stardust'] = 'SOA';
+      all_classifications['STEM'] = 'Technology';
+      all_classifications['Subversive'] = 'Technology';
+      all_classifications['Swordfish'] = 'SOA';
+      all_classifications['SWTBot'] = 'Technology';
+      all_classifications['Target Management'] = 'Tools';
+      all_classifications['TCF'] = 'Tools';
+      all_classifications['Tigerstripe'] = 'Technology';
+      all_classifications['TMF'] = 'Modeling';
+      all_classifications['TMW'] = 'Tools';
+      all_classifications['Tools'] = 'Tools';
+      all_classifications['TPTP Agent Controller'] = 'TPTP';
+      all_classifications['TPTP ASF'] = 'TPTP';
+      all_classifications['TPTP Build to Manage'] = 'TPTP';
+      all_classifications['TPTP Common Logging'] = 'TPTP';
+      all_classifications['TPTP GLA'] = 'TPTP';
+      all_classifications['TPTP Line Coverage'] = 'TPTP';
+      all_classifications['TPTP Log Analyzer'] = 'TPTP';
+      all_classifications['TPTP Probe Instrumentation'] = 'TPTP';
+      all_classifications['TPTP Profiling'] = 'TPTP';
+      all_classifications['TPTP Release Engineering'] = 'TPTP';
+      all_classifications['TPTP Resource Monitoring'] = 'TPTP';
+      all_classifications['TPTP Static Analysis'] = 'TPTP';
+      all_classifications['TPTP Testing'] = 'TPTP';
+      all_classifications['Tycho'] = 'Technology';
+      all_classifications['UOMo'] = 'Technology';
+      all_classifications['Virgo'] = 'RT';
+      all_classifications['Vjet'] = 'WebTools';
+      all_classifications['VTP'] = 'Technology';
+      all_classifications['Web Tools'] = 'WebTools';
+      all_classifications['WindowBuilder'] = 'Tools';
+      all_classifications['Woolsey'] = 'Technology';
+      all_classifications['Working Groups'] = 'Eclipse Foundation';
+      all_classifications['WTP Common Tools'] = 'WebTools';
+      all_classifications['WTP Datatools'] = 'WebTools';
+      all_classifications['WTP EJB Tools'] = 'WebTools';
+      all_classifications['WTP Incubator'] = 'WebTools';
+      all_classifications['WTP Java EE Tools'] = 'WebTools';
+      all_classifications['WTP Releng'] = 'WebTools';
+      all_classifications['WTP ServerTools'] = 'WebTools';
+      all_classifications['WTP Source Editing'] = 'WebTools';
+      all_classifications['WTP Webservices'] = 'WebTools';
+      all_classifications['WTP Website'] = 'WebTools';
+      all_classifications['Xtend'] = 'Tools';
+      all_classifications['z_Archived'] = 'Eclipse Foundation';
+
+  //-->
+  </script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input type="hidden" name="delta_ts" value="2012-02-09 15:57:47">
+  <input type="hidden" name="longdesclength" value="11">
+  <input type="hidden" name="id" value="1">
+  <input type="hidden" name="token" value="1350001659-53a8a95296ba2987ae33dd8c1e61b620">
+<div class="bz_alias_short_desc_container edit_form"><div class="knob-buttons">
+      <input type="submit" value="Save Changes"
+             id="commit_top">
+    </div>
+     <a href="show_bug.cgi?id=1"><b>Bug&nbsp;12345</b></a> -<span id="summary_alias_container" class="bz_default_hidden"> 
+      <span id="short_desc_nonedit_display">Usability issue with external editors (1GE6IRL)</span>
+     </span>
+
+
+    <div id="summary_alias_input">
+      <table id="summary">
+
+        <tr>
+          <td>
+            <label accesskey="s" for="short_desc"><u>S</u>ummary</label>:
+          </td>
+          <td>Usability issue with external editors (1GE6IRL)
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Usability issue with external editors (1GE6IRL)', '');
+  </script>
+  <table class="edit_form">
+    <tr>
+
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">
+        <table>
+          <tr>
+    <td class="field_label">
+      <b><a href="page.cgi?id=fields.html#status">Status</a></b>:
+    </td>
+    <td id="bz_field_status">
+      <span id="static_bug_status">CLOSED
+          FIXED
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_product">
+
+
+  <a
+      title="Bugs are categorised into Products and Components. Select a Classification to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi"
+  >Product:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_product" >Platform</td>
+    </tr>
+
+
+    <tr class="bz_default_hidden"><th class="field_label "
+    id="field_label_classification">
+
+
+  <a
+      title="Bugs are categorised into Classifications, Products and Components. classifications is the top-level categorisation."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#classification"
+  >Classification:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_classification" >Eclipse</td>
+    </tr>
+
+
+
+    <tr><th class="field_label "
+    id="field_label_component">
+
+
+  <a
+      title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list."
+      class="field_help_link"
+      href="describecomponents.cgi?product=Platform"
+  >Component:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_component" >Team</td>
+    </tr>
+    <tr>
+      <td class="field_label">
+        <label for="version"><b>Version</b></label>:
+      </td>
+<td>2.0
+  </td>
+    </tr>
+
+
+
+    <tr>
+      <td class="field_label">
+        <label for="rep_platform" accesskey="h"><b>Platform</b></label>:
+      </td>
+      <td class="field_value">All
+       All
+       <script type="text/javascript">
+         assignToDefaultOnChange(['product', 'component']);
+       </script>
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr>
+      <td class="field_label">
+        <label for="priority" accesskey="i">
+          <b><a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></b></label>:
+      </td>
+      <td>P3
+       normal<span id="votes_container">
+    (<a href="page.cgi?id=voting/user.html&amp;bug_id=1#vote_1">vote</a>)
+  </span>
+      </td>
+    </tr>
+
+      <tr>
+        <td class="field_label">
+          <label for="target_milestone">
+              <a href="page.cgi?id=fields.html#target_milestone">
+            Target&nbsp;Milestone</a></label>:
+        </td><td>---
+  </td>
+      </tr>
+
+          <tr>
+      <td class="field_label">
+        <b><a href="page.cgi?id=fields.html#assigned_to">Assigned To</a></b>:
+      </td>
+      <td><span class="vcard"><a class="email" href="mailto:James_Moody&#64;ca.ibm.com" title="James Moody &lt;James_Moody&#64;ca.ibm.com&gt;"> <span class="fn">James Moody</span></a>
+</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="field_label">
+        <label for="qa_contact" accesskey="q"><b><u>Q</u>A Contact</b></label>:
+      </td>
+      <td><span class="vcard"><a class="email" href="mailto:" title=""></a>
+</span>
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label "
+    id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a
+      title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#bug_file_loc"
+  >URL:</a>
+</label>
+</th>
+    <td>
+      <span id="bz_url_input_area">
+      </span>
+    </td>
+  </tr>
+
+    <tr>
+      <td class="field_label">
+        <label for="status_whiteboard" accesskey="w"><b><u>W</u>hiteboard</b></label>:
+      </td><td colspan="2">
+  </td>
+    </tr>
+
+    <tr>
+      <td class="field_label">
+        <label for="keywords" accesskey="k">
+          <b><a href="describekeywords.cgi"><u>K</u>eywords</a></b></label>:
+      </td>
+      <td class="field_value" colspan="2">
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+          <tr><th class="field_label "
+    id="field_label_dependson">
+
+
+  <a
+      title="The bugs listed here must be resolved before this bug can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#dependson"
+  >Depends on:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+    </span>
+
+  </td>
+  </tr>
+
+  <tr><th class="field_label "
+    id="field_label_blocked">
+
+
+  <a
+      title="This bug must be resolved before the bugs listed in this field can be resolved."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#blocked"
+  >Blocks:</a>
+
+</th>
+
+  <td>
+    <span id="blocked_input_area">
+    </span>
+
+  </td>
+
+  <tr>
+    <th>&nbsp;</th>
+
+    <td colspan="2" align="left" id="show_dependency_tree_or_graph">
+      Show dependency <a href="showdependencytree.cgi?id=1&amp;hide_resolved=1">tree</a>
+
+    </td>
+  </tr>
+
+        </table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tr>
+    <td class="field_label">
+      <b>Reported</b>:
+    </td>
+    <td>2001-10-10 21:34 EDT by <span class="vcard"><a class="email" href="mailto:andre_weinand&#64;ch.ibm.com" title="Andre Weinand &lt;andre_weinand&#64;ch.ibm.com&gt;"> <span class="fn">Andre Weinand</span></a>
+</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="field_label">
+      <b> Modified</b>:
+    </td>
+    <td>2012-02-09 15:57 EST
+      (<a href="show_activity.cgi?id=1">History</a>)
+    </td>
+
+  </tr>
+         <tr>
+      <td class="field_label">
+        <label for="newcc" accesskey="a"><b>CC List</b>:</label>
+      </td>
+      <td>
+            <input type="checkbox" id="addselfcc" name="addselfcc" checked="checked">
+            <label for="addselfcc">Add me to CC list</label>
+            <br> 10
+          users
+          <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
+            (<a href="#" id="cc_edit_area_showhide">edit</a>)
+          </span>
+        <div id="cc_edit_area">
+          <br>
+            <div>
+              <div><label for="cc"><b>Add</b></label></div><input
+    name="newcc"
+    value="" class="bz_userfield"  size="30"  id="newcc"
+  >
+            </div>
+            <select id="cc" multiple="multiple" size="5">
+                <option value="bokowski&#64;google.com">bokowski&#64;google.com</option>
+                <option value="denis.roy&#64;eclipse.org">denis.roy&#64;eclipse.org</option>
+                <option value="hirujung&#64;gmail.com">hirujung&#64;gmail.com</option>
+                <option value="john_arthorne&#64;ca.ibm.com">john_arthorne&#64;ca.ibm.com</option>
+                <option value="Kevin_McGuire&#64;ca.ibm.com">Kevin_McGuire&#64;ca.ibm.com</option>
+                <option value="manfredend&#64;yahoo.com.cn">manfredend&#64;yahoo.com.cn</option>
+                <option value="mauromol&#64;tiscali.it">mauromol&#64;tiscali.it</option>
+                <option value="mik.kersten&#64;tasktop.com">mik.kersten&#64;tasktop.com</option>
+                <option value="pombredanne&#64;nexb.com">pombredanne&#64;nexb.com</option>
+                <option value="yagnesh&#64;infoworldpune.com">yagnesh&#64;infoworldpune.com</option>
+            </select>
+              <input type="hidden" name="cc" value="oss.wakayama&#64;gmail.com">
+        </div>
+          <script type="text/javascript">
+            hideEditableField( 'cc_edit_area_showhide_container',
+                               'cc_edit_area',
+                               'cc_edit_area_showhide',
+                               '',
+                               '');
+          </script>
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label "
+    id="field_label_see_also">
+
+
+  <a
+      title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with a comma. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields."
+      class="field_help_link"
+      href="page.cgi?id=fields.html#see_also"
+  >See Also:</a>
+
+</th>
+  <td class="field_value "
+      id="field_container_see_also" ></td>
+    </tr>
+
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+
+                <tr>
+      <td class="field_label flags_label">
+        <label><b>Flags:</b></label>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2"><script src="js/flag.js?1334781167" type="text/javascript"></script>
+
+<table id="flags">
+
+
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Documentation updated" for="flag_type-4">documentation</label>
+    </td>
+    <td>
+      <select id="flag_type-4" name="flag_type-4"
+              title="Documentation updated" disabled="disabled"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-4">
+        <option value="X"></option>
+      </select>
+    </td>
+      <td>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Used to tag plan items against the release in which they're planned (i.e. Indigo this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." for="flag_type-11">indigo</label>
+    </td>
+    <td>
+      <select id="flag_type-11" name="flag_type-11"
+              title="Used to tag plan items against the release in which they're planned (i.e. Indigo this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." disabled="disabled"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-11">
+        <option value="X"></option>
+      </select>
+    </td>
+      <td>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Set to + to flag the bug for the IP log. This is a committers-only flag for bugs." for="flag_type-8">iplog</label>
+    </td>
+    <td>
+      <select id="flag_type-8" name="flag_type-8"
+              title="Set to + to flag the bug for the IP log. This is a committers-only flag for bugs." disabled="disabled"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-8">
+        <option value="X"></option>
+      </select>
+    </td>
+      <td>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Used to tag plan items against the release in which they're planned (i.e. Juno this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." for="flag_type-12">juno</label>
+    </td>
+    <td>
+      <select id="flag_type-12" name="flag_type-12"
+              title="Used to tag plan items against the release in which they're planned (i.e. Juno this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." disabled="disabled"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-12">
+        <option value="X"></option>
+      </select>
+    </td>
+      <td>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Used to tag plan items against the release in which they're planned (i.e. kepler this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." for="flag_type-13">kepler</label>
+    </td>
+    <td>
+      <select id="flag_type-13" name="flag_type-13"
+              title="Used to tag plan items against the release in which they're planned (i.e. kepler this time around). This is necessary for bug-based plans to retain information about bugs that were deferred from one release and then get committed for a subsequent release - e.g. a bug that was deferred from ganymede but committed for galileo would have both 'galileo' and 'ganymede' flags on it." disabled="disabled"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-13">
+        <option value="X"></option>
+      </select>
+    </td>
+      <td>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Code has PMC/Project Lead approval" for="flag_type-2">pmc_approved</label>
+    </td>
+    <td>
+      <select id="flag_type-2" name="flag_type-2"
+              title="Code has PMC/Project Lead approval"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-2">
+        <option value="X"></option>
+          <option value="?">?</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+      </select>
+    </td>
+      <td>
+          <span style="white-space: nowrap;"><input
+    name="requestee_type-2"
+    value="" class="requestee"  id="requestee_type-2"
+  >
+
+          </span>
+      </td>
+  </tr>
+<tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <label title="Code review needed" for="flag_type-1">review</label>
+    </td>
+    <td>
+      <select id="flag_type-1" name="flag_type-1"
+              title="Code review needed"
+              onchange="toggleRequesteeField(this);"
+              class="flag_select flag_type-1">
+        <option value="X"></option>
+          <option value="?">?</option>
+      </select>
+    </td>
+      <td>
+          <span style="white-space: nowrap;"><input
+    name="requestee_type-1"
+    value="" class="requestee"  id="requestee_type-1"
+  >
+
+          </span>
+      </td>
+  </tr>
+
+
+</table>
+      </td>
+    </tr>
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </table>
+
+  <table id="bz_big_form_parts" cellspacing="0" cellpadding="0"><tr>
+  <td>
+
+
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Show Obsolete";
+        view_all.href = view_all.href + hide_obsolete_url_parameter
+    }
+    else {
+        link.innerHTML = "Hide Obsolete";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellspacing="0" cellpadding="4">
+  <tr id="a0">
+    <th colspan="3" align="left">
+      Attachments
+    </th>
+  </tr>
+
+
+
+  <tr class="bz_attach_footer">
+    <td colspan="3">
+        <a href="attachment.cgi?bugid=1&amp;action=enter">Add an attachment</a>
+        (proposed patch, testcase, etc.)
+    </td>
+  </tr>
+</table>
+<br>
+<div id="add_comment" class="bz_section_additional_comments">
+      <label for="comment" accesskey="c"><b>Additional
+        <u>C</u>omments</b></label>:
+
+
+      <!-- This table keeps the submit button aligned with the box. -->
+      <table><tr><td><textarea name="comment" id="comment"
+            rows="10"
+          cols="80"
+            onFocus="this.rows=25"></textarea>
+        <br><div class="knob-buttons">
+      <input type="submit" value="Save Changes"
+             id="commit">
+    </div>
+
+        <table id="bug_status_bottom"
+               class="status" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="field_label">
+              <b><a href="page.cgi?id=fields.html#status">Status</a></b>:
+            </td>
+            <td><div id="status">CLOSED
+
+    <noscript><br>resolved&nbsp;as&nbsp;</noscript>
+
+  <span id="resolution_settings">FIXED
+  </span>
+
+</div>
+
+<script type="text/javascript">
+  var close_status_array = [
+      'CLOSED'
+  ];
+  YAHOO.util.Dom.removeClass('dup_id_discoverable', 'bz_default_hidden');
+  hideEditableField( "dup_id_container", "dup_id", 'dup_id_edit_action',
+                     'dup_id', '' )
+  showHideStatusItems( "",  ['',
+                             'CLOSED']);
+  YAHOO.util.Event.addListener( 'bug_status', "change", showHideStatusItems,
+                                ['',
+                                 'CLOSED']);
+  YAHOO.util.Event.addListener( 'resolution', "change", showDuplicateItem);
+  YAHOO.util.Event.addListener( 'dup_id_discoverable_action',
+                                'click',
+                                setResolutionToDuplicate,
+                                'CLOSED');
+  YAHOO.util.Event.addListener( window, 'load',  showHideStatusItems,
+                              ['',
+                               'CLOSED'] );
+
+</script>
+            </td>
+          </tr>
+        </table>
+      </td></tr></table>
+
+
+  </div>
+  </td>
+  <td>
+  </td>
+  </tr></table>
+
+
+  <div id="comments"><script src="js/comments.js?1334781167" type="text/javascript">
+</script>
+
+
+
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(0, 1);
+              addCollapseLink(0, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c0">Description</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:andre_weinand&#64;ch.ibm.com" title="Andre Weinand &lt;andre_weinand&#64;ch.ibm.com&gt;"> <span class="fn">Andre Weinand</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2001-10-10 21:34:46 EDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_0">- Setup a project that contains a *.gif resource
+	- release project to CVS
+	- edit the *.gif resource with an external editor, e.g. PaintShop
+	- save and close external editor
+	- in Navigator open the icon resource and verify that your changes are there
+	- release project
+		-&gt; nothing to release!
+	- in Navigator open the icon resource and verify that your changes are still there
+
+	Problem: because I never &quot;Refreshed from local&quot;, the workspace hasn't changed so &quot;Release&quot; didn't find anything.
+	However opening the resource with an external editor found the modified file on disk and showed the changes.
+
+	The real problem occurs if &quot;Release&quot; actually finds something to release but you don't spot that some resources are missing.
+	This is extremely error prone: one of my changes didn't made it into build 110 because of this!
+
+NOTES:
+EG (5/23/01 3:00:33 PM)
+	Release should do a refresh from local before doing the release.
+	Moving to VCM
+
+
+KM (05/27/01 5:10:19 PM)
+	Comments from JM in related email:
+
+	Should not do this for free.  Could have a setting which made it optoinal but should nt be mandatory.  Default setting could be to have it on.
+	Consider the SWT team who keep their workspaces on network drives.  This will be slow.
+
+	Side effects will be that a build runs when the refresh is completed unless you somehow do it in a workspace runnable and don't end the
+	runnable until after the release.  This would be less than optimal as some builders may be responsible for maintaining some invariants and deriving resources which are releasable.  If you don't run the builders before releasing, the invariants will not be maintained and you will release inconsistent state.
+
+	Summary:  Offer to &quot;ensure local consistency&quot; before releasing.
+
+KM (5/31/01 1:30:35 PM)
+	See also 1GEAG1A: ITPVCM:WINNT - Internal error comparing with a document
+	which failed with an error.  Never got log from Tod though.</pre>
+    </div>
+  <div id="c1" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(1, 5934);
+              addCollapseLink(1, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c1">Comment 1</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:James_Moody&#64;ca.ibm.com" title="James Moody &lt;James_Moody&#64;ca.ibm.com&gt;"> <span class="fn">James Moody</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2001-10-19 10:32:10 EDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_1">*** <a class="bz_bug_link
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED DUPLICATE - readme: must refresh from local if using external editors (1GFBQNI)"
+   href="show_bug.cgi?id=183">Bug 183</a> has been marked as a duplicate of this bug. ***</pre>
+    </div>
+  <div id="c2" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(2, 5989);
+              addCollapseLink(2, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c2">Comment 2</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:James_Moody&#64;ca.ibm.com" title="James Moody &lt;James_Moody&#64;ca.ibm.com&gt;"> <span class="fn">James Moody</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2001-10-19 16:36:00 EDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_2">Implemented 'auto refresh' option. Default value is off.</pre>
+    </div>
+  <div id="c3" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(3, 6322);
+              addCollapseLink(3, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c3">Comment 3</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:dj_houghton&#64;ca.ibm.com" title="DJ Houghton &lt;dj_houghton&#64;ca.ibm.com&gt;"> <span class="fn">DJ Houghton</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2001-10-23 23:39:03 EDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_3">PRODUCT VERSION:
+	109
+
+</pre>
+    </div>
+  <div id="c4" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(4, 7766);
+              addCollapseLink(4, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c4">Comment 4</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:James_Moody&#64;ca.ibm.com" title="James Moody &lt;James_Moody&#64;ca.ibm.com&gt;"> <span class="fn">James Moody</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2001-10-25 10:19:43 EDT
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_4">Fixed in v206</pre>
+    </div>
+  <div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(5, 821827);
+              addCollapseLink(5, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c5">Comment 5</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:bokowski&#64;google.com" title="Boris Bokowski &lt;bokowski&#64;google.com&gt;"> <span class="fn">Boris Bokowski</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-01 16:25:53 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_5">I looked at this because of the link in Ian's blog (<a href="http://ianskerrett.wordpress.com/2006/11/01/looking-back-in-time-at-eclipse/">http://ianskerrett.wordpress.com/2006/11/01/looking-back-in-time-at-eclipse/</a>).
+
+Much to my surprise, I can still reproduce the original issue with Eclipse 3.2.1!
+
+Why didn't we turn auto-refresh on by default?  Does the SWT team still have their workspaces on network drives?</pre>
+    </div>
+  <div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(6, 821839);
+              addCollapseLink(6, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c6">Comment 6</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:john_arthorne&#64;ca.ibm.com" title="John Arthorne &lt;john_arthorne&#64;ca.ibm.com&gt;"> <span class="fn">John Arthorne</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-01 16:35:52 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_6">Yes, people still use network drives. In fact, since in 3.2 we now allow projects to be backed by arbitrary file systems via EFS, there are even more scenarios where refresh will be expensive.
+
+Note also that James was referring to an &quot;auto-refresh&quot; option in the sync view. This was replaced with a global auto-refresh in the 3.0 release. This is still off by default, because as mentioned before, it can be expensive.</pre>
+    </div>
+  <div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(7, 821845);
+              addCollapseLink(7, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c7">Comment 7</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:bokowski&#64;google.com" title="Boris Bokowski &lt;bokowski&#64;google.com&gt;"> <span class="fn">Boris Bokowski</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-01 16:42:41 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_7">(In reply to <a href="show_bug.cgi?id=1#c6">comment #6</a>)
+<span class="quote">&gt; This is still off by default, because as mentioned before, it can be expensive.</span >
+
+Couldn't we turn it on by default now that we have jobs, and a place where jobs show up in the UI? If the refresh happened in a background job that was displayed in the status line, people would have a way to find out what's going on and disable it if they don't like it.
+</pre>
+    </div>
+  <div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(8, 821869);
+              addCollapseLink(8, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c8">Comment 8</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:john_arthorne&#64;ca.ibm.com" title="John Arthorne &lt;john_arthorne&#64;ca.ibm.com&gt;"> <span class="fn">John Arthorne</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-01 17:22:38 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_8">Boris: see <a class="bz_bug_link
+          bz_status_RESOLVED  bz_closed"
+   title="RESOLVED WONTFIX - default value for refreshing workspace automatically"
+   href="show_bug.cgi?id=89672">bug 89672</a></pre>
+    </div>
+  <div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(9, 826401);
+              addCollapseLink(9, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c9">Comment 9</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:pombredanne&#64;nexb.com" title="Philippe Ombredanne &lt;pombredanne&#64;nexb.com&gt;"> <span class="fn">Philippe Ombredanne</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-09 14:03:39 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_9">Happy birthday <a class="bz_bug_link
+          bz_status_CLOSED  bz_closed"
+   title="CLOSED FIXED - Usability issue with external editors (1GE6IRL)"
+   href="show_bug.cgi?id=1">bug 1</a>, you are five years old, and still kicking :-D</pre>
+    </div>
+  <div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(10, 826422);
+              addCollapseLink(10, 'Toggle comment display'); // -->
+            </script>
+          </span>
+
+
+        <span class="bz_comment_number">
+          <a
+             href="show_bug.cgi?id=1#c10">Comment 10</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:john_arthorne&#64;ca.ibm.com" title="John Arthorne &lt;john_arthorne&#64;ca.ibm.com&gt;"> <span class="fn">John Arthorne</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2006-11-09 14:17:41 EST
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text"  id="comment_text_10">Closing.</pre>
+    </div>
+
+
+  <div class="bz_add_comment">
+    <a href="#"
+       onclick="return goto_add_comments();">
+       Add Comment</a>
+  </div>
+
+
+
+</td>
+<td>
+    <ul class="bz_collapse_expand_comments">
+      <li><a href="#" onclick="toggle_all_comments('collapse');
+                               return false;">Collapse All Comments</a></li>
+      <li><a href="#" onclick="toggle_all_comments('expand');
+                               return false;">Expand All Comments</a></li>
+    </ul>
+</td>
+</tr></table>
+  </div>
+
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="show_bug.cgi?format=multiple&amp;id=1">Format For Printing</a></li>
+    <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=1">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=1">Clone This Bug</a></li>
+
+    <li>&nbsp;-&nbsp;<a href="#">Top of page </a></li>
+    </ul>
+
+
+<div class="navigation">
+
+  <i><font color="#777777">First</font></i>
+  <i><font color="#777777">Last</font></i>
+  <i><font color="#777777">Prev</font></i>
+  <i><font color="#777777">Next</font></i>
+  &nbsp;&nbsp;
+  <i><font color="#777777">This bug is not in your last
+    search results.</font></i>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="./">Home</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
+  <li><span class="separator">| </span><a href="describecomponents.cgi">Browse</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input class="txt" type="text" id="quicksearch_bottom" name="quicksearch"
+           title="Quick Search" value="">
+    <input class="btn" type="submit" value="Search"
+           id="find_bottom"></form>
+  <a href="page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+
+  <li>
+      <span class="separator">| </span>
+        <a href="request.cgi?requester=oss.wakayama%40gmail.com&amp;requestee=oss.wakayama%40gmail.com&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a></li>
+
+    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+<li>
+        <span class="separator">| </span>
+        <a href="http://www.bugzilla.org/docs/4.2/en/html/bug_page.html" target="_blank">Help</a>
+      </li>
+
+    <li>
+      <span class="separator">| </span>
+        <a href="index.cgi?logout=1">Log&nbsp;out</a>
+        oss.wakayama&#64;gmail.com</li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+  <span class="separator">| </span>
+  <li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+</ul>
+  </li>
+
+
+
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=oss.wakayama%40gmail.com&emailtype1=exact&emailassigned_to1=1&emailreporter1=1">My Bugs</a></li>
+
+      </ul>
+    </li>
+
+
+<li id="links-special">
+    <script type="text/javascript">
+      <!--
+      function update_text() {
+        // 'lob' means list_of_bugs.
+        var lob_action = document.getElementById('lob_action');
+        var action = lob_action.options[lob_action.selectedIndex].value;
+        var text = document.getElementById('lob_direction');
+        var new_query_text = document.getElementById('lob_new_query_text');
+
+        if (action == "add") {
+          text.innerHTML = "to";
+          new_query_text.style.display = 'inline';
+        }
+        else {
+          text.innerHTML = "from";
+          new_query_text.style.display = 'none';
+        }
+      }
+
+      function manage_old_lists() {
+        var old_lists = document.getElementById('lob_oldqueryname');
+        // If there is no saved searches available, returns.
+        if (!old_lists) return;
+
+        var new_query = document.getElementById('lob_newqueryname').value;
+
+        if (new_query != "") {
+          old_lists.disabled = true;
+        }
+        else {
+          old_lists.disabled = false;
+        }
+      }
+      //-->
+    </script>
+
+    <div class="label"></div>
+    <ul class="links"><li class="form">
+      <form id="list_of_bugs" action="buglist.cgi" method="get">
+        <input type="hidden" name="cmdtype" value="doit">
+        <input type="hidden" name="remtype" value="asnamed">
+        <input type="hidden" name="list_of_bugs" value="1">
+        <input type="hidden" name="token" value="1350001659-502a3134b5686cce4f3abd6c64cc6bb9">
+        <select id="lob_action" name="action" onchange="update_text();">
+          <option value="add">Add</option>
+        </select>
+
+          <a href="http://www.bugzilla.org/docs/4.2/en/html/query.html#individual-buglists">the named tag</a>
+
+        <span id="lob_new_query_text">
+          <input class="txt" type="text" id="lob_newqueryname"
+                 size="20" maxlength="64" name="newqueryname"
+                 onkeyup="manage_old_lists();">
+        </span>
+        <span id="lob_direction">to</span>
+        bugs
+        <input type="text" name="bug_ids" size="12" maxlength="80" value="1">
+        <input type="submit" value="Commit" id="commit_list_of_bugs">
+      </form>
+    </li></ul>
+  </li>
+
+
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+</body>
+</html>
