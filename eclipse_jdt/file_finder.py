@@ -29,10 +29,15 @@ f_test = open(argvs[3], "w")
 for file in fild_all_files(argvs[1]):
 	if '.' in file: # ディレクトリ名を省き，ファイル名だけが抽出されるようフィルタリングする．
             file = file.replace('\\', '/')
-            if file.startswith("C:/Users/hideshi/git/ant/src/tests") or file.startswith("C:/Users/hideshi/git/ant/src/testcases"):
-                file = file.split('/')[-1]
-                f_test.write(file+"\n")
-            elif file.startswith("C:/Users/hideshi/git/ant/src/main"):
+            file_path_list = file.split("/")
+            test_flag = 0
+            for file_path in file_path_list:
+                if ("test" in file_path) or ("Test" in file_path) or ("TEST" in file_path):
+                    file = file.split('/')[-1]
+                    f_test.write(file+"\n")
+                    test_flag = 1
+                    break
+            if test_flag == 0:
                 file = file.split('/')[-1]
                 f_product.write(file+"\n")
             print file
