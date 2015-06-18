@@ -11,7 +11,6 @@ After that, this script identifies when the bug is fixed.
 input: A file that records bug history (not bug report). It is obtained by using Masaki's script.
 output: the date that the bug is fixed.
 """
-# 各ライブラリのインポート
 import os
 import sys
 import commands
