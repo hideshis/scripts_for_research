@@ -25,30 +25,72 @@ import sys
 import commands
 import subprocess
 import re
+import csv
+
+def join(bug_id):
+    writer = csv.writer(file("eclipse"+bug_id+".csv", 'w'), lineterminator="\n")
+    header = ["Bug ID", "Opened", "Changed"]
+    writer.writerow(header)
+    for line_num in range(1, 10001):
+        row = []
+        cmd = "sed -n '" + str(line_num) +"p' result_report.csv" # extract nth line from result_report.csv
+        output = subprocess.check_output(cmd)
+        row.append(output.split(",")[0]) # bug ID
+        row.append(output.split(",")[1].replace("\n", "")) # Created date
+        if output.split(",")[1].replace("\n", "") == "-1": # if Created date is -1
+            continue
+        cmd = "sed -n '" + str(line_num) +"p' result_activity.csv" # extract nth line from result_report.csv
+        output = subprocess.check_output(cmd)
+        row.append(output.split(",")[1].replace("\n", "")) # last changed date
+        if output.split(",")[1].replace("\n", "") == "-1": # if last changed date is -1
+            continue
+        writer.writerow(row)
+    return
 
 def bug_info_extraction(bug_id, bug_id_start, bug_id_end):
     # dive into activity_(bug_id) direcetory
+    print "start activity"
     os.chdir("./activity" + bug_id)
     list_file = os.listdir(".")
     for file_name in list_file:
         if not file_name.startswith("activity"):
             continue
-        print file_name
-        bug_report_activity_parser.extraction(file_name)
+        #print file_name
+        result_list = bug_report_activity_parser.extraction(file_name)
+        text = result_list[0] + "," + result_list[1]
+        os.system("echo " + text + ">>result_activity.csv")
     os.system("rm bug_report_history_tmp*.txt")
     os.system("rm bug_report_table_info.hoge")
     os.system("rm bug_report_activity_sample_dripped.hoge")
+    os.system("egrep -v '^\s*$' result_activity.csv > tmp.csv") # remove brank lines
+    os.system("mv tmp.csv result_activity.csv")
+    os.system("sort -t ',' -k 1n,1 result_activity.csv > tmp.csv")
+    os.system("mv tmp.csv result_activity.csv")
+    os.system("mv result_activity.csv ..")
     os.chdir("..")
+
     # dive into bug_(bug_id) direcetory
+    print "start report"
     os.chdir("bug" + bug_id)
     list_file = os.listdir(".")
     for file_name in list_file:
         if not file_name.startswith("issue"):
             continue
-        print file_name
-        bug_report_parser.extraction(file_name)
+        #print file_name
+        result_list = bug_report_parser.extraction(file_name)
+        text = result_list[0] + "," + result_list[1]
+        os.system("echo " + text + ">>result_report.csv")
+    os.system("egrep -v '^\s*$' result_report.csv > tmp.csv") # remove brank lines
+    os.system("mv tmp.csv result_report.csv")
+    os.system("sort -t ',' -k 1n,1 result_report.csv > tmp.csv")
+    os.system("mv tmp.csv result_report.csv")
+    os.system("mv result_report.csv ..")
     os.chdir("..")
-    sys.exit("execute abortion")
+
+    print "start join"
+    join(bug_id)
+    os.system("rm result_activity.csv")
+    os.system("rm result_report.csv")
 
 if __name__ == '__main__':
     print "project name: "

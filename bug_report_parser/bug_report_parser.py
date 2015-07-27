@@ -5,7 +5,6 @@ This script identifies following info.:
 1. bug ID
 2. Craetion date of the report
 3. last modified date of the bug report
-4. the latest status of the bug
 
 input: Bug report. It is obtained by using Masaki's script.
 output: Info. cited above.
@@ -27,18 +26,25 @@ def extraction(file_name):
     try:
         match = r.search(bug_id_html[0])
     except IndexError:
-        print "this bug report does not exist"
-        return
+        #print "this bug report does not exist"
+        match = re.findall(r'[0-9]+', file_name)
+        bug_id = match[0]
+        return_list = []
+        return_list.append(bug_id)
+        return_list.append("-1")
+        return return_list
     bug_id = match.group(0)
-    print "Bug ID: " + bug_id
+    #print "Bug ID: " + bug_id
 
     # extracting creation date of the report
     creation_date_html = tree.xpath('//*[@id="bz_show_bug_column_2"]/table/tr[1]/td/text()')
-    r = re.compile("[0-9]{4}-[0-9]{2}-[0-9]{2}")
+    r = re.compile("[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}")
     match = r.search(creation_date_html[0])
     creation_date = match.group(0)
-    print "Creation date: " + creation_date
+    creation_date = creation_date.replace("-", "/")
+    #print "Creation date: " + creation_date
 
+    """
     # extracting the last modified date of the bug report
     modified_date_html = tree.xpath('//*[@id="bz_show_bug_column_2"]/table/tr[2]/td/text()[1]')
     r = re.compile("[0-9]{4}-[0-9]{2}-[0-9]{2}")
@@ -60,4 +66,10 @@ def extraction(file_name):
     #modified_date = match.group(0)
     #print "Modified date: " + modified_date
     print "Latest state: " + latest_status
-    return
+    """
+    match = re.findall(r'[0-9]+', file_name)
+    bug_id = match[0]
+    return_list = []
+    return_list.append(bug_id)
+    return_list.append(creation_date)
+    return return_list

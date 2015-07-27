@@ -9,7 +9,7 @@ This is done by parsing the history of the bug.
 After that, this script identifies when the bug is fixed.
 
 input: A file that records bug history (not bug report). It is obtained by using Masaki's script.
-output: the date that the bug is fixed.
+output: bug ID and the date that the bug is fixed.
 """
 import os
 import sys
@@ -26,9 +26,29 @@ def str_format(src):
 def extraction(file_name):
     html_string = open(file_name).read()
     tree = html.fromstring(html_string)
+
+    # check if the activity exists
+    try:
+        presence = tree.xpath('//*[@id="bugzilla-body"]/p[2]/text()')
+        if presence[0] == "\n    No changes have been made to this bug yet.\n  ":
+            match = re.findall(r'[0-9]+', file_name)
+            bug_id = match[0]
+            return_list = []
+            return_list.append(bug_id)
+            return_list.append("-1")
+            return return_list
+    except IndexError:
+        presence = tree.xpath('//*[@id="error_msg"]/text()[1]')
+        if "You are not authorized to access bug" in presence:
+            match = re.findall(r'[0-9]+', file_name)
+            bug_id = match[0]
+            return_list = []
+            return_list.append(bug_id)
+            return_list.append("-1")
+            return return_list
+
     tr_len = len(tree.xpath('//*[@id="bugzilla-body"]/table/tr'))
     if tr_len == 0:
-        print "null activity"
         return
     fixed_date = ""
     for tr_num in range(2, tr_len+1):
@@ -61,8 +81,16 @@ def extraction(file_name):
             elif (activity_detail["added"] == "RESOLVED") or (activity_detail["added"] == "VERIFIED") or (activity_detail["added"] == "CLOSED"):
                 r = re.compile("\d{4}-\d{2}-\d{2}")
                 fixed_date = r.findall(activity_detail["when"])[0]
+                fixed_date = fixed_date.replace("-", "/")
+                r = re.compile("\d{2}:\d{2}")
+                fixed_time = r.findall(activity_detail["when"])[0]
+                fixed_date = fixed_date + " " + fixed_time
+    match = re.findall(r'[0-9]+', file_name)
+    bug_id = match[0]
+    return_list = []
+    return_list.append(bug_id)
     if fixed_date == "":
-        print "this bug is not fixed"
+        return_list.append("-1")
     else:
-        print "fixed date: " + fixed_date
-    return
+        return_list.append(fixed_date)
+    return return_list
