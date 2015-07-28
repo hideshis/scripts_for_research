@@ -53,7 +53,6 @@ def log_scraper(pjt_name):
 			date = date.replace("-", "/")
 			line = f.readline()
 		file_list = []
-		file_info = []
 		while (not line == "\n") and (line):
 			file_path = line.replace("\n", "")
 			file_name = file_path.split("/")[-1]
@@ -64,6 +63,7 @@ def log_scraper(pjt_name):
 			else:
 				line = f.readline()
 				continue
+			file_info = []
 			file_info.append(file_name)
 			file_info.append(file_attribution)
 			file_list.append(file_info)
