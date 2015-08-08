@@ -50,13 +50,19 @@ def file_integrator(pjt_name, commit_info_file, id_list_file):
 		author = data[1]
 		file_name = data[2]
 		if commit_info_file == "pc_with_tc_with_bug.csv":
-			attribution = "pc_with_tc_with_bug"
+			if data[3] == "test":
+				attribution = data[3]
+			else:
+				attribution = "pc_with_bug"
 		elif commit_info_file == "pc_with_tc_without_bug.csv":
-			attribution = "pc_with_tc_without_bug"
+			if data[3] == "test":
+				attribution = data[3]
+			else:
+				attribution = "pc_without_bug"
 		elif commit_info_file == "pc_without_tc_with_bug.csv":
-			attribution = "pc_without_tc_with_bug"
+			attribution = "pc_with_bug"
 		elif commit_info_file == "pc_without_tc_without_bug.csv":
-			attribution = "pc_without_tc_without_bug"
+			attribution = "pc_without_bug"
 		else:
 			sys.exit("attribution error.")
 		id = id_getter(file_name, id_list_file)
