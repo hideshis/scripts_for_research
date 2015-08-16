@@ -46,7 +46,7 @@ while line:
     cmd = 'git checkout ' + commit_hash
     os.system(cmd)
     sub_system_name_getter(commit_date)
-    cmd = 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true'
+    cmd = 'mvn clean org.jacoco:jacoco-maven-plugin:0.7.4.201502262128:prepare-agent install -Dmaven.test.failure.ignore=true --fail-never'
     os.system(cmd)
     cmd = 'mvn sonar:sonar'
     os.system(cmd)

@@ -112,7 +112,7 @@ def func(commit_date):
         pjt_name = tree.xpath('/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[' + str(x+1) + ']/td[2]/a/text()')
         print pjt_name[0]
         if pjt_name[0] == "HttpComponents Client" or pjt_name[0] == "Apache HttpComponents Client":
-            next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[" + str(x+1) + "]/td[2]/a")
+            next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/div/table/tbody/tr[" + str(x+1) + "]/td[2]/a")
             next_button.click()
             next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[4]/div/div[1]/div[1]/div[1]/div/div[1]/span[2]/a")
             next_button.click()
