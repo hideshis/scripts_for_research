@@ -96,11 +96,13 @@ def func(commit_date):
     html_string = open("dashboard.html").read()
     tree = html.fromstring(html_string)
     pjt_table = tree.xpath('/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr')
+    next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/thead/tr/th[6]/a")
+    next_button.click()
     for x in range(len(pjt_table)):
         pjt_name = tree.xpath('/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[' + str(x+1) + ']/td[2]/a/text()')
         print pjt_name[0]
-        if pjt_name[0] == "XStream Parent":
-            next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[8]/td[2]/a")
+        if pjt_name[0] == "HttpComponents Core" or pjt_name[0] == "Apache HttpComponents Core":
+            next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[" + str(x+1) + "]/td[2]/a")
             next_button.click()
             next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[4]/div/div[1]/div[1]/div[1]/div/div[1]/span[2]/a")
             next_button.click()
