@@ -7,6 +7,7 @@ from lxml import html
 import sys
 import time
 import csv
+import subprocess
 
 def file_output(pc_list, commit_date):
     writer = csv.writer(file("pc_name_coverage_list_" + commit_date + ".csv", 'a'), lineterminator="\n")
@@ -28,7 +29,7 @@ def pc_name_coverage_getter(driver, sub_system_name, module_name, commit_date):
         return_list = []
         for x in range(len(coverage_table)):
             pc_name = tree.xpath('//*[@id="col_2"]/table/tbody/tr[' + str(x+1) + ']/td[1]/a[2]/text()')[0]
-            pc_name = module_name + "/" + pc_name
+            pc_name = sub_system_name + "/" + module_name + "/" + pc_name
             pc_coverage= tree.xpath('//*[@id="col_2"]/table/tbody/tr[' + str(x+1) + ']/td[2]/span/text()')[0]
             print "        " + pc_name + " " + pc_coverage
             pc_info = []
@@ -60,6 +61,14 @@ def module_crawler(driver, sub_system_name, commit_date):
                 finish_counter += 1
     return driver, finish_counter
 
+def true_sub_system_name_getter(sub_system_name, commit_date):
+    cmd = 'egrep "^' + sub_system_name + '," sub_system_name_list_' + commit_date + '.csv'
+    result = subprocess.check_output(cmd, shell=True)
+    true_name = result.split(",")[1]
+    true_name = true_name.replace("\r", "")
+    true_name = true_name.replace("\n", "")
+    return true_name
+
 def html_parser(driver, commit_date):
     html_string = open("hogehoge.html").read()
     tree = html.fromstring(html_string)
@@ -77,7 +86,8 @@ def html_parser(driver, commit_date):
             html_source = driver.page_source
             f.write(html_source.encode("utf-8"))
             f.close()
-            driver, num = module_crawler(driver, sub_system_name, commit_date)
+            true_sub_system_name = true_sub_system_name_getter(sub_system_name[0], commit_date)
+            driver, num = module_crawler(driver, true_sub_system_name, commit_date)
             if num == 0:
                 print "retry @ html_parser"
                 driver.back()
@@ -101,7 +111,7 @@ def func(commit_date):
     for x in range(len(pjt_table)):
         pjt_name = tree.xpath('/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[' + str(x+1) + ']/td[2]/a/text()')
         print pjt_name[0]
-        if pjt_name[0] == "HttpComponents Core" or pjt_name[0] == "Apache HttpComponents Core":
+        if pjt_name[0] == "HttpComponents Client" or pjt_name[0] == "Apache HttpComponents Client":
             next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[" + str(x+1) + "]/td[2]/a")
             next_button.click()
             next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[4]/div/div[1]/div[1]/div[1]/div/div[1]/span[2]/a")

@@ -31,6 +31,8 @@ def sub_system_name_getter(commit_date):
                 sub_system_info.append(sub_system_name_dir)
                 writer.writerow(sub_system_info)
             os.chdir("..")
+    cmd = 'mv sub_system_name_list_' + commit_date + '.csv ..'
+    os.system(cmd)
 
 argvs = sys.argv
 pjt_name = argvs[1]
@@ -44,15 +46,14 @@ while line:
     cmd = 'git checkout ' + commit_hash
     os.system(cmd)
     sub_system_name_getter(commit_date)
-    """
     cmd = 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true'
     os.system(cmd)
     cmd = 'mvn sonar:sonar'
     os.system(cmd)
-    """
     os.chdir("..")
-    #time.sleep(10)
-    #sonarqube_scraper.func(commit_date)
+    time.sleep(10)
+    sonarqube_scraper.func(commit_date)
     line = f.readline()
     line = line.replace("\n", "")
+    sys.exit("execution abortion")
 f.close()
