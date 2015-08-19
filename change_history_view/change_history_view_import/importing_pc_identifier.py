@@ -43,12 +43,20 @@ def find_all_files(pjt_name):
     os.system(cmd)
     os.chdir("../")
 
-def file_finder(imported_file_candidate_list):
+def file_finder(tc, imported_file_candidate_list):
+    path_head = tc.split("/test/")[0] + "/main/java/"
     imported_file_list = []
     for target in imported_file_candidate_list:
-        target = target.split("import ")[-1]
-        target = target.replace(".", "/")
-        target = "/" + target + ".java"
+        if " static " in target:
+            target = target.split("static ")[-1]
+            path_list = target.split(".")
+            path_list.pop() # remove method name
+            target = "/".join(path_list)
+        else:
+            target = target.split("import ")[-1]
+            target = target.replace(".", "/")
+        #target = "/" + target + ".java"
+        target = path_head + target + ".java"
         cmd = 'grep "' + target + '" file_list.txt'
         try:
             result = subprocess.check_output(cmd, shell=True)
@@ -68,12 +76,20 @@ def importing_pc_identifier(pjt_name, commit_hash, tc_list):
             result = result.replace("\r", "")
             imported_file_candidate_list = result.split(";\n")
             imported_file_candidate_list.pop() # remove blank factor
-            imported_file_list = file_finder(imported_file_candidate_list)
-            for imported_file in imported_file_list:
-                info_list = []
-                info_list.append(commit_hash)
-                info_list.append(imported_file)
-                writer.writerow(info_list)
+            imported_file_list = file_finder(tc, imported_file_candidate_list)
+            if len(imported_file_list) == 0:
+                cmd = 'echo ' + tc + '>> no_importing_tc_list.txt'
+                os.system(cmd)
+                cmd = 'cat no_importing_tc_list.txt | sort | uniq > tmp.txt'
+                os.system(cmd)
+                cmd = 'mv tmp.txt no_importing_tc_list.txt'
+                os.system(cmd)
+            else:
+                for imported_file in imported_file_list:
+                    info_list = []
+                    info_list.append(commit_hash)
+                    info_list.append(imported_file)
+                    writer.writerow(info_list)
         except subprocess.CalledProcessError: # if the tc doesn't import any pcs
             print "no imports"
 

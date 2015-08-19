@@ -94,9 +94,10 @@ def log_scraper(pjt_name):
 			#file_path = line.replace("\n", "")
 			#file_name = file_path.split("/")[-1]
 			file_name = line.replace("\n", "")
-			if file_name.endswith("Test.java") or file_name.endswith("Tests.java"):
+			source_code_name = file_name.split("/")[-1]
+			if "/src/test/java/" in file_name and source_code_name.endswith(".java"):
 				file_attribution = "test"
-			elif file_name.endswith(".java"):
+			elif source_code_name.endswith(".java"):
 				file_attribution = "production"
 			else:
 				line = f.readline()

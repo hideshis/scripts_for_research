@@ -72,6 +72,7 @@ def file_id_giver(pjt_name):
 	subprocess.call(command, shell=True)
 	"""
 	command = "grep \",production$\|,test$\" " + pjt_name + "_all.csv | cut -d',' -f4 | sort | uniq > files_production.txt"
+	command = 'cat ' + pjt_name + '_all.csv | cut -d"," -f4 | sort | uniq > files_production.txt'
 	subprocess.call(command, shell=True)
 	id = id_giver_production()
 	command = "mv file_id_list_production.csv file_id_list.csv"
