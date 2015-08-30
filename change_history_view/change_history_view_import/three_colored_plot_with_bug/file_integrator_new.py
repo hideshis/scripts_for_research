@@ -16,14 +16,14 @@ import csv
 
 def id_getter(file_name, id_list_file):
 	command = "grep \"^" + file_name + ",\" " + id_list_file
-	result = subprocess.check_output(command)
+	result = subprocess.check_output(command, shell=True)
 	id = result.split(",")[-1]
 	id = id.replace("\n", "")
 	return id
 
 def checker(id):
 	command = "grep \"," + id + "$\" file_id_list.csv"
-	result = subprocess.check_output(command)
+	result = subprocess.check_output(command, shell=True)
 	result_list = result.split("\n")
 	if len(result_list) == 3:
 		flag = 1
