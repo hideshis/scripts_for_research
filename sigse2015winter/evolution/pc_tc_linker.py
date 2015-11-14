@@ -11,7 +11,7 @@ def tc_identifier(result):
     tmp_list.pop()
     tc_list = []
     for tmp in tmp_list:
-        tc_list.append(tmp.split(",")[-2])
+        tc_list.append(tmp.split(",")[-3])
     tc_list = list(set(tc_list))
     return tc_list
 
