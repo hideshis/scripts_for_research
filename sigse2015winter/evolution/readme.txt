@@ -1,0 +1,6 @@
+1. python log_scraper.py (pjt_name)
+2. git clone (pjt_url)
+3. python importing_pc_identifier.py (pjt_name)
+4. python pc_tc_linker.py (pjt_name)
+5. python commit_info_getter.py (pjt_name)
+6. python co_evolution_identifier.py (pjt_name)
