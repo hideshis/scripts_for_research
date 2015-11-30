@@ -1,0 +1,14 @@
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntry.java,0.10714285714285714,125,13,dead,2.16
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java,0.125,186,12,dead,0.4838709677419355
+httpclient-win/src/test/java/org/apache/http/impl/auth/win/TestWindowsNegotiateScheme.java,0.09090909090909091,453,9,arrive,0.0
+httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,0.09158665966216237,470,9,dead,0.006382978723404255
+module-client/src/test/java/org/apache/http/conn/TestScheme.java,0.33692810457516337,650,10,dead,0.3807692307692308
+module-client/src/test/java/org/apache/http/impl/client/TestDefaultClientRequestDirector.java,0.0938044589276925,347,17,dead,0.13754257270107415
+module-client/src/test/java/org/apache/http/impl/conn/ExecReqThread.java,0.1745388669301713,650,14,dead,0.3230769230769231
+module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,0.16038011695906432,650,11,dead,0.25846153846153846
+module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMNoServer.java,0.12343839909629384,650,20,dead,0.2744939271255061
+module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,0.2164445203918888,419,9,dead,0.17073618505599414
+module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,0.17460768398268398,387,11,dead,0.12112403100775193
+module-client/src/test/java/org/apache/http/impl/cookie/TestBrowserCompatSpec.java,0.29796536796536793,650,9,dead,0.0
+module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2109Spec.java,0.24080808080808075,650,10,dead,0.0
+module-client/src/test/java/org/apache/http/localserver/ServerTestBase.java,0.18065656565656568,650,12,dead,0.25846153846153846

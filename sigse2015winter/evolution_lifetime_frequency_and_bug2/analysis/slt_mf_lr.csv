@@ -1,0 +1,9 @@
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestStaleWhileRevalidationReleasesConnection.java,0.0625,713,9,arrive,0.0
+httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,0.0,472,12,dead,0.0
+httpclient/src/test/java/org/apache/http/impl/execchain/TestMinimalClientExec.java,0.008333333333333333,827,10,arrive,0.018137847642079808
+httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,0.06742317498658078,827,12,arrive,0.012091898428053206
+httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,0.01763668430335097,827,9,arrive,0.0
+module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,0.060944113534048244,510,13,dead,0.14215686274509803
+module-client/src/test/java/org/apache/http/impl/conn/ClientConnAdapterMockup.java,0.06084656084656084,650,11,dead,0.4307692307692308
+module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,0.06012474031301587,650,21,dead,0.2743589743589744
+module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,0.049999999999999996,650,9,dead,0.1054945054945055

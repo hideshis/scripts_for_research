@@ -83,12 +83,15 @@ def lifetime_frequency_getter(tc, pjt_name):
     num_of_times_of_commit = len(commit_date_list)
     print commit_date_list
     print num_of_times_of_commit
-    commit_frequency = commit_frequency_getter(tc, num_of_times_of_commit, commit_date_list)
+    # commit_frequency_getter は，コミット頻度ではなくコミット間隔を計算する．
+    #commit_frequency = commit_frequency_getter(tc, num_of_times_of_commit, commit_date_list)
+    commit_frequency = num_of_times_of_commit
     print commit_frequency
     os.chdir("..")
     return_list = []
     return_list.append(lifetime)
     return_list.append(commit_frequency)
+    return_list.append(flag)
     return return_list
 
 argvs = sys.argv
@@ -119,4 +122,5 @@ for tc in tc_list:
         continue
     info_list.append(result[0]) # lifetime
     info_list.append(result[1]) # commit frequency
+    inof_list.append(result[2])
     writer.writerow(info_list)

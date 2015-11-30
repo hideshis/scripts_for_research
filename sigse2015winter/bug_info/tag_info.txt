@@ -1,0 +1,19 @@
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestProtocolRecommendations.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ConditionalRequestBuilder.java
+
+    git-svn-id: https://svn.apache.org/repos/asf/httpcomponents/httpclient/trunk@1000023 13f79535-47bb-0310-9956-ffa450edef68
+    
+    
+    Contributed by Jonathan Moore <jonathan_moore at comcast.com>
+    HTTPCLIENT-998: cache should use both Last-Modified and ETag for validations when available
+
+Date:   Wed Sep 22 15:06:53 2010 +0000
+Author: Oleg Kalnichevski <olegk@apache.org>
+commit 6d41d97eb9fcd90429005fcd52935897f0138d64
+
+with Bugzilla
+
+Date:   Sat Nov 14 20:53:35 2015 +0900
+Tagger: hideshis <hideshis1990@gmail.com>
+tag _FIX-998-453
