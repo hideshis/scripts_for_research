@@ -43,7 +43,7 @@ def find_all_files(pjt_name):
     os.system(cmd)
     os.chdir("../")
 
-def file_finder(tc, imported_file_candidate_list):
+def file_finder_by_import(tc, imported_file_candidate_list):
     path_head = tc.split("/test/")[0] + "/main/java/"
     imported_file_list = []
     for target in imported_file_candidate_list:
@@ -87,7 +87,7 @@ def importing_pc_identifier(pjt_name, date, commit_hash, author, tc_list):
             result = result.replace("\r", "")
             imported_file_candidate_list = result.split(";\n")
             imported_file_candidate_list.pop() # remove blank factor
-            imported_file_list = file_finder(tc, imported_file_candidate_list)
+            imported_file_list = file_finder_by_import(tc, imported_file_candidate_list)
             imported_file_by_name = file_finder_by_naming_convention(tc)
             if imported_file_by_name[0] != 'none':
                 imported_file_list += imported_file_by_name
