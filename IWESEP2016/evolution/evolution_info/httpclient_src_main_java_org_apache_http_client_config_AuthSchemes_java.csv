@@ -1,0 +1,23 @@
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+4e50149ac6a46437331d1511b998e09e9ab4bf75,1357909908,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+3b5df666a9874ea16683b16dcbb49b36a12a53c2,1415994695,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+2489d1df6631ecd82bcb5eaa7d0a8c779b764a3a,1415995180,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+e7190e717756ffb71f20635bbe916b0dbcb23d1d,1437645613,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test

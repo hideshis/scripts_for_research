@@ -1,0 +1,33 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+a23c18ac1ec689c2053a6186d053e816b0e5dc9a,1239652405,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+746bb7aea287ed0f41828c08fd536fbb30f485b8,1389710936,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+cd1f9fc9f787d90b90ed2a099483a89c1e6342b0,1397559229,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+4709d85aaf4a97dfc0276e3060eb8c1166538668,1402660866,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test

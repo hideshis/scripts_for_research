@@ -1,0 +1,17 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+dbd7dd0efd737009b48d41ef6aa9f5b8bfa81149,1255431148,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+243c862a032b9047e959f1edb3cd6fa036c93f35,1409063856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109DomainHandler.java,production

@@ -1,0 +1,9 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestDateUtils.java,test
+81b6a1acdb52204756ba8f70b74d23a353facba3,1393292612,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/utils/TestDateUtils.java,test
+700b390d8e72041a8ca7b69bc9b9a9417d3c3962,1401547357,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateParseException.java,production

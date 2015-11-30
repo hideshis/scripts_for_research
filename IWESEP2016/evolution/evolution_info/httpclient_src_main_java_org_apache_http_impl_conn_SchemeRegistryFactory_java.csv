@@ -1,0 +1,16 @@
+18de7cda9c6c3c1e2e036c543c0810cfe2587e1c,1293549506,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+6bd3da869d53c9046e89fa35284fd14d83a023a2,1318074601,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+420fc2604f026a8b464d97b987b158a9d32fc0c8,1318256865,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+7f04b88f12965175b9961b0442a2d03502d91e3c,1318256887,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+287d8394103db1b8b0ad74b0acde45e3259cfd61,1318272368,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestConnPoolByRoute.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/SchemeRegistryFactory.java,production

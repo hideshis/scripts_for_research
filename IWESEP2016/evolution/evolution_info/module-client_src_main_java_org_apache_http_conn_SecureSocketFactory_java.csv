@@ -1,0 +1,4 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/SecureSocketFactory.java,production
+cca8a23380720be493acb7e6222ec4c1972451b3,1182085694,Roland Weber,module-client/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
+7ea84c4be42ef2b04e5098ec624372d4c8e21fa1,1184966379,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
+25a9063286fe5ad3216c33f6e83fc843b284b5df,1191087633,Roland Weber,module-client/src/main/java/org/apache/http/conn/SecureSocketFactory.java,production

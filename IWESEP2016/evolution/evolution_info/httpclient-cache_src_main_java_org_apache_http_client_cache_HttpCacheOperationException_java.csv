@@ -1,0 +1,17 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheOperationException.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java,test
+80415614f796ff91ca625366c765d8b245e8cceb,1272728729,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java,test
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheInvalidator.java,test
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java,test
+ef2839b7700d311e5046263cbc40b2088c1cfbd6,1274651720,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java,test
+c85eaa094b57f4afb53f0bdc1d36b8a6178f21eb,1278250527,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheInvalidator.java,test
+76e37db58a8d93d7d237d60fa8b41c7e617f4836,1279052040,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java,test
+c10d235ed2ed98fe72a1bc185e02d4f4f0de4079,1279053656,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheInvalidator.java,test
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheInvalidator.java,test
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java,test
+7891d8c2d4089c2443ce51cc0c3c66a70bfa3fa8,1280146802,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheOperationException.java,production
+218f06e113e8738f39b13b4959ca85deb8ba1e8f,1282420143,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheOperationException.java,production
+e664fa132f8a5eb35c34fcd906f17dfe60e8b6ce,1282939077,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheOperationException.java,production

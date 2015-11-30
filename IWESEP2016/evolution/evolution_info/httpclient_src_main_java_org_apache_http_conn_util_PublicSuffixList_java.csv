@@ -1,0 +1,7 @@
+221e7ba59e90e0ae9cf685884cc40c2867049b00,1409159288,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+3cd94a86f3920738fac0ddf48b4a8a5617b58924,1409252889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+195753c5621ec4e0a6c12a3edf4a7f2ba152a758,1409252905,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+2466424d5dd5780ed5e3829470b3935792732c73,1409839216,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+e7d625f6046fa392f258f1a5b08d1400ec7e8e90,1443879979,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test

@@ -1,0 +1,5 @@
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/KeyHashingScheme.java,production
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+cac1432472a1bec4c39482c12cc993d23473683f,1326836108,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+8265a355e7ca2f0c8c23df6a3aea4b0448fb9243,1328213711,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/KeyHashingScheme.java,production
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/KeyHashingScheme.java,production

@@ -1,0 +1,43 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestDefaultCacheEntrySerializer.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestDefaultCacheEntrySerializer.java,test
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestDefaultCacheEntrySerializer.java,test
+ef2839b7700d311e5046263cbc40b2088c1cfbd6,1274651720,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestDefaultCacheEntrySerializer.java,test
+0ea086094eb6b7a06e40d5155dcbd6768550014d,1274955341,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestDefaultCacheEntrySerializer.java,test
+818b97fd4c0f4130c969416d14fe091b8cb52618,1279052944,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCache.java,test
+672221fc5fe89100adb492fd03b8b02583c875d7,1282421981,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+68c8b4b1eef6ad97e3bcd12c2204930a17771150,1282725221,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e664fa132f8a5eb35c34fcd906f17dfe60e8b6ce,1282939077,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+aeffde46e6168a796df484c431cad85628859c4c,1283980625,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+bb9ad833c162b23df437020c2108d1c189b7e82a,1289767367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e025613aab2ba09d3346be50b926e9fe7dfad192,1292160269,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+868e46fd5bed08cf97cb0305e45530908f9ce771,1294284214,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+868e46fd5bed08cf97cb0305e45530908f9ce771,1294284214,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+6b723dd61ef7f47a54493dcc59d8ae891514774f,1294673737,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+3c0bc58a3050e774098749178239a891f72cc613,1294766900,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestProtocolRequirementsWithDeprecatedSerializer.java,test
+bac69b368ff4d3368d1fd1705d66343c99936563,1294842092,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+58036bc594022413b6a99b4906c560fd27e1cac0,1326305570,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+e9c87971083b7ea9435e9c0cc7da2b1e42e26886,1390583044,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+2883531e92f710a43d7fd04f500d7351f22c9e20,1415373783,Francois-Xavier Bonnet,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+95754d776c167f0442e2a5d28750345db0946b3c,1424695367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCacheStorage.java,test

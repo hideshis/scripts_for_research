@@ -1,0 +1,43 @@
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+57ea057594f90c81ff93f9a8db31659a040a19fc,1315344468,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+d1450f9071bf3da4065cad4688d01f97900d6205,1318277033,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionManagerBase.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+b28ec1bf3d083c693da5e05a35c07cbde967fd74,1352338366,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionManagerBase.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionManagerBase.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionManagerBase.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+bfbc573cbddfe2c607771faf02c905b837769eb9,1355408548,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+6bcb8e0b5f3026acd900a6e0d1015141568b0074,1376036661,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+23f6255cd735f81bc89a3b6376468b2ad83a0c98,1376048263,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+25d95561b27cab5e97ef46fa0aaf7043f61613be,1376061748,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+64ca74933b7ee34c44d3a4328e44753461987741,1376147382,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+260d370b0fee879259f082350a0222e2b7f033b4,1391088432,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+6c4f30fc4d22f4a9a78451113b8577cd2ebfcabe,1407239635,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test

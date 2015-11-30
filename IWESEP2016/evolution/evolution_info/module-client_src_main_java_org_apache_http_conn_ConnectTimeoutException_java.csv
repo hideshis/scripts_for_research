@@ -1,0 +1,11 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+df9d1ddc2c387ac96c3aef2b5cd995a1913499ed,1199523300,Roland Weber,module-client/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+1b4ecf0b57b77a3c70da3d6257ab3cc0d2e20aa0,1211391045,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+fdb6ace2908a773487a5e11c3b26b584f24e7820,1212864630,Sam Berlin,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+8c519d092887f526e390b7e346d30a4cfa72796b,1212870009,Sam Berlin,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+4752936837cc213f44d369ee6bc13bf47c5ac540,1214453004,Sam Berlin,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+dee6af01ad29c9a9e6829f86b4e97b5abff9ab6b,1214596160,Sam Berlin,module-client/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production

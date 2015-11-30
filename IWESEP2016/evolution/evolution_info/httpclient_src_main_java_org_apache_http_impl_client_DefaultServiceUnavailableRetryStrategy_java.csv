@@ -1,0 +1,9 @@
+a03573ca24bf09303ddba3f9e36a75680e18b830,1309352198,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+a03573ca24bf09303ddba3f9e36a75680e18b830,1309352198,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+be07d74d169586f9b9964737f163dc5a2e4d8f8f,1313507374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production
+d5c520a8e1231ae60142158781f5c9bf978fd8e9,1435402212,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultServiceUnavailableRetryStrategy.java,production

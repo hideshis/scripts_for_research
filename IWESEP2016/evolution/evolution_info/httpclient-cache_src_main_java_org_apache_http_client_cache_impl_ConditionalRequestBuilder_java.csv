@@ -1,0 +1,8 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachingHttpClient.java,test
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestConditionalRequestBuilder.java,test
+8e89d40f37c03494f624e02e159e866a33010091,1272671930,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java,production
+1a26a94f9509d9044e2973c1779f10e7916e950f,1272729868,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachingHttpClient.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java,production
+fd2e7a79a9696e3c2a6b87a1ff1246d642316136,1273182264,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java,production

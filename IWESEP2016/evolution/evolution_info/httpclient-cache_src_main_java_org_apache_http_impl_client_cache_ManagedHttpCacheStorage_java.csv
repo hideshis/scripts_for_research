@@ -1,0 +1,17 @@
+83c2c001091e6b5d15dc887e08e778b80328d9f4,1282158943,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+31590950b5a891859b6f42ea6f4aa5343978e757,1288800287,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+a6db7c51857b6c4640032f03c9618993e7796256,1322835311,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/TestHttpCacheJiraNumber1147.java,test
+cb6254fea6009cfcd51326ecb4ff70e0b41c6715,1324673831,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+648e5ab9be962ef9cfa81ecd2e2ec7b5f5cd3799,1328447918,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+b6d7989aaeacd0142c50c331b9147512bb6277b8,1355937123,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+93ae3c741b2932fa377cd13685673f24eaee8314,1392300627,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+80c8fb4dfc4437fad6921806f184f85bbc2eb074,1392300678,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+224711a6d1ce61a93002250ec10a8465bcfd4895,1408635859,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java,production

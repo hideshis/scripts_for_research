@@ -1,0 +1,17 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+2046a83cb3c9be19a97d5d3ca00cabd54ca61002,1184152489,Roland Weber,module-client/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+881bd9c98347210e5e140e0d44adbd332a8bb77c,1184963398,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+52b28593cd4dd4f0f1e1d293db678b0102050eb8,1191775871,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+fe1fa7cd3f83c52693ecae8b7cf8696995b12a56,1191777388,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+243769a600aa7b4a483580c7a6944f5117a30f88,1193666235,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+08bf8e8e50109f9ca81787b90c128a087bf04c2d,1197542005,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+92a3847e4cf970b85c30f254a05cb2c73418291d,1197569711,Roland Weber,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+389cd303f2ff96beb1d5fc19a924d8557c618094,1197570618,Roland Weber,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+dfffbc9a3c93ece6eb6005ab75ff317f07f4fa06,1199982692,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+e4f8eee752266e1d17c4b31fa25c6e534186497a,1210352772,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+284556d9be5cae415c907b74f3d4d3f1c20f9658,1212931280,Sam Berlin,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+e00ac083434a2b1624dfcfd163f036ed27ffcdd3,1228060144,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/CircularRedirectException.java,production

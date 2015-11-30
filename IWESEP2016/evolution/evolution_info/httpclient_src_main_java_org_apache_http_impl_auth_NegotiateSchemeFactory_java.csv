@@ -1,0 +1,13 @@
+d5b954aca957d8362e7d02102fbd727bccc4db87,1252848073,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+fb6d73ef384a2589b9d1332d5c0a37aabe4f0550,1253103433,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+9cbf76568f952f631ba0994429a3f44b2fc07395,1253820028,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+a09823ff000ab40c1bfc92c70990239cafba9d9e,1255364798,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+c80ee8a78d50fd76cc04ab64f32ae00e95dfc5ca,1270751392,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+c7f3b744e6753f7d696843f37ba037a160e97738,1273610186,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+9867254c972ef5e73afedfd54a65d585b088a203,1326976431,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/NegotiateSchemeFactory.java,production

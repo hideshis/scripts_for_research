@@ -1,0 +1,31 @@
+eb920ec3cc56a09e197c025ec5ee330e19ab0b8a,1312801195,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+0195cb4007d17ccda3ddef630122c2852499dd66,1312981241,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+46f309f7c95af63d4e18d078fdd7c44c7260f2f5,1313048795,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+57ea057594f90c81ff93f9a8db31659a040a19fc,1315344468,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+9ee4a41aa3f562b4a0106de9504d59f1ebc714fe,1316771622,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultClientRequestDirector.java,test
+960ee2f581467b7f686a69602dc7aa92565e46a8,1318277904,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+94dea64e63959efcf38cfbcc9c405ab6e1723033,1318334995,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+5d6404cbca2bd40a7c6f73309705c0eed956360b,1318335020,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+74e1be5ca87faec5ec3d437c1e833e093d9d4837,1326975348,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestHttpClientUtils.java,test
+24b8a78846a99450effb08593c594e2213cd93f7,1328117792,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+0cea739a381921df3ae678e16c49521c33eec735,1333999071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+93669262962998ffededfb7e76f25fd3b53a77b5,1334089160,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+ccdebd9384b1e3ac57a65b264aa9660bd0f85170,1344259955,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestRequestRetryHandler.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionAutoRelease.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+8e452a01591bda5c1ebd9dc32971a487db88f477,1348647258,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+c9829f5ac0612f12095b26539f75a906a652db0d,1348647300,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+3627984c9ded50c8f9f7e4aaa653b172de2bacb1,1360067961,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/conn/PoolingClientConnectionManager.java,production

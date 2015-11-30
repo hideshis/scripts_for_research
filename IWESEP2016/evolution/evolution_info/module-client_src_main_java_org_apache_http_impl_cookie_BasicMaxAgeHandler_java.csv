@@ -1,0 +1,6 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicMaxAgeHandler.java,production
+3c5e2e64912c938481e740c59a293193dcfc93a9,1185128389,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicMaxAgeHandler.java,production
+50179d9081f7b1e2f264bdd28fd9a424358d84bd,1191513230,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicMaxAgeHandler.java,production
+15a027f427d1c20ad61f85c59b9f1a032799bf33,1216891350,Ortwin Glueck,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+eec7461bed7771d0f1bebb1e516a2ba01fcce4d5,1234735851,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/BasicMaxAgeHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicMaxAgeHandler.java,production

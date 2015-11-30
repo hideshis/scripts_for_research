@@ -1,0 +1,16 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+f3fdcc1a066a9df07d5088203b8820981b5f46d5,1237420066,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+9f580578d989038d69419363402cdcf9a49a2bd9,1259697704,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/ClientParamsStack.java,production

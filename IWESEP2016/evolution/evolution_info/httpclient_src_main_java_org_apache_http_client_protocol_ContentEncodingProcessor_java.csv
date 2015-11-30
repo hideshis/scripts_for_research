@@ -1,0 +1,4 @@
+7a959d63066aa77a68c7c6d76d7eb40b80986461,1252830732,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ContentEncodingProcessor.java,production
+7a959d63066aa77a68c7c6d76d7eb40b80986461,1252830732,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+5ce6fda4d280dc03cfed0fa56d54d218c6882e5b,1252830890,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ContentEncodingProcessor.java,production
+39f46a9c2b26974cb3ce305c8cbcd4d40048f416,1253271575,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ContentEncodingProcessor.java,production

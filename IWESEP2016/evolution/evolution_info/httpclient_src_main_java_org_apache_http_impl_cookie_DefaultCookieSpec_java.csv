@@ -1,0 +1,7 @@
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production
+f114594c6fa58fa2fa6ba6049c06784532a76577,1419361407,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production
+a4436e12cac0afe40d4470c7b41aa44d2ddd1faf,1426277994,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpec.java,production

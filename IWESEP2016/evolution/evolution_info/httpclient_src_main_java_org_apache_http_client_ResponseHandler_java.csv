@@ -1,0 +1,43 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ResponseHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ResponseHandler.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ResponseHandler.java,production
+54c7e992fbd6df5e102fe97558f90355f0d5342d,1331830927,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+54c7e992fbd6df5e102fe97558f90355f0d5342d,1331830927,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestCompressionDecorator.java,test
+3f99045e4f332dedd27bf20339b8724eaed2445e,1331910087,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestCompressionDecorator.java,test
+93669262962998ffededfb7e76f25fd3b53a77b5,1334089160,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+ae4ebcc630c777f79c942264a45b41956cf8fe24,1337172062,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+a64a3e252ee56392aa2e103656d385cbcb4cd58d,1338474518,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+2451e5dec74b9b49f9e5ffc8da049b2dd46c6d02,1338562397,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+de80f40ae91020b1c528fe27c150ffde83bdddf2,1344260570,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ResponseHandler.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+5cd571a159bd103a2a26d1eb1aa7efab80d74e1e,1359991729,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+d9de7f7c962b73a2d919bcb89a13eb204f2cdfe2,1360542734,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+458575bf59400ad534d70793d1bd9d9ab2e259a1,1364477406,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+5f5269f17107a14c87e87c9f92650cd0e0e848b5,1364898190,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+2f310c3744a71c22d411e5e68d715f06c8c5cec1,1364908284,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+69a7589ad5ab8105c341824eee987a97469282cd,1365065764,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+656c6ecedc7724acee273c0318ada1e5a564e536,1370959831,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+7a33d56a6936ab045d598d266217b9f7acbcfdc3,1370974450,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+4709d85aaf4a97dfc0276e3060eb8c1166538668,1402660866,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+e767d59e5d180614c0f6c58ae18412a1f9b40cb7,1418156418,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestCloseableHttpClient.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test

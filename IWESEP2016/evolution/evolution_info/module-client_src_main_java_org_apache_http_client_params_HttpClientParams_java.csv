@@ -1,0 +1,12 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+cbdfa305f6a8dfe42e40ea089259ef2c4b69f50d,1180197458,Roland Weber,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+2046a83cb3c9be19a97d5d3ca00cabd54ca61002,1184152489,Roland Weber,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+2084e14af99892a3d8d6a3638521d820393d65ba,1188660768,Roland Weber,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+4c696dcc14b5bb58329fb6a53b85b77b1fda3f2a,1189938301,Roland Weber,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+7edb8cc47a9dcc9f85f034f53daffcee2fc3527a,1190910062,Roland Weber,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+f3ced2556a96785e13ed6a7c6ebb4c73a39bd8c2,1200917070,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+6d0c8099005ff246cc3e374492e7150b033e5114,1211389577,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+be2250f5b2527d14ce6b750ae4fd3bda3766e4d3,1211391733,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+c0cf0c76542e2cc0ff83d515de144c52086ba217,1211561234,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/params/HttpClientParams.java,production

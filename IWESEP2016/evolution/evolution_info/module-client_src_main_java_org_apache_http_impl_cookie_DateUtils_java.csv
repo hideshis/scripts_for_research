@@ -1,0 +1,14 @@
+848ff6f6529d7c6864a14a6dba48cee783c1a294,1182099140,Roland Weber,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+a8e875970da2f69fa248cd6eb6da520c5bcfac44,1193238169,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+8616ef1ab2e01a9b2dfeac7cf9c8267cf447d4f5,1194168469,Roland Weber,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+86f8cd7460ce61db93f7f60e46c801263b6527d9,1197396780,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+d12f607b7fac4c59f99adbf858cf32c4e9234baf,1197397605,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+aff60e46290f46caf16c7be7de196425c4fbef94,1209811168,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+e410739b7da15df5cb5c37ddfb596eb4b5a82805,1216207547,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+15a027f427d1c20ad61f85c59b9f1a032799bf33,1216891350,Ortwin Glueck,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production

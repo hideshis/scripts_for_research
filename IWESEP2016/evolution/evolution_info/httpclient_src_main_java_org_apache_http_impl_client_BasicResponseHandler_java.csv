@@ -1,0 +1,24 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+427d2c24e0348eb9a5ed8762e6a8df174a546941,1317989689,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+e9c87971083b7ea9435e9c0cc7da2b1e42e26886,1390583044,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+30d593562989ce866c365c0623382a1fab4a94be,1401100280,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+7ae0a8ac5f31d3b9f5bb54b920a32bcbb0452a32,1403164345,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicResponseHandler.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test

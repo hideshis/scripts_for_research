@@ -1,0 +1,102 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+e2520f85097f94fb42f30f0c6dfaacbc55bc923f,1238412873,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+e2520f85097f94fb42f30f0c6dfaacbc55bc923f,1238412873,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+a757cafadaf4e2dc001c96c96cba8a67dbc48417,1242238415,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+3c93d00a748634fc7e657eee8a29a71d12749a58,1247602347,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+a2ff2dc9dda4967e79ec5f9d48f190fdb4249d02,1263652035,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+c922b95f7113280d4a230d2dc524766786c91da2,1271182945,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+7381110b466620562a09791b62226b9a2183355a,1273607378,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+bd15468e72f0eb4dff4ccfe13e2d6cc523273156,1274716216,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+e9f6856f4ea2ab028cbf68e51706e387fd7adfd2,1299185992,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+86369c169654d8e1c3820851bf96c932d71e747d,1299508665,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+86369c169654d8e1c3820851bf96c932d71e747d,1299508665,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+0999878b31a8ba612ddb00ed3accf37d59ecfba5,1304775735,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+180ec543f016b789a531bd43a41a96d69b93fbc6,1306523815,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+e798d4947cb86373431020a41da9d24a5f16e414,1356008741,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+b8c0487c91839e6428cac635a3ff03c7c42fe420,1369831531,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+5e2c01472dfa0ffc084c98e3a0a8583ca07190ca,1376417716,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+36d12dd54a0f0f4a4195f1ee158ccf8aa6a842c4,1393260369,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+2bbfeb5bf7534acaaf0e78dfda5e04e63a72baed,1393278041,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+cd1f9fc9f787d90b90ed2a099483a89c1e6342b0,1397559229,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+6b2b1a6e93c5782139c61c1285e1185f696d6f1f,1408710959,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+f114594c6fa58fa2fa6ba6049c06784532a76577,1419361407,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseProcessCookies.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test

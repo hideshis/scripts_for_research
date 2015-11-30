@@ -1,0 +1,9 @@
+9867254c972ef5e73afedfd54a65d585b088a203,1326976431,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestSPNegoScheme.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+7284afbe7186dd6c640c7cd9d7fe3956511927cd,1405341162,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/SPNegoSchemeFactory.java,production

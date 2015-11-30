@@ -1,0 +1,10 @@
+6f2036bde285b5f65ea4270bbf2d1f5aed8ef73c,1281517145,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/FileResourceFactory.java,production
+a840e6598953a4dc1729664ac2d50444a56c9a4b,1281645174,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/FileResourceFactory.java,production
+a6db7c51857b6c4640032f03c9618993e7796256,1322835311,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/TestHttpCacheJiraNumber1147.java,test
+cb6254fea6009cfcd51326ecb4ff70e0b41c6715,1324673831,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+648e5ab9be962ef9cfa81ecd2e2ec7b5f5cd3799,1328447918,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheJiraNumber1147.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/FileResourceFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/FileResourceFactory.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/FileResourceFactory.java,production

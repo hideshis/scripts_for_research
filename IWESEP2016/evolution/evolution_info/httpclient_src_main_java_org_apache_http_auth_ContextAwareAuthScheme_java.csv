@@ -1,0 +1,17 @@
+4096a39651fbff276bce539fa47a4769db03f87d,1260574463,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+c80ee8a78d50fd76cc04ab64f32ae00e95dfc5ca,1270751392,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthenticationBase.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthenticationBase.java,test
+3c26d6ff4199afc81933aa27852f81783696e699,1352014723,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+b28ec1bf3d083c693da5e05a35c07cbde967fd74,1352338366,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+124224379315b7e4a396e41a54fb99cb8f73413b,1364992038,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestHttpAuthenticator.java,test
+485f06bb2709c1e10c9e1dfa4d9306514b8deaa4,1366021534,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestHttpAuthenticator.java,test
+772e352587920c32166d0de94f6a75ab1e89e406,1393261056,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/auth/TestHttpAuthenticator.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production

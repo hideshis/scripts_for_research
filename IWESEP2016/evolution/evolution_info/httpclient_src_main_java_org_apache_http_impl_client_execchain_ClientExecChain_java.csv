@@ -1,0 +1,5 @@
+1487890a0d75dff5942c2f85a756378cfe09ecbd,1354110448,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/ClientExecChain.java,production
+03769ceecc3143566a915bbc512cf15759622e48,1354457032,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/ClientExecChain.java,production
+a901dbf14f665d60ce035ba8d467332ef2d156a8,1354553377,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/ClientExecChain.java,production
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/ClientExecChain.java,production

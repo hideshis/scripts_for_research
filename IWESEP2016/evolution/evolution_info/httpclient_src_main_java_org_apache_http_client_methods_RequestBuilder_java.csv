@@ -1,0 +1,19 @@
+53d1180530a7a27aba98c8bf48534442894b8c78,1349966212,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+ea62c7fb5ee04e1964d4cb8d141a29cb9893f0ca,1350067453,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+9d3171f15e457bc6ccf7f30497bc97eb86c82b30,1356647213,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+ee1fec2a8c402d5dd039e745450db1c57716c53d,1376648208,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+11536d3d075c82a12e708e9b07a5f5f11192d24a,1379338165,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+eaaa6fc3ed0edd37b90b6cfdf390466fb33e4c36,1393265775,Sebastian Bazley,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+1b2c126f2a00c371736c8effbebd4f92c4d5cf0a,1394030812,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+5ff23f9613da754c2231c2d56cfddd49eaec27c9,1401829721,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+5ff23f9613da754c2231c2d56cfddd49eaec27c9,1401829721,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestRequestBuilder.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+d16152c10fa4b1d66d969f15d24ef88d3b3d1a9d,1420725844,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+d3a1171524a62dca8210e97d6a80c607296be16c,1434213056,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production
+58973ffa454acbeeb98a4f58c98ccd8a26ca04bf,1437665138,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/RequestBuilder.java,production

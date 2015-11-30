@@ -1,0 +1,13 @@
+dfea0c207ffffb050b4f2d5b2ca3d06f7f94774d,1311005624,Jonathan Moore,httpclient/src/main/java/org/apache/http/client/BackoffManager.java,production
+dfea0c207ffffb050b4f2d5b2ca3d06f7f94774d,1311005624,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+cbfca24df84382e4970e8994e0fbf544a4c11661,1311006985,Jonathan Moore,httpclient/src/main/java/org/apache/http/client/BackoffManager.java,production
+cbfca24df84382e4970e8994e0fbf544a4c11661,1311006985,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/BackoffManager.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+28fbd4df7c82560c6cb630e3d53b613ab9a4a911,1316779572,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/BackoffManager.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,test

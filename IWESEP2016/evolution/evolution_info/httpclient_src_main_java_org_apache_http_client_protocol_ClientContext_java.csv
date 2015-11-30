@@ -1,0 +1,65 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+a757cafadaf4e2dc001c96c96cba8a67dbc48417,1242238415,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+28c9b07691afc0952b108be26c158e34fd5dc544,1243082462,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+9996dad49dd50145cfdce1c3679125691d496072,1243959492,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+4f04500b22531e1fed30fb47569274f9279b3ca3,1244139458,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+af4b94418922677bbbbbef3170b2c34905935f2d,1253820903,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+f6699b27ff7fbebd1896fad79f09415f3dd9b508,1258578455,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+6ae3bb8bc81aa0c361f5fce2c6983c5fcf35ce06,1317476497,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+53883ec597bb1794b8f8298ccef9aa44fa75552e,1317680221,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+430c3d530e1e68c367ef6bc02187beeae99445c4,1317998140,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+b90f31138cc8ddafcfd765877ff7c45f8c1178e1,1330431380,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/ExecReqThread.java,test
+320fae656f582317f04fd47eaeebc186af2fb446,1344512539,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+639cc93c56729d9ca49d417a65d3b83b15de7749,1349349599,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3c26d6ff4199afc81933aa27852f81783696e699,1352014723,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+b28ec1bf3d083c693da5e05a35c07cbde967fd74,1352338366,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+8dccdcc7c886ef8fb992c83159217b6cdc66138f,1354109658,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+03769ceecc3143566a915bbc512cf15759622e48,1354457032,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+2aa1fc14004a1669d00d4d50aebb1ecabe5b3fa3,1355781102,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+e798d4947cb86373431020a41da9d24a5f16e414,1356008741,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+4e50149ac6a46437331d1511b998e09e9ab4bf75,1357909908,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookie2Support.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestCookieVirtualHost.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production

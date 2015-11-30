@@ -1,0 +1,161 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+4f04500b22531e1fed30fb47569274f9279b3ca3,1244139458,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+d384ec4e3a5daf624a64760955c72251140efc4e,1252009995,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+61551d1afef66b68766ef3d84f564096199acd38,1252010307,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+7a959d63066aa77a68c7c6d76d7eb40b80986461,1252830732,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+39f46a9c2b26974cb3ce305c8cbcd4d40048f416,1253271575,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+20db76c05a95092b85bf25a1386ec49d77629e2b,1257362208,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+bde82211f33c3b6a9b5c33203e1bd881a5a7340c,1263521570,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+a2ff2dc9dda4967e79ec5f9d48f190fdb4249d02,1263652035,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+c922b95f7113280d4a230d2dc524766786c91da2,1271182945,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+53d61aa4c67c45e5ee4aad0eb94254fce6e9856d,1271860967,Sebastian Bazley,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+c4c6cfc4138d89fc2dba031f145c7e885619272a,1275504725,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+0bb63c609a862d8a6603f2a72a67170a2d107321,1276447204,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+4b73b9c74e2b29a2b158dc1218eaf02f2ceadf29,1276611334,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+e0d37d550227a61cad176086be919a142cbad148,1280520939,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+e4d620451710f128e556a8d130f2ca24f73f35fc,1287432966,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+76989f0ed22b0c6fff025acbe7dc113b86806d5c,1301744092,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+a03573ca24bf09303ddba3f9e36a75680e18b830,1309352198,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+be07d74d169586f9b9964737f163dc5a2e4d8f8f,1313507374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+74e1be5ca87faec5ec3d437c1e833e093d9d4837,1326975348,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestHttpClientUtils.java,test
+54c7e992fbd6df5e102fe97558f90355f0d5342d,1331830927,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+54c7e992fbd6df5e102fe97558f90355f0d5342d,1331830927,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestCompressionDecorator.java,test
+3f99045e4f332dedd27bf20339b8724eaed2445e,1331910087,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestCompressionDecorator.java,test
+0cea739a381921df3ae678e16c49521c33eec735,1333999071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+93669262962998ffededfb7e76f25fd3b53a77b5,1334089160,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+93669262962998ffededfb7e76f25fd3b53a77b5,1334089160,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+ae4ebcc630c777f79c942264a45b41956cf8fe24,1337172062,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+a64a3e252ee56392aa2e103656d385cbcb4cd58d,1338474518,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+2451e5dec74b9b49f9e5ffc8da049b2dd46c6d02,1338562397,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+ccdebd9384b1e3ac57a65b264aa9660bd0f85170,1344259955,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestContentCodings.java,test
+de80f40ae91020b1c528fe27c150ffde83bdddf2,1344260570,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestHttpClientUtils.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestRequestRetryHandler.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/IntegrationTestBase.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestIdleConnectionEviction.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestRequestRetryHandler.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestRequestRetryHandler.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+d550a62fe308789660dcebc774784468c558ca6c,1352042865,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+b6d7989aaeacd0142c50c331b9147512bb6277b8,1355937123,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDecompressingHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+90fc40bbf240b0da6635ce09884ff4bbfd75e3d1,1359565147,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+5f5269f17107a14c87e87c9f92650cd0e0e848b5,1364898190,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+2f310c3744a71c22d411e5e68d715f06c8c5cec1,1364908284,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+69a7589ad5ab8105c341824eee987a97469282cd,1365065764,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+aaf08cec5cfb2cd76a8e28d36a959bcd2160c98f,1365069004,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+656c6ecedc7724acee273c0318ada1e5a564e536,1370959831,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+7a33d56a6936ab045d598d266217b9f7acbcfdc3,1370974450,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+ee1fec2a8c402d5dd039e745450db1c57716c53d,1376648208,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+cb89108e452555aa49ce36c0c1959c83c5813b32,1380918625,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+205258b1f9982a34d8d074e647ebc3dee12ec667,1389794484,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+e9c87971083b7ea9435e9c0cc7da2b1e42e26886,1390583044,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+4709d85aaf4a97dfc0276e3060eb8c1166538668,1402660866,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionReuse.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestFutureRequestExecutionService.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestAbortHandling.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodings.java,test
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestStatefulConnManagement.java,test

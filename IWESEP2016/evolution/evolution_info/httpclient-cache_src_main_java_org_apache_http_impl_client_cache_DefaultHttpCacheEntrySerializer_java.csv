@@ -1,0 +1,13 @@
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production
+b3e4f9e3c1210022027df85ee5c1ce5c1beae49f,1283199131,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+e7ab117ea51cf1e64a89622113dea29509f9e832,1328465822,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java,production

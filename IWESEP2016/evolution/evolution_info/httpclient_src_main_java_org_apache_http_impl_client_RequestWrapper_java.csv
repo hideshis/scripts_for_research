@@ -1,0 +1,17 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+f3fdcc1a066a9df07d5088203b8820981b5f46d5,1237420066,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+143f3b0a0c7123779b784f151a2713d709876fa3,1280948199,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+b1b85307a8b2d756eac772a5dfc1e6b74b90beac,1317904391,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/RequestWrapper.java,production
