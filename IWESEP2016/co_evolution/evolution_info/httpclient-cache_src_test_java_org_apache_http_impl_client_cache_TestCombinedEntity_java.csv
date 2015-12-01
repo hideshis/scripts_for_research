@@ -1,5 +1,0 @@
-a840e6598953a4dc1729664ac2d50444a56c9a4b,1281645174,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
-43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
-3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
-eddeaa64e6449ecb720a467dd0dc172de76a284c,1393260594,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
-95754d776c167f0442e2a5d28750345db0946b3c,1424695367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test

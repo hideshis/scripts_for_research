@@ -32,14 +32,16 @@ def pc_commit_getter(pjt_name, pc_name, lifetime):
 	result = result.replace('\r', '')
 	pc_commit_list = result.split('\n')
 	pc_commit_list.pop()
-	pc_commit_list_cpy = pc_commit_list
-	counter = 0
-	for pc_commit in pc_commit_list_cpy:
+	black_list = []
+	for pc_commit in pc_commit_list:
 		date = int(pc_commit.split(',')[1])
 		if (lifetime['dead'] >= date) and (date >= lifetime['born']):
-			counter += 1
+			black_list = black_list
 		else:
-			del pc_commit_list[counter]
+			black_list.append(pc_commit)
+	print black_list
+	for black_listed_commit in black_list:
+		pc_commit_list.remove(black_listed_commit)
 	return pc_commit_list
 
 def commit_getter(pjt_name, pc_name_list, tc_name, lifetime, file_name):
@@ -48,8 +50,10 @@ def commit_getter(pjt_name, pc_name_list, tc_name, lifetime, file_name):
 		pc_commit_list = pc_commit_getter(pjt_name, pc_name, lifetime)
 		for pc_commit in pc_commit_list:
 			f.write(pc_commit + '\n')
-		os.system('grep "' + tc_name + ',test,' + pc_name + '" imported_pc_list.csv | cut -d, -f1,2,3,4,5 >>' + file_name)
-	os.system('sort -t, -nk2,2 ' + file_name + ' >tmp.csv')
+	f.close()
+	for pc_name in pc_name_list:
+		os.system('grep ",' + tc_name + '," target_all.csv >>' + file_name)
+	os.system('sort -t, -nk2,2 ' + file_name + ' | uniq >tmp.csv')
 	os.system('mv tmp.csv ' + file_name)
 	os.system('mv ' + file_name + ' ./evolution_info')
 	return
