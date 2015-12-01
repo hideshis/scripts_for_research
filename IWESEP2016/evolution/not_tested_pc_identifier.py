@@ -17,8 +17,9 @@ pc = pc.replace('\n', '')
 while line:
 	try:
 		result = subprocess.check_output('grep "' + pc + '" pc_tc_link_info.csv', shell=True)
+		os.system('echo ' + pc + '>>pc_with_test_list.txt')
 	except subprocess.CalledProcessError:
-		print pc
+		os.system('echo ' + pc + '>>pc_without_test_list.txt')
 	line = f.readline()
 	pc = line.replace('\r', '')
 	pc = pc.replace('\n', '')

@@ -2,3 +2,4 @@ procedure
 
 evolution
 bug_info
+bug_count

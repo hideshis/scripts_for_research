@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+this script identifies buggy files.
+you have to the full path of the SZZnized git repo before execution.
+input:  SZZnized git repo.
+output: buggy_file_list.txt
+        tag_list.txt
+        tag_list_bug.txt
 """
 
 import os

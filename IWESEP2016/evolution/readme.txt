@@ -10,6 +10,6 @@
 10. python pc_tc_linker.py
 11. python commit_info_getter.py
 
-—— opttion ——
+—— option ——
 python co_evolution_identifier.py
 python not_tested_pc_identifier.py
