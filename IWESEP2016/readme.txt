@@ -1,5 +1,7 @@
 procedure
 
 evolution
+lifetime_and_commit_frequency
+co_evolution
 bug_info
 bug_count

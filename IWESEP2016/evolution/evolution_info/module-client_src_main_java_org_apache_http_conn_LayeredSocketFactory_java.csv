@@ -1,5 +1,0 @@
-25a9063286fe5ad3216c33f6e83fc843b284b5df,1191087633,Roland Weber,module-client/src/main/java/org/apache/http/conn/LayeredSocketFactory.java,production
-25a9063286fe5ad3216c33f6e83fc843b284b5df,1191087633,Roland Weber,module-client/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
-9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
-553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
-47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/LayeredSocketFactory.java,production

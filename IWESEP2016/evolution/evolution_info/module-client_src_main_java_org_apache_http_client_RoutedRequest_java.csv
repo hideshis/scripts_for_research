@@ -1,9 +1,0 @@
-5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/RoutedRequest.java,production
-3bd51e812d28dff59701b980fe6d58850b622f9f,1191749748,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
-52b28593cd4dd4f0f1e1d293db678b0102050eb8,1191775871,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
-fe1fa7cd3f83c52693ecae8b7cf8696995b12a56,1191777388,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
-243769a600aa7b4a483580c7a6944f5117a30f88,1193666235,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
-c7b26a6450953a3178a58f87e998fb91d49fc6a7,1195463941,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestRequestWrapper.java,test
-08bf8e8e50109f9ca81787b90c128a087bf04c2d,1197542005,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
-92a3847e4cf970b85c30f254a05cb2c73418291d,1197569711,Roland Weber,module-client/src/test/java/org/apache/http/client/protocol/TestRedirects.java,test
-494daec53fe7003e60a85cac729860772cfdb738,1197572422,Roland Weber,module-client/src/main/java/org/apache/http/client/RoutedRequest.java,production

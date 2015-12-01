@@ -1,0 +1,99 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+cc297408f9f1060dc60ebf5cfd29ffcf8661fe64,1239890958,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+af182ce5e93d3734237fa71230e75d2fc21c909a,1240011571,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+2fd0728ca209222fcebf8f32ca492f0c92641822,1272018624,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+a1f6685cd8e5fec267de245164ee75ca52883569,1299676213,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+92d66f33555e39dd80e35cfd1bf38e06bd960c08,1307435124,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeLayeredSocketFactory.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SocketClientConnection.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeLayeredSocketFactory.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+2ea3298894fac8992bcf17819f1e8274fdefba42,1358351684,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+2ea3298894fac8992bcf17819f1e8274fdefba42,1358351684,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/so6c4f30fc4d22f4a9a78451113b8577cd2ebfcabe,1407239635,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SocketClientConnection.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/UnsupportedSchemeException.java,production
+345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+e34e868ddc96b873a09b20e4911bc64fe8caf069,1370260337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+e34e868ddc96b873a09b20e4911bc64fe8caf069,1370260337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+e34e868ddc96b873a09b20e4911bc64fe8caf069,1370260337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/socket/ConnectionSocketFactory.java,production
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/socket/ConnectionSocketFactory.java,production
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeLayeredSocketFactory.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+bace78ebb490a9b1b7b4e441e90e7f7eee30da66,1376061718,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+bace78ebb490a9b1b7b4e441e90e7f7eee30da66,1376061718,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/socket/ConnectionSocketFactory.java,production
+260d370b0fee879259f082350a0222e2b7f033b4,1391088432,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+260d370b0fee879259f082350a0222e2b7f033b4,1391088432,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+fb87869f6aa02cf9a20de723659305fc8d642d8f,1393276998,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+6cbac13a396d40bab18c0efc9933bb60aa2beaaf,1395103507,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ConnectTimeoutException.java,production
+6c4f30fc4d22f4a9a78451113b8577cd2ebfcabe,1407239635,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/socket/ConnectionSocketFactory.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpHostConnectException.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpInetSocketAddress.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeLayeredSocketFactory.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeSocketFactory.java,production

@@ -1,0 +1,70 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectionPoolTimeoutException.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/ConnectionPoolTimeoutException.java,production
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectionRequest.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SocketClientConnection.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+bfbc573cbddfe2c607771faf02c905b837769eb9,1355408548,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+bfbc573cbddfe2c607771faf02c905b837769eb9,1355408548,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ConnectionPoolTimeoutException.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,h1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+90fc40bbf240b0da6635ce09884ff4bbfd75e3d1,1359565147,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+90fc40bbf240b0da6635ce09884ff4bbfd75e3d1,1359565147,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+f6f1d7af4960b6c4b8d83053f1443f46098d07df,1359720393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectionRequest.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SocketClientConnection.java,production
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+4db81679811cc83c437f575e7081220519cb7ff2,1375903218,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ConnectionRequest.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ConnectionPoolTimeoutException.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ConnectionRequest.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/ManagedHttpClientConnection.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/HttpClientConnectionManager.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestPoolingHttpClientConnectionManager.java,test
+ec9afb1a1ac572a093a73f639a8f829203286d5b,1415983620,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production

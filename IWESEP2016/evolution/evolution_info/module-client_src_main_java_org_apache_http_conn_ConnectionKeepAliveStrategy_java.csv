@@ -1,9 +1,0 @@
-4752936837cc213f44d369ee6bc13bf47c5ac540,1214453004,Sam Berlin,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production
-932d21df7b24a35fea571fb0817c9875805d6138,1214500365,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production
-932d21df7b24a35fea571fb0817c9875805d6138,1214500365,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestDefaultConnKeepAliveStrategy.java,test
-dee6af01ad29c9a9e6829f86b4e97b5abff9ab6b,1214596160,Sam Berlin,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production
-dee6af01ad29c9a9e6829f86b4e97b5abff9ab6b,1214596160,Sam Berlin,module-client/src/test/java/org/apache/http/impl/client/TestDefaultConnKeepAliveStrategy.java,test
-89df3c059b1e1cd7128a73e591048c7dcc45f067,1228003928,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production
-9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/client/TestDefaultConnKeepAliveStrategy.java,test
-9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ConnectionKeepAliveStrategy.java,production

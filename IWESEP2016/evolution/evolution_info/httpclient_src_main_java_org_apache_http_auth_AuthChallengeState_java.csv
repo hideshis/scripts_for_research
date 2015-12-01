@@ -1,5 +1,0 @@
-70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthChallengeState.java,production
-70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
-70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
-70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseAuthCache.java,test
-c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthChallengeState.java,production

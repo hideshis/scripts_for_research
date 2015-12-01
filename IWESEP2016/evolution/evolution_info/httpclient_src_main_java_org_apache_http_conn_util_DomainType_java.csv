@@ -1,4 +1,0 @@
-a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/DomainType.java,production
-a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
-a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
-64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test

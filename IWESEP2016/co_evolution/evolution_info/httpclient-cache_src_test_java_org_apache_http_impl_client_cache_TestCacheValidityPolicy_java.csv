@@ -1,0 +1,17 @@
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+6b539c8c86eff4d73446c7d100c71624842f3746,1287519436,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+c76574f9476acab626f711ff966aee65a35d3845,1287784065,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+a91847b57c109ad6057bb6e13181ab6c6f6e9770,1292347086,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+3f3dc38dbb210acc088e3c1fcb12b82143215659,1292531387,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+2d017dcc0eeb7f78f43754a7aaee4377f29a8d73,1307631702,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+a6db7c51857b6c4640032f03c9618993e7796256,1322835311,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+0bbbd742b8cf80439d2253d052624278aa29ed26,1364911512,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+722f5c256b02e1e16e62a15ca03618812d584461,1393263056,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+eaaa6fc3ed0edd37b90b6cfdf390466fb33e4c36,1393265775,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test
+2883531e92f710a43d7fd04f500d7351f22c9e20,1415373783,Francois-Xavier Bonnet,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,test

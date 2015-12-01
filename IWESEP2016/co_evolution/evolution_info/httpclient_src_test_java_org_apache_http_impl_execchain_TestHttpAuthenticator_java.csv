@@ -1,0 +1,121 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicSchemeFactory.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+0483252843bacec314c47f9825ac5dd505f03b88,1236983287,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/BasicSchemeFactory.java,production
+adb782ce7e07125a7ca9cf43cf1081a6d08a92d3,1237426200,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+adb782ce7e07125a7ca9cf43cf1081a6d08a92d3,1237426200,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+a757cafadaf4e2dc001c96c96cba8a67dbc48417,1242238415,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+d715ace6293ce836385e41182382e47b5b49d549,1242419550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+d715ace6293ce836385e41182382e47b5b49d549,1242419550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d715ace6293ce836385e41182382e47b5b49d549,1242419550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicSchemeFactory.java,production
+d715ace6293ce836385e41182382e47b5b49d549,1242419550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+28c9b07691afc0952b108be26c158e34fd5dc544,1243082462,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+9996dad49dd50145cfdce1c3679125691d496072,1243959492,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+4f04500b22531e1fed30fb47569274f9279b3ca3,1244139458,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Ka3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicSchemeFactory.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicSchemeFactory.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestSchemeFactory.java,production
+af4b94418922677bbbbbef3170b2c34905935f2d,1253820903,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+7c2cc42b1faece97496f8d54888e00339535d729,1255184278,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+f6699b27ff7fbebd1896fad79f09415f3dd9b508,1258578455,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/AuthCache.java,production
+f6699b27ff7fbebd1896fad79f09415f3dd9b508,1258578455,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+4096a39651fbff276bce539fa47a4769db03f87d,1260574463,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+bde82211f33c3b6a9b5c33203e1bd881a5a7340c,1263521570,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+c80ee8a78d50fd76cc04ab64f32ae00e95dfc5ca,1270751392,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ContextAwareAuthScheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestSchemeFactory.java,production
+4580b4f73300ea5e0f7d36d121fbb8ffa70c3c48,1291896163,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+4e64d3961a2e629057329708004b51ca1b77f2d6,1297195680,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+f4ef817d255ecb471b4a6c5aed66dfd87329f355,1297258953,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+73e6ca8bb80119eea448019535bba3c33a6d2e66,1299617653,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+494ba13c3ef7f1742badb69662074795f2f5d512,1308821491,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+1b08395e7268c5a85baaa8371cbfacaf6d93fe81,1313507616,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1b08395e7268c5a85baaa8371cbfacaf6d93fe81,1313507616,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+e5d83200fd10b9832a621fc0a9467b55d386ab0e,1316951774,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+145d0c1f3c9dc64e53daaf358d798e47c1390d23,1316971642,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthOption.java,production
+145d0c1f3c9dc64e53daaf358d798e47c1390d23,1316971642,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/AuthenticationStrategy.java,production
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthProtocolState.java,production
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthProtocolState.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/AuthenticationStrategy.java,production
+430c3d530e1e68c367ef6bc02187beeae99445c4,1317998140,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+2278378495276ea66cbd02f556714e82bfd7e1cb,1318353728,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/AuthenticationStrategy.java,production
+64e56ef29c390a40a3464ca3bb2b15523358992c,1327501057,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+64e56ef29c390a40a3464ca3bb2b15523358992c,1327501057,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+c2e94980e1f2619c1027b0eddced3bdc7029d68d,1352258648,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+7201c0c21649fd2f6460688ad1d3f9701de6777b,1352339534,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthOption.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+78198edcbd5a88b6ed920226ea290851a3eedbbd,1393272314,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production

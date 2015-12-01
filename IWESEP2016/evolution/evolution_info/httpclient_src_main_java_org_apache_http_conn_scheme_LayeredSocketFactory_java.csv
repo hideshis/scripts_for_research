@@ -1,9 +1,0 @@
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
-842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,test
-8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production
-b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/LayeredSocketFactory.java,production

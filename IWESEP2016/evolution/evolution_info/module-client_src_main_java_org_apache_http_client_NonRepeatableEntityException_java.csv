@@ -1,3 +1,0 @@
-a25cb3c6c03ef4bc98c08c8f02658a82425977a1,1212775998,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/NonRepeatableEntityException.java,production
-a25cb3c6c03ef4bc98c08c8f02658a82425977a1,1212775998,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestDefaultClientRequestDirector.java,test
-df92be5902b0a979f684d1b8e073506c199df3ac,1212839307,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/NonRepeatableEntityException.java,production

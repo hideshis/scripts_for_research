@@ -1,9 +1,0 @@
-834d5e66da703e38a5ee5bec4337b5c723749b72,1374940776,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/socket/PlainConnectionSocketFactory.java,production
-834d5e66da703e38a5ee5bec4337b5c723749b72,1374940776,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-d90302ed14e6f4d87af2b7e6f2b54e22aa9be71a,1375779193,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/socket/PlainConnectionSocketFactory.java,production
-594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-dbf7a77171581d28c76054db170c7d5ca04d260f,1404123151,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test
-3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestConnectionManagement.java,test

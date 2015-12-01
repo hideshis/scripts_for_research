@@ -1,3 +1,0 @@
-5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/IdleConnectionEvictor.java,production
-5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
-8378e1b6440614d1e9fd75f30f556d8b966862f6,1440626944,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/IdleConnectionEvictor.java,production

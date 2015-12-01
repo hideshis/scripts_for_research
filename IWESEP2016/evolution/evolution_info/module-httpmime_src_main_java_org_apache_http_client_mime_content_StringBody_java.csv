@@ -1,8 +1,0 @@
-dc8f6d4a50c0addd41dee6293a38979b1458fac3,1201687236,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/client/mime/content/StringBody.java,production
-dc8f6d4a50c0addd41dee6293a38979b1458fac3,1201687236,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartForm.java,test
-275d00cb283fcbadec51b099a677e46f05d8bebd,1201692777,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/client/mime/content/StringBody.java,production
-275d00cb283fcbadec51b099a677e46f05d8bebd,1201692777,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartForm.java,test
-aa59688e66a14530813d4e351334323e90bbfbdb,1201694431,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartForm.java,test
-3fd74f63bc66c4fc649e89229e6e91b04bdfa2fc,1201798585,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartForm.java,test
-549cb86b5a40b106c4fe0779a9e870dce5276e79,1201888319,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartFormHttpEntity.java,test
-0be7a714d37b527d0cb4510e81d17de571051729,1202146044,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/client/mime/content/StringBody.java,production

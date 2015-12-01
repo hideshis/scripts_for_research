@@ -1,6 +1,0 @@
-d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production
-d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
-70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
-f114594c6fa58fa2fa6ba6049c06784532a76577,1419361407,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
-3ee78bbcb80d4a80d4a98839b6d9e35457c34cbd,1426871442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production
-64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production

@@ -1,0 +1,82 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/So842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+a23c18ac1ec689c2053a6186d053e816b0e5dc9a,1239652405,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+a23c18ac1ec689c2053a6186d053e816b0e5dc9a,1239652405,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+cc297408f9f1060dc60ebf5cfd29ffcf8661fe64,1239890958,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+af182ce5e93d3734237fa71230e75d2fc21c909a,1240011571,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+af182ce5e93d3734237fa71230e75d2fc21c909a,1240011571,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+af182ce5e93d3734237fa71230e75d2fc21c909a,1240011571,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+14b26e2a33b51f21e1eade006ab10a71efe49a92,1263133436,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+0f538860bd367ec6cc76af9eeb8ea990b8588b07,1271270536,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+2fd0728ca209222fcebf8f32ca492f0c92641822,1272018624,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+2b9d94af6787a8b4d08d38d4a309dbecbd0ee2ce,1272806407,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+a2deba9de58b45d91384e1d49a8b6b0dd3e2364c,1285397196,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+023363e3fffa569fe350ea196f0ec45d9c965ff5,1290014548,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+9a4d4f8bddbc68c1fabc572db0886bbf3d97985a,1291990554,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+50906f44e362728ce46575c11fcf171127260982,1291996541,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+74581924ccd16eb670f2dad9a219c318e9b92989,1292020867,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+74581924ccd16eb670f2dad9a219c318e9b92989,1292020867,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+eda06a75eec8f8d1a7adaf8141a96f8e0bdcb433,1293616442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+eda06a75eec8f8d1a7adaf8141a96f8e0bdcb433,1293616442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c3c7ba214d9c99692a34d0cebfb41c073da1b9a7,1297784628,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+92d66f33555e39dd80e35cfd1bf38e06bd960c08,1307435124,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+39117086b38e9805f2b39e953d52ff018f293d39,1328447882,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+7985a45e97633aeef643459aa8957fede44e9b28,1347442092,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+90fc40bbf240b0da6635ce09884ff4bbfd75e3d1,1359565147,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoutePlanner.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production

@@ -1,0 +1,55 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+adb782ce7e07125a7ca9cf43cf1081a6d08a92d3,1237426200,Sebastian Bazley,httpclient/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+c74443f68b16725a1cfb0c0df7ecd3903363bafe,1239652338,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+78a0d3346dac673a2e0fa8e7783921542cea03a6,1239884231,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+834c667310452874369248cc97e5fbb0552ea7f8,1239884540,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+9996dad49dd50145cfdce1c3679125691d496072,1243959492,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+4f04500b22531e1fed30fb47569274f9279b3ca3,1244139458,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+29b8b170e48969c903d37b6028eb742b91558950,1244661204,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+01b7d5dc40d4c0054f36c976dc7528a85684fe09,1255448337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+f6699b27ff7fbebd1896fad79f09415f3dd9b508,1258578455,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+51645b1cdfa61bdfd1338d8ca2eab5761f853903,1259094438,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+9d55b80d47655317393d1e3242e2dc5e59548c95,1259095951,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+4753d7e3ac6dd729574e1be5ca87faec5ec3d437c1e833e093d9d4837,1326975348,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestHttpClientUtils.java,test
+74e1be5ca87faec5ec3d437c1e833e093d9d4837,1326975348,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestHttpClientUtils.java,test
+93296a4779f794dc61d60cf60346e283a4c41a71,1336233225,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/CloseableHttpResponse.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+9b6aeffa80e236a299f0c1e0967ca2dc14c84234,1354709859,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/CloseableHttpResponse.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+96c021c8dd79ed968db51140dfe7f8a129ae2016,1364202913,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+aaf08cec5cfb2cd76a8e28d36a959bcd2160c98f,1365069004,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+aaf08cec5cfb2cd76a8e28d36a959bcd2160c98f,1365069004,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+ee1fec2a8c402d5dd039e745450db1c57716c53d,1376648208,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+cb89108e452555aa49ce36c0c1959c83c5813b32,1380918625,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+e767d59e5d180614c0f6c58ae18412a1f9b40cb7,1418156418,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/CloseableHttpClient.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/HttpClient.java,production

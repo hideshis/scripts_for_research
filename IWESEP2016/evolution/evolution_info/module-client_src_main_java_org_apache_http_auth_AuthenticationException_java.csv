@@ -1,4 +1,0 @@
-5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/AuthenticationException.java,production
-5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
-9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/AuthenticationException.java,production
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/AuthenticationException.java,production

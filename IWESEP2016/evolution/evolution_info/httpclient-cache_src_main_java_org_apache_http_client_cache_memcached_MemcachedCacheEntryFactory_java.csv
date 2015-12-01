@@ -1,3 +1,0 @@
-d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/MemcachedCacheEntryFactory.java,production
-d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
-10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/MemcachedCacheEntryFactory.java,production

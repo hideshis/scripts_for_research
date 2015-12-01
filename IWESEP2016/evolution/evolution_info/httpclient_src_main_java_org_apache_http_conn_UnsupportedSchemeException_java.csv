@@ -1,7 +1,0 @@
-345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/UnsupportedSchemeException.java,production
-345e69dc9f67a675d7ca6e5888fad0e1025127bb,1367918620,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
-d04b7baa642e7192bddb8e0ad26c7504c6908c85,1370352422,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
-260d370b0fee879259f082350a0222e2b7f033b4,1391088432,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
-0b7d6186dbee616798c76514d75d028971b4d368,1393266497,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
-c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test
-6c4f30fc4d22f4a9a78451113b8577cd2ebfcabe,1407239635,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestHttpClientConnectionOperator.java,test

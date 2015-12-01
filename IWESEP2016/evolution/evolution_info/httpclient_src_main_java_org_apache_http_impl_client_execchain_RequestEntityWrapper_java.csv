@@ -1,3 +1,0 @@
-1487890a0d75dff5942c2f85a756378cfe09ecbd,1354110448,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/RequestEntityWrapper.java,production
-1487890a0d75dff5942c2f85a756378cfe09ecbd,1354110448,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/execchain/TestRequestEntityWrapper.java,test
-03769ceecc3143566a915bbc512cf15759622e48,1354457032,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/execchain/RequestEntityWrapper.java,production

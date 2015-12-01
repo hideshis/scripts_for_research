@@ -8,8 +8,6 @@
 8. git clone (pjt_url) target
 9. python importing_pc_identifier.py
 10. python pc_tc_linker.py
-11. python commit_info_getter.py
 
 —— option ——
-python co_evolution_identifier.py
 python not_tested_pc_identifier.py

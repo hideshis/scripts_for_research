@@ -1,0 +1,37 @@
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+e0d37d550227a61cad176086be919a142cbad148,1280520939,Oleg Kalnichevski,httpclient-cach3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+911350a0c2778f180b49b9fea89f745a59086101,1280778533,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+cb4f012fa79af349b1c3277fa19e818779019eb0,1281471303,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+b3e4f9e3c1210022027df85ee5c1ce5c1beae49f,1283199131,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+6d41d97eb9fcd90429005fcd52935897f0138d64,1285168013,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+6892f58f2c88f8da565e6c6549cf0ee07b8303bd,1287171798,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+e025613aab2ba09d3346be50b926e9fe7dfad192,1292160269,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+2c04f2689b2866efe64fce9553f98d80c5d6b10a,1292160583,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+618754b6a9be418ad6afee99c0400cc5d0573d43,1292241336,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+477fdb1a3c633acbccf822b7cebed66227f9453c,1292325156,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+3b4b68fe683d6c8cd22faa966cc8397484418e4d,1294282668,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+4896d1752cab0beea5f21b0e113ae92833c271ec,1294282936,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+6b723dd61ef7f47a54493dcc59d8ae891514774f,1294673737,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+bac69b368ff4d3368d1fd1705d66343c99936563,1294842092,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+5b89c1097ff0b2c99d68d1e8229b2064e54784bf,1322835232,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+c429b34ca976f7e3b7d2987176d20a2c7d39c32d,1339098202,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+9aea057953293a522d3ba9e0fef5ab61ca69784b,1354703686,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+0bbbd742b8cf80439d2253d052624278aa29ed26,1364911512,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+c7c70ec451d9ea14b3031ca9eafe075594cf948b,1389711133,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+2883531e92f710a43d7fd04f500d7351f22c9e20,1415373783,Francois-Xavier Bonnet,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+0cedb7c8cc8a06819bd8c094071c04a628ab6f57,1415483232,Francois-Xavier Bonnet,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
