@@ -69,11 +69,14 @@ def file_finder_by_import(tc, imported_file_candidate_list):
     return imported_file_list
 
 def file_finder_by_naming_convention(tc):
-    query = tc.replace('/src/test/', '/src/main/')
+    if tc.startswith("src/"):
+        query = tc.replace('src/test/', 'src/java/')
+    else:
+        query = tc.replace('/src/test/', '/src/main/')
     try:
         result = subprocess.check_output('grep "' + query + '" file_list.txt', shell=True)
         result = result.replace("\r", "")
-        imported_file_list = result.replace("\n")
+        imported_file_list = result.split("\n")
         imported_file_list.pop()
         return imported_file_list
     except subprocess.CalledProcessError:
@@ -87,13 +90,14 @@ def no_import(tc):
         result = subprocess.check_output('cat no_importing_tc_list.txt importing_tc_list.txt | uniq -d', shell=True)
         result = result.replace("\r", "")
         doubled_tc_list = result.split("\n")
+        doubled_tc_list.pop()
         if len(doubled_tc_list) == 0:
             return
         else:
             for doubled_tc in doubled_tc_list:
                 os.system('grep -v "' + doubled_tc + '" no_importing_tc_list.txt >> tmp.txt')
                 os.system('mv tmp.txt no_importing_tc_list.txt')
-                return
+            return
     except subprocess.CalledProcessError:
         return
 

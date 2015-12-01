@@ -102,7 +102,7 @@ def log_scraper(pjt_name):
 			#file_name = file_path.split("/")[-1]
 			file_name = line.replace("\n", "")
 			source_code_name = file_name.split("/")[-1]
-			if "/src/test/java/" in file_name and source_code_name.endswith(".java"):
+			if "/test/" in file_name and source_code_name.endswith(".java"):
 				file_attribution = "test"
 				os.system('echo ' + file_name + '>>tc_list.txt')
 			elif source_code_name.endswith(".java"):
