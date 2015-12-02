@@ -51,7 +51,8 @@ def co_evolution_rate_calculator(file):
 def pc_name_getter(file):
     result = subprocess.check_output('grep ",production" ' + file + ' | cut -d, -f4 | sort | uniq', shell=True)
     pc_name = result.replace("\r", "")
-    pc_name = result.replace("\n", "")
+    pc_name = pc_name.replace("\n", "|")
+    pc_name = pc_name[:-1]
     return pc_name
 
 os.chdir('./evolution_info')

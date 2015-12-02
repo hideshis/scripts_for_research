@@ -14,7 +14,7 @@ def ave_bug_calcurator(csv_file):
     for num_bug in num_bug_list:
         bug_counter += float(num_bug)
     ave_bug = float(bug_counter) / len(num_bug_list)
-    print csv_file, str(ave_bug), str(bug_counter)
+    print csv_file, str(ave_bug), str(bug_counter), len(num_bug_list)
     return
 
 csv_list = os.listdir("./")

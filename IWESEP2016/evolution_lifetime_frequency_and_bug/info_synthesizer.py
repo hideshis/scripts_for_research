@@ -66,13 +66,10 @@ def ave_bug_calcurator(tc_name, lifetime):
     num_bug_list = []
     for linked_pc in linked_pc_list:
         num_bug_list.append(num_bug_getter(linked_pc, tc_born_time, tc_dead_time))
-    num_bug_list.remove(0)
-    print lifetime
+    #num_bug_list.remove(0)
     if int(lifetime) == 0:
-        print "a"
         num_bug_per_month = float(sum(num_bug_list)) * 30.0 * 1
     else:
-        print "b"
         num_bug_per_month = float(sum(num_bug_list)) * ((30.0 * 1) / float(lifetime))
     if len(num_bug_list) == 0:
         return num_bug_per_month
@@ -81,7 +78,7 @@ def ave_bug_calcurator(tc_name, lifetime):
 
 
 pjt_name = "target"
-f = open("tc_list.txt", "r")
+f = open("importing_tc_list.txt", "r")
 line = f.readline()
 line = line.replace("\r", "")
 line = line.replace("\n", "")

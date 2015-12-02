@@ -18,25 +18,25 @@ for line in lines:
     co_evo = factor[1]
     lifetime = factor[2]
     frequency = factor[3]
-    if float(lifetime) > 848.5:
-        if int(frequency) > 8:
-            if float(co_evo) > 0.083333:
+    if float(lifetime) > 859:
+        if int(frequency) > 7:
+            if float(co_evo) > 0.125:
                 os.system('echo ' + line + '>>llt_mf_hr.csv')
             else:
                 os.system('echo ' + line + '>>llt_mf_lr.csv')
         else:
-            if float(co_evo) > 0.083333:
+            if float(co_evo) > 0.125:
                 os.system('echo ' + line + '>>llt_lf_hr.csv')
             else:
                 os.system('echo ' + line + '>>llt_lf_lr.csv')
     else:
-        if int(frequency) > 8:
-            if float(co_evo) > 0.083333:
+        if int(frequency) > 7:
+            if float(co_evo) > 0.125:
                 os.system('echo ' + line + '>>slt_mf_hr.csv')
             else:
                 os.system('echo ' + line + '>>slt_mf_lr.csv')
         else:
-            if float(co_evo) > 0.083333:
+            if float(co_evo) > 0.125:
                 os.system('echo ' + line + '>>slt_lf_hr.csv')
             else:
                 os.system('echo ' + line + '>>slt_lf_lr.csv')
