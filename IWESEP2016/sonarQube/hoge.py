@@ -6,8 +6,7 @@ import os.path
 import os
 import datetime
 import subprocess
-
-def sonar_analysis():
+import sonar_analyzer
 
 def git_clone_and_checkouter(commit_hash):
 	os.system('rm -Rf target')
@@ -66,6 +65,8 @@ def execution_result_checker():
 	sys.exit()
 	return
 
+sonar_analyzer.analysis()
+sys.exit()
 commit_hash_list = commit_hash_getter()
 for commit_hash in commit_hash_list:
 	git_clone_and_checkouter(commit_hash)
@@ -76,7 +77,7 @@ for commit_hash in commit_hash_list:
 	else:
 		print commit_hash
 		print execution_result
-		soanr_analysis()
+		sonar_analyzer.analysis()
 	sys.exit()
 
 """

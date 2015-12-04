@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]--><head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link href="/images/favicon.ico?1424473328" type="image/x-icon" rel="shortcut icon" />
+  
+  <title>Apache HttpComponents Client</title>
+
+  <link media="all" rel="stylesheet" href="/css/sonar.css?v=5.1.2" />
+  
+  <script>
+    var pageLang = 'ja';
+    
+    window.SS = typeof window.SS === 'object' ? window.SS : {};
+    window.SS.hoursInDay = 8;
+    window.SS.user = '';
+    window.SS.userName = '';
+  </script>
+  <script src="/js/sonar.js?v=5.1.2"></script>
+  <script>
+    var baseUrl = '';
+    var $j = jQuery.noConflict();
+    $j(document).ready(function () {$j('.open-modal').modal()});
+    moment.lang(window.pageLang);
+    numeral.language(window.pageLang);
+  </script>
+  <script src="/js/require.js?v=5.1.2"></script>
+  <script>
+    requirejs.config({
+      baseUrl: baseUrl + '/js',
+      urlArgs: 'v=5.1.2'
+    });
+  </script>
+  
+  <script>require(['drilldown/app']);</script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="drilldown/app" src="/js/drilldown/app.js?v=5.1.2"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nav/app" src="/js/nav/app.js?v=5.1.2"></script></head>
+<body>
+
+
+  
+<div id="container" class="page-wrapper page-wrapper-context">
+  <nav id="global-navigation" class="navbar navbar-global page-container"></nav>
+
+  
+    <nav id="context-navigation" class="navbar navbar-context page-container"></nav>
+  
+
+  
+  <div class="page-container" id="body">
+    <div id="content">
+      <div style="display:none" id="error" class="error">
+        <span id="errormsg"></span>   [<a onclick="javascript:$j('#error').hide();return false;" href="#">hide</a>]
+      </div>
+      <div style="display:none" id="info" class="notice">
+        <span id="infomsg"></span>   [<a onclick="javascript:$j('#info').hide();return false;" href="#">hide</a>]
+      </div>
+      <div style="display:none" id="warning" class="warning">
+        <span id="warningmsg"></span>   [<a onclick="javascript:$j('#warning').hide();return false;" href="#">hide</a>]
+      </div>
+      
+
+<div class="page">
+  <script type="text/javascript">
+  /* display resource */
+  function d(resourceId, is_file) {
+    var action = is_file ? 'index' : 'view';
+    var url = '/resource/' + action + '/' + resourceId + '?metric=33' +
+        '&amp;rule=&amp;period=&amp;project=1';
+    openAccordionItem(url);
+    return false;
+  }
+
+  // refresh page after issues bulk change
+  function onBulkIssues(issues_query_params){
+    if (issues_query_params['components'] != null) {
+      d(issues_query_params['components']);
+      closeModalWindow();
+    } else {
+      window.location.reload();
+    }
+  }
+</script>
+
+  
+
+  <div class="marginbottom10">
+    
+      <h3>Unit tests failures</h3>
+
+      <p class="big">
+        <span id="m_test_failures">0</span>
+      </p>
+    
+    
+  </div>
+
+  <div class="width100" id="drilldown">
+    
+      
+  </div>
+  <script>
+    
+
+    window.drilldown = {
+      metric: 'test_failures',
+      rule: null,
+      severity: null,
+      period: null,
+      periodName: null,
+    };
+  </script>
+
+  <div id="source-viewer"></div>
+
+  <div id="resource_container"> </div>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  
+  <div class="page-footer page-container" id="footer">
+    
+    <div>SonarQube™ technology is powered by <a target="SonarSource SA" href="http://www.sonarsource.com">SonarSource SA</a></div>
+    <div>
+      Version 5.1.2 -
+      <a target="lgpl_v3" href="http://www.gnu.org/licenses/lgpl-3.0.txt">LGPL v3</a> -
+      <a target="sonar" href="http://www.sonarqube.org">Community</a> -
+      <a target="sonar_doc" href="http://www.sonarqube.org/documentation">Documentation</a> -
+      <a target="support" href="http://www.sonarqube.org/support">Get Support</a> -
+      <a target="plugins" href="http://redirect.sonarsource.com/doc/plugin-library.html">Plugins</a> -
+      <a href="/api_documentation">Web Service API</a>
+      
+    </div>
+    <!--[if lte IE 8 ]><br/><span class="ie-warn">IE 8 is not supported. Some widgets may not be properly displayed. Please switch to a <a target="_blank" href="http://redirect.sonarsource.com/doc/requirements.html">supported version or another supported browser</a>.</span><!--<![endif]-->
+  </div>
+
+
+
+<script>
+  window.navbarOptions = new Backbone.Model();
+
+  window.navbarOptions.set({
+    qualifiers: [
+      
+      'TRK'
+      
+    ]
+  });
+  window.SS.isUserAdmin = false;
+</script>
+
+
+
+
+
+
+
+<script>
+  window.navbarOptions.set({
+    globalDashboards: [
+      
+      {
+        url: '/dashboard/?did=4',
+        name: 'Home'
+      }
+      
+    ],
+    globalPages: [
+      
+    ],
+    
+    
+    
+  });
+</script>
+
+
+
+  
+
+
+<script>
+  window.navbarOptions.set({
+    contextId: '1',
+    contextKey: 'org.apache.httpcomponents:httpcomponents-client',
+    contextUuid: 'a800641a-2dce-4b8d-8a32-0c50f79e8733',
+    contextComparable: true,
+    canFavoriteContext: false,
+    isContextFavorite: false,
+    
+    contextVersion: '4.5-alpha1-SNAPSHOT',
+    
+    
+    contextDate: '2015-12-04T10:10:48+09:00',
+    
+    contextDashboards: [
+      
+      {
+        url: '/dashboard/index?id=org.apache.httpcomponents:httpcomponents-client&amp;did=1',
+        name: 'Main Dashboard'
+      }, 
+      
+      {
+        url: '/dashboard/index?id=org.apache.httpcomponents:httpcomponents-client&amp;did=2',
+        name: 'Issues Report'
+      }, 
+      
+      {
+        url: '/dashboard/index?id=org.apache.httpcomponents:httpcomponents-client&amp;did=3',
+        name: 'Time Machine'
+      }
+      
+    ],
+    contextExtensions: [
+      
+    ]
+  });
+
+  
+
+  window.navbarOptions.set({
+    contextBreadcrumbs: [
+      
+      
+      {
+        q: 'TRK',
+        url: '/drilldown/measures?metric=test_failures&amp;id=org.apache.httpcomponents%3Ahttpcomponents-client',
+        name: 'Apache HttpComponents Client'
+      },
+      
+    ]
+  });
+</script>
+
+
+<script>
+  var sonarRecentHistory = new Sonar.RecentHistory();
+  
+  sonarRecentHistory.add(
+      'org.apache.httpcomponents:httpcomponents-client',
+      'Apache HttpComponents Client',
+      'trk');
+  
+</script>
+<script>
+  require(['nav/app']);
+</script>
+
+<!--[if lte IE 7 ]>
+<div style="position:fixed;z-index:99999;top:0;bottom:0;left:0;right:0;background:#fff;">
+  <div style="margin-top:150px;text-align:center;line-height:1.4;color:#333;">
+    The web interface cannot be displayed because your browser is not supported.<br>
+    Please switch to a <a target="_blank"
+                          href="http://redirect.sonarsource.com/doc/requirements.html">supported version or another supported browser</a>.
+  </div>
+</div>
+<!--<![endif]-->
+
+
+<script>
+
+
+
+</script>
+
+
+<ul class="processes-container"></ul></body></html>

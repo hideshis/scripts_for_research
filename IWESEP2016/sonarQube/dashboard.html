@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="dashboard-page"><!--<![endif]--><head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link href="/images/favicon.ico?1424473328" type="image/x-icon" rel="shortcut icon" />
+  
+  <title>SonarQube</title>
+
+  <link media="all" rel="stylesheet" href="/css/sonar.css?v=5.1.2" />
+  
+  <script>
+    var pageLang = 'ja';
+    
+    window.SS = typeof window.SS === 'object' ? window.SS : {};
+    window.SS.hoursInDay = 8;
+    window.SS.user = '';
+    window.SS.userName = '';
+  </script>
+  <script src="/js/sonar.js?v=5.1.2"></script>
+  <script>
+    var baseUrl = '';
+    var $j = jQuery.noConflict();
+    $j(document).ready(function () {$j('.open-modal').modal()});
+    moment.lang(window.pageLang);
+    numeral.language(window.pageLang);
+  </script>
+  <script src="/js/require.js?v=5.1.2"></script>
+  <script>
+    requirejs.config({
+      baseUrl: baseUrl + '/js',
+      urlArgs: 'v=5.1.2'
+    });
+  </script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nav/app" src="/js/nav/app.js?v=5.1.2"></script></head>
+<body>
+
+
+  
+<div id="container" class="page-wrapper page-wrapper-global">
+  <nav id="global-navigation" class="navbar navbar-global page-container navbar-fade in"><div class="container">
+  <div class="navbar-header">
+    <a href="/" class="navbar-brand ">
+        <img title="Embrace Quality" alt="Embrace Quality" src="/images/logo.svg" />
+    </a>
+  </div>
+
+  <ul class="nav navbar-nav">
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+        Dashboards <span class="icon-dropdown"></span>
+      </a>
+      <ul class="dropdown-menu">
+          <li>
+            <a href="/dashboard/?did=4">Home</a>
+          </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/issues/search">Issues</a>
+    </li>
+    <li>
+      <a href="/measures/search?qualifiers[]=TRK">Measures</a>
+    </li>
+    <li>
+      <a href="/coding_rules">Rules</a>
+    </li>
+    <li>
+      <a href="/profiles">Quality Profiles</a>
+    </li>
+    <li>
+      <a href="/quality_gates">Quality Gates</a>
+    </li>
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle">More <i class="icon-dropdown"></i></a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/comparison">Compare Projects</a>
+        </li>
+        <li>
+          <a href="/dependencies">Dependencies</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="/sessions/new" class="js-login">Log in</a>
+      </li>
+    <li class="dropdown js-search-dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle navbar-search-dropdown js-search-dropdown-toggle">
+        <i class="icon-search navbar-icon"></i> <span class="icon-dropdown"></span>
+      </a>
+
+      <div class="js-search-region dropdown-menu dropdown-menu-right"></div>
+    </li>
+    <li>
+      <a href="#" class="js-shortcuts">
+        <i class="icon-help navbar-icon"></i>
+      </a>
+    </li>
+  </ul>
+
+</div>
+</nav>
+
+  
+
+  
+  <div class="page-container" id="body">
+    <div id="content">
+      <div style="display:none" id="error" class="error">
+        <span id="errormsg"></span>   [<a onclick="javascript:$j('#error').hide();return false;" href="#">hide</a>]
+      </div>
+      <div style="display:none" id="info" class="notice">
+        <span id="infomsg"></span>   [<a onclick="javascript:$j('#info').hide();return false;" href="#">hide</a>]
+      </div>
+      <div style="display:none" id="warning" class="warning">
+        <span id="warningmsg"></span>   [<a onclick="javascript:$j('#warning').hide();return false;" href="#">hide</a>]
+      </div>
+      <div id="dashboard" class="page">
+    <header class="page-header">
+  <h1 class="page-title">Home</h1>
+
+
+  <div class="page-actions operations noprint">
+    
+
+    
+  </div>
+</header>
+
+  <div style="width: 100%;display: block; float: none">
+    
+      <!-- the right margin with 1px is a trick for IE. See SONAR-2637 -->
+      <div style="width: 50%;margin: 0 -1px 0 0;" class="dashboard-column-wrapper">
+        <div style="margin: 0 5px 0 0px;" id="dashboard-column-1" class="dashboard-column">
+          
+              
+
+
+  <div id="block_23" class="block">
+    
+
+    <div style="height:100%;" class="welcome">
+      
+        <div class="widget">
+          <h3 class="marginbottom5">Welcome to SonarQube Dashboard</h3><p class="marginbottom5">Since you are able to read this, it means that you have successfully started your SonarQube server. Well done!</p><p class="marginbottom5">If you have not removed this text, it also means that you have not yet played much with SonarQube. So here are a few pointers for your next step:</p><ul class="bullet"><li>Do you now want to <a href="http://redirect.sonarsource.com/1">run analysis</a> on a project?</li><li>Maybe start <a href="http://redirect.sonarsource.com/2">customizing dashboards</a>?</li><li>Or simply browse the <a href="http://redirect.sonarsource.com/3">complete documentation</a>?</li><li>If you have a question or an issue, please visit the <a href="http://www.sonarsource.org/get-support/">Get Support</a> page.</li></ul>          <div class="clear"></div>
+        </div>
+      
+
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+
+
+
+
+          
+              
+
+
+
+
+
+          
+        </div>
+      </div>
+    
+      <!-- the right margin with 1px is a trick for IE. See SONAR-2637 -->
+      <div style="width: 50%;margin: 0 -1px 0 0;" class="dashboard-column-wrapper">
+        <div style="margin: 0 0px 0 5px;" id="dashboard-column-2" class="dashboard-column">
+          
+              
+
+
+  <div id="block_25" class="block">
+    
+  <div id="widget_title_25" class="widget-title"><a href="/measures/filter/1">Projects</a></div>
+
+
+    <div style="height:100%;" class="measure_filter_list">
+      
+        <div class="widget">
+          
+
+<div id="measure_filter_list25">
+<script>
+  var filterCriteria25 = {"display":"list","qualifiers":"TRK","cols":["metric:alert_status","name","version","metric:ncloc","metric:sqale_index","date"],"pageSize":"20","sort":"name","asc":"true"};
+
+  function refreshList25(sort, asc, page) {
+    $j('#measure_filter_foot25_pages').hide();
+    $j('#measure_filter_foot25_loading').show();
+
+    filterCriteria25['sort']=sort;
+    filterCriteria25['asc']=asc;
+    filterCriteria25['page']=page;
+    var url=baseUrl + '/measures/search/1?widget_id=25&amp;' + $j.param(filterCriteria25);
+
+    
+    $j('#measure_filter_list25').load(url);
+    
+    return false;
+  }
+</script>
+
+
+<table id="measures-table" class="data">
+  <thead>
+  <tr valign="top">
+    
+    
+      <th class="right thin"><a title="The project status with regard to its quality gate." onclick="refreshList25('metric:alert_status',false, '1'); return false;" href="#">QG</a></th>    
+      <th class=" "><a title="Name" onclick="refreshList25('name',false, '1'); return false;" href="#">Name</a> <i class="icon-sort-asc"></i></th>    
+      <th class="right "><a title="Version" onclick="refreshList25('version',false, '1'); return false;" href="#">Version</a></th>    
+      <th class="right "><a title="Non Commenting Lines of Code" onclick="refreshList25('metric:ncloc',false, '1'); return false;" href="#">LOC</a></th>    
+      <th class="right "><a title="Total effort (in days) to fix all the issues on the component and therefore to comply to all the requirements." onclick="refreshList25('metric:sqale_index',false, '1'); return false;" href="#">Technical Debt</a></th>    
+      <th class="right "><a title="Last Analysis" onclick="refreshList25('date',false, '1'); return false;" href="#">Last Analysis</a></th>    
+  </tr>
+  </thead>
+  <tbody>
+
+  
+
+  
+
+  
+    <tr class="even">
+      
+      
+        <td class="right ">
+                   </td>
+      
+        <td class=" nowrap">
+          <i class="icon-qualifier-trk"></i> <a title="org.apache.httpcomponents:httpcomponents-client" href="/dashboard/index/1">Apache HttpComponents Client</a>        </td>
+      
+        <td class="right nowrap">
+          4.5-alpha1-SNAPSHOT        </td>
+      
+        <td class="right nowrap">
+          <span id="m_ncloc">28,266</span> <i class="icon-trend-2 icon-black"></i>        </td>
+      
+        <td class="right nowrap">
+          <span id="m_sqale_index">35d</span> <i class="icon-trend-2 icon-red"></i>        </td>
+      
+        <td class="right nowrap">
+          10:10        </td>
+      
+    </tr>
+  
+    <tr class="odd">
+      
+      
+        <td class="right ">
+                   </td>
+      
+        <td class=" nowrap">
+          <i class="icon-qualifier-trk"></i> <a title="com.puppycrawl.tools:checkstyle" href="/dashboard/index/939">checkstyle</a>        </td>
+      
+        <td class="right nowrap">
+          5.7-SNAPSHOT        </td>
+      
+        <td class="right nowrap">
+          <span id="m_ncloc">23,416</span> <i class="icon-trend--2 icon-black"></i>        </td>
+      
+        <td class="right nowrap">
+          <span id="m_sqale_index">17d</span> <i class="icon-trend-2 icon-red"></i>        </td>
+      
+        <td class="right nowrap">
+          2015/08/19        </td>
+      
+    </tr>
+  
+    <tr class="even">
+      
+      
+        <td class="right ">
+                   </td>
+      
+        <td class=" nowrap">
+          <i class="icon-qualifier-trk"></i> <a title="org.apache.zeppelin:zeppelin" href="/dashboard/index/3948">Zeppelin</a>        </td>
+      
+        <td class="right nowrap">
+          0.5.0-incubating        </td>
+      
+        <td class="right nowrap">
+          <span id="m_ncloc">17,325</span> <i class="icon-trend-0"></i>        </td>
+      
+        <td class="right nowrap">
+          <span id="m_sqale_index">76d</span> <i class="icon-trend-0"></i>        </td>
+      
+        <td class="right nowrap">
+          2015/09/15        </td>
+      
+    </tr>
+  
+
+  
+
+  </tbody>
+  
+    <tfoot id="measure_filter_foot25"><tr><td colspan="6"><img id="measure_filter_foot25_loading" style="display: none" src="/images/loading-small.gif" /><div id="measure_filter_foot25_pages">3 results</div></td></tr></tfoot>  
+</table>
+</div>
+
+          <div class="clear"></div>
+        </div>
+      
+
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+
+
+
+
+          
+              
+
+
+  <div id="block_26" class="block">
+    
+  <div id="widget_title_26" class="widget-title"><a href="/measures/filter/1?display=list">Projects</a></div>
+
+
+    <div style="height:100%;" class="measure_filter_treemap">
+      
+        <div class="widget">
+          
+<div id="treemap-widget26" class="treemap-widget">
+<!--[if lte IE 8 ]> <h3>Your browser is out of date and does not support this widget.</h3> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<!--<![endif]-->
+<div class="sonar-d3"><div class="legend legend-html"><span class="legend-text">Size: <span class="legend-text-main">Lines of code</span></span><span class="legend-text">Color: <span class="legend-text-main">Coverage</span></span></div><div class="treemap-container" style="height: 250.25px;"><div class="treemap-cell treemap-cell-drilldown" title="Apache HttpComponents Client
+Coverage: 72.9%
+Lines of code: 28,266" style="background-color: rgb(139, 207, 0); left: 0px; top: 0px; width: 341px; height: 137px; line-height: 137px; font-size: 16.3542px;"><div class="treemap-inner" style="max-width: 341px;">Apache HttpComponents Client</div><a class="treemap-link" href="/dashboard/index?id=org.apache.httpcomponents%3Ahttpcomponents-client" style="font-size: 14px;"><i class="icon-link"></i></a></div><div class="treemap-cell treemap-cell-drilldown" title="checkstyle
+Lines of code: 23,416" style="background-color: rgb(119, 119, 119); left: 0px; top: 137px; width: 341px; height: 113.25px; line-height: 113.25px; font-size: 18px;"><div class="treemap-inner" style="max-width: 341px;">checkstyle</div><a class="treemap-link" href="/dashboard/index?id=com.puppycrawl.tools%3Acheckstyle" style="font-size: 14px;"><i class="icon-link"></i></a></div><div class="treemap-cell treemap-cell-drilldown" title="Zeppelin
+Coverage: 0.0%
+Lines of code: 17,325" style="background-color: rgb(238, 0, 0); left: 341px; top: 0px; width: 114px; height: 250.25px; line-height: 250.25px; font-size: 17.5625px;"><div class="treemap-inner" style="max-width: 114px;">Zeppelin</div><a class="treemap-link" href="/dashboard/index?id=org.apache.zeppelin%3Azeppelin" style="font-size: 14px;"><i class="icon-link"></i></a></div></div><div class="max-results-reached-message" style="display: none;">Only the first 30 components are displayed</div><div class="treemap-breadcrumbs" style="display: none;"><span class="treemap-breadcrumbs-item" title="Projects"><i class="icon-chevron-right" style="display: none;"></i><i class=""></i><a><i class="icon-home"></i></a></span></div></div></div>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script>
+(function () {
+var metrics = [
+'coverage',
+'ncloc'
+],
+query = [
+'filter=1',
+'metrics=' + metrics.join(','),
+'fields=name,longName,qualifier',
+'pageSize=30',
+'page=1',
+'sort=metric:' + metrics[1],
+'asc=false'
+].join('&amp;'),
+widget = new SonarWidgets.Widget();
+widget
+.type('Treemap')
+.source(baseUrl + '/measures/search_filter?' + query)
+.metricsPriority(metrics)
+.options({
+heightInPercents: '55',
+maxItems: 30,
+maxItemsReachedMessage: 'Only the first 30 components are displayed',
+baseUrl: baseUrl + '/dashboard/index',
+noData: 'No data',
+resource: 'Projects'
+})
+.render('#treemap-widget26');
+autoResize(500, function() {
+widget.update('#treemap-widget26');
+});
+})();
+</script>
+<!--<![endif]-->
+
+          <div class="clear"></div>
+        </div>
+      
+
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+
+
+
+
+          
+        </div>
+      </div>
+    
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
+<script>
+  jQuery('html').addClass('dashboard-page');
+  jQuery('[data-toggle="tooltip"]').tooltip({ container: '#body' });
+</script>
+
+    </div>
+  </div>
+</div>
+
+
+  
+  <div class="page-footer page-container" id="footer">
+    
+    <div>SonarQube™ technology is powered by <a target="SonarSource SA" href="http://www.sonarsource.com">SonarSource SA</a></div>
+    <div>
+      Version 5.1.2 -
+      <a target="lgpl_v3" href="http://www.gnu.org/licenses/lgpl-3.0.txt">LGPL v3</a> -
+      <a target="sonar" href="http://www.sonarqube.org">Community</a> -
+      <a target="sonar_doc" href="http://www.sonarqube.org/documentation">Documentation</a> -
+      <a target="support" href="http://www.sonarqube.org/support">Get Support</a> -
+      <a target="plugins" href="http://redirect.sonarsource.com/doc/plugin-library.html">Plugins</a> -
+      <a href="/api_documentation">Web Service API</a>
+      
+    </div>
+    <!--[if lte IE 8 ]><br/><span class="ie-warn">IE 8 is not supported. Some widgets may not be properly displayed. Please switch to a <a target="_blank" href="http://redirect.sonarsource.com/doc/requirements.html">supported version or another supported browser</a>.</span><!--<![endif]-->
+  </div>
+
+
+
+<script>
+  window.navbarOptions = new Backbone.Model();
+
+  window.navbarOptions.set({
+    qualifiers: [
+      
+      'TRK'
+      
+    ]
+  });
+  window.SS.isUserAdmin = false;
+</script>
+
+
+
+
+
+
+
+<script>
+  window.navbarOptions.set({
+    globalDashboards: [
+      
+      {
+        url: '/dashboard/?did=4',
+        name: 'Home'
+      }
+      
+    ],
+    globalPages: [
+      
+    ],
+    
+    
+    
+  });
+</script>
+
+
+
+<script>
+  var sonarRecentHistory = new Sonar.RecentHistory();
+  
+</script>
+<script>
+  require(['nav/app']);
+</script>
+
+<!--[if lte IE 7 ]>
+<div style="position:fixed;z-index:99999;top:0;bottom:0;left:0;right:0;background:#fff;">
+  <div style="margin-top:150px;text-align:center;line-height:1.4;color:#333;">
+    The web interface cannot be displayed because your browser is not supported.<br>
+    Please switch to a <a target="_blank"
+                          href="http://redirect.sonarsource.com/doc/requirements.html">supported version or another supported browser</a>.
+  </div>
+</div>
+<!--<![endif]-->
+
+
+<script>
+
+
+
+</script>
+
+
+<ul class="processes-container"></ul></body></html>
