@@ -1,0 +1,437 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache HttpComponents Client
+[INFO] Apache HttpClient
+[INFO] Apache HttpClient Mime
+[INFO] Apache HttpClient Fluent API
+[INFO] Apache HttpClient Cache
+[INFO] Apache HttpClient Windows features
+[INFO] Apache HttpClient OSGi bundle
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache HttpComponents Client 4.5-alpha1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- sonar-maven-plugin:2.6:sonar (default-cli) @ httpcomponents-client ---
+[INFO] SonarQube version: 5.1.2
+INFO: Default locale: "ja_JP", source code encoding: "UTF-8"
+INFO: Work directory: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/target/sonar
+INFO: SonarQube Server 5.1.2
+[INFO] [10:10:39.896] Load global repositories
+[INFO] [10:10:40.007] Load global repositories (done) | time=113ms
+[INFO] [10:10:40.010] Server id: 20151202182121
+[INFO] [10:10:40.012] User cache: /Users/hideshi-s/.sonar/cache
+[INFO] [10:10:40.021] Install plugins
+[INFO] [10:10:40.100] Install JDBC driver
+[INFO] [10:10:40.108] Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8
+[INFO] [10:10:41.437] Initializing Hibernate
+[INFO] [10:10:42.977] Load project repositories
+[INFO] [10:10:43.038] Load project repositories (done) | time=61ms
+[INFO] [10:10:43.038] Load project settings
+[INFO] [10:10:43.330] Load technical debt model
+[INFO] [10:10:43.358] Apply project exclusions
+[INFO] [10:10:48.765] -------------  Scan Apache HttpClient
+[INFO] [10:10:48.769] Load module settings
+[INFO] [10:10:48.944] Load rules
+[INFO] [10:10:49.092] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient
+[INFO] [10:10:49.092] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient/target/sonar
+[INFO] [10:10:49.093] Source paths: pom.xml, src/main/java
+[INFO] [10:10:49.093] Test paths: src/test/java
+[INFO] [10:10:49.093] Binary dirs: target/classes
+[INFO] [10:10:49.093] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:10:49.094] Index files
+[INFO] [10:10:49.415] 434 files indexed
+[INFO] [10:10:51.070] Quality profile for java: Sonar way
+[INFO] [10:10:51.117] Sensor JavaSquidSensor
+[INFO] [10:10:51.522] Java Main Files AST scan...
+[INFO] [10:10:51.524] 317 source files to be analyzed
+[INFO] [10:11:01.525] 294/317 files analyzed, current is /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecProvider.java
+[INFO] [10:11:02.443] 317/317 source files analyzed
+[INFO] [10:11:02.444] Java Main Files AST scan done: 10922 ms
+[INFO] [10:11:02.454] Java bytecode scan...
+[INFO] [10:11:02.834] Java bytecode scan done: 380 ms
+[INFO] [10:11:02.834] Java Test Files AST scan...
+[INFO] [10:11:02.835] 117 source files to be analyzed
+[INFO] [10:11:05.186] Java Test Files AST scan done: 2352 ms
+[INFO] [10:11:05.186] 117/117 source files analyzed
+[INFO] [10:11:05.188] Package design analysis...
+[INFO] [10:11:05.908] Package design analysis done: 720 ms
+[INFO] [10:11:06.017] Sensor JavaSquidSensor (done) | time=14900ms
+[INFO] [10:11:06.017] Sensor Lines Sensor
+[INFO] [10:11:06.032] Sensor Lines Sensor (done) | time=15ms
+[INFO] [10:11:06.032] Sensor QProfileSensor
+[INFO] [10:11:06.036] Sensor QProfileSensor (done) | time=4ms
+[INFO] [10:11:06.036] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:06.156] Sensor InitialOpenIssuesSensor (done) | time=120ms
+[INFO] [10:11:06.157] Sensor ProjectLinksSensor
+[INFO] [10:11:06.188] Sensor ProjectLinksSensor (done) | time=31ms
+[INFO] [10:11:06.188] Sensor VersionEventsSensor
+[INFO] [10:11:06.206] Sensor VersionEventsSensor (done) | time=18ms
+[INFO] [10:11:06.206] Sensor Maven dependencies
+[INFO] [10:11:06.264] Sensor Maven dependencies (done) | time=58ms
+[INFO] [10:11:06.264] Sensor SurefireSensor
+[INFO] [10:11:06.266] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient/target/surefire-reports
+[INFO] [10:11:06.517] Sensor SurefireSensor (done) | time=252ms
+[INFO] [10:11:06.517] Sensor JaCoCoOverallSensor
+[INFO] [10:11:06.546] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient/target/sonar/jacoco-overall.exec
+[INFO] [10:11:06.904] No information about coverage per test.
+[INFO] [10:11:06.904] Sensor JaCoCoOverallSensor (done) | time=387ms
+[INFO] [10:11:06.904] Sensor SCM Sensor
+[INFO] [10:11:06.983] Sensor SCM Sensor (done) | time=79ms
+[INFO] [10:11:06.983] Sensor JaCoCoSensor
+[INFO] [10:11:06.990] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient/target/jacoco.exec
+[INFO] [10:11:07.213] No information about coverage per test.
+[INFO] [10:11:07.213] Sensor JaCoCoSensor (done) | time=230ms
+[INFO] [10:11:07.213] Sensor CPD Sensor
+[INFO] [10:11:07.213] JavaCpdEngine is used for java
+[INFO] [10:11:07.214] Cross-project analysis disabled
+[INFO] [10:11:07.802] Sensor CPD Sensor (done) | time=589ms
+[INFO] [10:11:07.803] No quality gate is configured.
+[INFO] [10:11:07.851] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:07.857] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:07.858] Compare to previous version (2015-12-02)
+[INFO] [10:11:08.060] Execute decorators...
+[INFO] [10:11:11.401] -------------  Scan Apache HttpClient Mime
+[INFO] [10:11:11.402] Load module settings
+[INFO] [10:11:11.419] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpmime
+[INFO] [10:11:11.419] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpmime/target/sonar
+[INFO] [10:11:11.419] Source paths: pom.xml, src/main/java
+[INFO] [10:11:11.420] Test paths: src/test/java
+[INFO] [10:11:11.420] Binary dirs: target/classes
+[INFO] [10:11:11.420] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:11.420] Index files
+[INFO] [10:11:11.433] 26 files indexed
+[INFO] [10:11:11.516] Quality profile for java: Sonar way
+[INFO] [10:11:11.522] Sensor JavaSquidSensor
+[INFO] [10:11:11.535] Java Main Files AST scan...
+[INFO] [10:11:11.535] 21 source files to be analyzed
+[INFO] [10:11:12.033] Java Main Files AST scan done: 498 ms
+[INFO] [10:11:12.033] 21/21 source files analyzed
+[INFO] [10:11:12.034] Java bytecode scan...
+[INFO] [10:11:12.050] Java bytecode scan done: 16 ms
+[INFO] [10:11:12.050] Java Test Files AST scan...
+[INFO] [10:11:12.050] 5 source files to be analyzed
+[INFO] [10:11:12.121] Java Test Files AST scan done: 71 ms
+[INFO] [10:11:12.121] 5/5 source files analyzed
+[INFO] [10:11:12.121] Package design analysis...
+[INFO] [10:11:12.144] Package design analysis done: 23 ms
+[INFO] [10:11:12.147] Sensor JavaSquidSensor (done) | time=625ms
+[INFO] [10:11:12.147] Sensor Lines Sensor
+[INFO] [10:11:12.148] Sensor Lines Sensor (done) | time=1ms
+[INFO] [10:11:12.148] Sensor QProfileSensor
+[INFO] [10:11:12.148] Sensor QProfileSensor (done) | time=0ms
+[INFO] [10:11:12.148] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:12.157] Sensor InitialOpenIssuesSensor (done) | time=9ms
+[INFO] [10:11:12.157] Sensor ProjectLinksSensor
+[INFO] [10:11:12.164] Sensor ProjectLinksSensor (done) | time=7ms
+[INFO] [10:11:12.164] Sensor VersionEventsSensor
+[INFO] [10:11:12.170] Sensor VersionEventsSensor (done) | time=6ms
+[INFO] [10:11:12.170] Sensor Maven dependencies
+[INFO] [10:11:12.172] Sensor Maven dependencies (done) | time=2ms
+[INFO] [10:11:12.172] Sensor SurefireSensor
+[INFO] [10:11:12.172] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpmime/target/surefire-reports
+[INFO] [10:11:12.176] Sensor SurefireSensor (done) | time=4ms
+[INFO] [10:11:12.176] Sensor JaCoCoOverallSensor
+[INFO] [10:11:12.179] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpmime/target/sonar/jacoco-overall.exec
+[INFO] [10:11:12.192] No information about coverage per test.
+[INFO] [10:11:12.192] Sensor JaCoCoOverallSensor (done) | time=16ms
+[INFO] [10:11:12.192] Sensor SCM Sensor
+[INFO] [10:11:12.194] Sensor SCM Sensor (done) | time=2ms
+[INFO] [10:11:12.194] Sensor JaCoCoSensor
+[INFO] [10:11:12.195] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpmime/target/jacoco.exec
+[INFO] [10:11:12.207] No information about coverage per test.
+[INFO] [10:11:12.207] Sensor JaCoCoSensor (done) | time=13ms
+[INFO] [10:11:12.207] Sensor CPD Sensor
+[INFO] [10:11:12.207] JavaCpdEngine is used for java
+[INFO] [10:11:12.207] Cross-project analysis disabled
+[INFO] [10:11:12.226] Sensor CPD Sensor (done) | time=19ms
+[INFO] [10:11:12.227] No quality gate is configured.
+[INFO] [10:11:12.229] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:12.230] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:12.231] Compare to previous version (2015-12-02)
+[INFO] [10:11:12.382] Execute decorators...
+[INFO] [10:11:12.524] -------------  Scan Apache HttpClient Fluent API
+[INFO] [10:11:12.525] Load module settings
+[INFO] [10:11:12.546] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/fluent-hc
+[INFO] [10:11:12.546] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/fluent-hc/target/sonar
+[INFO] [10:11:12.547] Source paths: pom.xml, src/main/java
+[INFO] [10:11:12.547] Test paths: src/test/java
+[INFO] [10:11:12.547] Binary dirs: target/classes
+[INFO] [10:11:12.547] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:12.547] Index files
+[INFO] [10:11:12.554] 15 files indexed
+[INFO] [10:11:12.607] Quality profile for java: Sonar way
+[INFO] [10:11:12.613] Sensor JavaSquidSensor
+[INFO] [10:11:12.624] Java Main Files AST scan...
+[INFO] [10:11:12.624] 14 source files to be analyzed
+[INFO] [10:11:13.045] Java Main Files AST scan done: 421 ms
+[INFO] [10:11:13.045] 14/14 source files analyzed
+[INFO] [10:11:13.046] Java bytecode scan...
+[INFO] [10:11:13.068] Java bytecode scan done: 22 ms
+[INFO] [10:11:13.068] Java Test Files AST scan...
+[INFO] [10:11:13.068] 1 source files to be analyzed
+[INFO] [10:11:13.080] Java Test Files AST scan done: 12 ms
+[INFO] [10:11:13.080] 1/1 source files analyzed
+[INFO] [10:11:13.081] Package design analysis...
+[INFO] [10:11:13.090] Package design analysis done: 9 ms
+[INFO] [10:11:13.093] Sensor JavaSquidSensor (done) | time=479ms
+[INFO] [10:11:13.093] Sensor Lines Sensor
+[INFO] [10:11:13.093] Sensor Lines Sensor (done) | time=0ms
+[INFO] [10:11:13.093] Sensor QProfileSensor
+[INFO] [10:11:13.093] Sensor QProfileSensor (done) | time=0ms
+[INFO] [10:11:13.093] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:13.103] Sensor InitialOpenIssuesSensor (done) | time=10ms
+[INFO] [10:11:13.103] Sensor ProjectLinksSensor
+[INFO] [10:11:13.110] Sensor ProjectLinksSensor (done) | time=7ms
+[INFO] [10:11:13.110] Sensor VersionEventsSensor
+[INFO] [10:11:13.115] Sensor VersionEventsSensor (done) | time=5ms
+[INFO] [10:11:13.115] Sensor Maven dependencies
+[INFO] [10:11:13.119] Sensor Maven dependencies (done) | time=4ms
+[INFO] [10:11:13.120] Sensor SurefireSensor
+[INFO] [10:11:13.120] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/fluent-hc/target/surefire-reports
+[INFO] [10:11:13.122] Sensor SurefireSensor (done) | time=1ms
+[INFO] [10:11:13.122] Sensor JaCoCoOverallSensor
+[INFO] [10:11:13.124] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/fluent-hc/target/sonar/jacoco-overall.exec
+[INFO] [10:11:13.132] No information about coverage per test.
+[INFO] [10:11:13.132] Sensor JaCoCoOverallSensor (done) | time=10ms
+[INFO] [10:11:13.132] Sensor SCM Sensor
+[INFO] [10:11:13.133] Sensor SCM Sensor (done) | time=1ms
+[INFO] [10:11:13.133] Sensor JaCoCoSensor
+[INFO] [10:11:13.134] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/fluent-hc/target/jacoco.exec
+[INFO] [10:11:13.142] No information about coverage per test.
+[INFO] [10:11:13.142] Sensor JaCoCoSensor (done) | time=9ms
+[INFO] [10:11:13.143] Sensor CPD Sensor
+[INFO] [10:11:13.143] JavaCpdEngine is used for java
+[INFO] [10:11:13.143] Cross-project analysis disabled
+[INFO] [10:11:13.160] Sensor CPD Sensor (done) | time=17ms
+[INFO] [10:11:13.160] No quality gate is configured.
+[INFO] [10:11:13.163] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:13.164] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:13.165] Compare to previous version (2015-12-02)
+[INFO] [10:11:13.301] Execute decorators...
+[INFO] [10:11:13.413] -------------  Scan Apache HttpClient Cache
+[INFO] [10:11:13.413] Load module settings
+[INFO] [10:11:13.425] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-cache
+[INFO] [10:11:13.426] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-cache/target/sonar
+[INFO] [10:11:13.426] Source paths: pom.xml, src/main/java
+[INFO] [10:11:13.426] Test paths: src/test/java
+[INFO] [10:11:13.426] Binary dirs: target/classes
+[INFO] [10:11:13.426] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:13.426] Index files
+[INFO] [10:11:13.487] 119 files indexed
+[INFO] [10:11:13.809] Quality profile for java: Sonar way
+[INFO] [10:11:13.816] Sensor JavaSquidSensor
+[INFO] [10:11:13.831] Java Main Files AST scan...
+[INFO] [10:11:13.832] 70 source files to be analyzed
+[INFO] [10:11:15.685] Java Main Files AST scan done: 1854 ms
+[INFO] [10:11:15.685] 70/70 source files analyzed
+[INFO] [10:11:15.686] Java bytecode scan...
+[INFO] [10:11:15.782] Java bytecode scan done: 96 ms
+[INFO] [10:11:15.782] Java Test Files AST scan...
+[INFO] [10:11:15.782] 49 source files to be analyzed
+[INFO] [10:11:17.312] Java Test Files AST scan done: 1530 ms
+[INFO] [10:11:17.312] 49/49 source files analyzed
+[INFO] [10:11:17.312] Package design analysis...
+[INFO] [10:11:17.400] Package design analysis done: 88 ms
+[INFO] [10:11:17.409] Sensor JavaSquidSensor (done) | time=3593ms
+[INFO] [10:11:17.409] Sensor Lines Sensor
+[INFO] [10:11:17.410] Sensor Lines Sensor (done) | time=1ms
+[INFO] [10:11:17.410] Sensor QProfileSensor
+[INFO] [10:11:17.410] Sensor QProfileSensor (done) | time=0ms
+[INFO] [10:11:17.410] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:17.427] Sensor InitialOpenIssuesSensor (done) | time=17ms
+[INFO] [10:11:17.427] Sensor ProjectLinksSensor
+[INFO] [10:11:17.437] Sensor ProjectLinksSensor (done) | time=10ms
+[INFO] [10:11:17.437] Sensor VersionEventsSensor
+[INFO] [10:11:17.441] Sensor VersionEventsSensor (done) | time=4ms
+[INFO] [10:11:17.441] Sensor Maven dependencies
+[INFO] [10:11:17.467] Sensor Maven dependencies (done) | time=26ms
+[INFO] [10:11:17.468] Sensor SurefireSensor
+[INFO] [10:11:17.468] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-cache/target/surefire-reports
+[INFO] [10:11:17.507] Sensor SurefireSensor (done) | time=39ms
+[INFO] [10:11:17.508] Sensor JaCoCoOverallSensor
+[INFO] [10:11:17.515] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-cache/target/sonar/jacoco-overall.exec
+[INFO] [10:11:17.554] No information about coverage per test.
+[INFO] [10:11:17.554] Sensor JaCoCoOverallSensor (done) | time=46ms
+[INFO] [10:11:17.554] Sensor SCM Sensor
+[INFO] [10:11:17.568] Sensor SCM Sensor (done) | time=14ms
+[INFO] [10:11:17.568] Sensor JaCoCoSensor
+[INFO] [10:11:17.569] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-cache/target/jacoco.exec
+[INFO] [10:11:17.621] No information about coverage per test.
+[INFO] [10:11:17.621] Sensor JaCoCoSensor (done) | time=53ms
+[INFO] [10:11:17.621] Sensor CPD Sensor
+[INFO] [10:11:17.621] JavaCpdEngine is used for java
+[INFO] [10:11:17.621] Cross-project analysis disabled
+[INFO] [10:11:17.722] Sensor CPD Sensor (done) | time=101ms
+[INFO] [10:11:17.722] No quality gate is configured.
+[INFO] [10:11:17.724] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:17.725] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:17.725] Compare to previous version (2015-12-02)
+[INFO] [10:11:17.868] Execute decorators...
+[INFO] [10:11:18.356] -------------  Scan Apache HttpClient Windows features
+[INFO] [10:11:18.357] Load module settings
+[INFO] [10:11:18.374] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-win
+[INFO] [10:11:18.374] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-win/target/sonar
+[INFO] [10:11:18.374] Source paths: pom.xml, src/main/java
+[INFO] [10:11:18.374] Test paths: src/test/java
+[INFO] [10:11:18.374] Binary dirs: target/classes
+[INFO] [10:11:18.375] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:18.375] Index files
+[INFO] [10:11:18.380] 8 files indexed
+[INFO] [10:11:18.404] Quality profile for java: Sonar way
+[INFO] [10:11:18.411] Sensor JavaSquidSensor
+[INFO] [10:11:18.427] Java Main Files AST scan...
+[INFO] [10:11:18.427] 7 source files to be analyzed
+[INFO] [10:11:18.563] Java Main Files AST scan done: 136 ms
+[INFO] [10:11:18.563] 7/7 source files analyzed
+[INFO] [10:11:18.564] Java bytecode scan...
+[INFO] [10:11:18.573] Java bytecode scan done: 9 ms
+[INFO] [10:11:18.573] Java Test Files AST scan...
+[INFO] [10:11:18.573] 1 source files to be analyzed
+[INFO] [10:11:18.578] Java Test Files AST scan done: 5 ms
+[INFO] [10:11:18.578] 1/1 source files analyzed
+[INFO] [10:11:18.578] Package design analysis...
+[INFO] [10:11:18.582] Package design analysis done: 4 ms
+[INFO] [10:11:18.584] Sensor JavaSquidSensor (done) | time=174ms
+[INFO] [10:11:18.584] Sensor Lines Sensor
+[INFO] [10:11:18.584] Sensor Lines Sensor (done) | time=0ms
+[INFO] [10:11:18.584] Sensor QProfileSensor
+[INFO] [10:11:18.584] Sensor QProfileSensor (done) | time=0ms
+[INFO] [10:11:18.584] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:18.592] Sensor InitialOpenIssuesSensor (done) | time=8ms
+[INFO] [10:11:18.592] Sensor ProjectLinksSensor
+[INFO] [10:11:18.599] Sensor ProjectLinksSensor (done) | time=7ms
+[INFO] [10:11:18.599] Sensor VersionEventsSensor
+[INFO] [10:11:18.603] Sensor VersionEventsSensor (done) | time=4ms
+[INFO] [10:11:18.603] Sensor Maven dependencies
+[INFO] [10:11:18.612] Sensor Maven dependencies (done) | time=9ms
+[INFO] [10:11:18.612] Sensor SurefireSensor
+[INFO] [10:11:18.612] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-win/target/surefire-reports
+[INFO] [10:11:18.614] Sensor SurefireSensor (done) | time=2ms
+[INFO] [10:11:18.614] Sensor JaCoCoOverallSensor
+[INFO] [10:11:18.615] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-win/target/sonar/jacoco-overall.exec
+[INFO] [10:11:18.619] No information about coverage per test.
+[INFO] [10:11:18.620] Sensor JaCoCoOverallSensor (done) | time=6ms
+[INFO] [10:11:18.620] Sensor SCM Sensor
+[INFO] [10:11:18.620] Sensor SCM Sensor (done) | time=0ms
+[INFO] [10:11:18.620] Sensor JaCoCoSensor
+[INFO] [10:11:18.621] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-win/target/jacoco.exec
+[INFO] [10:11:18.625] No information about coverage per test.
+[INFO] [10:11:18.625] Sensor JaCoCoSensor (done) | time=5ms
+[INFO] [10:11:18.625] Sensor CPD Sensor
+[INFO] [10:11:18.625] JavaCpdEngine is used for java
+[INFO] [10:11:18.625] Cross-project analysis disabled
+[INFO] [10:11:18.632] Sensor CPD Sensor (done) | time=7ms
+[INFO] [10:11:18.633] No quality gate is configured.
+[INFO] [10:11:18.635] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:18.636] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:18.637] Compare to previous version (2015-12-02)
+[INFO] [10:11:18.749] Execute decorators...
+[INFO] [10:11:18.815] -------------  Scan Apache HttpClient OSGi bundle
+[INFO] [10:11:18.816] Load module settings
+[INFO] [10:11:18.828] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-osgi
+[INFO] [10:11:18.828] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-osgi/target/sonar
+[INFO] [10:11:18.829] Source paths: pom.xml, src/main/java
+[INFO] [10:11:18.829] Test paths: src/test/java
+[INFO] [10:11:18.829] Binary dirs: target/classes
+[INFO] [10:11:18.829] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:18.829] Index files
+[INFO] [10:11:18.835] 13 files indexed
+[INFO] [10:11:18.883] Quality profile for java: Sonar way
+[INFO] [10:11:18.888] Sensor JavaSquidSensor
+[INFO] [10:11:18.899] Java Main Files AST scan...
+[INFO] [10:11:18.899] 12 source files to be analyzed
+[INFO] [10:11:19.092] Java Main Files AST scan done: 193 ms
+[INFO] [10:11:19.092] 12/12 source files analyzed
+[INFO] [10:11:19.093] Java bytecode scan...
+[INFO] [10:11:19.122] Java bytecode scan done: 29 ms
+[INFO] [10:11:19.123] Java Test Files AST scan...
+[INFO] [10:11:19.123] 1 source files to be analyzed
+[INFO] [10:11:19.132] Java Test Files AST scan done: 9 ms
+[INFO] [10:11:19.132] 1/1 source files analyzed
+[INFO] [10:11:19.132] Package design analysis...
+[INFO] [10:11:19.138] Package design analysis done: 6 ms
+[INFO] [10:11:19.139] Sensor JavaSquidSensor (done) | time=251ms
+[INFO] [10:11:19.140] Sensor Lines Sensor
+[INFO] [10:11:19.140] Sensor Lines Sensor (done) | time=0ms
+[INFO] [10:11:19.140] Sensor QProfileSensor
+[INFO] [10:11:19.140] Sensor QProfileSensor (done) | time=0ms
+[INFO] [10:11:19.140] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:19.147] Sensor InitialOpenIssuesSensor (done) | time=7ms
+[INFO] [10:11:19.148] Sensor ProjectLinksSensor
+[INFO] [10:11:19.159] Sensor ProjectLinksSensor (done) | time=11ms
+[INFO] [10:11:19.159] Sensor VersionEventsSensor
+[INFO] [10:11:19.164] Sensor VersionEventsSensor (done) | time=5ms
+[INFO] [10:11:19.164] Sensor Maven dependencies
+[INFO] [10:11:19.176] Sensor Maven dependencies (done) | time=12ms
+[INFO] [10:11:19.176] Sensor SurefireSensor
+[INFO] [10:11:19.176] parsing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-osgi/target/surefire-reports
+[INFO] [10:11:19.177] Sensor SurefireSensor (done) | time=1ms
+[INFO] [10:11:19.177] Sensor JaCoCoOverallSensor
+[INFO] [10:11:19.179] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-osgi/target/sonar/jacoco-overall.exec
+[INFO] [10:11:19.185] No information about coverage per test.
+[INFO] [10:11:19.185] Sensor JaCoCoOverallSensor (done) | time=8ms
+[INFO] [10:11:19.186] Sensor SCM Sensor
+[INFO] [10:11:19.186] Sensor SCM Sensor (done) | time=0ms
+[INFO] [10:11:19.186] Sensor JaCoCoSensor
+[INFO] [10:11:19.187] Analysing /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/httpclient-osgi/target/jacoco.exec
+[INFO] [10:11:19.194] No information about coverage per test.
+[INFO] [10:11:19.194] Sensor JaCoCoSensor (done) | time=8ms
+[INFO] [10:11:19.194] Sensor CPD Sensor
+[INFO] [10:11:19.194] JavaCpdEngine is used for java
+[INFO] [10:11:19.194] Cross-project analysis disabled
+[INFO] [10:11:19.203] Sensor CPD Sensor (done) | time=9ms
+[INFO] [10:11:19.204] No quality gate is configured.
+[INFO] [10:11:19.206] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:19.207] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:19.208] Compare to previous version (2015-12-02)
+[INFO] [10:11:19.332] Execute decorators...
+[INFO] [10:11:19.420] -------------  Scan Apache HttpComponents Client
+[INFO] [10:11:19.421] Load module settings
+[INFO] [10:11:19.432] Base dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target
+[INFO] [10:11:19.432] Working dir: /Users/hideshi-s/Desktop/iwesep2016/analysis/sonarQube/target/target/sonar
+[INFO] [10:11:19.432] Source encoding: UTF-8, default locale: ja_JP
+[INFO] [10:11:19.439] Sensor Lines Sensor
+[INFO] [10:11:19.439] Sensor Lines Sensor (done) | time=0ms
+[INFO] [10:11:19.439] Sensor InitialOpenIssuesSensor
+[INFO] [10:11:19.444] Sensor InitialOpenIssuesSensor (done) | time=5ms
+[INFO] [10:11:19.444] Sensor ProjectLinksSensor
+[INFO] [10:11:19.452] Sensor ProjectLinksSensor (done) | time=8ms
+[INFO] [10:11:19.452] Sensor VersionEventsSensor
+[INFO] [10:11:19.456] Sensor VersionEventsSensor (done) | time=4ms
+[INFO] [10:11:19.456] Sensor Maven dependencies
+[INFO] [10:11:19.456] Sensor Maven dependencies (done) | time=0ms
+[INFO] [10:11:19.456] Sensor SCM Sensor
+[INFO] [10:11:19.456] Sensor SCM Sensor (done) | time=0ms
+[INFO] [10:11:19.456] Sensor CPD Sensor
+[INFO] [10:11:19.457] Sensor CPD Sensor (done) | time=1ms
+[INFO] [10:11:19.457] No quality gate is configured.
+[INFO] [10:11:19.459] Compare to previous analysis (2015-12-03)
+[INFO] [10:11:19.460] Compare over 30 days (2015-11-04, analysis of Wed Dec 02 22:08:22 JST 2015)
+[INFO] [10:11:19.461] Compare to previous version (2015-12-02)
+[INFO] [10:11:19.524] Execute decorators...
+[INFO] [10:11:19.561] Store results in database
+[INFO] [10:11:29.672] Analysis reports generated in 571ms, dir size=380 KB
+[INFO] [10:11:30.616] Analysis reports compressed in 944ms, zip size=389 KB
+[INFO] [10:11:30.666] Analysis reports sent to server in 50ms
+[INFO] [10:11:30.667] ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard/index/org.apache.httpcomponents:httpcomponents-client
+[INFO] [10:11:30.667] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apache HttpComponents Client ....................... SUCCESS [ 52.561 s]
+[INFO] Apache HttpClient .................................. SKIPPED
+[INFO] Apache HttpClient Mime ............................. SKIPPED
+[INFO] Apache HttpClient Fluent API ....................... SKIPPED
+[INFO] Apache HttpClient Cache ............................ SKIPPED
+[INFO] Apache HttpClient Windows features ................. SKIPPED
+[INFO] Apache HttpClient OSGi bundle ...................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 53.904 s
+[INFO] Finished at: 2015-12-04T10:11:30+09:00
+[INFO] Final Memory: 41M/838M
+[INFO] ------------------------------------------------------------------------
