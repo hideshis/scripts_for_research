@@ -1,0 +1,7 @@
+hoge <- read.csv("synthesized_info.csv")
+dead <- subset(hoge, status == "dead")
+arrive <- subset(hoge, status == "arrive")
+cor(dead$lifetime, dead$commit.frequency, method = "spearman")
+cor(arrive$lifetime, arrive$commit.frequency, method = "spearman")
+cor(dead$lifetime, dead$co.evolution.rate, method = "spearman")
+cor(arrive$lifetime, arrive$co.evolution.rate, method = "spearman")
