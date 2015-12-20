@@ -63,6 +63,7 @@ def ave_bug_calcurator(tc_name, lifetime):
     tc_born_time = int(result_list[4])
     tc_dead_time = int(result_list[5])
     linked_pc_list = linked_pc_list_getter(tc_name)
+    linked_pc_list.pop()
     num_bug_list = []
     for linked_pc in linked_pc_list:
         num_bug_list.append(num_bug_getter(linked_pc, tc_born_time, tc_dead_time))
