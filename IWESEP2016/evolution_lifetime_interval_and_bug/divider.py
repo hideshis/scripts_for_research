@@ -17,29 +17,29 @@ for line in lines:
     factor = line.split(",")
     co_evo = factor[1]
     lifetime = factor[2]
-    frequency = factor[3]
+    interval = factor[3]
     if float(lifetime) > 859:
-        if int(frequency) > 7:
+        if float(interval) > 31.0:
             if float(co_evo) > 0.125:
-                os.system('echo ' + line + '>>llt_mf_hr.csv')
+                os.system('echo ' + line + '>>llt_li_hr.csv')
             else:
-                os.system('echo ' + line + '>>llt_mf_lr.csv')
+                os.system('echo ' + line + '>>llt_li_lr.csv')
         else:
             if float(co_evo) > 0.125:
-                os.system('echo ' + line + '>>llt_lf_hr.csv')
+                os.system('echo ' + line + '>>llt_si_hr.csv')
             else:
-                os.system('echo ' + line + '>>llt_lf_lr.csv')
+                os.system('echo ' + line + '>>llt_si_lr.csv')
     else:
-        if int(frequency) > 7:
+        if float(interval) > 31.0:
             if float(co_evo) > 0.125:
-                os.system('echo ' + line + '>>slt_mf_hr.csv')
+                os.system('echo ' + line + '>>slt_li_hr.csv')
             else:
-                os.system('echo ' + line + '>>slt_mf_lr.csv')
+                os.system('echo ' + line + '>>slt_li_lr.csv')
         else:
             if float(co_evo) > 0.125:
-                os.system('echo ' + line + '>>slt_lf_hr.csv')
+                os.system('echo ' + line + '>>slt_si_hr.csv')
             else:
-                os.system('echo ' + line + '>>slt_lf_lr.csv')
+                os.system('echo ' + line + '>>slt_si_lr.csv')
 f.close()
 
 """

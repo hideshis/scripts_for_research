@@ -36,13 +36,33 @@ def lifetime_getter(born_time_unix, dead_time_unix):
     lifetime = (dead_time - born_time).days
     return lifetime
 
+def commit_interval_getter(commit_time_list):
+    flag = 0
+    if len(commit_time_list) == 1:
+        return 0
+    start_time = 0
+    end_time = 0
+    commit_interval_list = []
+    for commit_time in commit_time_list:
+        if flag == 0:
+            flag = 1
+            start_time = datetime.datetime.fromtimestamp(commit_time)
+        else:
+            end_time = datetime.datetime.fromtimestamp(commit_time)
+            commit_interval = (end_time - start_time).days
+            commit_interval_list.append(commit_interval)
+            start_time = end_time
+    data = numpy.array(commit_interval_list)
+    median = numpy.median(data)
+    return median
+
 pjt_name = "target"
 allLines = open('tc_list.txt').read()
 allLines = allLines.replace('\r', '')
 tc_list = allLines.split('\n')
 tc_list.pop()
 writer = csv.writer(file(pjt_name + "_tc_lifetime_frequency.csv", 'w'))
-header = ["tc_name", "lifetime", "commit frequency", "status", "born", "dead"]
+header = ["tc_name", "lifetime", "commit interval", "status", "born", "dead"]
 writer.writerow(header)
 for tc in tc_list:
     commit_time_list = commit_time_list_getter(tc)
@@ -55,11 +75,13 @@ for tc in tc_list:
     else:
         sys.exit('error in doa')
     lifetime = lifetime_getter(born_time_unix, dead_time_unix)
-    commit_frequency = len(commit_time_list)
+    #commit_frequency = len(commit_time_list)
+    commit_interval = commit_interval_getter(commit_time_list)
     info_list = []
     info_list.append(tc) # tc's name
     info_list.append(lifetime) # lifetime
-    info_list.append(commit_frequency) # commit frequency
+    #info_list.append(commit_frequency) # commit frequency
+    info_list.append(commit_interval)
     info_list.append(status)
     info_list.append(born_time_unix)
     info_list.append(dead_time_unix)
