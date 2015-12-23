@@ -1,0 +1,14 @@
+0b5dd9c3a5b7cad2df8a64a953031a7ee69ed69b,1239819593,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+ab954f255a2fd99d8987f141a270a134fd9f4fda,1240434287,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnConnectionPNames.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnConnectionPNames.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+c5131c62c9c258f5767ed225458abf58ca3152af,1263521596,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+47ffa72411e32fd79b2e6388adeebb57de64dd06,1267468769,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnConnectionPNames.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+471c2b3ae97309f3961c19c5c14a669cb9707629,1304167364,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnConnectionPNames.java,production
+471c2b3ae97309f3961c19c5c14a669cb9707629,1304167364,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test
+aa412a29b934ef51c69ba41701e9bceca8568793,1336315298,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnConnectionPNames.java,production
+aa412a29b934ef51c69ba41701e9bceca8568793,1336315298,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultResponseParser.java,test

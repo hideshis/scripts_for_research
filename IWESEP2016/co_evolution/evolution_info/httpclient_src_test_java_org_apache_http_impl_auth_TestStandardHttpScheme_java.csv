@@ -1,0 +1,4 @@
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthChallenge.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/ChallengeType.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestStandardHttpScheme.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestStandardHttpScheme.java,test

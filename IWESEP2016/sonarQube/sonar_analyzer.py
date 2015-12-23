@@ -78,12 +78,18 @@ def analysis():
         print "hoge"
         #driver, flag = operation_checker(driver, "dashboard.html", "comprehensive_analysis_result.html")
     error, failure = error_failure_checker(tree)
-    if error >= 0:
+    if error >= 1 or failure >= 1:
+        driver.close()
+        return "stop"
+    else:
+        driver.close()
+        return "continue"
+    if error > 0:
         tree_cpy = tree
         while tree == tree_cpy:
             tree = page_getter(driver, "/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[4]/div/div[1]/div[1]/div[2]/div/div[3]/span[2]/a/span", "error.html")
         driver.back()
-    if failure >= 0:
+    if failure > 0:
         tree_cpy = tree
         while tree == tree_cpy:
             tree = page_getter(driver, "/html/body/div[1]/div/div/div[4]/div[1]/div[2]/div/div[4]/div/div[1]/div[1]/div[2]/div/div[2]/span[2]/a/span", "failure.html")

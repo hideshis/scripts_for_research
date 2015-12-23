@@ -1,0 +1,52 @@
+d73f4c1b384066956b5ed74d7891937e3094675f,1361522196,Francois-Xavier Bonnet,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+68a101475a9323126587c72995bec6f265d35fa1,1369565988,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+4db81679811cc83c437f575e7081220519cb7ff2,1375903218,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpExecutionAware.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+47e6f4590b1d50b474bf2df482745f417dcf2ad3,1392299903,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+78198edcbd5a88b6ed920226ea290851a3eedbbd,1393272314,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+ad092c5d03e9a000c4883272a205901f336b06cb,1403164361,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+d9cc6c8879edc266b81b199d25ee877168b76b7e,1403897409,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+ec9afb1a1ac572a093a73f639a8f829203286d5b,1415983620,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+d85679d2a1ea541e0484151970f53a0657e3262c,1426107251,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+1eb2553ddb1f48566da998ef8996990f247174b1,1433403658,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/CredentialsProvider.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CredentialsProvider.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production

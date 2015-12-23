@@ -1,0 +1,45 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+de1cead50dfd0b5d9bd8e49a5bc270fa252ec9cf,1237344064,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+d715ace6293ce836385e41182382e47b5b49d549,1242419550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AUTH.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+1b08395e7268c5a85baaa8371cbfacaf6d93fe81,1313507616,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+a38281b7f2363b2708860404f807fbe75b7970a1,1317688753,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/Credentials.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+bace78ebb490a9b1b7b4e441e90e7f7eee30da66,1376061718,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+07e7a0c281c439b1ece7099cc24e0e763b33f5b0,1401973787,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+c6113729e20848314aaac8a42a77e1f440c815df,1403543913,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+41afff3f2a3cf263343fb323edd9f902547a7462,1403545790,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthenticationException.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+90c97da9b8635510fb08d0065a6b98ee1c5f3cba,1411371174,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+5f9f55df1609f940be51e62e30edc2670319758f,1422266592,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,test

@@ -1,0 +1,14 @@
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestURIExtractor.java,test
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+4ae188acbbad19fb59e5552e216a442f4a22fdde,1280493884,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+e0d37d550227a61cad176086be919a142cbad148,1280520939,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+911350a0c2778f180b49b9fea89f745a59086101,1280778533,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+cb4f012fa79af349b1c3277fa19e818779019eb0,1281471303,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+b3e4f9e3c1210022027df85ee5c1ce5c1beae49f,1283199131,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+ec40554d4dbe084b09d62c5dfc34d8743c7e5f4b,1283810458,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestURIExtractor.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestURIExtractor.java,test
+e025613aab2ba09d3346be50b926e9fe7dfad192,1292160269,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+2c04f2689b2866efe64fce9553f98d80c5d6b10a,1292160583,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+4e7d9fa5c8e6cf0a12aed9a7d55cd6c4c27bb3eb,1292163865,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestURIExtractor.java,test
+d60c36c40c51d736fc8c8f177f6361601aa99875,1292361486,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestURIExtractor.java,test

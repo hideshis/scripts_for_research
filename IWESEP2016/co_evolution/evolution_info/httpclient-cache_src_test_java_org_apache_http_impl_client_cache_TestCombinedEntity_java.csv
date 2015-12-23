@@ -1,0 +1,9 @@
+a840e6598953a4dc1729664ac2d50444a56c9a4b,1281645174,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/Resource.java,production
+6b723dd61ef7f47a54493dcc59d8ae891514774f,1294673737,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/Resource.java,production
+a6db7c51857b6c4640032f03c9618993e7796256,1322835311,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/Resource.java,production
+e2da283f21949b4812106d16cf0cb88370f9f4b4,1328181131,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/Resource.java,production
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
+eddeaa64e6449ecb720a467dd0dc172de76a284c,1393260594,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test
+95754d776c167f0442e2a5d28750345db0946b3c,1424695367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,test

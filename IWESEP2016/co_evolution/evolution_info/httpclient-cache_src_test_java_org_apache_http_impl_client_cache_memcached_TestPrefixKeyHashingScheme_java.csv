@@ -1,0 +1,9 @@
+cac1432472a1bec4c39482c12cc993d23473683f,1326836108,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+8265a355e7ca2f0c8c23df6a3aea4b0448fb9243,1328213711,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/KeyHashingScheme.java,production
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/KeyHashingScheme.java,production
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+e7ab117ea51cf1e64a89622113dea29509f9e832,1328465822,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,test

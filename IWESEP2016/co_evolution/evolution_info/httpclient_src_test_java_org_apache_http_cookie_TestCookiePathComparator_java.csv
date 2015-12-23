@@ -1,0 +1,23 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,test
+dd9e5e28ee379a8c05d96a8178aebb22f48cc9d2,1237515685,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+a757cafadaf4e2dc001c96c96cba8a67dbc48417,1242238415,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+1628039b85046b7092cb259c156ec74c89e200df,1267186746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+4e4424a5841e912ec2a5a45c1e271083dbfaf611,1418156406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production

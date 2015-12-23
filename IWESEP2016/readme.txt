@@ -1,9 +1,9 @@
 execution procedure
 
 evolution
-lifetime_and_commit_interval
+lifetime_and_commit_frequency
 co_evolution
 bug_info
 bug_count
-evolution_lifetime_interval_and_bug
+evolution_lifetime_frequency_and_bug
 sonarQube

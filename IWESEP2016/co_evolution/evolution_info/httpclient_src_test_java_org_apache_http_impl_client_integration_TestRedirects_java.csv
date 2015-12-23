@@ -1,0 +1,185 @@
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+320fae656f582317f04fd47eaeebc186af2fb446,1344512539,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+034805c3af124957a5b51ea3f935d7ffc7b9a9b4,1355228408,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+bfbc573cbddfe2c607771faf02c905b837769eb9,1355408548,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+c82a5116c2f9e04b9c82f83a1ccb77e8d5935916,1355489690,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+b6d7989aaeacd0142c50c331b9147512bb6277b8,1355937123,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+41e08bfa5246b86b6989203340d2f2ecfcb00a38,1356100466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ClientProtocolException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/RedirectException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+712cafd1e9082746862fe4cd264996c94465af8d,1356706781,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+8155bab28dd2bb2ba839c2275081ddb4616f390e,1357312950,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4232febf6373bb3f535c88aa69e0b991f9e7801a,1357582955,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4232febf6373bb3f535c88aa69e0b991f9e7801a,1357582955,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+6ceddc02e0df39020e87b45594363e46e2d61fc6,1357592795,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+4e50149ac6a46437331d1511b998e09e9ab4bf75,1357909908,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/ClientProtocolException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/RedirectException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+371b754e1c9dd911c2b15f9111cffecd54c22cbc,1364202928,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+458575bf59400ad534d70793d1bd9d9ab2e259a1,1364477406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+ff1acb48a875b54319fed9da87d1942d4d0d9db3,1368695562,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+600c19f5c53f7f92026129ee546c61909381c6ef,1368695591,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+45456cf1f0efb4694b1731e0d81dd0a60bcfb30f,1368803170,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/URICollection.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+eeaec64f5c5646e03af10b553fa950171f63130c,1369818294,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+2bd70ff44c235753732a15d2be768e470d80ee9b,1369829914,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/URICollection.java,production
+b8c0487c91839e6428cac635a3ff03c7c42fe420,1369831531,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+efe3d7d7e202e1fc0fc1e10dd511998b743ae977,1372775567,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/ClientContext.java,production
+834d5e66da703e38a5ee5bec4337b5c723749b72,1374940776,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+5e2c01472dfa0ffc084c98e3a0a8583ca07190ca,1376417716,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+71ef6682589e7c0ae5b59dacf4120f104ea63973,1376422728,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+ee1fec2a8c402d5dd039e745450db1c57716c53d,1376648208,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/URICollection.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+95d65666c8a51011273ad0612023c74eb128007a,1376997073,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+eeee0720b573d15aa465944569a9a947b87b5045,1379939250,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+08140864e3e4c0994e094c4cf0507932baf6a66a,1380744871,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+75937296d99da74a991b66da3d1b2a6e1576c93e,1380786227,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+cb89108e452555aa49ce36c0c1959c83c5813b32,1380918625,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+9cc7c1acecb5ce7af867718f0d1933b3bdf3c3f1,1385629024,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+24d5d8b454a8d6b6e31fc3d4427a7414fdfc3a6a,1392893632,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+7eb9097b1c97d57d45d35b732ff272d5f97d5c94,1393271641,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+5d11a3e751fe0c02a7a4539d3436b06e0be35876,1393321787,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+b370df34ca2e71582ff9dfb183a6a077a16bf841,1395070506,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+719daae5144248263e4f5e5fdcbd40db31d16bcc,1396346661,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+cd1f9fc9f787d90b90ed2a099483a89c1e6342b0,1397559229,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+b40661e45ec12fb1c7ef52b1891a9b677331f48d,1398850372,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+0a93660d96d498b717cc3fc22771b2968ccbe0d5,1399893168,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+1ba8a897f3a3006dfea6bb8024c97998752783b8,1400140332,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+d66b842b79592eeb6055312c0bbbae2e35b71432,1403166519,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/RedirectException.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+c5c0bc680180c3ccac90430a6380901dc1e968df,1403525615,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+899c7c80461305f49b2eef9897ee804006167bae,1403547483,Sebastian Bazley,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+d7c64ee9c000a990341edc358bef2ce11442e06c,1405408250,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/CircularRedirectException.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/RedirectException.java,production
+f5bf414adcbeef7c7eb2c2d70ce2fcc594e6f955,1407506455,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpPost.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+abe50fafe4146f0e3ce241e7dd955f48e0e1a6d2,1410257203,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+061f150ab1871d91271e9b963ab5b921fed289ee,1410869264,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+2c0bf9ac102f394d3eb5f33a467fa8d013790ef2,1413135788,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+4e4424a5841e912ec2a5a45c1e271083dbfaf611,1418156406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+c4f47f34894151c3d9ff822be9cee8e19422d486,1419361373,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+529e1373a5a7cc8483862fbfd453f2c567b6362d,1420618463,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+56ec3b9c1034d506b25272837f6f61b5f7334e0d,1424684644,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+ed79acbef02c02fb3c05f191a436b39a2fceef4f,1425068018,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+f798204f68a8717f2eb1a3a2cacf3b5a3156d5f8,1425068759,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+542ccae5022fae8f94d2024b3c51058f49fd67cc,1425238498,Michael Osipov,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+6f70eca1702a0a8d938522e920a982ada52fd3eb,1425240660,Michael Osipov,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+a319a25f4e2b2d0c87fe6218a34e22cce4ee4437,1426105637,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+a4436e12cac0afe40d4470c7b41aa44d2ddd1faf,1426277994,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+bf0844103a9305d4e1ecc65a7600462d97258e38,1429353075,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+68d48b3fd488ce1a1f585fe3bf242df220d382d8,1430471349,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/SM.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+5f3ba04de27aa63a53e205411d6174a344f7b58e,1432902501,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+412dfe76993e93a93b78740c31d535317d70a8bf,1433017366,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/SM.java,production
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production

@@ -1,0 +1,3 @@
+3c0bc58a3050e774098749178239a891f72cc613,1294766900,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestProtocolRequirementsWithDeprecatedSerializer.java,test
+bac69b368ff4d3368d1fd1705d66343c99936563,1294842092,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+bac69b368ff4d3368d1fd1705d66343c99936563,1294842092,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestProtocolRequirementsWithDeprecatedSerializer.java,test

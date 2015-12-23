@@ -1,0 +1,11 @@
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+ce13e3606f0c193342f54d9b8bcea8a7162cf27a,1315311626,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+57ea057594f90c81ff93f9a8db31659a040a19fc,1315344468,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+d1450f9071bf3da4065cad4688d01f97900d6205,1318277033,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/DnsResolver.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultClientConnectOperator.java,test

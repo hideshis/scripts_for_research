@@ -65,20 +65,19 @@ def execution_result_checker():
 	sys.exit()
 	return
 
-sonar_analyzer.analysis()
-sys.exit()
 commit_hash_list = commit_hash_getter()
 for commit_hash in commit_hash_list:
 	git_clone_and_checkouter(commit_hash)
 	test_sonar_execution()
 	execution_result = execution_result_checker()
+	os.system("echo " + commit_hash + ">>done_list.txt")
 	if execution_result == "failure":
 		continue
 	else:
+		sonar_result = sonar_analyzer.analysis()
+	if sonar_result == "stop":
 		print commit_hash
-		print execution_result
-		sonar_analyzer.analysis()
-	sys.exit()
+		sys.exit("execution abortion")
 
 """
 pattern_list = os.listdir('./')

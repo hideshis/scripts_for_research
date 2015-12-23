@@ -1,0 +1,249 @@
+e9f6856f4ea2ab028cbf68e51706e387fd7adfd2,1299185992,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+86369c169654d8e1c3820851bf96c932d71e747d,1299508665,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+180ec543f016b789a531bd43a41a96d69b93fbc6,1306523815,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+92d66f33555e39dd80e35cfd1bf38e06bd960c08,1307435124,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/CookiePolicy.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/IgnoreSpecFactory.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+bcc97c838fce49dc968ce2f8777d787e681103ec,1317593807,Sebastian Bazley,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+39117086b38e9805f2b39e953d52ff018f293d39,1328447882,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+7a207ae47572dd9fa604d12eff52ede19824c214,1336918299,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpRoutedConnection.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+7985a45e97633aeef643459aa8957fede44e9b28,1347442092,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpRoutedConnection.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+4dc5821acb07bf0d3adb9059301a2462d5da2b54,1354109746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+8901aed4949de2d597e09f645dfb2a0507839483,1354109852,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecProvider.java,production
+8901aed4949de2d597e09f645dfb2a0507839483,1354109852,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/IgnoreSpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/CookiePolicy.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+c222ad924718271e30f00de9a9752d52b73ee12c,1354614720,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+dd3d12f0d66f38c65b7f20d1c17c86602bb93f42,1354968732,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/CookieStore.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+8155bab28dd2bb2ba839c2275081ddb4616f390e,1357312950,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4232febf6373bb3f535c88aa69e0b991f9e7801a,1357582955,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+90fc40bbf240b0da6635ce09884ff4bbfd75e3d1,1359565147,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+26add4a3d6fe58f644a19e1e20b2fd8533d5377f,1364907019,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+0ba38201ad8a237cb509945456faaf80717f1a6a,1367878701,Karl Wright,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+0ba38201ad8a237cb509945456faaf80717f1a6a,1367878701,Karl Wright,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+ff1acb48a875b54319fed9da87d1942d4d0d9db3,1368695562,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/CookiePolicy.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/CookiePolicy.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/PlainSocketFactory.java,production
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4db81679811cc83c437f575e7081220519cb7ff2,1375903218,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+5e2c01472dfa0ffc084c98e3a0a8583ca07190ca,1376417716,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+5e2c01472dfa0ffc084c98e3a0a8583ca07190ca,1376417716,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+ee1fec2a8c402d5dd039e745450db1c57716c53d,1376648208,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+4f03bedbf81d4a94d31542464598138243e255f8,1381228590,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+48b34a5ab289f18ed5a05db8ad9b56e984a76203,1389710244,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/IgnoreSpecFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+24d5d8b454a8d6b6e31fc3d4427a7414fdfc3a6a,1392893632,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+36d12dd54a0f0f4a4195f1ee158ccf8aa6a842c4,1393260369,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+6cbac13a396d40bab18c0efc9933bb60aa2beaaf,1395103507,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+c5c0bc680180c3ccac90430a6380901dc1e968df,1403525615,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+899c7c80461305f49b2eef9897ee804006167bae,1403547483,Sebastian Bazley,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+3df564f0c604b0bb516364c286487b3936c68762,1407763966,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+3df564f0c604b0bb516364c286487b3936c68762,1407763966,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/HttpRoutedConnection.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+5c006f8d3047b9cc926d7cf8c731b9781f7eda35,1408710914,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+243c862a032b9047e959f1edb3cd6fa036c93f35,1409063856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+243c862a032b9047e959f1edb3cd6fa036c93f35,1409063856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+243c862a032b9047e959f1edb3cd6fa036c93f35,1409063856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+243c862a032b9047e959f1edb3cd6fa036c93f35,1409063856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+92700fd23b33121226318309077f9ce1def990ed,1409125494,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+92700fd23b33121226318309077f9ce1def990ed,1409125494,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+92700fd23b33121226318309077f9ce1def990ed,1409125494,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+92700fd23b33121226318309077f9ce1def990ed,1409125494,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+92700fd23b33121226318309077f9ce1def990ed,1409125494,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BestMatchSpecFactory.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+139529327ce959dda0ec58ab2c165deceaceb328,1409159254,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpec.java,production
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BrowserCompatSpecFactory.java,production
+45100c7d6d2420204aed279b39b1843dd3f125b7,1409159273,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/IgnoreSpecFactory.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/IgnoreSpecProvider.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecFactory.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109SpecFactory.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecFactory.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecProvider.java,production
+d568ebdbf35f25a59e436d29300a4c0b0d2ba5de,1410257174,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+a4c0c6ed7cde8b41258b6e04f11752f37d1f3102,1410257189,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+a4c0c6ed7cde8b41258b6e04f11752f37d1f3102,1410257189,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecProvider.java,production
+abe50fafe4146f0e3ce241e7dd955f48e0e1a6d2,1410257203,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+ec9afb1a1ac572a093a73f639a8f829203286d5b,1415983620,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+4e4424a5841e912ec2a5a45c1e271083dbfaf611,1418156406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieOrigin.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC6265CookieSpecProvider.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC6265StrictSpec.java,production
+70489c4bb03491b6ea0bec60904fc78782963a3a,1419022782,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+cd41e8998de1c989d7298ca7c53fd4b3e56a89b2,1419361361,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+c4f47f34894151c3d9ff822be9cee8e19422d486,1419361373,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+f114594c6fa58fa2fa6ba6049c06784532a76577,1419361407,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+ed79acbef02c02fb3c05f191a436b39a2fceef4f,1425068018,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+f798204f68a8717f2eb1a3a2cacf3b5a3156d5f8,1425068759,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+a319a25f4e2b2d0c87fe6218a34e22cce4ee4437,1426105637,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+e7b2729d9a7f6cf8d1584132e089ba032bd9f11e,1426428595,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC6265CookieSpecProvider.java,production
+3ee78bbcb80d4a80d4a98839b6d9e35457c34cbd,1426871442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+3ee78bbcb80d4a80d4a98839b6d9e35457c34cbd,1426871442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production
+3ee78bbcb80d4a80d4a98839b6d9e35457c34cbd,1426871442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+3ee78bbcb80d4a80d4a98839b6d9e35457c34cbd,1426871442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecProvider.java,production
+163f7804b82b544af7d05b898e7df9638a5cb912,1428745268,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC6265StrictSpec.java,production
+68d48b3fd488ce1a1f585fe3bf242df220d382d8,1430471349,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC6265StrictSpec.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/HttpRoutedConnection.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpecRegistry.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCookieStore.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/CookieSpecs.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/SM.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/BasicClientCookie2.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DefaultCookieSpecProvider.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpec.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/NetscapeDraftSpecProvider.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2109Spec.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/RFC2965SpecProvider.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test
+5f3ba04de27aa63a53e205411d6174a344f7b58e,1432902501,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+412dfe76993e93a93b78740c31d535317d70a8bf,1433017366,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/RequestConfig.java,production
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/SM.java,production
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAddCookies.java,test

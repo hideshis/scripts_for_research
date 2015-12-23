@@ -1,0 +1,13 @@
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AllClientPNames.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
+e52e269dc883f0d1e3a7bb991e5b2868807128f0,1439235833,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,test
