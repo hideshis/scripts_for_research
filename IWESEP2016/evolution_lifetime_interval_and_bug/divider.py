@@ -18,7 +18,7 @@ for line in lines:
     co_evo = factor[1]
     lifetime = factor[2]
     interval = factor[3]
-    if float(lifetime) > 859:
+    if float(lifetime) > 869:
         if float(interval) > 31.0:
             if float(co_evo) > 0.125:
                 os.system('echo ' + line + '>>llt_li_hr.csv')

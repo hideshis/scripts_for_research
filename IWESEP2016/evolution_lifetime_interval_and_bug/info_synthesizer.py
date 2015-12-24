@@ -28,6 +28,7 @@ def life_time_comit_interval_status_getter(pjt_name, tc_name):
 def linked_pc_list_getter(tc_name):
     result = subprocess.check_output('egrep ",' + tc_name + '" pc_tc_link_info.csv', shell=True)
     result_list = result.split("\n")
+    result_list.pop()
     return_list = []
     for x in result_list:
         return_list.append(x.split(",")[0])
@@ -36,6 +37,7 @@ def linked_pc_list_getter(tc_name):
 def linked_pc_num_getter(tc_name):
     result = subprocess.check_output('egrep ",' + tc_name + '" pc_tc_link_info.csv', shell=True)
     result_list = result.split("\n")
+    result_list.pop()
     return_list = []
     for x in result_list:
         return_list.append(x.split(",")[0])
@@ -55,18 +57,20 @@ def num_bug_getter(linked_pc, tc_born_time, tc_dead_time):
     except subprocess.CalledProcessError:
         return 0
 
-def ave_bug_calcurator(tc_name, lifetime):
-    result = subprocess.check_output('egrep "^' + tc_name + '" ' + pjt_name + '_tc_lifetime_interval.csv', shell=True)
-    result = result.replace("\r", "")
-    result = result.replace("\n", "")
-    result_list = result.split(",")
-    tc_born_time = int(result_list[4])
-    tc_dead_time = int(result_list[5])
+def ave_bug_calcurator(tc_name, lifetime, tc_born_time, tc_dead_time):
     linked_pc_list = linked_pc_list_getter(tc_name)
-    linked_pc_list.pop()
+    #linked_pc_list.pop()
     num_bug_list = []
     for linked_pc in linked_pc_list:
-        num_bug_list.append(num_bug_getter(linked_pc, tc_born_time, tc_dead_time))
+        num_bug = num_bug_getter(linked_pc, tc_born_time, tc_dead_time)
+        num_bug_list.append(num_bug)
+        ###
+        if int(lifetime) == 0:
+            num_bug_per_month = float(num_bug) * 30.0 * 1
+        else:
+            num_bug_per_month = float(num_bug) * ((30.0 * 1) / float(lifetime))
+        os.system("echo " + tc_name + "," + str(linked_pc) + "," + str(num_bug_per_month) + ">>num_bug_list.csv")
+        ###
     #num_bug_list.remove(0)
     if int(lifetime) == 0:
         num_bug_per_month = float(sum(num_bug_list)) * 30.0 * 1
@@ -77,6 +81,14 @@ def ave_bug_calcurator(tc_name, lifetime):
     else:
         return num_bug_per_month / float(len(num_bug_list))
 
+def born_time_dead_time_getter(pjt_name, tc_name):
+    result = subprocess.check_output('egrep "^' + tc_name + '" ' + pjt_name + '_tc_lifetime_interval.csv', shell=True)
+    result = result.replace("\r", "")
+    result = result.replace("\n", "")
+    result_list = result.split(",")
+    tc_born_time = int(result_list[4])
+    tc_dead_time = int(result_list[5])
+    return tc_born_time, tc_dead_time
 
 pjt_name = "target"
 f = open("importing_tc_list.txt", "r")
@@ -84,7 +96,7 @@ line = f.readline()
 line = line.replace("\r", "")
 line = line.replace("\n", "")
 writer = csv.writer(file("synthesized_info.csv", 'w'), lineterminator="\n")
-header = ["test code name", "co-evolution rate", "lifetime", "commit interval", "status", "average bug"]
+header = ["test code name", "co-evolution rate", "lifetime", "commit interval", "status", "average bug", "linked pc num", "born time", "dead time"]
 writer.writerow(header)
 linked_pc_counter = []
 while line:
@@ -101,7 +113,9 @@ while line:
     lifetime = lt_cf_status_list[0]
     interval = lt_cf_status_list[1]
     status = lt_cf_status_list[2]
-    ave_bug = ave_bug_calcurator(tc_name, lifetime)
+    tc_born_time, tc_dead_time = born_time_dead_time_getter(pjt_name, tc_name)
+    ave_bug = ave_bug_calcurator(tc_name, lifetime, tc_born_time, tc_dead_time)
+    linked_pc_num = linked_pc_num_getter(tc_name)
     info_list = []
     info_list.append(tc_name)
     info_list.append(co_evo_rate)
@@ -109,6 +123,9 @@ while line:
     info_list.append(interval)
     info_list.append(status)
     info_list.append(ave_bug)
+    info_list.append(linked_pc_num)
+    info_list.append(tc_born_time)
+    info_list.append(tc_dead_time)
     writer.writerow(info_list)
     linked_pc_counter.append(linked_pc_num_getter(tc_name))
     line = f.readline()
