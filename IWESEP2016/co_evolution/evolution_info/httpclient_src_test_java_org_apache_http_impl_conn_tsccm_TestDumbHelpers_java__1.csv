@@ -1,0 +1,6 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ClientConnectionOperator.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+b44aee815bf1671d1ab077b206eb35e91b207c03,1239905550,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ClientConnectionOperator.java,production
+4f51cdcf24c9bbb0030f2dc2aa74c588b781fd9a,1240247705,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ClientConnectionOperator.java,production
+b1db46db6cb6c9b8a804f4a59fff2adb5ebe3d1a,1243540851,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ClientConnectionOperator.java,production
+bd2f049ada455eb6949d0e9c17c6b60463ec4851,1244888016,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test

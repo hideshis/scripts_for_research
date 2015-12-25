@@ -1,0 +1,52 @@
+tag _BUG-1001-449-477
+Tagger: hideshis <hideshis1990@gmail.com>
+Date:   Fri Dec 25 11:19:44 2015 +0900
+
+@@httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntryUpdater.java@@@@
+
+commit 1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5
+Author: Oleg Kalnichevski <olegk@apache.org>
+Date:   Thu May 6 20:02:22 2010 +0000
+
+    HTTPCLIENT-427: CacheEntry made immutable
+    Contributed by David Mays <david_mays at comcast.com>
+    
+    
+    git-svn-id: https://svn.apache.org/repos/asf/httpcomponents/httpclient/trunk@941886 13f79535-47bb-0310-9956-ffa450edef68
+
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/BasicHttpCache.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntryGenerator.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntryUpdater.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheableRequestPolicy.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachedHeaderGroup.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachedResponseSuitabilityChecker.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachingHttpClient.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CombinedInputStream.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ConditionalRequestBuilder.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/DefaultCacheEntrySerializer.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/HeaderConstants.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/OptionsHttp11Response.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/RequestProtocolCompliance.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ResponseCachingPolicy.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ResponseProtocolCompliance.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/SizeLimitedResponseReader.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/DoNotTestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntry.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntryGenerator.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntryUpdater.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheableRequestPolicy.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachedHttpResponseGenerator.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachedResponseSuitabilityChecker.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachingHttpClient.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCombinedInputStream.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestConditionalRequestBuilder.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestDefaultCacheEntrySerializer.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestProtocolDeviations.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCachingPolicy.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestSizeLimitedResponseReader.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestURIExtractor.java

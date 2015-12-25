@@ -1,0 +1,16 @@
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+68c8b4b1eef6ad97e3bcd12c2204930a17771150,1282725221,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+bb9ad833c162b23df437020c2108d1c189b7e82a,1289767367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e025613aab2ba09d3346be50b926e9fe7dfad192,1292160269,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+bac69b368ff4d3368d1fd1705d66343c99936563,1294842092,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+5b89c1097ff0b2c99d68d1e8229b2064e54784bf,1322835232,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+e9c87971083b7ea9435e9c0cc7da2b1e42e26886,1390583044,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+2883531e92f710a43d7fd04f500d7351f22c9e20,1415373783,Francois-Xavier Bonnet,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestHttpCacheEntrySerializers.java,test

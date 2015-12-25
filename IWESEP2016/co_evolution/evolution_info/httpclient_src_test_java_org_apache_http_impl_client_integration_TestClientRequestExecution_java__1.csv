@@ -1,0 +1,22 @@
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+e99b061a953b95c4e3cd2cc337044c2a88471d64,1356023107,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/ClientProtocolException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+9ec0c1359486d06eb723c6b7d7d332a9fe71c8f2,1357061168,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+a7984199d78da1b371c119355105192e2686a651,1357786052,Karl Wright,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/ClientProtocolException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+eeaec64f5c5646e03af10b553fa950171f63130c,1369818294,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test
+6d72c0e326a927a8d6aef6555ea395f20247fe98,1434802323,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientRequestExecution.java,test

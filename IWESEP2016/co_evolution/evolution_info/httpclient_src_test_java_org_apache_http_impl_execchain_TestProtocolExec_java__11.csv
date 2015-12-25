@@ -1,0 +1,11 @@
+d73f4c1b384066956b5ed74d7891937e3094675f,1361522196,Francois-Xavier Bonnet,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/BasicCredentialsProvider.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test

@@ -1,0 +1,42 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+b19d19e544060894b70f5de3a2e0fbcc96fae8fb,1179746637,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+hoge,1179754025,hoge,hoge,bug
+d0a973d3bfdce9d105624a47191e2da8f3700361,1180349428,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+hoge,1180349428,hoge,hoge,bug
+598c7ac8e8ce93e15912a99f79954545ce15705b,1180785918,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+hoge,1180785918,hoge,hoge,bug
+d4862a917b05ac7a47e48dcd7731004c93ddd19c,1184955202,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+hoge,1185108847,hoge,hoge,bug
+hoge,1185479587,hoge,hoge,bug
+hoge,1185814342,hoge,hoge,bug
+hoge,1188894029,hoge,hoge,bug
+hoge,1190462037,hoge,hoge,bug
+hoge,1191513230,hoge,hoge,bug
+hoge,1191762749,hoge,hoge,bug
+hoge,1193238169,hoge,hoge,bug
+hoge,1197309672,hoge,hoge,bug
+hoge,1197396410,hoge,hoge,bug
+hoge,1197458275,hoge,hoge,bug
+hoge,1197458700,hoge,hoge,bug
+hoge,1197659102,hoge,hoge,bug
+hoge,1197729948,hoge,hoge,bug
+52cb8d3defd38d1afcc6810fae434270ab8033bb,1198215880,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+hoge,1198215880,hoge,hoge,bug
+789bc843c0af75481a7f91d392127d4d2b82a36a,1198241887,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+hoge,1198241887,hoge,hoge,bug
+2016962d6fa7402865562ae91b9ba98c22b2aeba,1198242157,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+d1a4c2ce6de6afd3fedcb23fc1a333c3887a4eaf,1198942751,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/main/java/org/apache/http/conn/HttpRoute.java,production
+bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+hoge,1201193602,hoge,hoge,bug
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+hoge,1202080490,hoge,hoge,bug
+a42e4de19e0e0caf72d1ee132d6be71c1e83ceec,1203757472,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+hoge,1204144835,hoge,hoge,bug
+a72e883d9ce89f695984a80a15ef603d072010d3,1205955362,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+hoge,1205955362,hoge,hoge,bug
+c51f3a980f380655f3d59cf9f0cc153636d31f3b,1206060054,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+8ff6eedd9eb86aba59ea38b1437d3c51a373e636,1207776573,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/GetConnThread.java,test

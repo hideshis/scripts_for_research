@@ -1,0 +1,16 @@
+a03573ca24bf09303ddba3f9e36a75680e18b830,1309352198,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+be07d74d169586f9b9964737f163dc5a2e4d8f8f,1313507374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+898b33ac218c2f86da6db013401bd5f98e757aea,1342959627,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+90b864630950c5bb4371958a7bd42c7bcde310f6,1346333705,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+05b0a00f9c04fc88aadf709982692079a1008d57,1349862701,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/cookie/DateUtils.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAutoRetryHttpClient.java,test

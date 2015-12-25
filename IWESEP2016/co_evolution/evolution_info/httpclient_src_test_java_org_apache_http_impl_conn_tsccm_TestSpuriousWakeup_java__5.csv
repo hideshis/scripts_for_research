@@ -1,0 +1,17 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnPerRoute.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+ab954f255a2fd99d8987f141a270a134fd9f4fda,1240434287,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnPerRoute.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnPerRoute.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/params/ConnPerRoute.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+a2ad042193fe696ae456c686df9d759f82c8d9a4,1276552856,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+1e70d5a39e3e806ca51676313ba2061dde999cec,1285396507,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test

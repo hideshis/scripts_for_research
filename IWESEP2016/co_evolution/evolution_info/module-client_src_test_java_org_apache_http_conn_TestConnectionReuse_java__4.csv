@@ -1,0 +1,8 @@
+18ee596a4d17684685ac1765bc3b73e78f633796,1209769820,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+f761a1746069932c13d918563c6e26fae2208cf0,1209770140,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/params/ConnPerRouteBean.java,production
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+4752936837cc213f44d369ee6bc13bf47c5ac540,1214453004,Sam Berlin,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+55c231d227be106d368f32088468e7f86ae6ef23,1214876950,Sam Berlin,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/params/ConnPerRouteBean.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/params/ConnPerRouteBean.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test

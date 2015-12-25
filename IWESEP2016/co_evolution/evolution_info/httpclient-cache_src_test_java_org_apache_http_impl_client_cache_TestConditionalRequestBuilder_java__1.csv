@@ -1,0 +1,21 @@
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+ef2839b7700d311e5046263cbc40b2088c1cfbd6,1274651720,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+e2efb174004df2b2b3a25fbad9660ef174ea4e4b,1278518974,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+5a54675818892e9523964af9eb8f216cd649ee72,1279225020,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+5059eddd97cbf90955bd49c3a716350de7180e24,1279912002,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+6d41d97eb9fcd90429005fcd52935897f0138d64,1285168013,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+6892f58f2c88f8da565e6c6549cf0ee07b8303bd,1287171798,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+618754b6a9be418ad6afee99c0400cc5d0573d43,1292241336,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+477fdb1a3c633acbccf822b7cebed66227f9453c,1292325156,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+5b89c1097ff0b2c99d68d1e8229b2064e54784bf,1322835232,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HeaderConstants.java,production
+9aea057953293a522d3ba9e0fef5ab61ca69784b,1354703686,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+a6a328a7af760902621c2042b02722eaa9aa7fcd,1365065856,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestConditionalRequestBuilder.java,test

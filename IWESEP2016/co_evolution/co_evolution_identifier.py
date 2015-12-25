@@ -51,22 +51,34 @@ def co_evolution_rate_calculator(file):
 def pc_name_getter(file):
     result = subprocess.check_output('grep ",production" ' + file + ' | cut -d, -f4 | sort | uniq', shell=True)
     pc_name = result.replace("\r", "")
-    pc_name = pc_name.replace("\n", "|")
-    pc_name = pc_name[:-1]
+    pc_name = pc_name.replace("\n", "")
     return pc_name
 
 os.chdir('./evolution_info')
 files = os.listdir('.')
-writer = csv.writer(file('co_evolution_rate.csv', 'w'), lineterminator="\n")
-for file in files:
-    if (not file.endswith(".csv")) or (file == "co_evolution_rate.csv"):
+tc_list = []
+for x in files:
+    if (not x.endswith(".csv")) or (x == "co_evolution_rate.csv"):
         continue
-    co_evolution_rate = co_evolution_rate_calculator(file)
-    tc_name = file.split("__")[0]
+    tc_list.append(x.split("__")[0])
+tc_list = list(set(tc_list))
+writer = csv.writer(file('co_evolution_rate.csv', 'w'), lineterminator="\n")
+for tc in tc_list:
+    result = subprocess.check_output('ls | grep "' + tc + '"', shell=True)
+    result = result.replace("\r", "")
+    tc_file_list = result.split("\n")
+    tc_file_list.pop()
+    co_evolution_rate_list = []
+    pc_name_list = []
+    for tc_file in tc_file_list:
+        co_evolution_rate_list.append(co_evolution_rate_calculator(tc_file))
+        pc_name_list.append(pc_name_getter(tc_file))
+    co_evolution_rate = float(sum(co_evolution_rate_list)) / float(len(co_evolution_rate_list))
+    pc_name = "|".join(pc_name_list)
+    tc_name = tc.split("__")[0]
     tc_name = tc_name.replace("_java", ".java")
     tc_name = tc_name.replace("_", "/")
     tc_name = tc_name.replace("/src/test.java/", "/src/test/java/")
-    pc_name = pc_name_getter(file)
     info_list = []
     info_list.append(tc_name)
     info_list.append(pc_name)

@@ -1,0 +1,15 @@
+b1b85307a8b2d756eac772a5dfc1e6b74b90beac,1317904391,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test
+62c57991f502dac8484c628b506f54838a73860a,1317904461,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+162f3d6d9958bee8909e6a73aa93f8fb3691fc2e,1318009782,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+f2aa4812802b8804394e5758e55c8394ef7c6bc6,1318081447,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+da570f7079d3d920843d8436843a41a3bb859cde,1318267352,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+2278378495276ea66cbd02f556714e82bfd7e1cb,1318353728,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+46bcf3acf74187f2624f1dfe32f41df6c4eb0451,1326040446,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+a32899e446331e0bc51ca89cc63ca0a48aa68345,1330777739,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+be6347aef0f7450133017b775113a8f3fadd2f1c,1333999115,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+63d06f06cd51d4a2259d876dd1d1ae34ab2431e5,1335282907,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+2514a058955197e2c0e59b676e57e8dd26d0c712,1338488749,Jonathan Moore,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+e8bc96c549d9588084f3f1735d2ed8011651bff4,1339073977,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultRequestDirector.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test

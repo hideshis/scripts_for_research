@@ -1,0 +1,9 @@
+3bd51e812d28dff59701b980fe6d58850b622f9f,1191749748,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+c86b3b02bd54c7262d92a58f8f38fc20e6a264bd,1197572090,Roland Weber,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+2370dc5fd3dcebf23ff82e5619ab54a6b1d039fc,1197729948,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+e4f8eee752266e1d17c4b31fa25c6e534186497a,1210352772,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+379a83514a278b2d54dcdf1797078874e23215d2,1225283517,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/cookie/SetCookie2.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/SetCookie2.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,test

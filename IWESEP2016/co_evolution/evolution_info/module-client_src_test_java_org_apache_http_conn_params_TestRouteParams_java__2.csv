@@ -1,0 +1,11 @@
+1892a783cc39a5e73ac3bae9cbfefcfcd3d85210,1202081189,Roland Weber,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+b0dc5a5d6a0eebb1b533cb6ef0a4bee6ff545764,1202084946,Roland Weber,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+55ffbe1b6c28debc5e025de4bf76722dfdd0d803,1202086722,Roland Weber,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+137da8207de36a7b6ccc73084ad46f6083ddc9fc,1202140279,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+2c2dd57f723e2040c80296c79f0fb21a8b525036,1202638728,Roland Weber,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+aff60e46290f46caf16c7be7de196425c4fbef94,1209811168,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test
+5e0b01c68def1daaa45e2929ba8d931b5da4a95b,1228145776,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/params/TestRouteParams.java,test

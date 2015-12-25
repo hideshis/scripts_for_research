@@ -1,0 +1,17 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+cca8a23380720be493acb7e6222ec4c1972451b3,1182085694,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+70e32c6503da223f7f336b9c5608eef850fce1e3,1182623709,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+84168a156d8bc258e78956c120bbfadfaafe8937,1182624180,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+08bf8e8e50109f9ca81787b90c128a087bf04c2d,1197542005,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+2cc2818642a7770f8cb2675698f58411c73e9cde,1201810452,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+17bacf5e7f4c0b23999f5341aa0458c71d452fcf,1209772188,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+dd5061b2abbaa8f3e789a2e099b266627e6a642f,1234629993,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+hoge,1234717840,hoge,hoge,bug
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test

@@ -1,0 +1,4 @@
+b1b85307a8b2d756eac772a5dfc1e6b74b90beac,1317904391,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test
+39117086b38e9805f2b39e953d52ff018f293d39,1328447882,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test

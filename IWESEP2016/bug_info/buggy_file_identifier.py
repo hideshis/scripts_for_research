@@ -13,6 +13,30 @@ import sys
 import subprocess
 import csv
 
+def buggy_file_list_getter_sub(buggy_file_candidate_list, tag):
+    buggy_file_list = []
+    for buggy_file_candidate in buggy_file_candidate_list:
+        try:
+            result = subprocess.check_output('git show --name-only ' + tag + ' | grep -v "@@@@" | grep "' + buggy_file_candidate + '"', shell=True)
+            result = result.replace("\r", "")
+            result_list = result.split("\n")
+            result_list.pop()
+            """
+            for x in result_list:
+                if x.startswith("@@") and x.endswith("@@@@"):
+                    tmp = x
+                    break
+            result_list.remove(tmp)
+            """
+            print "target: " + buggy_file_candidate
+            print result_list[0]
+            buggy_file_list.append(result_list[0])
+        except subprocess.CalledProcessError:
+            print "noppo-san"
+            continue
+        print "\n\n"
+    return buggy_file_list
+
 def buggy_file_list_getter(tag):
     result = subprocess.check_output('git show --name-only --date=raw ' + tag, shell=True)
     result = result.replace('\r', '')
@@ -21,7 +45,7 @@ def buggy_file_list_getter(tag):
     for tag_info in tag_info_list:
         if tag_info.startswith("@@") and tag_info.endswith("@@@@"):
             tag_info = tag_info[2:-4] # remove redundant @s
-            buggy_file_list = tag_info.split("@@")
+            buggy_file_list = buggy_file_list_getter_sub(tag_info.split("@@"), tag)
             for buggy_file in buggy_file_list:
                 os.system('echo ' + buggy_file + '>>buggy_file_list.txt')
         if tag_info.startswith('Author: '):

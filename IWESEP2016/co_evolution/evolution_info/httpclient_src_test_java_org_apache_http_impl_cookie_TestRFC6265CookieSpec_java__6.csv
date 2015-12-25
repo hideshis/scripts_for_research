@@ -1,0 +1,4 @@
+163f7804b82b544af7d05b898e7df9638a5cb912,1428745268,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestRFC6265CookieSpec.java,test
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/cookie/SetCookie.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestRFC6265CookieSpec.java,test
+3297b7a9f3898b5af918502529962b5c7e3f66e9,1447534106,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestRFC6265CookieSpec.java,test

@@ -1,0 +1,20 @@
+tag _BUG-1001-449-478
+Tagger: hideshis <hideshis1990@gmail.com>
+Date:   Fri Dec 25 11:19:44 2015 +0900
+
+@@httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntryUpdater.java@@httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachedResponseSuitabilityChecker.java@@@@
+
+commit f749748401d203706923d28068d4fa7c27616b05
+Author: Oleg Kalnichevski <olegk@apache.org>
+Date:   Fri May 7 13:53:13 2010 +0000
+
+    Tweaked logging in caching components
+    
+    git-svn-id: https://svn.apache.org/repos/asf/httpcomponents/httpclient/trunk@942073 13f79535-47bb-0310-9956-ffa450edef68
+
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheableRequestPolicy.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachedResponseSuitabilityChecker.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachingHttpClient.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/impl/ResponseCachingPolicy.java

@@ -1,0 +1,21 @@
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+76989f0ed22b0c6fff025acbe7dc113b86806d5c,1301744092,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+281d9d5f4db7e50fcf171513b26115ff4a38567d,1302543517,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+5c0cb57422c561bd54dbcc248de8c320e39ea4c9,1355760738,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+01a7e66d7ba8cf310366be1a263f2d669ca597e8,1355910391,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+1f7b7a32af9c012f16f5dc88685140e6486751d5,1359580382,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+0b3ef4b0d0a0306ec95beff35b2342f6b4a34d6b,1383734274,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+24d5d8b454a8d6b6e31fc3d4427a7414fdfc3a6a,1392893632,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+5d11a3e751fe0c02a7a4539d3436b06e0be35876,1393321787,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+5d11a3e751fe0c02a7a4539d3436b06e0be35876,1393321787,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+6f4a762197347ad71218caba105bf3d4c03e044a,1430303544,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/entity/DecompressingEntity.java,production
+412dfe76993e93a93b78740c31d535317d70a8bf,1433017366,Michael Osipov,httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,test

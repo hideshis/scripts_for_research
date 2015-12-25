@@ -1,0 +1,21 @@
+be6347aef0f7450133017b775113a8f3fadd2f1c,1333999115,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+7a207ae47572dd9fa604d12eff52ede19824c214,1336918299,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+da16fdc9736b4ffe14d28fe30656b7f6d68f2652,1340363110,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+46aca9def4e82f30ea0e5a10cce64f9d71ca36f5,1349902290,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+600c19f5c53f7f92026129ee546c61909381c6ef,1368695591,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+2bd70ff44c235753732a15d2be768e470d80ee9b,1369829914,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+b8c0487c91839e6428cac635a3ff03c7c42fe420,1369831531,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/ClientPNames.java,production
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultRedirectStrategy.java,test

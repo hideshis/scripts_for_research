@@ -1,0 +1,8 @@
+196ac3f328463e1b18bbf152efe6439688281e87,1408387173,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+95c0f4857e209feffe940b5583a4755f63b46546,1408457483,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+268d6cc113b305addc4a31a70bd7c3b6d545e337,1408622231,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+9e83772d35e858042faeac137307c2908c6f08d0,1409923050,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+6f706c23287aa38c1626c21130c18200b6d57545,1410014772,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+65ebd91590a17242d1b40c91472141788fdc3fcf,1420458871,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test
+a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/DomainType.java,production
+a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestDefaultHostnameVerifier.java,test

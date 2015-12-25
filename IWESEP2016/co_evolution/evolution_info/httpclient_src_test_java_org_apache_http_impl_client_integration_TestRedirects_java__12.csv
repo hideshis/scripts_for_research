@@ -1,0 +1,44 @@
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+6ceddc02e0df39020e87b45594363e46e2d61fc6,1357592795,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+600c19f5c53f7f92026129ee546c61909381c6ef,1368695591,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+eeaec64f5c5646e03af10b553fa950171f63130c,1369818294,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b8c0487c91839e6428cac635a3ff03c7c42fe420,1369831531,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+71ef6682589e7c0ae5b59dacf4120f104ea63973,1376422728,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+9cc7c1acecb5ce7af867718f0d1933b3bdf3c3f1,1385629024,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b370df34ca2e71582ff9dfb183a6a077a16bf841,1395070506,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b40661e45ec12fb1c7ef52b1891a9b677331f48d,1398850372,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+061f150ab1871d91271e9b963ab5b921fed289ee,1410869264,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+bf0844103a9305d4e1ecc65a7600462d97258e38,1429353075,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/URIUtils.java,production
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+777f6ead467639563df7a5cdbb6b824c47108aec,1434883471,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestRedirects.java,test

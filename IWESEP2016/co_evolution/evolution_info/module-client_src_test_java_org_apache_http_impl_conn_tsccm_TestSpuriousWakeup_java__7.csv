@@ -1,0 +1,12 @@
+7c53de5b93dcb094a96e696e19df434bca4bb4da,1202414464,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+c51f3a980f380655f3d59cf9f0cc153636d31f3b,1206060054,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/SchemeRegistry.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+8ff6eedd9eb86aba59ea38b1437d3c51a373e636,1207776573,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+bc6b2d70611f99316c62db98070cb4328d1760cb,1208182621,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+5a08148d258bec204441b6fb969d0e5803877e40,1208383535,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+2b91201275339cc39e5853c5600387c6c17ee3bb,1208426445,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+cb7a2ce8bd728aa8d933159d2b645c5633f23014,1209910333,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,test

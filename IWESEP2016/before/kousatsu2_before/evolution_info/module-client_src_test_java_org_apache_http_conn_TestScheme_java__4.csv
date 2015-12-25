@@ -1,0 +1,41 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+6132eab65e6675df1a9f20e66ee209a20c2ac1fb,1179754025,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1179754025,hoge,hoge,bug
+cca8a23380720be493acb7e6222ec4c1972451b3,1182085694,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+70e32c6503da223f7f336b9c5608eef850fce1e3,1182623709,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+84168a156d8bc258e78956c120bbfadfaafe8937,1182624180,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+ebbc30a916603eb9f853c801721035f5fed56213,1183977198,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1185467345,hoge,hoge,bug
+25a9063286fe5ad3216c33f6e83fc843b284b5df,1191087633,Roland Weber,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1191087633,hoge,hoge,bug
+hoge,1193590592,hoge,hoge,bug
+08bf8e8e50109f9ca81787b90c128a087bf04c2d,1197542005,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+f696e1f6849b4d4d9195ec7084f87e5ab9195e80,1197740803,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+2cc2818642a7770f8cb2675698f58411c73e9cde,1201810452,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+4f6599c959a6543f1ce4756009e47ea655fa5e2c,1202140884,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+aa020a5c0d06627716411f6acbfea8f5c77061c9,1202334066,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1202334066,hoge,hoge,bug
+b055442d4b15e8fd411a7ae46b9fdbb1d0814e5b,1204144835,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1204144835,hoge,hoge,bug
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+hoge,1207652932,hoge,hoge,bug
+4419c91e65d757d0786ccdde8c525d03e31a7981,1209504839,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1209504839,hoge,hoge,bug
+a89695fea4427a70a5f01993d8899373c0e726f3,1211481227,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1211481227,hoge,hoge,bug
+1f7f493c1846023351e7717edd2d5b315ae79e48,1218396936,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1218396936,hoge,hoge,bug
+884a7cb69ac8c999be0f950315f4b151faebbe81,1222289747,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1222289747,hoge,hoge,bug
+07dad4db9ceb7cd352f1e1025ff9fdf14ba0b296,1228003975,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+d855722988cd19867f500f0909565ddc156b6159,1234630898,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1234630898,hoge,hoge,bug
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+hoge,1234717840,hoge,hoge,bug
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/ssl/SSLSocketFactory.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestScheme.java,test

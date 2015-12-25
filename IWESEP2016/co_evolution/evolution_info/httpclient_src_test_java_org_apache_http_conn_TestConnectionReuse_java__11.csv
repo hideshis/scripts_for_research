@@ -1,0 +1,17 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+53d61aa4c67c45e5ee4aad0eb94254fce6e9856d,1271860967,Sebastian Bazley,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClientBuilder.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+d550a62fe308789660dcebc774784468c558ca6c,1352042865,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test

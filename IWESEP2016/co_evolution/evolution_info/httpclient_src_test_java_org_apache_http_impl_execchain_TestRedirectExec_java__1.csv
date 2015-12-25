@@ -1,0 +1,12 @@
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+746bb7aea287ed0f41828c08fd536fbb30f485b8,1389710936,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+4709d85aaf4a97dfc0276e3060eb8c1166538668,1402660866,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+93525ebb367ff97cdfc2b52c219cf1d92306072d,1434883428,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthExchange.java,production
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRedirectExec.java,test

@@ -1,0 +1,9 @@
+6d0c8099005ff246cc3e374492e7150b033e5114,1211389577,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+6d0c8099005ff246cc3e374492e7150b033e5114,1211389577,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+be2250f5b2527d14ce6b750ae4fd3bda3766e4d3,1211391733,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+9126cd218303bee1b04cdc474f2e09ecd8eab5da,1215794456,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test

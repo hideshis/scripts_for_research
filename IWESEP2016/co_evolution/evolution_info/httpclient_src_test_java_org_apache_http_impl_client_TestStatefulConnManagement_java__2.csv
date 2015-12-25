@@ -1,0 +1,17 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+4f04500b22531e1fed30fb47569274f9279b3ca3,1244139458,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+30b38eb6e46cd9be37a435cde86cfc1fe2d31858,1254483180,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+a2ff2dc9dda4967e79ec5f9d48f190fdb4249d02,1263652035,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+c922b95f7113280d4a230d2dc524766786c91da2,1271182945,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/UserTokenHandler.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+0bb63c609a862d8a6603f2a72a67170a2d107321,1276447204,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+ee323a52fa30f603b16eb6a9e0aec1437b0cbd58,1279656849,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+e0d37d550227a61cad176086be919a142cbad148,1280520939,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestStatefulConnManagement.java,test

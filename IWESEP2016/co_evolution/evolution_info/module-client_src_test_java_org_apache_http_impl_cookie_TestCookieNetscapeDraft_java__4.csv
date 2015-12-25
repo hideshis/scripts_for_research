@@ -1,0 +1,13 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+6d36b3aa06a12b39ec1d610da46a754da830dea7,1185108847,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+3c5e2e64912c938481e740c59a293193dcfc93a9,1185128389,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+8325bfe2d12b9c3d42a960a454490f9fccd5ff06,1188894029,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+1ccb1cfc277e9f670d33f2702d592c1d46ebe138,1190458978,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+e6d76b275061de9de75717241450ad8a5ff7751b,1191669069,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+34d72d935ee64fc291684e4b67524c9d55755c9a,1197458275,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+34d72d935ee64fc291684e4b67524c9d55755c9a,1197458275,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/CookieSpec.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieNetscapeDraft.java,test

@@ -1,0 +1,9 @@
+7c4f0f14ca650101f9ecdac0226d013168738b3d,1201193602,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestUriEscapes.java,test
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+8c08ae3178074e42c018b4175f10b8a0916fd3fc,1201899931,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/protocol/TestUriEscapes.java,test
+284556d9be5cae415c907b74f3d4d3f1c20f9658,1212931280,Sam Berlin,module-client/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+7378dc82be3364a72714cb7106656f8c3259a090,1229027645,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/protocol/TestUriEscapes.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/methods/HttpGet.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/protocol/TestUriEscapes.java,test

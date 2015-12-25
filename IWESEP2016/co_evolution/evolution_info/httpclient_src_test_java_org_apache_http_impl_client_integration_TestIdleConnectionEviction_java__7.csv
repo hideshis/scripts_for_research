@@ -1,0 +1,16 @@
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+034805c3af124957a5b51ea3f935d7ffc7b9a9b4,1355228408,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+f643326e9e3aaec5a878d937b6c416efe0d57589,1355228578,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+41e08bfa5246b86b6989203340d2f2ecfcb00a38,1356100466,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+712cafd1e9082746862fe4cd264996c94465af8d,1356706781,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+458575bf59400ad534d70793d1bd9d9ab2e259a1,1364477406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+205258b1f9982a34d8d074e647ebc3dee12ec667,1389794484,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test

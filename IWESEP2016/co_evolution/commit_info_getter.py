@@ -45,6 +45,21 @@ def pc_commit_getter(pjt_name, pc_name, lifetime):
 	return pc_commit_list
 
 def commit_getter(pjt_name, pc_name_list, tc_name, lifetime, file_name):
+	counter = 1
+	for pc_name in pc_name_list:
+		hoge = file_name + "__" + str(counter) + ".csv"
+		f = open(hoge, 'w')
+		pc_commit_list = pc_commit_getter(pjt_name, pc_name, lifetime)
+		for pc_commit in pc_commit_list:
+			f.write(pc_commit + '\n')
+		f.close()
+		os.system('grep ",' + tc_name + '," target_all.csv >>' + hoge)
+		os.system('sort -t, -nk2,2 ' + hoge + ' | uniq >tmp.csv')
+		os.system('mv tmp.csv ' + hoge)
+		os.system('mv ' + hoge + ' ./evolution_info')
+		counter += 1
+
+	"""
 	f = open(file_name, 'w')
 	for pc_name in pc_name_list:
 		pc_commit_list = pc_commit_getter(pjt_name, pc_name, lifetime)
@@ -56,6 +71,7 @@ def commit_getter(pjt_name, pc_name_list, tc_name, lifetime, file_name):
 	os.system('sort -t, -nk2,2 ' + file_name + ' | uniq >tmp.csv')
 	os.system('mv tmp.csv ' + file_name)
 	os.system('mv ' + file_name + ' ./evolution_info')
+	"""
 	return
 
 
@@ -69,7 +85,7 @@ for tc_name in lines:
 	tc_name = tc_name.replace("\n", "")
 	file_name = tc_name.replace("/", "_")
 	file_name = file_name.replace(".", "_")
-	file_name = file_name + ".csv"
+	#file_name = file_name + ".csv"
 	pc_name_list = pc_name_list_getter(tc_name)
 	lifetime = lifetime_getter(tc_name)
 	commit_getter(pjt_name, pc_name_list, tc_name, lifetime, file_name)

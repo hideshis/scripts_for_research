@@ -1,0 +1,18 @@
+53883ec597bb1794b8f8298ccef9aa44fa75552e,1317680221,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+b90f31138cc8ddafcfd765877ff7c45f8c1178e1,1330431380,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+3b5df666a9874ea16683b16dcbb49b36a12a53c2,1415994695,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+2489d1df6631ecd82bcb5eaa7d0a8c779b764a3a,1415995180,Michael Osipov,httpclient/src/main/java/org/apache/http/client/config/AuthSchemes.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+e7190e717756ffb71f20635bbe916b0dbcb23d1d,1437645613,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestAuthenticationStrategy.java,test

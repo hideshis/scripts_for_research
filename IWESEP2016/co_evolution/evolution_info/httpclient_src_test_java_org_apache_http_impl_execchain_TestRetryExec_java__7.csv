@@ -1,0 +1,14 @@
+0fb27248f504a7ffc441441aac783688ad3ab1e4,1376061681,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+da8ac20f458fb67d54d5841066c415202c71ba61,1376144410,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+fe360e7b3dbaf28db6ee60462aefd3bb321cbeba,1393265023,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+4709d85aaf4a97dfc0276e3060eb8c1166538668,1402660866,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test
+ad092c5d03e9a000c4883272a205901f336b06cb,1403164361,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+d9cc6c8879edc266b81b199d25ee877168b76b7e,1403897409,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+1eb2553ddb1f48566da998ef8996990f247174b1,1433403658,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+6d72c0e326a927a8d6aef6555ea395f20247fe98,1434802323,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestRetryExec.java,test

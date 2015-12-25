@@ -1,0 +1,15 @@
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
+e5d83200fd10b9832a621fc0a9467b55d386ab0e,1316951774,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
+430c3d530e1e68c367ef6bc02187beeae99445c4,1317998140,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+2278378495276ea66cbd02f556714e82bfd7e1cb,1318353728,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test
+d7d7bb2bde72d1b1f2bd66b19ba5eff982d401c9,1319985159,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthState.java,production
+3c26d6ff4199afc81933aa27852f81783696e699,1352014723,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestTargetAuthentication.java,test

@@ -1,0 +1,15 @@
+74f349b0c53592ed67fe1461d2c8e36f7a81cf72,1199699391,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+8ff6eedd9eb86aba59ea38b1437d3c51a373e636,1207776573,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+824b785a9906d307ddab1f133b88aca7de25f4f8,1207852212,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+ad9e79c4d9eb0fb07381cb70a7f56600ea27ab1f,1208454613,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+17bacf5e7f4c0b23999f5341aa0458c71d452fcf,1209772188,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+dd5061b2abbaa8f3e789a2e099b266627e6a642f,1234629993,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test

@@ -1,0 +1,4 @@
+4232febf6373bb3f535c88aa69e0b991f9e7801a,1357582955,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultProxyRoutePlanner.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultProxyRoutePlanner.java,test
+f9839221572b22961c8aeba83d5606210f671387,1370521013,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/SchemePortResolver.java,production

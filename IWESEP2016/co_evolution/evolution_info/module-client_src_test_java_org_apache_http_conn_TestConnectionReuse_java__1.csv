@@ -1,0 +1,14 @@
+18ee596a4d17684685ac1765bc3b73e78f633796,1209769820,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+e4f8eee752266e1d17c4b31fa25c6e534186497a,1210352772,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+a9d307fa91a7642f4c4924d5e3a912d336575eb9,1211392060,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+68b9913d7dee2e23e52c290b6a6b9a8e88a28bc9,1211625743,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+650a04c7341d65d88982dc734b0780620cdce27f,1212090060,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+284556d9be5cae415c907b74f3d4d3f1c20f9658,1212931280,Sam Berlin,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+4752936837cc213f44d369ee6bc13bf47c5ac540,1214453004,Sam Berlin,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+96335cd101fff394aecff32e8f3d5c3a7c70ef10,1214609585,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+55c231d227be106d368f32088468e7f86ae6ef23,1214876950,Sam Berlin,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test
+17d75864d96e25941f67e73d94ec550e97fe5e82,1215794329,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+43c53f2ecf5ef9836681cfe40ecd68ae8fe2c325,1216930085,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/HttpClient.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/conn/TestConnectionReuse.java,test

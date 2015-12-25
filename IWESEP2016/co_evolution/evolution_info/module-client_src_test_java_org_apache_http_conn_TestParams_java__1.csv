@@ -1,0 +1,13 @@
+1e5ff31bbd9f68ffabe7048ab52098425f968fad,1184151931,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
+d4862a917b05ac7a47e48dcd7731004c93ddd19c,1184955202,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+d4862a917b05ac7a47e48dcd7731004c93ddd19c,1184955202,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
+46270b747aa3d511b28172d34d3bb1413bc55c94,1184963383,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+6475dd23d803923fe9d81421d5d621de53939cfa,1186233279,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+4c696dcc14b5bb58329fb6a53b85b77b1fda3f2a,1189938301,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+3337029c964ca9c3186d575087cc295399c4ea3f,1197394075,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+0603fc9f3c1be166bb6ccd3c15d277a985ab5f81,1197466195,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+7477aa3042a561a5be690e40d62f7f080b0bd3a1,1197468201,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
+430d7d10cb0d80a1d0877015c6cd7ef8efe4986d,1201899372,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/params/HttpConnectionManagerParams.java,production
+1892a783cc39a5e73ac3bae9cbfefcfcd3d85210,1202081189,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test

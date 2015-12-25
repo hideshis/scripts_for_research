@@ -1,0 +1,5 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+a23c18ac1ec689c2053a6186d053e816b0e5dc9a,1239652405,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+bd2f049ada455eb6949d0e9c17c6b60463ec4851,1244888016,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestDumbHelpers.java,test

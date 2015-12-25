@@ -1,0 +1,13 @@
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryGenerator.java,test
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+7205e7d34008e1893e27efbfbfc514e5f6aaf665,1279804589,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryGenerator.java,test
+hoge,1279804589,hoge,hoge,bug
+4ae188acbbad19fb59e5552e216a442f4a22fdde,1280493884,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+e0d37d550227a61cad176086be919a142cbad148,1280520939,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+hoge,1280520939,hoge,hoge,bug
+911350a0c2778f180b49b9fea89f745a59086101,1280778533,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+7c8a1fdf5b0ced3b4866bab477fdf26ddfecd00e,1280778952,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryGenerator.java,test
+cb4f012fa79af349b1c3277fa19e818779019eb0,1281471303,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntry.java,production
+hoge,1281471303,hoge,hoge,bug
+6f2036bde285b5f65ea4270bbf2d1f5aed8ef73c,1281517145,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryGenerator.java,test
+e0a296f6b6bb4a0e51840b429716f0d57f88c1b0,1281532780,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryGenerator.java,test

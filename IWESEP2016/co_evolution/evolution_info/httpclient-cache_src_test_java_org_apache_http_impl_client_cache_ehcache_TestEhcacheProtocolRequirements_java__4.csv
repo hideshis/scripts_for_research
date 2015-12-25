@@ -1,0 +1,36 @@
+2112061b160afab528e9676d47cd445b9afa386c,1282392555,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+e664fa132f8a5eb35c34fcd906f17dfe60e8b6ce,1282939077,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+65528c02ecd549030eaececc88ddc74ad8174360,1287230642,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+6b539c8c86eff4d73446c7d100c71624842f3746,1287519436,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+c76574f9476acab626f711ff966aee65a35d3845,1287784065,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+31590950b5a891859b6f42ea6f4aa5343978e757,1288800287,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+3f3dc38dbb210acc088e3c1fcb12b82143215659,1292531387,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+83efe306fdce960129a05052e2580a601dfae1ef,1292588150,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+6b723dd61ef7f47a54493dcc59d8ae891514774f,1294673737,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+3c0bc58a3050e774098749178239a891f72cc613,1294766900,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+72a41afd5e8f5381822673b2d45fd46ff65bdb60,1316363573,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+72a41afd5e8f5381822673b2d45fd46ff65bdb60,1316363573,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+fcd02a0a18c3404e338c0749d2f29dec21fe7df7,1354996764,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+38e6a997fcfe438701dbd0fe3e582e96ab00659f,1356022601,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+8155bab28dd2bb2ba839c2275081ddb4616f390e,1357312950,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+2ea3298894fac8992bcf17819f1e8274fdefba42,1358351684,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+908b81dd5adabedeb706674ab2ecc203e954e01a,1370553904,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+b7b4ef91a4847a75836187443dc742e83401e23d,1377878497,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+85a99b22e4adb94822596d972dde5e8a6f846898,1383147081,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+eddeaa64e6449ecb720a467dd0dc172de76a284c,1393260594,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtocolRequirements.java,test
+fb374dab5fae52c52db534b1714880d98dbca084,1408633744,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+224711a6d1ce61a93002250ec10a8465bcfd4895,1408635859,Gary D. Gregory,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+2883531e92f710a43d7fd04f500d7351f22c9e20,1415373783,Francois-Xavier Bonnet,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+0cedb7c8cc8a06819bd8c094071c04a628ab6f57,1415483232,Francois-Xavier Bonnet,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java,production

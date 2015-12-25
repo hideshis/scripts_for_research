@@ -1,0 +1,16 @@
+e2520f85097f94fb42f30f0c6dfaacbc55bc923f,1238412873,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+a23c18ac1ec689c2053a6186d053e816b0e5dc9a,1239652405,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+c922b95f7113280d4a230d2dc524766786c91da2,1271182945,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+9a4d4f8bddbc68c1fabc572db0886bbf3d97985a,1291990554,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+50906f44e362728ce46575c11fcf171127260982,1291996541,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+74581924ccd16eb670f2dad9a219c318e9b92989,1292020867,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+dd90fe4685e202f5c767cf856512e788f32748e1,1311091365,Jonathan Moore,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+9b97410b844f58af9c021521c875bfe9133acd83,1312800670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/localserver/BasicServerTestBase.java,test

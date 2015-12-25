@@ -1,4 +1,0 @@
-549cb86b5a40b106c4fe0779a9e870dce5276e79,1201888319,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartFormHttpEntity.java,test
-0be7a714d37b527d0cb4510e81d17de571051729,1202146044,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/client/mime/content/InputStreamBody.java,production
-0be7a714d37b527d0cb4510e81d17de571051729,1202146044,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/client/mime/content/StringBody.java,production
-0be7a714d37b527d0cb4510e81d17de571051729,1202146044,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/client/mime/TestMultipartFormHttpEntity.java,test

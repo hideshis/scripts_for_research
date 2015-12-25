@@ -1,0 +1,13 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+379e2a6bfbbcd029efd3eafc56522d2ac5c6c58d,1271270717,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java,production
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+4c24320359c8b044bbf114bc3bae6c5a717ed448,1292970239,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java,production
+84d4b9e2acf1a2afab30843f840177b8b2bc16e1,1350226511,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+f596896b324d36e540d8ccac6f860d7ae24a396a,1371762563,Karl Wright,httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java,production
+9056303b5cd3e7d9f3424e1ea0719224de40543a,1371817738,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test

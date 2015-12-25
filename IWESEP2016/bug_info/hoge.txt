@@ -1,0 +1,42 @@
+tag _BUG-1001-449-479
+Tagger: hideshis <hideshis1990@gmail.com>
+Date:   Fri Dec 25 11:19:44 2015 +0900
+
+@@httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java@@httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CachedResponseSuitabilityChecker.java@@httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntryUpdater.java@@@@
+
+commit 83c2c001091e6b5d15dc887e08e778b80328d9f4
+Author: Oleg Kalnichevski <olegk@apache.org>
+Date:   Wed Aug 18 19:15:43 2010 +0000
+
+    HTTPCLIENT-979: cache entry resource management extracted from CachingHttpClient
+    Contributed by Jonathan Moore <jonathan_moore at comcast.com>
+    
+    
+    git-svn-id: https://svn.apache.org/repos/asf/httpcomponents/httpclient/trunk@986864 13f79535-47bb-0310-9956-ffa450edef68
+
+httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCache.java
+httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheStorage.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/BasicHttpCache.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/BasicHttpCacheStorage.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheConfig.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CacheInvalidator.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCache.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/SizeLimitedResponseReader.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ehcache/EhcacheHttpCache.java
+httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ehcache/EhcacheHttpCacheStorage.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/CacheEntry.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/DoNotTestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/HttpTestUtils.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/SimpleHttpCacheStorage.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestBasicHttpCache.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheInvalidator.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCachingHttpClient.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestProtocolDeviations.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestResponseCache.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestSizeLimitedResponseReader.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheHttpCache.java
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtcolRequirements.java

@@ -1,0 +1,13 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+hoge,1272661208,hoge,hoge,bug
+529a3e67fcc9ebe92fbc9509a56cb20c01c59bf5,1272665918,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+8e89d40f37c03494f624e02e159e866a33010091,1272671930,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+80415614f796ff91ca625366c765d8b245e8cceb,1272728729,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test
+hoge,1273176142,hoge,hoge,bug
+6f23db2533224e3fe726939537557e4243b9bf1e,1273181420,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+f749748401d203706923d28068d4fa7c27616b05,1273240393,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheInvalidator.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheInvalidator.java,test

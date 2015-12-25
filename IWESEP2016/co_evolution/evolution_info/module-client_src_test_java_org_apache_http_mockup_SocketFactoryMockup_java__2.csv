@@ -1,0 +1,9 @@
+cca8a23380720be493acb7e6222ec4c1972451b3,1182085694,Roland Weber,module-client/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,test
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,test
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,test
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/SocketFactory.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,test

@@ -1,0 +1,12 @@
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpUriRequest.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+205258b1f9982a34d8d074e647ebc3dee12ec667,1389794484,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+c76412a8390431e8a5fb8aee4fb363d587e534dd,1408630799,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpUriRequest.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpUriRequest.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpUriRequest.java,production
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test

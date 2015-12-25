@@ -1,0 +1,15 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+ecefd447fd6837fde2a13cac5ffc3a11b75f9ea9,1181493704,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+0f0128450bef7e0fb715f44a155d544f02c29097,1182099721,Roland Weber,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+6d36b3aa06a12b39ec1d610da46a754da830dea7,1185108847,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+3c5e2e64912c938481e740c59a293193dcfc93a9,1185128389,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+3c5e2e64912c938481e740c59a293193dcfc93a9,1185128389,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+8325bfe2d12b9c3d42a960a454490f9fccd5ff06,1188894029,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+8325bfe2d12b9c3d42a960a454490f9fccd5ff06,1188894029,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+1ccb1cfc277e9f670d33f2702d592c1d46ebe138,1190458978,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+aff60e46290f46caf16c7be7de196425c4fbef94,1209811168,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+15a027f427d1c20ad61f85c59b9f1a032799bf33,1216891350,Ortwin Glueck,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test
+eec7461bed7771d0f1bebb1e516a2ba01fcce4d5,1234735851,Sebastian Bazley,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/impl/cookie/BasicPathHandler.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestBasicCookieAttribHandlers.java,test

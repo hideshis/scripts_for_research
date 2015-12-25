@@ -1,0 +1,26 @@
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+2c1d3f797adeb49c9a18bce0d10bb9a406e4d7fc,1354109801,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+fd5cab185b9a47355031249b5d709aa8e5bf4c5e,1362822393,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+dc3b8d47fb4b727c700f70ceab6237d67ce30e4b,1371300656,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+fc8df4ef2a23b9960010446c95680b2cebc9b91b,1375288175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+6bcb8e0b5f3026acd900a6e0d1015141568b0074,1376036661,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+23f6255cd735f81bc89a3b6376468b2ad83a0c98,1376048263,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+25d95561b27cab5e97ef46fa0aaf7043f61613be,1376061748,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+64ca74933b7ee34c44d3a4328e44753461987741,1376147382,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+7e162182b39a8b80531828796e9a7c1be6604dae,1393266265,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestBasicHttpClientConnectionManager.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production

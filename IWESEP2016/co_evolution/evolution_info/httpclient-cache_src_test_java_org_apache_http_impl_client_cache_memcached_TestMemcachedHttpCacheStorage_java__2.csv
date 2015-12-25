@@ -1,0 +1,19 @@
+aeffde46e6168a796df484c431cad85628859c4c,1283980625,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+868e46fd5bed08cf97cb0305e45530908f9ce771,1294284214,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+ca41afb97ef8bbc9df5e7ffd243e3e01a559298a,1294437714,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+6b723dd61ef7f47a54493dcc59d8ae891514774f,1294673737,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCacheEntrySerializer.java,production
+58036bc594022413b6a99b4906c560fd27e1cac0,1326305570,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+e1395539dedd186fe82519357881e3b336f7125e,1352256444,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+fcd02a0a18c3404e338c0749d2f29dec21fe7df7,1354996764,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test
+95754d776c167f0442e2a5d28750345db0946b3c,1424695367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedHttpCacheStorage.java,test

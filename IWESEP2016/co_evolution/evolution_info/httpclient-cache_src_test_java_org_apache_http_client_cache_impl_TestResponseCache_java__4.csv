@@ -1,0 +1,8 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java,test
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java,production
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java,test
+a85de755815fee165b8e451140d122463d2dc6c5,1273182236,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java,production
+f749748401d203706923d28068d4fa7c27616b05,1273240393,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/CacheEntry.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCache.java,test

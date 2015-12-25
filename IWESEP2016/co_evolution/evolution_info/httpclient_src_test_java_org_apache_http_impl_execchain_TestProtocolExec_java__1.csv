@@ -1,0 +1,16 @@
+d73f4c1b384066956b5ed74d7891937e3094675f,1361522196,Francois-Xavier Bonnet,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+553e7dd3206aafa4aa8f009ddff53fdd243cfb45,1376048285,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+fe84b2934cff8149bc6b59a6d381a230aeefcea4,1389711419,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+47e6f4590b1d50b474bf2df482745f417dcf2ad3,1392299903,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+78198edcbd5a88b6ed920226ea290851a3eedbbd,1393272314,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+d85679d2a1ea541e0484151970f53a0657e3262c,1426107251,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestProtocolExec.java,test

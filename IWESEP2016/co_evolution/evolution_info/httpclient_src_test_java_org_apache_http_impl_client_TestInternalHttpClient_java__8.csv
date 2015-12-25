@@ -1,0 +1,22 @@
+de45d141cb72b699f1c5129d0bd4ec01fd2da30d,1356973490,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+5fbe5ea46d8eb4182af1279ca50e4c301eccaf65,1360749084,Francois-Xavier Bonnet,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+f4447aef19cb7f9230972997876547ae22d1c9d0,1360763329,Francois-Xavier Bonnet,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+68a101475a9323126587c72995bec6f265d35fa1,1369565988,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+715a34c86039f5e56f7239a3f88c8ec5c7aec890,1390582965,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+c79ccfe755f36e69ba4279bd22b048f68caa2d83,1393276426,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+cd1f9fc9f787d90b90ed2a099483a89c1e6342b0,1397559229,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+ad092c5d03e9a000c4883272a205901f336b06cb,1403164361,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+d9cc6c8879edc266b81b199d25ee877168b76b7e,1403897409,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+1eb2553ddb1f48566da998ef8996990f247174b1,1433403658,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/methods/HttpRequestWrapper.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestInternalHttpClient.java,test

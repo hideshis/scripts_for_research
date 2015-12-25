@@ -1,0 +1,24 @@
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+639cc93c56729d9ca49d417a65d3b83b15de7749,1349349599,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+8dccdcc7c886ef8fb992c83159217b6cdc66138f,1354109658,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/params/AuthPNames.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+4e50149ac6a46437331d1511b998e09e9ab4bf75,1357909908,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/params/AuthPNames.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+0490cdd6797497c63e328f22d355cbbf3275c89d,1403543875,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+41afff3f2a3cf263343fb323edd9f902547a7462,1403545790,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/params/AuthPNames.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientReauthentication.java,test

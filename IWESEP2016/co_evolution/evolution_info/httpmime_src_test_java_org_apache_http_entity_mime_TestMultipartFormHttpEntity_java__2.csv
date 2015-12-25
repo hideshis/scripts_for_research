@@ -1,0 +1,29 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+9940cb59824d5b1d6400890b818a4bfeb38f810e,1236347450,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+d2a63269e513ca846f95aa40207f57f325187998,1237428015,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+d2b10048b926c8337b9d1d1b7a23a92d3ab94d77,1252099337,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+379e2a6bfbbcd029efd3eafc56522d2ac5c6c58d,1271270717,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+379e2a6bfbbcd029efd3eafc56522d2ac5c6c58d,1271270717,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+4eec65b378c661ef25b22328c2fa6ae5092e5558,1292545680,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+820817d0b85671de5db3259ee5be6693d60ee0bd,1292551938,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+d012c1041ca09fc42dfe9ee6b320473304c3b6f1,1292554155,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+7bd182d4816eeb71d45bea7b15f71ae1e33c9aab,1292970345,Sebastian Bazley,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+84d4b9e2acf1a2afab30843f840177b8b2bc16e1,1350226511,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+84d4b9e2acf1a2afab30843f840177b8b2bc16e1,1350226511,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+74213fa41965b051d0e571cf842ed66630cfeee7,1371722373,Karl Wright,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+1dd6b903748a994f34f11998d6c5ba2dbc8d9810,1371755193,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+9056303b5cd3e7d9f3424e1ea0719224de40543a,1371817738,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+9056303b5cd3e7d9f3424e1ea0719224de40543a,1371817738,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,test
+47f900a03f60e049d39a5a3e349a7ef0dccb225b,1371996442,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java,production

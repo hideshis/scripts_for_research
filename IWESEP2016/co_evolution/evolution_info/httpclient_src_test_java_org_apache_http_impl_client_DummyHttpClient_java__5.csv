@@ -1,0 +1,7 @@
+54c7e992fbd6df5e102fe97558f90355f0d5342d,1331830927,Jonathan Moore,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+ae4ebcc630c777f79c942264a45b41956cf8fe24,1337172062,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/ClientConnectionManager.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test
+e7d9978f266ea84e7677f9dc7097c3d370b59e7c,1374930997,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/DummyHttpClient.java,test

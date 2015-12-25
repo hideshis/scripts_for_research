@@ -1,0 +1,17 @@
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+5f64a941921ade09c68e942460e57e817e5fb3d3,1179746444,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+1bbbd79a8c59eda876d45ebf4129188a7cbbfa35,1187688477,Roland Weber,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+f4d2074d1e6febf8b291ad857cc25dddf15e08a7,1197458700,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+2cc2818642a7770f8cb2675698f58411c73e9cde,1201810452,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+2b96bbd67851169687d0d3ac39186de57434ccc6,1209691719,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+aff60e46290f46caf16c7be7de196425c4fbef94,1209811168,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+b418ac5e2cf6d669faf54ca3afe31c4b0a5afaa2,1210097559,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+db8947ac504b9ba9be4399a92ebb7b25b2750a76,1211317467,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+e434f1367a4e591dfaf116a9e060d5d50dec4a90,1225206685,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test
+56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/auth/UsernamePasswordCredentials.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/auth/TestDigestScheme.java,test

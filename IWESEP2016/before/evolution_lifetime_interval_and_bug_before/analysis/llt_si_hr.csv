@@ -1,0 +1,11 @@
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/DoNotTestProtocolRequirements.java,0.23529411764705882,940,8.0,dead,0.5744680851063829,1,1273695087,1354996764
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,0.1111111111111111,1433,18.5,arrive,0.0104675505931612,2,1326820334,1450672231
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,0.125,1433,16.5,arrive,0.0,1,1326836108,1450672231
+httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,0.18181818181818182,1756,30.0,arrive,0.0,1,1298923071,1450672232
+httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,0.10680909790816911,1756,18.0,arrive,0.1366742596810934,4,1298923071,1450672233
+httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,0.20579710144927535,1616,10.5,arrive,0.0061881188118811875,3,1311005624,1450672235
+httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultProxyRoutePlanner.java,0.11241883116883117,1077,8.0,arrive,0.06963788300835655,4,1357582955,1450672240
+httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultRoutePlanner.java,0.11747994652406417,1117,24.0,arrive,0.09400179051029543,4,1354109971,1450672240
+httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestConnPoolByRoute.java,0.10033066668696464,1343,26.5,dead,0.1563663440059568,8,1235925412,1352014670
+httpclient/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,0.18137254901960786,1621,28.0,dead,0.0431832202344232,3,1235925412,1376061718
+httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartForm.java,0.12469977243347136,2485,27.0,arrive,0.22535211267605634,6,1235925412,1450672245

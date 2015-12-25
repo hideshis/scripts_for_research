@@ -1,0 +1,6 @@
+b1b85307a8b2d756eac772a5dfc1e6b74b90beac,1317904391,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test
+7f04b88f12965175b9961b0442a2d03502d91e3c,1318256887,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+93296a4779f794dc61d60cf60346e283a4c41a71,1336233225,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/DefaultHttpClient.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/conn/TestAbortHandling.java,test

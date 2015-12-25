@@ -1,0 +1,10 @@
+a5df9fe83ca3c011b15215941dd0bb4a541eb219,1298643283,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+e9f6856f4ea2ab028cbf68e51706e387fd7adfd2,1299185992,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+70a34914ba6b78b7ff671468259094267a2c14c6,1316965767,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthProtocolState.java,production
+c514ac2a4cd66f2a88ec84c6021afb318cabfbad,1317128746,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthProtocolState.java,production
+0cad2defa7544af60c377d4af3a6738a3d56b3c0,1317410175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test
+3c26d6ff4199afc81933aa27852f81783696e699,1352014723,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestProxyAuthentication.java,test

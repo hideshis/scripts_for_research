@@ -1,0 +1,42 @@
+55d9c6f161b50c152fb31f77054022101acb8a7b,1247779838,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+ba748bf20c5061d005bbb1044d8e908164fa95c8,1270318600,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+261fb7d7db622a1912524fe167412da7eb6fe588,1293644136,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+dafdf43025e5f701b16eada2780c1454afb072ad,1293700200,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+8162b91e3ce044208a05b777c8bef0fe4fbbd196,1299510543,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+d87d45a618d864b18a534633cf938f29453e350d,1329233058,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+647e4dc314876a103dcd136447b64db137c6ba28,1329235922,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+be6347aef0f7450133017b775113a8f3fadd2f1c,1333999115,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+ddde53711c2fed5c852086412bb064fae05c9d43,1340051279,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+21471f848656491a1500b921a020b745cddc7d95,1340581729,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+b4d78c4d692f87ae1fd1e8a4cefa46e235ba9cc1,1340585971,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+6ceddc02e0df39020e87b45594363e46e2d61fc6,1357592795,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+600c19f5c53f7f92026129ee546c61909381c6ef,1368695591,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+29ffce391c9426e208bab512de0dae24948c479e,1368788514,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+a679b4f4ec5af8ca52ae23b05929932f80ea2298,1368803635,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+26ee6689f3019aac7e784c93c6d14a78acff70e6,1369753711,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+eeaec64f5c5646e03af10b553fa950171f63130c,1369818294,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+d917eec043d0d3388904d1cb456e58255bfa879d,1369818337,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+bcabf224b805f805bf7f7817f134cf65ad2a793f,1370265395,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+2d17d461bba8e23a9f29c9746c5956c2cdcb6b77,1375959406,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+71ef6682589e7c0ae5b59dacf4120f104ea63973,1376422728,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+089daca602dcdcd91c7ab958e6f1572b4b8eface,1376655207,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+9cc7c1acecb5ce7af867718f0d1933b3bdf3c3f1,1385629024,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+b40661e45ec12fb1c7ef52b1891a9b677331f48d,1398850372,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+683bb070fdbfecec4521fe7efac7a8d03a3cc309,1408186295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+061f150ab1871d91271e9b963ab5b921fed289ee,1410869264,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+bf0844103a9305d4e1ecc65a7600462d97258e38,1429353075,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/utils/TestURIUtils.java,test
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/protocol/HttpClientContext.java,production

@@ -1,0 +1,13 @@
+6b0fdc74cc50bddf908a0cf7e90ef7c317f76bce,1373119963,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+f17ef0ad1159c60933ba41adb927839f238d8fc3,1373119975,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+bb902afa4fb4b6575e500c965c31cabf82791ec1,1373192433,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+9385b90c0a1dbeb3988b2bac412143a291a65f7c,1373196546,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+b524b797c417ad36cd5dee1730fc444552a65752,1373275730,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/NTCredentials.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/NTCredentials.java,production
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+724a33a1a117ee2850f513d60e721048e1eb2a95,1435161953,Karl Wright,httpclient/src/main/java/org/apache/http/auth/NTCredentials.java,production
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/NTCredentials.java,production
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+8c17af907aeda0d0209d80c7fccf0ba25b58ef69,1439990996,Michael Osipov,httpclient/src/main/java/org/apache/http/auth/NTCredentials.java,production

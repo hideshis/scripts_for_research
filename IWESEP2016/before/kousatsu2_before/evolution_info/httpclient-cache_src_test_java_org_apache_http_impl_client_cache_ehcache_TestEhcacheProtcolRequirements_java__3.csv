@@ -1,0 +1,20 @@
+6956d4ffc8be7b203f6693054b69003b2d891827,1281898292,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtcolRequirements.java,test
+83c2c001091e6b5d15dc887e08e778b80328d9f4,1282158943,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+83c2c001091e6b5d15dc887e08e778b80328d9f4,1282158943,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtcolRequirements.java,test
+hoge,1282158943,hoge,hoge,bug
+f279d8c37de8921f0521c442b05eb99e0a6a36e5,1282246623,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+02bb1461d8184ccb4126bd127305660bf95e918f,1282937718,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+b368f909139a15f25bbe1b765903695681dda4c7,1283461688,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+hoge,1283461688,hoge,hoge,bug
+hoge,1283803012,hoge,hoge,bug
+hoge,1283888469,hoge,hoge,bug
+18d3966ed820684bde6032039dfc0bcc08a78415,1283978097,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+hoge,1283978097,hoge,hoge,bug
+d78939ec1a4a13effbf64acc69b65cbf88fecdfc,1283978671,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+hoge,1283978671,hoge,hoge,bug
+hoge,1284404719,hoge,hoge,bug
+c3e43de4f1ef65d2d1c6caf403c501ef0f4f57fe,1284580841,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+hoge,1284580841,hoge,hoge,bug
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClient.java,production
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/ehcache/TestEhcacheProtcolRequirements.java,test
+hoge,1285167164,hoge,hoge,bug

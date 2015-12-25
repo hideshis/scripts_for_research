@@ -1,0 +1,10 @@
+78856ca1b1a950c677c7a09d139e8f8c7b66e30f,1352014670,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+205258b1f9982a34d8d074e647ebc3dee12ec667,1389794484,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/IdleConnectionEvictor.java,production
+5a192e2bf46bc749d8771a6f16cd40bc34146f24,1417956139,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestIdleConnectionEviction.java,test
+8378e1b6440614d1e9fd75f30f556d8b966862f6,1440626944,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/client/IdleConnectionEvictor.java,production

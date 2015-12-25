@@ -1,0 +1,14 @@
+6ae3bb8bc81aa0c361f5fce2c6983c5fcf35ce06,1317476497,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+430c3d530e1e68c367ef6bc02187beeae99445c4,1317998140,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+732095943fed4ee49ddda668c6ba77e60774d125,1318444395,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+64e56ef29c390a40a3464ca3bb2b15523358992c,1327501057,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+3c26d6ff4199afc81933aa27852f81783696e699,1352014723,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+b28ec1bf3d083c693da5e05a35c07cbde967fd74,1352338366,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestHttpAuthenticator.java,test

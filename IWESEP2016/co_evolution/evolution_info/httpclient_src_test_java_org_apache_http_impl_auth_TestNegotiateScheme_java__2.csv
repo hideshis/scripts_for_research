@@ -1,0 +1,12 @@
+c7f3b744e6753f7d696843f37ba037a160e97738,1273610186,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+13f31eb2dbeee32367558692ee9ab0a59d7b2d14,1273689197,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+5edc70cd285ad58f3da063c0188c71eb58c65bd5,1274653244,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+bd15468e72f0eb4dff4ccfe13e2d6cc523273156,1274716216,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+30abf15ba6d2d38e99a34a89063d182a7e29bbd1,1283198506,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+4580b4f73300ea5e0f7d36d121fbb8ffa70c3c48,1291896163,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+f4ef817d255ecb471b4a6c5aed66dfd87329f355,1297258953,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+51ef77e7f22149809cbe0b24c011a1c0c36b0722,1298635996,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+73e6ca8bb80119eea448019535bba3c33a6d2e66,1299617653,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test
+9867254c972ef5e73afedfd54a65d585b088a203,1326976431,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestNegotiateScheme.java,test

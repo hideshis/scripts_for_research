@@ -1,0 +1,31 @@
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+e9f6856f4ea2ab028cbf68e51706e387fd7adfd2,1299185992,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+73e6ca8bb80119eea448019535bba3c33a6d2e66,1299617653,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+73e6ca8bb80119eea448019535bba3c33a6d2e66,1299617653,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+444c6bf0e877d9c8be19e1f262f3a81178b5929b,1312982120,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+e41274c27df82d8d599d0f39dcf7e8801b8a5e05,1318272097,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+60f072453348557fc36663ce843b445467f6226e,1392299889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+47e6f4590b1d50b474bf2df482745f417dcf2ad3,1392299903,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+3524ca42aca230b31ff2bc1ba5927c97dafe32c2,1393260397,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+78198edcbd5a88b6ed920226ea290851a3eedbbd,1393272314,Sebastian Bazley,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+dc0642e0941b091e9877a451076d8d07bf369527,1402575163,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+5a851c7f0d2044dd8f763d963ff744a2cf525320,1408634492,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+d85679d2a1ea541e0484151970f53a0657e3262c,1426107251,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthScope.java,production
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test

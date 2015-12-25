@@ -1,0 +1,30 @@
+b8c1bb05cc4251a4b4620264203663d0c55aaf4d,1280493270,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+911350a0c2778f180b49b9fea89f745a59086101,1280778533,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+7c8a1fdf5b0ced3b4866bab477fdf26ddfecd00e,1280778952,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+6f2036bde285b5f65ea4270bbf2d1f5aed8ef73c,1281517145,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+83c2c001091e6b5d15dc887e08e778b80328d9f4,1282158943,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCache.java,production
+83c2c001091e6b5d15dc887e08e778b80328d9f4,1282158943,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+e82184af366fb7a5fc73938c832d5327c0eb89f2,1285167164,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+804359f1ab4472971cf785f0a9880129320381e1,1286306682,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCache.java,production
+6892f58f2c88f8da565e6c6549cf0ee07b8303bd,1287171798,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCache.java,production
+6892f58f2c88f8da565e6c6549cf0ee07b8303bd,1287171798,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+65528c02ecd549030eaececc88ddc74ad8174360,1287230642,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/HttpCache.java,production
+65528c02ecd549030eaececc88ddc74ad8174360,1287230642,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+bb9ad833c162b23df437020c2108d1c189b7e82a,1289767367,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+618754b6a9be418ad6afee99c0400cc5d0573d43,1292241336,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+477fdb1a3c633acbccf822b7cebed66227f9453c,1292325156,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+856c1c28ad9c4af28e9375eba336747df8f9c428,1293376239,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+e5ea32b76d6fd40e62b62dbccc4ed9070a860a4b,1316362820,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+72a41afd5e8f5381822673b2d45fd46ff65bdb60,1316363573,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+43d4e8f46951d30d85b744897b7e9a3dece32857,1349710010,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+0edf06281fdf20afc3ab1ff31daca98dfca5ee90,1354552467,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+9aea057953293a522d3ba9e0fef5ab61ca69784b,1354703686,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+fcd02a0a18c3404e338c0749d2f29dec21fe7df7,1354996764,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+594f24cf0512a2ed6dafdd0912bbb63b703cefb3,1371671402,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+6bb9398b3994325ddebc745d6988337709de98da,1382436616,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+8acc3ad661ebbd7de117959c983720b9a3ef68ec,1388132283,Francois-Xavier Bonnet,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+eddeaa64e6449ecb720a467dd0dc172de76a284c,1393260594,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test
+1964e9530a0a42c24787c3c1c2ab1f8335843d52,1415718588,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/AbstractProtocolTest.java,test

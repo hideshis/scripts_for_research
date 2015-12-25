@@ -1,0 +1,9 @@
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/URIExtractor.java,production
+283bba855f5ae2b34d2806ac5b8b2a0e00f3a7c6,1272661208,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestURIExtractor.java,test
+hoge,1272661208,hoge,hoge,bug
+c44b15f1990e7733993c470d685c7fb9cea55f2f,1272661403,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/URIExtractor.java,production
+df4e1924f66bc528748b3ac917d546e6f07a7d25,1272667423,Sebastian Bazley,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestURIExtractor.java,test
+8e89d40f37c03494f624e02e159e866a33010091,1272671930,Sebastian Bazley,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/URIExtractor.java,production
+1d1df0174da000cf99de4d381d7bb6ba0f9d6dc5,1273176142,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestURIExtractor.java,test
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/impl/URIExtractor.java,production
+3d4349f44f3e5ebbaf776133d506e1d27173c508,1273695087,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestURIExtractor.java,test

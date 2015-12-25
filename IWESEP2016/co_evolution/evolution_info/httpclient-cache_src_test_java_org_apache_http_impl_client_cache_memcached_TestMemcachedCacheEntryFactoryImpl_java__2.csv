@@ -1,0 +1,7 @@
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/MemcachedCacheEntry.java,production
+d47c30baaeaf7b3a76def41ef0f93f9c29fc4dde,1326820334,Jonathan Moore,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryFactoryImpl.java,test
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/main/java/org/apache/http/client/cache/memcached/MemcachedCacheEntry.java,production
+10f6da691eda115aa8dc96d8516b4a742a694899,1328213830,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryFactoryImpl.java,test
+e7ab117ea51cf1e64a89622113dea29509f9e832,1328465822,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryFactoryImpl.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryFactoryImpl.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryFactoryImpl.java,test

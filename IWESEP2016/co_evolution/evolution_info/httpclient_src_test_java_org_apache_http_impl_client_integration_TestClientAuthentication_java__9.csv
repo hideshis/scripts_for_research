@@ -1,0 +1,29 @@
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+639cc93c56729d9ca49d417a65d3b83b15de7749,1349349599,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+0155befe4a7101562d3a6b67a0da6e3fb3b4709b,1352014800,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+8dccdcc7c886ef8fb992c83159217b6cdc66138f,1354109658,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+03769ceecc3143566a915bbc512cf15759622e48,1354457032,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+2aa1fc14004a1669d00d4d50aebb1ecabe5b3fa3,1355781102,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+4e50149ac6a46437331d1511b998e09e9ab4bf75,1357909908,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3a073e8ed8810610d9bf4d51a9b2930b4408332a,1358052573,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+e8c5d1bca41ca474379363f4c9a188de3073a8f7,1365849504,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+013d53a64f5c1ff799d1136cb6f56b00e9965a0a,1368713751,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+4ab2f9494a557f96d45892b13f260b5274fc9c58,1371738877,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+59b229079b3971e841cc47dbf477c9f15c236c61,1401996605,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+9e4c8332f83a74ab243e978ec3e2886a7a7200dd,1405863739,Gary D. Gregory,httpclient/src/main/java/org/apache/http/auth/MalformedChallengeException.java,production
+fb56b49465e9c58d00343df56ef3a7b01ec90513,1435402238,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+e7190e717756ffb71f20635bbe916b0dbcb23d1d,1437645613,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthentication.java,test

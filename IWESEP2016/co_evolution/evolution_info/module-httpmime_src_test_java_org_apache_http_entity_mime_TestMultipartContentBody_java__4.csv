@@ -1,0 +1,6 @@
+997d0e069421c75a855fd1a54742c6b890a88d30,1225473368,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/entity/mime/content/StringBody.java,production
+997d0e069421c75a855fd1a54742c6b890a88d30,1225473368,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartContentBody.java,test
+9806e2f5d06dbae68ccdd43e2dc7af7a57d74660,1234714732,Sebastian Bazley,module-httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartContentBody.java,test
+77ab335fb38c7b333f3fcdb784a6dda7f095f509,1234736230,Sebastian Bazley,module-httpmime/src/main/java/org/apache/http/entity/mime/content/StringBody.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-httpmime/src/main/java/org/apache/http/entity/mime/content/StringBody.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartContentBody.java,test

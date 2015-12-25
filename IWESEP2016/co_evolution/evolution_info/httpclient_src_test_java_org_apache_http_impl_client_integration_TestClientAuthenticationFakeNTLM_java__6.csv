@@ -1,0 +1,9 @@
+6b0fdc74cc50bddf908a0cf7e90ef7c317f76bce,1373119963,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+f17ef0ad1159c60933ba41adb927839f238d8fc3,1373119975,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+bb902afa4fb4b6575e500c965c31cabf82791ec1,1373192433,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+9385b90c0a1dbeb3988b2bac412143a291a65f7c,1373196546,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+b524b797c417ad36cd5dee1730fc444552a65752,1373275730,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+c0c92b814c1d27a35631612ba432067a08ab9165,1376936923,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/integration/TestClientAuthenticationFakeNTLM.java,test

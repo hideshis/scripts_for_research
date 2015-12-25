@@ -1,0 +1,40 @@
+9d55aee86fe41cc05708b84625997e73cdd06d61,1298923071,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+e9f6856f4ea2ab028cbf68e51706e387fd7adfd2,1299185992,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+73e6ca8bb80119eea448019535bba3c33a6d2e66,1299617653,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+1b08395e7268c5a85baaa8371cbfacaf6d93fe81,1313507616,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+e41274c27df82d8d599d0f39dcf7e8801b8a5e05,1318272097,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+4d1b15727275d9ada7fa462dfa12225357481e07,1318419954,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+64e56ef29c390a40a3464ca3bb2b15523358992c,1327501057,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+500434f2560c7fc04a5efa932690f64ed37939b3,1359119963,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+549a45b2f4512b0776849c584483a74863ba309b,1359129356,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+3524ca42aca230b31ff2bc1ba5927c97dafe32c2,1393260397,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+07e7a0c281c439b1ece7099cc24e0e763b33f5b0,1401973787,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+dc0642e0941b091e9877a451076d8d07bf369527,1402575163,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+0700b14d6af0615b9bdaffe40482b3fe05e4441d,1403192742,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+695d0028feaff093f34a744f7341e19db5311338,1438932832,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+697ccb314ed88bdfd9ed5c9b856523482e6c539d,1438932853,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+3b905dc69cd54dab837ea7ebe246e55bf65b58b8,1438932898,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+d09ae9707d6fbaad0ebccb0ae48fd87ce32dd98d,1439235849,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/protocol/TestRequestAuthCache.java,test
+fcaa920b938dfb3a07dcf87f018e515ff5308b6f,1439287138,Michael Osipov,httpclient/src/main/java/org/apache/http/impl/auth/BasicScheme.java,production

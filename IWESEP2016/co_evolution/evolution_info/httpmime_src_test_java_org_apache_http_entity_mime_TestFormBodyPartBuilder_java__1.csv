@@ -1,0 +1,5 @@
+978c67d3da4dc247eeb045f30abbab8b0a4d27ab,1419361425,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/content/FileBody.java,production
+978c67d3da4dc247eeb045f30abbab8b0a4d27ab,1419361425,Oleg Kalnichevski,httpmime/src/test/java/org/apache/http/entity/mime/TestFormBodyPartBuilder.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/content/FileBody.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/content/FileBody.java,production
+7d8ac569be11ffd52f6dcb03841319ffac1a77cd,1432736521,Oleg Kalnichevski,httpmime/src/main/java/org/apache/http/entity/mime/content/FileBody.java,production

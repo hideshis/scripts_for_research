@@ -1,0 +1,7 @@
+38761e7e46ef262841f2acaf6bcf40a17201230d,1202062488,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+608a6e67f3024c84ad490b9713dd5c73acbf3090,1208282273,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/scheme/SchemeRegistry.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test

@@ -1,0 +1,13 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+79c1aa0b5df7bb19e1874b7fa45d05c8fa8aea0f,1358961586,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+a544aef29e48065fb0ac28852d7d075f107e126a,1358961816,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+221e7ba59e90e0ae9cf685884cc40c2867049b00,1409159288,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+3cd94a86f3920738fac0ddf48b4a8a5617b58924,1409252889,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+195753c5621ec4e0a6c12a3edf4a7f2ba152a758,1409252905,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+2466424d5dd5780ed5e3829470b3935792732c73,1409839216,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+a0b31445afb3da5aa91822535ab23f5713162a5e,1424968560,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/util/PublicSuffixList.java,production
+64ce856b920fc47fef84876ad2be38190ac95357,1432485363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test
+e7d625f6046fa392f258f1a5b08d1400ec7e8e90,1443879979,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/cookie/TestPublicSuffixListParser.java,test

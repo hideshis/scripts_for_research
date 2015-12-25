@@ -1,0 +1,4 @@
+9867254c972ef5e73afedfd54a65d585b088a203,1326976431,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AuthPolicy.java,production
+9867254c972ef5e73afedfd54a65d585b088a203,1326976431,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestSPNegoScheme.java,test
+91250b2a890843d977c2c41abebc071e2d26c539,1337172105,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/params/AuthPolicy.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestSPNegoScheme.java,test

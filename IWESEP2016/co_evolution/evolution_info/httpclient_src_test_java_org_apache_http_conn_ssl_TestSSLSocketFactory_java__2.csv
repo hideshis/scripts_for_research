@@ -1,0 +1,61 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+fe0e5e96547ffd5de11587c4976efb9a1901357c,1237347427,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2520f85097f94fb42f30f0c6dfaacbc55bc923f,1238412873,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+cc297408f9f1060dc60ebf5cfd29ffcf8661fe64,1239890958,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+33de23c1025e6bc58d587d351ce0fdf6f9fdbe50,1251225479,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+5c9850a7a945a455b2225e4ae88bb9de99c96717,1256913304,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+0be39371e9b799a702cfa8f590563b47d861b9b3,1270233590,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+8de26bac03997f86230d3e0d3a08178588eff9f8,1270661295,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+c922b95f7113280d4a230d2dc524766786c91da2,1271182945,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+c7f3b744e6753f7d696843f37ba037a160e97738,1273610186,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+4b73b9c74e2b29a2b158dc1218eaf02f2ceadf29,1276611334,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+12e382daf9657adc3d2d02dd069153437a41ed9c,1276612831,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+74581924ccd16eb670f2dad9a219c318e9b92989,1292020867,Sebastian Bazley,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+eda06a75eec8f8d1a7adaf8141a96f8e0bdcb433,1293616442,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+04626cb5edc5620d886c7904af6dcc0d0e44f273,1316781091,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+39117086b38e9805f2b39e953d52ff018f293d39,1328447882,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+a8d2e5e5fa8481f0d0376c9af27a00f6adad1ebd,1336406771,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+2fa4b6b8541a1cd5649fd9c0d356b9bfc3e00a88,1344458113,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+7985a45e97633aeef643459aa8957fede44e9b28,1347442092,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+e2e564a1a198ed7cf7a6460f8bfb0a7f64b594f1,1354109971,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+d72e9b3ae73ca5ff7ee0d4a9e3355c4bcd103f38,1355847778,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+1db3da376e11db56b75b07e7dd32e40ce8079584,1356706137,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+917145dbd38bfce3630f1437c210ff3360d842f5,1358255521,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+3d34035b1749efb0e27a1d5089942d9c97148524,1358280490,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+53e3c07805821652c581becf5c96ea60903410c2,1366792949,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+e71b14d28c8e8d9edaab159dee7f0e0f41077a6f,1367606089,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+f08b21bdf14993c0cf2f0a09f29b07c492bea0f3,1367606757,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+b1c387e986c3e479972ab9b3639221eb7e7afa03,1370879569,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+eeba3e364dae5096125eac7c13419fa5256bee68,1371712732,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+4ab2f9494a557f96d45892b13f260b5274fc9c58,1371738877,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+834d5e66da703e38a5ee5bec4337b5c723749b72,1374940776,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+d9e2140b1260db86f8dc6c77e378733c0459f244,1380717698,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+92b7e8cd971868505d0f22ee5cfc12a68ee91b80,1385204944,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+594f2f4b62a9100ea49cff5bb978dbfb8c1f0f20,1390582925,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+2ebd8202849c1f4a17d4320543e315a46cbfdc10,1403096803,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+3269410866bf65da6c416827851a6ee3b57416d4,1403169473,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+4006d7e4f23dac62462995a3cf923eae662239e5,1403545589,Sebastian Bazley,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+41afff3f2a3cf263343fb323edd9f902547a7462,1403545790,Sebastian Bazley,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+f5bf414adcbeef7c7eb2c2d70ce2fcc594e6f955,1407506455,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+4007c05f9bdfcece4c770a32d2e5e96c970cdf4a,1408630292,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+5e2d999c0bd7085ebc4f712ad4060b8d7dd17a99,1408633009,Gary D. Gregory,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+4c9577a08f614b1e981933c1b083ddb8fef33d8c,1413057693,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+2c0bf9ac102f394d3eb5f33a467fa8d013790ef2,1413135788,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+8a7586336d43fd0d5a1cc7f43555e6cd87a9ef3a,1413140133,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+f6fed403face7383279ae520ef3f585bb33ee7d7,1413140716,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+114a5bf4abe976daabd12b6c118c4fb70857c8bb,1413746456,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+213d5b1871d6187dd74fe994ea2cb2c163eba1ef,1423397286,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test
+b29c819645a404a064f022d5a75d8597985f6fac,1432476763,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/conn/scheme/Scheme.java,production
+3b5990e36343fb23daa76f158acbb032b0ca5783,1432477466,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/conn/ssl/TestSSLSocketFactory.java,test

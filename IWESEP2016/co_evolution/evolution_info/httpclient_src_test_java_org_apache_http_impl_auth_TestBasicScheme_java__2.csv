@@ -1,0 +1,19 @@
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+842a75050917d1877991fbb0ef20283d40620dd0,1247512608,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+7c2cc42b1faece97496f8d54888e00339535d729,1255184278,Sebastian Bazley,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+4defb0689ff6f16777301aae4c26929b40c78762,1272050363,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+160af55cb16e942f4519cba54318914a0c975106,1272391328,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+1b08395e7268c5a85baaa8371cbfacaf6d93fe81,1313507616,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+20de472dd741702db57414465b44a7e3ddf67a3a,1352382384,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+73dc5eebfd0eefeb79a80f8b8c9b4c4fdaca8e73,1354110306,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+1c322eb843f4dd27220db3b08895acd91dcadf00,1356705374,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+07e7a0c281c439b1ece7099cc24e0e763b33f5b0,1401973787,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+5f9f55df1609f940be51e62e30edc2670319758f,1422266592,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+8fc08b322e49ec0ed13d7de2ac22dbf421b83da0,1432279441,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+11612ab974aeaf32b09a0691fb361f2a5cea81a0,1435402253,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthChallenge.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/auth/AuthChallenge.java,production
+2f66271de984350eb52cd9a0bf51d2d54dbb1ef9,1436017360,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+fe175a845a970f7495a01102e7a10a68f88a7dc3,1436017400,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+d3bcbedec7254b909ba0ebdaa77f03df2e04cb21,1437645646,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test
+2e080356cdbeebb1a52e3e91a930952aa809470b,1439235875,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/auth/TestBasicScheme.java,test

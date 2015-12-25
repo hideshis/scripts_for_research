@@ -1,0 +1,8 @@
+50179d9081f7b1e2f264bdd28fd9a424358d84bd,1191513230,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test
+34d72d935ee64fc291684e4b67524c9d55755c9a,1197458275,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test
+988bfe0b82378baea5642148e559517e348832bc,1225123707,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test
+379a83514a278b2d54dcdf1797078874e23215d2,1225283517,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/cookie/MalformedCookieException.java,production
+9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/cookie/MalformedCookieException.java,production
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/cookie/TestCookieRFC2965Spec.java,test

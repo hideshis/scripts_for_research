@@ -1,0 +1,6 @@
+38761e7e46ef262841f2acaf6bcf40a17201230d,1202062488,Roland Weber,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+aa020a5c0d06627716411f6acbfea8f5c77061c9,1202334066,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/PlainSocketFactory.java,production
+b055442d4b15e8fd411a7ae46b9fdbb1d0814e5b,1204144835,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/PlainSocketFactory.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/PlainSocketFactory.java,production
+47eff4157edfdd8dc0a5e358e21f8c1f7c4a5ae3,1207652932,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test
+c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,test

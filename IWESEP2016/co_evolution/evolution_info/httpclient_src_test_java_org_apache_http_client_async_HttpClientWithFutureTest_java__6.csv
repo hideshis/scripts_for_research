@@ -1,0 +1,6 @@
+5cd571a159bd103a2a26d1eb1aa7efab80d74e1e,1359991729,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+d9de7f7c962b73a2d919bcb89a13eb204f2cdfe2,1360542734,Sebastian Bazley,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+458575bf59400ad534d70793d1bd9d9ab2e259a1,1364477406,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+458575bf59400ad534d70793d1bd9d9ab2e259a1,1364477406,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/impl/client/HttpClients.java,production
+0373fbed65c13cbe932a812df8b47be3bd493899,1364898175,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/client/async/HttpClientWithFutureTest.java,test
