@@ -2,6 +2,7 @@ library(ggplot2)
 hoge <- read.csv("test.csv", header = F)
 ggplot(hoge, aes(y=hoge$data, x=hoge$time)) + geom_point() + xlab("unix time") + ylab("type of data")
 
+library(ggplot2)
 library(grid)
 hoge1 <- read.csv("module-client_src_test_java_org_apache_http_conn_TestScheme_java__4.csv", header = F)
 a <- ggplot(hoge1, aes(y=hoge1$V5, x=hoge1$V2)) + geom_point() + xlab("unix time") + ylab("type of data") + ggtitle("example 1")

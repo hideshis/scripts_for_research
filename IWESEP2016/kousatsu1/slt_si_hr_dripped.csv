@@ -1,0 +1,10 @@
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestResponseCachingPolicy.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestSizeLimitedResponseReader.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntryGenerator.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntry.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/DoNotTestProtocolRequirements.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestProtocolDeviations.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCachedResponseSuitabilityChecker.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestConditionalRequestBuilder.java
+httpclient-cache/src/test/java/org/apache/http/client/cache/impl/TestCacheEntryUpdater.java
