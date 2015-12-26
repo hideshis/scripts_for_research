@@ -1,3 +1,0 @@
-d5c520a8e1231ae60142158781f5c9bf978fd8e9,1435402212,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/client/TestDefaultServiceUnavailableRetryStrategy.java,test
-6ab2c3297063a867fbabb4166981f3e40da707a7,1447075247,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/DateUtils.java,production
-70e603f81950c7ce56245f4fb211c688bfac7fe5,1447081700,Oleg Kalnichevski,httpclient/src/main/java/org/apache/http/client/utils/DateUtils.java,production

@@ -6,3 +6,4 @@ plot(hoge$commit.interval, hoge$average.bug, xlab="commit interval [day]", ylab=
 abline(v=31, lty=2)
 plot(hoge$co.evolution.rate, hoge$average.bug, xlab="co-evolution rate", ylab="# of bug per month")
 abline(v=0.100, lty=2)
+dev.copy2eps(file="../kousatsu1.eps")

@@ -1,9 +1,0 @@
-f87aaff0f193688945c6de455d9626c2058cdcde,1216891311,Ortwin Glueck,module-client/src/test/java/org/apache/http/client/utils/TestRfc3492Idn.java,test
-403f7623c76dc1b128e4f60f659c722c85c91f53,1216906539,Ortwin Glueck,module-client/src/main/java/org/apache/http/client/utils/Rfc3492Idn.java,production
-d887bfb9a8983f09ddc5e1bb7ca0b02c87a0de3e,1219180846,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/utils/Rfc3492Idn.java,production
-d887bfb9a8983f09ddc5e1bb7ca0b02c87a0de3e,1219180846,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/utils/TestRfc3492Idn.java,test
-9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/utils/Rfc3492Idn.java,production
-9ca4ef79eec8ee341cec0257901a0097d9ff3b99,1234715693,Sebastian Bazley,module-client/src/test/java/org/apache/http/client/utils/TestRfc3492Idn.java,test
-56ed0740572e2e108b6910ba8f3cac0dcaa31fa4,1234717840,Sebastian Bazley,module-client/src/main/java/org/apache/http/client/utils/Rfc3492Idn.java,production
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/client/utils/Rfc3492Idn.java,production
-c211aaf0cad59a3e5764f8efcc1be76fa3667af6,1235925412,Oleg Kalnichevski,module-client/src/test/java/org/apache/http/client/utils/TestRfc3492Idn.java,test

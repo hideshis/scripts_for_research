@@ -1,8 +1,0 @@
-1e5ff31bbd9f68ffabe7048ab52098425f968fad,1184151931,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
-d4862a917b05ac7a47e48dcd7731004c93ddd19c,1184955202,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
-bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
-bcc2848421255eb1b01cf69dbdb299d4a03ff9dc,1200855619,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test
-49ba9e65e61fbcea288d49c10493a85678b9e98f,1201270359,Oleg Kalnichevski,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
-9b592fd9613fb2860faf0e222aed16817ce12a8e,1201811884,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
-553a26bc1ba3a2f3aff7ea2e811e6c4db791faab,1201899247,Sebastian Bazley,module-client/src/main/java/org/apache/http/conn/routing/HttpRoute.java,production
-1892a783cc39a5e73ac3bae9cbfefcfcd3d85210,1202081189,Roland Weber,module-client/src/test/java/org/apache/http/conn/TestParams.java,test

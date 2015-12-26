@@ -1,7 +1,0 @@
-d4dc9e1ac7958ba538161d95801428a2d4714420,1358109701,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
-276a9c459750cb868c61e58fc3aa1dbb2b4dea88,1358274598,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
-3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/main/java/org/apache/http/impl/auth/DigestScheme.java,production
-3ebbcab3b4bc072c4a66a95680887b46840218e3,1358306864,Gary D. Gregory,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
-hoge,1358306864,hoge,hoge,bug
-3f444fc7403c3c092432b745540fbd48dceecc98,1364990194,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
-124224379315b7e4a396e41a54fb99cb8f73413b,1364992038,Oleg Kalnichevski,httpclient/src/test/java/org/apache/http/impl/execchain/TestHttpAuthenticator.java,test
