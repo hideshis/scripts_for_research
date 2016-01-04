@@ -1,11 +1,16 @@
 httpclient-cache/src/test/java/org/apache/http/client/cache/TestHttpCacheEntry.java,0.2413793103448276,1922,80.0,arrive,0.0,1,1284580841,1450672225
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/DoNotTestProtocolRequirements.java,0.23529411764705882,940,8.0,dead,0.15957446808510636,1,1273695087,1354996764
 httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheEntryUpdater.java,0.14705882352941177,2048,42.0,arrive,0.0439453125,1,1273695087,1450672228
 httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCacheValidityPolicy.java,0.10810810810810811,1977,53.5,arrive,0.045523520485584223,1,1279804589,1450672228
 httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCachedHttpResponseGenerator.java,0.11428571428571428,2048,59.0,arrive,0.0439453125,1,1273695087,1450672228
 httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCachedResponseSuitabilityChecker.java,0.13513513513513514,2048,54.5,arrive,0.0439453125,1,1273695087,1450672228
 httpclient-cache/src/test/java/org/apache/http/impl/client/cache/TestCombinedEntity.java,0.125,1956,383.5,arrive,0.0,1,1281645174,1450672229
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestMemcachedCacheEntryImpl.java,0.1111111111111111,1433,18.5,arrive,0.0,2,1326820334,1450672231
+httpclient-cache/src/test/java/org/apache/http/impl/client/cache/memcached/TestPrefixKeyHashingScheme.java,0.125,1433,16.5,arrive,0.0,1,1326836108,1450672231
 httpclient-osgi/src/test/java/org/apache/http/osgi/impl/TestPropertiesUtils.java,0.4,976,156.0,arrive,0.0,1,1366278319,1450672231
 httpclient/src/test/java/org/apache/http/client/protocol/TestCookie2Support.java,0.17568850902184235,1256,125.0,dead,0.02388535031847134,9,1235925412,1344458113
+httpclient/src/test/java/org/apache/http/client/protocol/TestRequestDefaultHeaders.java,0.18181818181818182,1756,30.0,arrive,0.0,1,1298923071,1450672232
+httpclient/src/test/java/org/apache/http/client/protocol/TestResponseContentEncoding.java,0.10680909790816911,1756,18.0,arrive,0.07260820045558086,4,1298923071,1450672233
 httpclient/src/test/java/org/apache/http/client/utils/TestRfc3492Idn.java,0.15789473684210525,2017,137.0,dead,0.014873574615765989,1,1235925412,1410257318
 httpclient/src/test/java/org/apache/http/conn/TestConnectionAutoRelease.java,0.15736542868895811,1256,109.0,dead,0.05800727934485896,7,1235925412,1344458113
 httpclient/src/test/java/org/apache/http/conn/TestScheme.java,0.2548100048100048,1608,90.5,dead,0.03731343283582089,3,1235925412,1374930997
@@ -14,6 +19,7 @@ httpclient/src/test/java/org/apache/http/cookie/TestCookiePathComparator.java,0.
 httpclient/src/test/java/org/apache/http/cookie/TestCookiePolicy.java,0.23174603174603173,1621,134.0,dead,0.024676125848241828,3,1235925412,1376061718
 httpclient/src/test/java/org/apache/http/impl/auth/TestRFC2617Scheme.java,0.1208133971291866,2315,122.0,dead,0.009719222462203024,4,1235925412,1436017360
 httpclient/src/test/java/org/apache/http/impl/client/MockConnPoolControl.java,0.3333333333333333,1549,195.5,arrive,0.019367333763718526,1,1316779572,1450672235
+httpclient/src/test/java/org/apache/http/impl/client/TestAIMDBackoffManager.java,0.20579710144927535,1616,10.5,arrive,0.0061881188118811875,3,1311005624,1450672235
 httpclient/src/test/java/org/apache/http/impl/client/TestBasicAuthCache.java,0.12486045700331415,1166,77.5,arrive,0.007351139426611125,7,1349896450,1450672236
 httpclient/src/test/java/org/apache/http/impl/client/TestBasicCookieStore.java,0.12698412698412698,2123,56.0,arrive,0.0,2,1267186746,1450672236
 httpclient/src/test/java/org/apache/http/impl/client/TestBasicCredentialsProvider.java,0.19017094017094016,2485,142.5,arrive,0.012072434607645876,3,1235925412,1450672236
@@ -24,11 +30,14 @@ httpclient/src/test/java/org/apache/http/impl/client/integration/TestContentCodi
 httpclient/src/test/java/org/apache/http/impl/conn/ClientConnAdapterMockup.java,0.30000000000000004,948,474.0,dead,0.015822784810126583,2,1235925412,1317904391
 httpclient/src/test/java/org/apache/http/impl/conn/ExecReqThread.java,0.26717171717171717,1343,284.0,dead,0.008935219657483246,5,1235925412,1352014670
 httpclient/src/test/java/org/apache/http/impl/conn/GetConnThread.java,0.3229437229437229,1256,325.0,dead,0.005971337579617835,4,1235925412,1344458113
+httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultProxyRoutePlanner.java,0.11241883116883117,1077,8.0,arrive,0.055710306406685235,4,1357582955,1450672240
+httpclient/src/test/java/org/apache/http/impl/conn/TestDefaultRoutePlanner.java,0.11747994652406417,1117,24.0,arrive,0.06714413607878245,4,1354109971,1450672240
 httpclient/src/test/java/org/apache/http/impl/conn/TestLocalServer.java,0.2857142857142857,1256,209.0,dead,0.02388535031847134,2,1235925412,1344458113
 httpclient/src/test/java/org/apache/http/impl/conn/TestProxySelRoutePlanner.java,0.21326633892423366,1367,200.5,dead,0.025603511338697874,6,1235925412,1354109971
 httpclient/src/test/java/org/apache/http/impl/conn/TestSCMWithServer.java,0.1433735994397759,953,64.0,dead,0.03147953830010493,4,1235925412,1318335043
 httpclient/src/test/java/org/apache/http/impl/conn/TestTSCCMNoServer.java,0.12126478648343975,953,65.0,dead,0.04197271773347324,12,1235925412,1318335043
 httpclient/src/test/java/org/apache/http/impl/conn/TestTSCCMWithServer.java,0.10279928841499207,953,37.5,dead,0.0373819517313746,16,1235925412,1318335043
+httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestConnPoolByRoute.java,0.10033066668696464,1343,26.5,dead,0.0390915860014892,8,1235925412,1352014670
 httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestSpuriousWakeup.java,0.11239306001302905,1343,83.5,dead,0.024199553239017128,12,1235925412,1352014670
 httpclient/src/test/java/org/apache/http/impl/conn/tsccm/TestWaitingThread.java,0.1726190476190476,1343,153.0,dead,0.029784065524944156,3,1235925412,1352014670
 httpclient/src/test/java/org/apache/http/impl/cookie/TestAbstractCookieSpec.java,0.17213203463203466,2119,284.0,dead,0.0056630486078338834,5,1235925412,1419022782
@@ -43,5 +52,7 @@ httpclient/src/test/java/org/apache/http/localserver/RequestBasicAuth.java,0.222
 httpclient/src/test/java/org/apache/http/localserver/ResponseBasicUnauthorized.java,0.25,2456,284.0,arrive,0.0,1,1238412873,1450672244
 httpclient/src/test/java/org/apache/http/localserver/ServerTestBase.java,0.14042277167277167,1256,86.0,dead,0.03184713375796178,6,1235925412,1344458113
 httpclient/src/test/java/org/apache/http/mockup/SecureSocketFactoryMockup.java,0.11587301587301586,1621,96.5,dead,0.0,3,1235925412,1376061718
+httpclient/src/test/java/org/apache/http/mockup/SocketFactoryMockup.java,0.18137254901960786,1621,28.0,dead,0.01850709438618137,3,1235925412,1376061718
 httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartContentBody.java,0.14696969696969697,2485,74.5,arrive,0.018108651911468814,2,1235925412,1450672245
+httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartForm.java,0.12469977243347136,2485,27.0,arrive,0.024144869215291753,6,1235925412,1450672245
 httpmime/src/test/java/org/apache/http/entity/mime/TestMultipartFormHttpEntity.java,0.11133698884823323,2485,134.0,arrive,0.018108651911468814,4,1235925412,1450672245

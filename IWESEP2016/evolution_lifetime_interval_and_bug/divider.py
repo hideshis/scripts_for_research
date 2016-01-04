@@ -19,27 +19,15 @@ for line in lines:
     lifetime = factor[2]
     interval = factor[3]
     if float(lifetime) > 869:
-        if float(interval) > 31.0:
-            if float(co_evo) > 0.100:
-                os.system('echo ' + line + '>>llt_li_hr.csv')
-            else:
-                os.system('echo ' + line + '>>llt_li_lr.csv')
+        if float(co_evo) > 0.100:
+            os.system('echo ' + line + '>>llt_hr.csv')
         else:
-            if float(co_evo) > 0.100:
-                os.system('echo ' + line + '>>llt_si_hr.csv')
-            else:
-                os.system('echo ' + line + '>>llt_si_lr.csv')
+            os.system('echo ' + line + '>>llt_lr.csv')
     else:
-        if float(interval) > 31.0:
-            if float(co_evo) > 0.100:
-                os.system('echo ' + line + '>>slt_li_hr.csv')
-            else:
-                os.system('echo ' + line + '>>slt_li_lr.csv')
+        if float(co_evo) > 0.100:
+            os.system('echo ' + line + '>>slt_hr.csv')
         else:
-            if float(co_evo) > 0.100:
-                os.system('echo ' + line + '>>slt_si_hr.csv')
-            else:
-                os.system('echo ' + line + '>>slt_si_lr.csv')
+            os.system('echo ' + line + '>>slt_lr.csv')
 f.close()
 
 """
