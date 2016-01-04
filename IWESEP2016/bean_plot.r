@@ -1,0 +1,6 @@
+library("beanplot")
+hoge <- read.csv("synthesized_info.csv")
+dead <- subset(hoge, status == "dead")
+arrive <- subset(hoge, status == "arrive")
+beanplot(dead$co.evolution.rate, arrive$co.evolution.rate, names=c("dead test code", "arrive test code"), ylab="degree of co-eovlution")
+beanplot(dead$lifetime, arrive$lifetime, names=c("dead test code", "arrive test code"), ylab="lifetime")
