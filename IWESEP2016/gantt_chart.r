@@ -1,0 +1,11 @@
+library(plan)
+hoge_new <- hoge[order(hoge$status, hoge$born.time),]
+data("gantt")
+gantt$key <- as.numeric(c(1:276))
+gantt$description <- as.character(hoge_new$status)
+gantt$start <- as.POSIXlt(hoge_new$born.time, origin="1970-01-01")
+gantt$end <- as.POSIXlt(hoge_new$dead.time, origin="1970-01-01")
+done <- as.numeric(rep(0, length=276))
+gantt$done <- as.numeric(rep(0, length=276))
+gantt$neededBy <- as.logical(rep(NA, length=276))
+plot(gantt)
