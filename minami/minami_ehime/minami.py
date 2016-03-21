@@ -16,7 +16,8 @@ while line:
         os.mkdir(setID)
         # file1 を前のバージョンにもどして, setID ディレクトリにコピーする
         destination =  './' + setID  + '/' + file_name_current.split('.')[0] + '_old.java
-        os.system('./line1.sh', setID, commit_hash, file1, destination)
+        argument_list = [setID, commit_hash, file1, destination]
+        os.system('./line1.sh ' + ' '.join(argument_list))
     elif file1 == "hogehoge":
         # 上の処理を参考にして自分で書いてください
     else:
