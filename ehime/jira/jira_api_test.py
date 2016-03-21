@@ -14,7 +14,7 @@ def removeCRLF(target):
     return target
 
 options = {'server': 'https://issues.apache.org/jira',}
-jira = JIRA(options, basic_auth=('hideshis', 'soredeKOSO1989'))
+jira = JIRA(options, basic_auth=(user_name, pass_word))
 projects = jira.projects()
 for jira_id in range(782, 1732):
     key = 'HTTPCLIENT-' + str(jira_id)
