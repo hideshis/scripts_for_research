@@ -47,7 +47,7 @@ for jira_id in range(782, 1732):
     if issue_type == 'Bug':
         # CSV に書き込み
         query = issue.key + ','  + issue_type + ',' + resolution + ',' + created + ',' + updated + ',' + resolved + ',' + version
-        os.system('echo ' + query + ' >> bug_info.csv')
+        os.system('echo ' + query + '>> bug_info.csv')
         # resolution の状態遷移取得
         issue = jira.issue(key, expand='changelog')
         #print json.dumps(issue.raw)
@@ -60,5 +60,5 @@ for jira_id in range(782, 1732):
                     if item.toString is None:
                         item.toString = 'null'
                     query = issue.key + ',' + history.created + ',' + item.fromString + ',' + item.toString
-                    os.system('echo ' + query + ' >> bug_history.csv')
+                    os.system('echo ' + query + '>> bug_history.csv')
     time.sleep(3.0)
