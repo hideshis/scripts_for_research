@@ -43,6 +43,20 @@ def find_all_files(pjt_name):
     os.system(cmd)
     os.chdir("../")
 
+def file_finder_by_naming_convention(tc):
+    if tc.startswith("src/"):
+        query = tc.replace('src/test/', 'src/java/')
+    else:
+        query = tc.replace('/src/test/', '/src/main/')
+    try:
+        result = subprocess.check_output('grep "' + query + '" file_list.txt', shell=True)
+        result = result.replace("\r", "")
+        imported_file_list = result.split("\n")
+        imported_file_list.pop()
+        return imported_file_list
+    except subprocess.CalledProcessError:
+        return ['none']
+
 def file_finder(tc, imported_file_candidate_list):
     path_head = tc.split("/test/")[0] + "/main/java/"
     imported_file_list = []
@@ -71,12 +85,16 @@ def importing_pc_identifier(pjt_name, commit_hash, tc_list):
     writer = csv.writer(file("imported_pc_list.csv", "a"), lineterminator="\n")
     for tc in tc_list:
         cmd = 'grep "^import" ./' + pjt_name + '/' + tc
+        imported_file_list = []
         try:
+            imported_file_by_name = file_finder_by_naming_convention(tc)
+            if not imported_file_by_name[0] != "none":
+                imported_file_list.extend(imported_file_by_name)
             result = subprocess.check_output(cmd, shell=True)
             result = result.replace("\r", "")
             imported_file_candidate_list = result.split(";\n")
             imported_file_candidate_list.pop() # remove blank factor
-            imported_file_list = file_finder(tc, imported_file_candidate_list)
+            imported_file_list.extend(file_finder(tc, imported_file_candidate_list))
             if len(imported_file_list) == 0:
                 cmd = 'echo ' + tc + '>> no_importing_tc_list.txt'
                 os.system(cmd)
@@ -91,7 +109,15 @@ def importing_pc_identifier(pjt_name, commit_hash, tc_list):
                     info_list.append(imported_file)
                     writer.writerow(info_list)
         except subprocess.CalledProcessError: # if the tc doesn't import any pcs
-            print "no imports"
+            if len(imported_file_list) == 0:
+                print "no imports"
+            else:
+                for imported_file in imported_file_list:
+                    info_list = []
+                    info_list.append(commit_hash)
+                    info_list.append(imported_file)
+                    writer.writerow(info_list)
+
 
 if __name__ == "__main__":
     argvs = sys.argv
