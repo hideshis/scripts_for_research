@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ManagedHttpCacheStorage.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ManagedHttpCacheStorage.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.Closeable;
+import java.io.IOException;
+import java.lang.ref.ReferenceQueue;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.client.cache.HttpCacheEntry;
+import org.apache.http.client.cache.HttpCacheStorage;
+import org.apache.http.client.cache.HttpCacheUpdateCallback;
+import org.apache.http.client.cache.Resource;
+import org.apache.http.util.Args;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * &lt;p>
+ * {@link HttpCacheStorage} implementation capable of deallocating resources associated with
+ * the cache entries.
+ * &lt;p>
+ * This cache keeps track of cache entries using
+ * {@link java.lang.ref.PhantomReference} and maintains a collection of all resources that
+ * are no longer in use. The cache, however, does not automatically deallocates associated
+ * resources by invoking {@link Resource#dispose()} method. The consumer MUST periodically
+ * call {@link #cleanResources()} method to trigger resource deallocation. The cache can be
+ * permanently shut down using {@link #shutdown()} method. All resources associated with
+ * the entries used by the cache will be deallocated.
+ * &lt;/p>
+ * &lt;p>
+ * This {@link HttpCacheStorage} implementation is intended for use with {@link FileResource}
+ * and similar.
+ * &lt;/p>
+ * &lt;p>
+ * Compatibility note. Prior to version 4.4 this storage implementation used to dispose of
+ * all resource entries upon {@link #close()}. As of version 4.4 the {@link #close()} method
+ * disposes only of those resources that have been explicitly removed from the cache with
+ * {@link #removeEntry(String)} method.
+ * &lt;/p>
+ * &lt;p>
+ * The {@link #shutdown()} ()} method can still be used to shut down the storage and dispose of
+ * all resources currently managed by it.
+ * &lt;/p>
+ *
+ * @since 4.1
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@ThreadSafe</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class ManagedHttpCacheStorage implements HttpCacheStorage, Closeable {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final CacheMap entries;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ReferenceQueue&lt;HttpCacheEntry> morque;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Set&lt;ResourceReference> resources;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final AtomicBoolean active;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public ManagedHttpCacheStorage(final CacheConfig config) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>        super();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l83s0'>        this.entries = new CacheMap(config.getMaxCacheEntries());</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        this.morque = new ReferenceQueue&lt;HttpCacheEntry>();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>        this.resources = new HashSet&lt;ResourceReference>();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        this.active = new AtomicBoolean(true);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 95</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void ensureValidState() throws IllegalStateException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>        <span id='l90s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (!this.active.get())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x5, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l91s0'>            throw new IllegalStateException("Cache has been shut down");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x5, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void keepResourceReference(final HttpCacheEntry entry) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l96s0'>        final Resource resource = entry.getResource();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l97s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (resource != null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='comment'>            // Must deallocate the resource when the entry is no longer in used</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l99s0'>            final ResourceReference ref = new ResourceReference(entry, this.morque);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>            this.resources.add(ref);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l102s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void putEntry(final String url, final HttpCacheEntry entry) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>        Args.notNull(url, "URL");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>        Args.notNull(entry, "Cache entry");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>        ensureValidState();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>        synchronized (this) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>            this.entries.put(url, entry);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>            keepResourceReference(entry);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public HttpCacheEntry getEntry(final String url) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>        Args.notNull(url, "URL");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x4, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>        ensureValidState();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x4, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l119s0'>        synchronized (this) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x4, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>            return this.entries.get(url);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheJiraNumber1147#testIssue1147: 124x4, 143x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l121s0'>        }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void removeEntry(final String url) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l126s0'>        Args.notNull(url, "URL");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l127s0'>        ensureValidState();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l128s0'>        synchronized (this) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='comment'>            // Cannot deallocate the associated resources immediately as the</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='comment'>            // cache entry may still be in use</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l131s0'>            this.entries.remove(url);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l132s0'>        }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l133s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void updateEntry(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final String url,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpCacheUpdateCallback callback) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l139s0'>        Args.notNull(url, "URL");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l140s0'>        Args.notNull(callback, "Callback");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l141s0'>        ensureValidState();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l142s0'>        synchronized (this) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l143s0'>            final HttpCacheEntry existing = this.entries.get(url);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l144s0'>            final HttpCacheEntry updated = callback.update(existing);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l145s0'>            this.entries.put(url, updated);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>            <span id='l146s0' title='Executions: 0' class='uncovered'>if (existing != updated)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l147s0'>                keepResourceReference(updated);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l149s0'>        }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l150s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void cleanResources() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l153s0' title='Executions: 0' class='uncovered'>if (this.active.get())</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            ResourceReference ref;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>            <span id='l155s0' title='Executions: 0' class='uncovered'>while ((ref = (ResourceReference) this.morque.poll()) != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l156s0'>                synchronized (this) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l157s0'>                    this.resources.remove(ref);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l158s0'>                }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l159s0'>                ref.getResource().dispose();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l162s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>164</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void shutdown() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l165s0' title='Executions: 0' class='uncovered'>if (this.active.compareAndSet(true, false))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l166s0'>            synchronized (this) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l167s0'>                this.entries.clear();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>                <span id='l168s0' title='Executions: 0' class='uncovered'>for (final ResourceReference ref: this.resources)</span> <span id='l168s1' title='Executions: 0' class='uncovered'>{</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l169s0'>                    ref.getResource().dispose();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l170s0'>                }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l171s0'>                this.resources.clear();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>                <span id='l172s0' title='Executions: 0' class='uncovered'>while (this.morque.poll() != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l174s0'>            }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>175</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l176s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>178</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void close() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l180s0' title='Executions: 0' class='uncovered'>if (this.active.compareAndSet(true, false))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l181s0'>            synchronized (this) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                ResourceReference ref;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>                <span id='l183s0' title='Executions: 0' class='uncovered'>while ((ref = (ResourceReference) this.morque.poll()) != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l184s0'>                    this.resources.remove(ref);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l185s0'>                    ref.getResource().dispose();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l187s0'>            }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>189</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l189s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>191</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

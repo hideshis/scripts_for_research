@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DefaultFailureCache.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultFailureCache.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.apache.http.annotation.ThreadSafe;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Implements a bounded failure cache. The oldest entries are discarded when
+ * the maximum size is exceeded.
+ *
+ * @since 4.3
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@ThreadSafe</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class DefaultFailureCache implements FailureCache {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    static final int DEFAULT_MAX_SIZE = 1000;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    static final int MAX_UPDATE_TRIES = 10;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final int maxSize;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ConcurrentMap&lt;String, FailureCacheValue> storage;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Create a new failure cache with the maximum size of
+     * {@link #DEFAULT_MAX_SIZE}.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public DefaultFailureCache() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>86</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>        this(DEFAULT_MAX_SIZE);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>86</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Creates a new failure cache with the specified maximum size.
+     * @param maxSize the maximum number of entries the cache should store
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>87</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    public DefaultFailureCache(final int maxSize) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 60</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>87</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        this.maxSize = maxSize;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 60</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>87</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>        this.storage = new ConcurrentHashMap&lt;String, FailureCacheValue>();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 60</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>87</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 60</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public int getErrorCount(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>14</td>
+      <td><pre class='prettyprint jmp'>        <span id='l69s0' title='Executions: 14' class='covered cp' onclick='showHide(this,0)'>if (identifier == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 44</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 66</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 54</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l70s0'>            throw new IllegalArgumentException("identifier may not be null");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>14</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>        final FailureCacheValue storedErrorCode = storage.get(identifier);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 44</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 66</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 54</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>14</td>
+      <td><pre class='prettyprint jmp'>        <span id='l73s0' title='Executions: 14' class='covered cp' onclick='showHide(this,0)'>return storedErrorCode != null</span> ? <span id='l73s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>storedErrorCode.getErrorCount()</span> : <span id='l73s2' title='Executions: 13' class='covered cp' onclick='showHide(this,2)'>0;</span></pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 44</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 66</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 54</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 54</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 44</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 66</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void resetErrorCount(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>        <span id='l78s0' title='Executions: 5' class='covered cp' onclick='showHide(this,0)'>if (identifier == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 42</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l79s0'>            throw new IllegalArgumentException("identifier may not be null");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        storage.remove(identifier);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 42</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>5</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 42</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void increaseErrorCount(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>        <span id='l86s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (identifier == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l87s0'>            throw new IllegalArgumentException("identifier may not be null");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>        updateValue(identifier);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>        removeOldestEntryIfMapSizeExceeded();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void updateValue(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>        /**
+         * Due to concurrency it is possible that someone else is modifying an
+         * entry before we could write back our updated value. So we keep
+         * trying until it is our turn.
+         *
+         * In case there is a lot of contention on that identifier, a thread
+         * might starve. Thus it gives up after a certain number of failed
+         * update tries.
+         */</div><span>        /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>        <span id='l103s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>for (int i = 0</span>; i &lt; MAX_UPDATE_TRIES; i++) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>            final FailureCacheValue oldValue = storage.get(identifier);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>            <span id='l105s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (oldValue == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>                final FailureCacheValue newValue = new FailureCacheValue(identifier, 1);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>7</td>
+      <td><pre class='prettyprint jmp'>                <span id='l107s0' title='Executions: 7' class='covered cp' onclick='showHide(this,0)'>if (storage.putIfAbsent(identifier, newValue) == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>                    return;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l110s0'>            }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>                final int errorCount = oldValue.getErrorCount();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>                <span id='l113s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (errorCount == Integer.MAX_VALUE)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l114s0'>                    return;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l116s0'>                final FailureCacheValue newValue = new FailureCacheValue(identifier, errorCount + 1);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>                <span id='l117s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if (storage.replace(identifier, oldValue, newValue))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l118s0'>                    return;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l122s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private void removeOldestEntryIfMapSizeExceeded() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>        <span id='l125s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (storage.size() > maxSize)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>            final FailureCacheValue valueWithOldestTimestamp = findValueWithOldestTimestamp();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>            <span id='l127s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if (valueWithOldestTimestamp != null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l128s0'>                storage.remove(valueWithOldestTimestamp.getKey(), valueWithOldestTimestamp);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testResetErrorCount: 41</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 61, 62, 63, 64</li>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testIncrementErrorCount: 50, 51, 52</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private FailureCacheValue findValueWithOldestTimestamp() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>        long oldestTimestamp = Long.MAX_VALUE;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>        FailureCacheValue oldestValue = null;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l136s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>for (final Map.Entry&lt;String, FailureCacheValue> storageEntry</span> : <span id='l136s1' title='Executions: 4' class='covered cp' onclick='showHide(this,1)'>storage.entrySet())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l137s0'>            final FailureCacheValue value = storageEntry.getValue();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>            final long creationTimeInNanos = value.getCreationTimeInNanos();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>            <span id='l139s0' title='Executions: 4' class='covered cp' onclick='showHide(this,0)'>if (creationTimeInNanos &lt; oldestTimestamp)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l140s0'>                oldestTimestamp = creationTimeInNanos;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>                oldestValue = storageEntry.getValue();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>        }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l144s0'>        return oldestValue;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestDefaultFailureCache#testMaxSize: 64</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

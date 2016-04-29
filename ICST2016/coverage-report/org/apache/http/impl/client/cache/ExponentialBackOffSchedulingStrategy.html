@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ExponentialBackOffSchedulingStrategy.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ExponentialBackOffSchedulingStrategy.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.util.Args;
+
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * An implementation that backs off exponentially based on the number of
+ * consecutive failed attempts stored in the
+ * {@link AsynchronousValidationRequest}. It uses the following defaults:
+ * &lt;pre>
+ *         no delay in case it was never tried or didn't fail so far
+ *     6 secs delay for one failed attempt (= {@link #getInitialExpiryInMillis()})
+ *    60 secs delay for two failed attempts
+ *    10 mins delay for three failed attempts
+ *   100 mins delay for four failed attempts
+ *  ~16 hours delay for five failed attempts
+ *   24 hours delay for six or more failed attempts (= {@link #getMaxExpiryInMillis()})
+ * &lt;/pre>
+ *
+ * The following equation is used to calculate the delay for a specific revalidation request:
+ * &lt;pre>
+ *     delay = {@link #getInitialExpiryInMillis()} * Math.pow({@link #getBackOffRate()},
+ *     {@link AsynchronousValidationRequest#getConsecutiveFailedAttempts()} - 1))
+ * &lt;/pre>
+ * The resulting delay won't exceed {@link #getMaxExpiryInMillis()}.
+ *
+ * @since 4.3
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@ThreadSafe</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class ExponentialBackOffSchedulingStrategy implements SchedulingStrategy {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static final long DEFAULT_BACK_OFF_RATE = 10;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>    public static final long DEFAULT_INITIAL_EXPIRY_IN_MILLIS = TimeUnit.SECONDS.toMillis(6);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>    public static final long DEFAULT_MAX_EXPIRY_IN_MILLIS = TimeUnit.SECONDS.toMillis(86400);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final long backOffRate;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final long initialExpiryInMillis;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final long maxExpiryInMillis;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ScheduledExecutorService executor;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Create a new scheduling strategy using a fixed pool of worker threads.
+     * @param cacheConfig the thread pool configuration to be used; not {@code null}
+     * @see org.apache.http.impl.client.cache.CacheConfig#getAsynchronousWorkersMax()
+     * @see #DEFAULT_BACK_OFF_RATE
+     * @see #DEFAULT_INITIAL_EXPIRY_IN_MILLIS
+     * @see #DEFAULT_MAX_EXPIRY_IN_MILLIS
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public ExponentialBackOffSchedulingStrategy(final CacheConfig cacheConfig) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l81s0'>        this(cacheConfig,</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                DEFAULT_BACK_OFF_RATE,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                DEFAULT_INITIAL_EXPIRY_IN_MILLIS,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                DEFAULT_MAX_EXPIRY_IN_MILLIS);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l85s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Create a new scheduling strategy by using a fixed pool of worker threads and the
+     * given parameters to calculated the delay.
+     *
+     * @param cacheConfig the thread pool configuration to be used; not {@code null}
+     * @param backOffRate the back off rate to be used; not negative
+     * @param initialExpiryInMillis the initial expiry in milli seconds; not negative
+     * @param maxExpiryInMillis the upper limit of the delay in milli seconds; not negative
+     * @see org.apache.http.impl.client.cache.CacheConfig#getAsynchronousWorkersMax()
+     * @see ExponentialBackOffSchedulingStrategy
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public ExponentialBackOffSchedulingStrategy(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final CacheConfig cacheConfig,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final long backOffRate,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final long initialExpiryInMillis,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final long maxExpiryInMillis) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l103s0'>        this(createThreadPoolFromCacheConfig(cacheConfig),</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                backOffRate,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                initialExpiryInMillis,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                maxExpiryInMillis);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l107s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private static ScheduledThreadPoolExecutor createThreadPoolFromCacheConfig(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final CacheConfig cacheConfig) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l111s0'>        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l112s0'>                cacheConfig.getAsynchronousWorkersMax());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l113s0'>        scheduledThreadPoolExecutor.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l114s0'>        return scheduledThreadPoolExecutor;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    ExponentialBackOffSchedulingStrategy(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ScheduledExecutorService executor,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final long backOffRate,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final long initialExpiryInMillis,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l121s0'>            final long maxExpiryInMillis) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l122s0'>        this.executor = Args.notNull(executor, "Executor");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l123s0'>        this.backOffRate = Args.notNegative(backOffRate, "BackOffRate");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l124s0'>        this.initialExpiryInMillis = Args.notNegative(initialExpiryInMillis, "InitialExpiryInMillis");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>        this.maxExpiryInMillis = Args.notNegative(maxExpiryInMillis, "MaxExpiryInMillis");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#setUp: 54x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void schedule(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final AsynchronousValidationRequest revalidationRequest) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>        Args.notNull(revalidationRequest, "RevalidationRequest");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l132s0'>        final int consecutiveFailedAttempts = revalidationRequest.getConsecutiveFailedAttempts();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>        final long delayInMillis = calculateDelayInMillis(consecutiveFailedAttempts);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l134s0'>        executor.schedule(revalidationRequest, delayInMillis, TimeUnit.MILLISECONDS);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l135s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void close() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l139s0'>        executor.shutdown();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l140s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public long getBackOffRate() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l143s0'>        return backOffRate;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>146</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public long getInitialExpiryInMillis() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l147s0'>        return initialExpiryInMillis;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public long getMaxExpiryInMillis() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l151s0'>        return maxExpiryInMillis;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected long calculateDelayInMillis(final int consecutiveFailedAttempts) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>        <span id='l155s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if (consecutiveFailedAttempts > 0)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>            final long delayInSeconds = (long) (initialExpiryInMillis *</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l157s0'>                    Math.pow(backOffRate, consecutiveFailedAttempts - 1));</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l158s0'>            return Math.min(delayInSeconds, maxExpiryInMillis);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 123</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 101</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 134</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 79</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 112</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 145</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 90</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l161s0'>            return 0;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 68</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @deprecated Use {@link org.apache.http.util.Args#notNull(Object, String)}
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Deprecated</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected static &lt;T> T checkNotNull(final String parameterName, final T value) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l170s0' title='Executions: 0' class='uncovered'>if (value == null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l171s0'>            throw new IllegalArgumentException(parameterName + " may not be null");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l173s0'>        return value;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @deprecated Use {@link org.apache.http.util.Args#notNegative(long, String)}
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Deprecated</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected static long checkNotNegative(final String parameterName, final long value) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l181s0' title='Executions: 0' class='uncovered'>if (value &lt; 0)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l182s0'>            throw new IllegalArgumentException(parameterName + " may not be negative");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l184s0'>        return value;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

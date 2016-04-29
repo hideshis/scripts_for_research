@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ImmediateSchedulingStrategy.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/ImmediateSchedulingStrategy.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.util.Args;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Immediately schedules any incoming validation request. Relies on
+ * {@link CacheConfig} to configure the used {@link java.util.concurrent.ThreadPoolExecutor}.
+ *
+ * @since 4.3
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@ThreadSafe</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class ImmediateSchedulingStrategy implements SchedulingStrategy {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ExecutorService executor;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Uses a {@link java.util.concurrent.ThreadPoolExecutor} which is configured according to the
+     * given {@link CacheConfig}.
+     * @param cacheConfig specifies thread pool settings. See
+     * {@link CacheConfig#getAsynchronousWorkersMax()},
+     * {@link CacheConfig#getAsynchronousWorkersCore()},
+     * {@link CacheConfig#getAsynchronousWorkerIdleLifetimeSecs()},
+     * and {@link CacheConfig#getRevalidationQueueSize()}.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public ImmediateSchedulingStrategy(final CacheConfig cacheConfig) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>138</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>        this(new ThreadPoolExecutor(</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x124</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45x2</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335x2</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371x2</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423x2</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380x2</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>69</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>                cacheConfig.getAsynchronousWorkersCore(),</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>69</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>                cacheConfig.getAsynchronousWorkersMax(),</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>69</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>                cacheConfig.getAsynchronousWorkerIdleLifetimeSecs(),</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                TimeUnit.SECONDS,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>69</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>                new ArrayBlockingQueue&lt;Runnable>(cacheConfig.getRevalidationQueueSize()))</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        );</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>69</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>70</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>    ImmediateSchedulingStrategy(final ExecutorService executor) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#setUp: 46</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>70</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>        this.executor = executor;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#setUp: 46</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>70</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 179</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#setUp: 46</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void schedule(final AsynchronousValidationRequest revalidationRequest) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>        Args.notNull(revalidationRequest, "AsynchronousValidationRequest");</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#testRequestScheduledImmediately: 53</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>        executor.execute(revalidationRequest);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#testRequestScheduledImmediately: 53</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestImmediateSchedulingStrategy#testRequestScheduledImmediately: 53</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void close() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        executor.shutdown();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 190</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#stop: 126</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 190</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#stop: 126</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Visible for testing.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    void awaitTermination(final long timeout, final TimeUnit unit) throws InterruptedException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        executor.awaitTermination(timeout, unit);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 191</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 191</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
