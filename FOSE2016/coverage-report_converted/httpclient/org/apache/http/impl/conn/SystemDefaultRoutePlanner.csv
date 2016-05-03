@@ -1,0 +1,17 @@
+60,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#setup#66x3
+62,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#setup#66x3
+75,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+78,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+79,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+80,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+81,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+87,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+89,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+92,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+106,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+109,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+110,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+114,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+115,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117
+127,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75
+129,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirectDefaultPort#90,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testProxy#117,org.apache.http.impl.conn.TestSystemDefaultRoutePlanner#testDirect#75

@@ -1,0 +1,34 @@
+50,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 147x20, 148x20, 149x20, 160x20"
+51,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 147x20, 148x20, 149x20, 160x20"
+52,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 147x20, 148x20, 149x20, 160x20"
+58,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 147x20, 149x20, 160x20"
+65,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+66,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+68,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+72,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+73,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+74,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 148x20, 149x20"
+80,org.apache.http.client.fluent.TestFluent#testConnectionRelease#148x20
+81,org.apache.http.client.fluent.TestFluent#testConnectionRelease#148x20
+88,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 149x20"
+90,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 149x20"
+92,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,"org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20, 149x20"
+97,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#135,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126",org.apache.http.client.fluent.TestFluent#testGetRequest#105,org.apache.http.client.fluent.TestFluent#testConnectionRelease#146x20
+101,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+103,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+105,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+106,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+107,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+108,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+109,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+111,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+113,org.apache.http.client.fluent.TestFluent#testConnectionRelease#147x20
+118,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+119,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+124,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+126,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+128,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+131,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+132,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+133,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20
+134,org.apache.http.client.fluent.TestFluent#testConnectionRelease#160x20

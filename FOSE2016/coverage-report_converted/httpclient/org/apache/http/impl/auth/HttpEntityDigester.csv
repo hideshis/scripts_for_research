@@ -1,0 +1,15 @@
+40,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#518,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+41,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#518,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+42,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#518,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+43,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#518,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+48,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#531
+50,"org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#520, 521, 522, 523, 524, 525"
+51,"org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#520, 521, 522, 523, 524, 525"
+56,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#536
+58,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#526,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553
+59,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#526,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553
+66,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#528,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+67,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#528,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+68,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#528,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+69,org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#528,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575
+72,"org.apache.http.impl.auth.TestDigestScheme#testHttpEntityDigest#519, 527, 529",org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthInt#553,org.apache.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopAuthIntNullEntity#575

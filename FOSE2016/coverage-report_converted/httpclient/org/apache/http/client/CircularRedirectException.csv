@@ -1,0 +1,2 @@
+55,org.apache.http.impl.client.integration.TestRedirects#testCircularRedirect#458,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetLocationUriDisallowCircularRedirects#319
+56,org.apache.http.impl.client.integration.TestRedirects#testCircularRedirect#458,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetLocationUriDisallowCircularRedirects#319
