@@ -1,4 +1,4 @@
-50,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
-51,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
-52,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
-63,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#testDefaultProxyDirect#68
+50,fully covered,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
+51,fully covered,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
+52,fully covered,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#setup#58x2
+63,fully covered,org.apache.http.impl.conn.TestDefaultProxyRoutePlanner#testDefaultProxyDirect#68

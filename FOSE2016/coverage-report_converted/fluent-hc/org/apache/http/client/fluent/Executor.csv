@@ -1,15 +1,16 @@
-76,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-78,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-89,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-91,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-94,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-96,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-97,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-98,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-99,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-100,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-101,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-102,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-103,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
-284,org.apache.http.client.fluent.TestFluent#shutDown#97x5
-285,org.apache.http.client.fluent.TestFluent#shutDown#97x5
+76,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+78,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+89,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+91,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+92,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+94,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+96,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+97,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+98,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+99,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+100,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+101,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+102,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+103,fully covered,org.apache.http.client.fluent.TestFluent#testGetRequestFailure#113
+284,fully covered,org.apache.http.client.fluent.TestFluent#shutDown#97x5
+285,fully covered,org.apache.http.client.fluent.TestFluent#shutDown#97x5

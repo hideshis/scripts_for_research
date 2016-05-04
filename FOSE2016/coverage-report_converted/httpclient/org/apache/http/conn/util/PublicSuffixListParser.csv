@@ -1,35 +1,54 @@
-46,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#66,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#49,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#51x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#54x2
-47,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#66,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#49,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#51x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#54x2
-59,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-60,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-61,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-66,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x2,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x6,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x4
-69,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x25,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x75,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x50
-75,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12
-77,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-81,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-83,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x5,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x15,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x10
-85,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12
-86,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
-101,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-103,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-104,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-106,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-107,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-108,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-112,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x1558,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x5
-118,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-119,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x4,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x25
-120,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-125,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
-127,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
-128,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
-129,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
-143,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
-145,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-150,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-152,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
-155,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
-157,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7736,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x5
-159,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
-160,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+46,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#66,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#49,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#51x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#54x2
+47,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#66,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#49,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#51x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#54x2
+59,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+60,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+61,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+64,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x34,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x68,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x102
+65,fully covered,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x66,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x99,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x33
+66,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x2,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x6,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x4
+68,fully covered,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x62,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x31,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x93
+69,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x25,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x75,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x50
+71,fully covered,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6
+75,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12
+76,fully covered,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6
+77,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+80,fully covered,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6
+81,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+83,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x5,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x15,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x10
+85,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50x6,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x18,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x12
+86,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParse#50,org.apache.http.conn.util.TestPublicSuffixMatcher#setUp#52x3,org.apache.http.impl.cookie.TestPublicSuffixListParser#setUp#55x2
+101,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+103,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+104,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+106,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+107,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+108,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+110,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x11133,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x40
+111,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x39,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x11132
+112,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x1558,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x5
+114,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9574,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x34
+116,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x1829,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x28
+117,fully covered,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x26,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x5
+118,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+119,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x4,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x25
+120,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+123,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x1823,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x1824
+124,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+125,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+127,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+128,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+129,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+135,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+139,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+143,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+144,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+145,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+148,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+149,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+150,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+152,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x9,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67
+154,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7736,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x5
+155,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x2,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x2
+157,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7736,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x5
+159,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123x7745,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67x6
+160,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testBasicDefaultHostnameVerifier#123,org.apache.http.conn.util.TestPublicSuffixListParser#testParseByType#67

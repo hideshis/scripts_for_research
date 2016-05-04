@@ -1,6 +1,6 @@
-57,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
-58,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
-59,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
-60,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
-67,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
-68,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+57,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+58,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+59,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+60,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+67,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16
+68,fully covered,org.apache.http.client.protocol.TestRequestAddCookies#setUp#84x16

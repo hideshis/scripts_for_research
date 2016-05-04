@@ -1,10 +1,12 @@
-64,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#48
-65,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#48
-86,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
-88,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
-89,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
-91,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
-92,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
-94,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
-96,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
-97,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
+64,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#48
+65,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#48
+86,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
+88,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
+89,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49
+90,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x3
+91,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
+92,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
+93,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x4,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
+94,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
+96,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49x2
+97,fully covered,org.apache.http.client.methods.TestHttpOptions#testMultipleAllows#49

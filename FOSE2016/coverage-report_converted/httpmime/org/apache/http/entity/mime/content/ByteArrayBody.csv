@@ -1,8 +1,8 @@
-74,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-75,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-76,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-77,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-78,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-92,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-107,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
-112,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#71
+74,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+75,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+76,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+77,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+78,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+92,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+107,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#69
+112,fully covered,org.apache.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#71

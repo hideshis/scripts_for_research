@@ -1,2 +1,3 @@
-79,org.apache.http.client.methods.TestRequestBuilder#testAddParameters3#118
-80,org.apache.http.client.methods.TestRequestBuilder#testAddParameters3#118
+77,fully covered,org.apache.http.client.methods.TestRequestBuilder#testAddParameters3#118x2
+79,fully covered,org.apache.http.client.methods.TestRequestBuilder#testAddParameters3#118
+80,fully covered,org.apache.http.client.methods.TestRequestBuilder#testAddParameters3#118

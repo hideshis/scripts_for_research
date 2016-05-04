@@ -1,1 +1,3 @@
-43,org.apache.http.impl.client.TestDefaultBackoffStrategy#setUp#51x6
+43,fully covered,org.apache.http.impl.client.TestDefaultBackoffStrategy#setUp#51x6
+47,fully covered,org.apache.http.impl.client.TestDefaultBackoffStrategy#backsOffForConnectionTimeouts#66,org.apache.http.impl.client.TestDefaultBackoffStrategy#backsOffForSocketTimeouts#61,org.apache.http.impl.client.TestDefaultBackoffStrategy#doesNotBackOffForConnectionManagerTimeout#71
+53,fully covered,org.apache.http.impl.client.TestDefaultBackoffStrategy#backsOffForServiceUnavailable#78,org.apache.http.impl.client.TestDefaultBackoffStrategy#doesNotBackOffForNon503StatusCodes#89x499

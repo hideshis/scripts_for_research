@@ -1,4 +1,4 @@
-47,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
-48,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
-49,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
-52,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#720
+47,fully covered,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
+48,fully covered,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
+49,fully covered,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#718
+52,fully covered,org.apache.http.impl.execchain.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#720

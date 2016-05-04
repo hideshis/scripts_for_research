@@ -1,3 +1,3 @@
-38,org.apache.http.impl.client.TestNullBackoffStrategy#setUp#45x2
-42,org.apache.http.impl.client.TestNullBackoffStrategy#doesNotBackoffForThrowables#50
-47,org.apache.http.impl.client.TestNullBackoffStrategy#doesNotBackoffForResponses#57
+38,fully covered,org.apache.http.impl.client.TestNullBackoffStrategy#setUp#45x2
+42,fully covered,org.apache.http.impl.client.TestNullBackoffStrategy#doesNotBackoffForThrowables#50
+47,fully covered,org.apache.http.impl.client.TestNullBackoffStrategy#doesNotBackoffForResponses#57

@@ -1,4 +1,4 @@
-44,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
-45,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
-46,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
-49,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#86,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#78
+44,fully covered,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
+45,fully covered,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
+46,fully covered,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#83,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#75
+49,fully covered,org.apache.http.impl.client.TestAbstractResponseHandler#testUnsuccessfulResponse#86,org.apache.http.impl.client.TestBasicResponseHandler#testUnsuccessfulResponse#78
