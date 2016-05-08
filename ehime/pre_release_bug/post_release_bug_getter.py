@@ -4,6 +4,7 @@ import datetime
 import subprocess
 import sys
 import os
+import csv
 
 def time_getter(line, flag):
     if flag == 'creation':
@@ -19,7 +20,7 @@ def time_getter(line, flag):
 
 def bug_category_getter(creation_time, version):
     try:
-        result = subprocess.check_output('grep "' + version + '," tag_info2.csv', shell=True)
+        result = subprocess.check_output('grep "' + version + '," ../szz_tag/tag_info2.csv', shell=True)
     except subprocess.CalledProcessError:
         return 'non existing version'
     tagged_time = result.split(',')[-1]
@@ -34,7 +35,7 @@ def bug_category_getter(creation_time, version):
 def history_checker(issue_key, resolution):
     try:
         #result = subprocess.check_output('grep "' + issue_key + '," ./scripts_for_research/ehime/jira/bug_history.csv', shell=True)
-        result = subprocess.check_output('grep "' + issue_key + '," ./jira/bug_history.csv', shell=True)
+        result = subprocess.check_output('grep "' + issue_key + '," ../jira/bug_history.csv', shell=True)
     except subprocess.CalledProcessError:
         return resolution
     result = result.replace('\r', '')
@@ -47,10 +48,12 @@ def history_checker(issue_key, resolution):
             return 'Fixed'
     return resolution
 
+f = open('overlooked_bugs_httpclient.csv', 'w')
+writer = csv.writer(f, lineterminator='\n')
 query_list = ['Bug ID,Opened,Changed']
-os.system('echo ' + ','.join(query_list) + '>>overlooked_bugs_httpclient.csv')
+writer.writerow(query_list)
 #f = open('./scripts_for_research/ehime/jira/bug_info.csv', 'r')
-f = open('./jira/bug_info.csv', 'r')
+f = open('../jira/bug_info.csv', 'r')
 line = f.readline()
 line = line.replace('\r', '')
 line = line.replace('\n', '')
@@ -89,8 +92,9 @@ while line:
         updated_time = updated_time.replace('-', '/')
         updated_time = updated_time[:-3]
         query_list = [issue_key, creation_time, updated_time]
-        os.system('echo ' + ','.join(query_list) + '>>overlooked_bugs_httpclient.csv')
+        writer.writerow(query_list)
     line = f.readline()
     line = line.replace('\r', '')
     line = line.replace('\n', '')
 print null_counter, pre_counter, post_counter
+f.close()
