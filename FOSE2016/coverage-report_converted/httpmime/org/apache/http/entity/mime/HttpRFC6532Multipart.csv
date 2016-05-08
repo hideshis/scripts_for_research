@@ -1,0 +1,9 @@
+50,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#257
+51,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#257
+52,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#257
+56,fully covered,"org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260, 288"
+65,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x3
+66,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x3,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x9
+67,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x9
+68,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x9
+69,fully covered,org.apache.http.entity.mime.TestMultipartForm#testMultipartFormRFC6532#260x3

@@ -1,0 +1,16 @@
+45,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+46,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+47,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+48,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+49,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+50,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+51,fully covered,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+53,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#121, 125"
+71,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134
+72,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134
+80,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126"
+85,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134x3,"org.apache.http.client.fluent.TestFluent#testPostRequest#122x3, 126x3"
+95,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126"
+96,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126"
+97,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126"
+98,fully covered,org.apache.http.client.fluent.TestFluent#testContentAsStringWithCharset#134,"org.apache.http.client.fluent.TestFluent#testPostRequest#122, 126"

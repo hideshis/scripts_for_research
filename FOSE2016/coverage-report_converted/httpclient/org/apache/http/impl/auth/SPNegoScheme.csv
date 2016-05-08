@@ -1,0 +1,6 @@
+58,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#157,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#187
+59,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#157,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#187
+67,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#172x4,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#203x4
+87,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#172,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#203
+97,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#172,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#203
+120,fully covered,org.apache.http.impl.client.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#172,org.apache.http.impl.client.integration.TestSPNegoScheme#testNoTokenGeneratedError#203

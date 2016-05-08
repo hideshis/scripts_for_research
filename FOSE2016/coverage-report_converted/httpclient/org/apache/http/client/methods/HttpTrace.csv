@@ -1,0 +1,4 @@
+70,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#374
+71,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#374
+72,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#374
+76,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#374x3

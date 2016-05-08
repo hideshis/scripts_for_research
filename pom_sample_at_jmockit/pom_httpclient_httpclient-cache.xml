@@ -137,7 +137,7 @@
           <systemPropertyVariables>
              <coverage-output>html</coverage-output>
              <!-- Default value coverage-maxCallPoints seems to be 10. -->
-             <coverage-maxCallPoints>1000</coverage-maxCallPoints>
+             <coverage-maxCallPoints>10000</coverage-maxCallPoints>
           </systemPropertyVariables>
         </configuration>
       </plugin>

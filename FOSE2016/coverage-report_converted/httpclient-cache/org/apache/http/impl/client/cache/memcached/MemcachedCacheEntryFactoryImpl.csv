@@ -1,0 +1,2 @@
+34,fully covered,org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryFactoryImpl#createsMemcachedCacheEntryImpls#43
+38,fully covered,org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryFactoryImpl#createsMemcachedCacheEntryImpls#44

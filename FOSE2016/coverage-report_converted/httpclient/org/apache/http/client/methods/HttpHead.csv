@@ -1,0 +1,7 @@
+63,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+64,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+65,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+71,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+72,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+73,fully covered,org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362
+77,fully covered,"org.apache.http.impl.client.TestDefaultRedirectStrategy#testGetRedirectRequest#362, 364"
