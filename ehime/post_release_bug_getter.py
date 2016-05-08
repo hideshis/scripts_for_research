@@ -33,7 +33,8 @@ def bug_category_getter(creation_time, version):
 
 def history_checker(issue_key, resolution):
     try:
-        result = subprocess.check_output('grep "' + issue_key + '," ./scripts_for_research/ehime/jira/bug_history.csv', shell=True)
+        #result = subprocess.check_output('grep "' + issue_key + '," ./scripts_for_research/ehime/jira/bug_history.csv', shell=True)
+        result = subprocess.check_output('grep "' + issue_key + '," ./jira/bug_history.csv', shell=True)
     except subprocess.CalledProcessError:
         return resolution
     result = result.replace('\r', '')
@@ -42,13 +43,14 @@ def history_checker(issue_key, resolution):
     for history in history_list:
         if history.endswith(' '):
             history = history[:-1]
-        if history.split(',')[0] == 'Fixed':
+        if history.split(',')[-1] == 'Fixed':
             return 'Fixed'
     return resolution
 
 query_list = ['Bug ID,Opened,Changed']
 os.system('echo ' + ','.join(query_list) + '>>overlooked_bugs_httpclient.csv')
-f = open('./scripts_for_research/ehime/jira/bug_info.csv', 'r')
+#f = open('./scripts_for_research/ehime/jira/bug_info.csv', 'r')
+f = open('./jira/bug_info.csv', 'r')
 line = f.readline()
 line = line.replace('\r', '')
 line = line.replace('\n', '')
