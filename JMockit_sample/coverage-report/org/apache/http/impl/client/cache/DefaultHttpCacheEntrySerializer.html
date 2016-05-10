@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DefaultHttpCacheEntrySerializer.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/DefaultHttpCacheEntrySerializer.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+
+import org.apache.http.annotation.Immutable;
+import org.apache.http.client.cache.HttpCacheEntry;
+import org.apache.http.client.cache.HttpCacheEntrySerializationException;
+import org.apache.http.client.cache.HttpCacheEntrySerializer;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * {@link HttpCacheEntrySerializer} implementation that uses the default (native)
+ * serialization.
+ *
+ * @see java.io.Serializable
+ *
+ * @since 4.1
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>@Immutable</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>233</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>public class DefaultHttpCacheEntrySerializer implements HttpCacheEntrySerializer {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.ehcache.TestEhcacheProtocolRequirements#setUp: 72x231</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#setUp: 62</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void writeTo(final HttpCacheEntry cacheEntry, final OutputStream os) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>215</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        final ObjectOutputStream oos = new ObjectOutputStream(os);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheEntryDoesNotHaveACacheValidator: 4121</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeadersIsPreservedOnResponses: 467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3269</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3158, 3159</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransmitsAgeHeaderIfIncomingAgeHeaderTooBig: 4991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnRequests: 418</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddEtagToOriginResponse: 3401</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1551, 1552</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2055x2, 2056x2, 2057x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6201, 6202</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarnDatesAreAddedToWarningsOnLowerProtocolVersions: 6237</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardCachedPartialResponseIfCacheValidatorsDoNotStronglyMatchAndDateHeadersAreEqual: 4446</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpect100ContinueIsNotSentIfThereIsNoRequestBody: 704</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnResponsesAreForwarded: 591</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRequestsWithLowerProtocolVersionsGetUpgradedTo1_1: 175</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptHeaderValuesIsPreservedOnRequests: 332</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyServerResponseHeader: 5892</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatch: 4337</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRemovesWarningHeaderIfAllWarnValuesAreBadlyDated: 6320</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInContentLocationHeader: 4785x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2761, 2764</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3634</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testLowerOriginResponsesUpgradedToOurVersion1_1: 207</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1262</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToResponses: 6021</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHigher1_XProtocolVersionsDowngradeTo1_1: 144</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheMissOnGETUsesOriginResponse: 88</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptCharsetHeadersIsPreservedOnRequests: 339</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1988</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptEncodingHeadersIsPreservedOnRequests: 346</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInLocationHeader: 4779x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWWWAuthenticateHeadersIsPreservedOnResponses: 495</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCachedResponsesWithMissingDateHeadersShouldBeAssignedOne: 5802</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5873, 5874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToOriginResponse: 3611</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1646</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSubrangeGETMustUseStrongComparisonForCachedResponse: 3108</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWarningHeadersIsPreservedOnRequests: 425</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateIsNotCacheableBySharedCache: 5496</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnRequests: 411</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1740</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3990, 3991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationHeaderFromOrigin: 3358</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnResponses: 488</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidationEvenWithContraryIndications: 5581</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCachedResponseDoesNotHaveCacheValidator: 4282</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2689, 2692</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeaderValuesIsPreserved: 5706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToConditionalRangeRequestDoesNotIncludeOtherEntityHeaders: 1502</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1328</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyAllowHeaderWithUnknownMethods: 5011</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInLocationHeader: 4755x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnRequestsAreForwarded: 570</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleCacheControlHeadersIsPreservedOnRequests: 371</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5HeaderFromOrigin: 3363</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3233, 3234</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfIncomingRequestDoesNotHaveCacheValidator: 4228</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnResponses: 481</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheValidatorsDoNotStronglyMatch: 4174</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOrigin: 3594</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToAHEADRequestMustNotHaveABody: 925</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationToOriginResponse: 3391</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3731, 3732</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5ToOriginResponse: 3396</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1294</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4599x2, 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1958</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testForwardsUnknownHeadersOnRequestsFromHigherProtocolVersions: 256</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5222</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1923</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotServeFromCacheForVaryStar: 4521</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToOriginResponseWithNoTransformIfNotPresent: 3754</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingsInSingleHeadersIsPreserved: 5940</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInContentLocationHeader: 4749x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStripsBadlyDatedWarningsFromStoredResponses: 6301</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfIncomingResponseDoesNotHaveACacheValidator: 4069</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingHeadersIsPreserved: 5911</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToOriginResponseWithNoTransformIfNotPresent: 3742</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderFromOriginResponseWithNoTransform: 3682</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentLanguageHeadersIsPreservedOnResponses: 474</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedToOriginResponse: 3406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedHeaderFromOrigin: 3374</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3946, 3947</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInLocationHeader: 4791x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatchEvenIfResponsesOutOfOrder: 4392</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForRelativeUriInContentLocationHeader: 4797x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderFromOriginResponseWithNoTransform: 3666</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransferCodingsAreNotSentToAnHTTP_1_0Client: 281</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2194, 2195</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateOnFieldIsNotReturnedBySharedCache: 5522</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2271, 2272</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidation: 5556</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testVaryStarIsNotGeneratedByProxy: 5980x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testViaHeaderOnRequestProperlyRecordsClientProtocol: 6109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRetainsWarningHeadersReceivedFromUpstream: 6160</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInContentLocationHeader: 4767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToRequests: 6008</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4486x2, 4487</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleParametersInContentEncodingHeaderIsPreserved: 5734</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1452x2, 1453x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustNotNormallyCacheAuthorizedResponses: 5077</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2975</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagHeaderFromOrigin: 3368</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToA1_0RequestShouldUse1_1: 226</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptLanguageHeadersIsPreservedOnRequests: 353</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToOriginResponseWithNoTransformIfNotPresent: 3748</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheDoesNotAssumeContentLocationHeaderIndicatesAnotherCacheableResource: 5781, 5782</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1380</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3897, 3898</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustNotUseMultipartByteRangeContentTypeOnCacheGenerated416Responses: 2431</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>215</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l55s0'>            oos.writeObject(cacheEntry);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheEntryDoesNotHaveACacheValidator: 4121</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeadersIsPreservedOnResponses: 467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3269</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3158, 3159</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransmitsAgeHeaderIfIncomingAgeHeaderTooBig: 4991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnRequests: 418</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddEtagToOriginResponse: 3401</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1551, 1552</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2055x2, 2056x2, 2057x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6201, 6202</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarnDatesAreAddedToWarningsOnLowerProtocolVersions: 6237</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardCachedPartialResponseIfCacheValidatorsDoNotStronglyMatchAndDateHeadersAreEqual: 4446</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpect100ContinueIsNotSentIfThereIsNoRequestBody: 704</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnResponsesAreForwarded: 591</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRequestsWithLowerProtocolVersionsGetUpgradedTo1_1: 175</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptHeaderValuesIsPreservedOnRequests: 332</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyServerResponseHeader: 5892</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatch: 4337</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRemovesWarningHeaderIfAllWarnValuesAreBadlyDated: 6320</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInContentLocationHeader: 4785x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2761, 2764</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3634</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testLowerOriginResponsesUpgradedToOurVersion1_1: 207</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1262</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToResponses: 6021</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHigher1_XProtocolVersionsDowngradeTo1_1: 144</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheMissOnGETUsesOriginResponse: 88</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptCharsetHeadersIsPreservedOnRequests: 339</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1988</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptEncodingHeadersIsPreservedOnRequests: 346</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInLocationHeader: 4779x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWWWAuthenticateHeadersIsPreservedOnResponses: 495</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCachedResponsesWithMissingDateHeadersShouldBeAssignedOne: 5802</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5873, 5874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToOriginResponse: 3611</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1646</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSubrangeGETMustUseStrongComparisonForCachedResponse: 3108</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWarningHeadersIsPreservedOnRequests: 425</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateIsNotCacheableBySharedCache: 5496</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnRequests: 411</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1740</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3990, 3991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationHeaderFromOrigin: 3358</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnResponses: 488</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidationEvenWithContraryIndications: 5581</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCachedResponseDoesNotHaveCacheValidator: 4282</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2689, 2692</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeaderValuesIsPreserved: 5706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToConditionalRangeRequestDoesNotIncludeOtherEntityHeaders: 1502</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1328</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyAllowHeaderWithUnknownMethods: 5011</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInLocationHeader: 4755x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnRequestsAreForwarded: 570</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleCacheControlHeadersIsPreservedOnRequests: 371</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5HeaderFromOrigin: 3363</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3233, 3234</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfIncomingRequestDoesNotHaveCacheValidator: 4228</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnResponses: 481</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheValidatorsDoNotStronglyMatch: 4174</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOrigin: 3594</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToAHEADRequestMustNotHaveABody: 925</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationToOriginResponse: 3391</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3731, 3732</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5ToOriginResponse: 3396</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1294</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4599x2, 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1958</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testForwardsUnknownHeadersOnRequestsFromHigherProtocolVersions: 256</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5222</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1923</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotServeFromCacheForVaryStar: 4521</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToOriginResponseWithNoTransformIfNotPresent: 3754</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingsInSingleHeadersIsPreserved: 5940</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInContentLocationHeader: 4749x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStripsBadlyDatedWarningsFromStoredResponses: 6301</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfIncomingResponseDoesNotHaveACacheValidator: 4069</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingHeadersIsPreserved: 5911</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToOriginResponseWithNoTransformIfNotPresent: 3742</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderFromOriginResponseWithNoTransform: 3682</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentLanguageHeadersIsPreservedOnResponses: 474</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedToOriginResponse: 3406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedHeaderFromOrigin: 3374</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3946, 3947</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInLocationHeader: 4791x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatchEvenIfResponsesOutOfOrder: 4392</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForRelativeUriInContentLocationHeader: 4797x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderFromOriginResponseWithNoTransform: 3666</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransferCodingsAreNotSentToAnHTTP_1_0Client: 281</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2194, 2195</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateOnFieldIsNotReturnedBySharedCache: 5522</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2271, 2272</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidation: 5556</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testVaryStarIsNotGeneratedByProxy: 5980x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testViaHeaderOnRequestProperlyRecordsClientProtocol: 6109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRetainsWarningHeadersReceivedFromUpstream: 6160</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInContentLocationHeader: 4767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToRequests: 6008</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4486x2, 4487</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleParametersInContentEncodingHeaderIsPreserved: 5734</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1452x2, 1453x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustNotNormallyCacheAuthorizedResponses: 5077</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2975</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagHeaderFromOrigin: 3368</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToA1_0RequestShouldUse1_1: 226</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptLanguageHeadersIsPreservedOnRequests: 353</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToOriginResponseWithNoTransformIfNotPresent: 3748</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheDoesNotAssumeContentLocationHeaderIndicatesAnotherCacheableResource: 5781, 5782</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1380</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3897, 3898</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustNotUseMultipartByteRangeContentTypeOnCacheGenerated416Responses: 2431</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>215</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l57s0'>            oos.close();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheEntryDoesNotHaveACacheValidator: 4121</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeadersIsPreservedOnResponses: 467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3269</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3158, 3159</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransmitsAgeHeaderIfIncomingAgeHeaderTooBig: 4991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnRequests: 418</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddEtagToOriginResponse: 3401</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1551, 1552</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2055x2, 2056x2, 2057x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6201, 6202</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarnDatesAreAddedToWarningsOnLowerProtocolVersions: 6237</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardCachedPartialResponseIfCacheValidatorsDoNotStronglyMatchAndDateHeadersAreEqual: 4446</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpect100ContinueIsNotSentIfThereIsNoRequestBody: 704</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnResponsesAreForwarded: 591</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRequestsWithLowerProtocolVersionsGetUpgradedTo1_1: 175</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptHeaderValuesIsPreservedOnRequests: 332</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyServerResponseHeader: 5892</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatch: 4337</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRemovesWarningHeaderIfAllWarnValuesAreBadlyDated: 6320</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInContentLocationHeader: 4785x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2761, 2764</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3634</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testLowerOriginResponsesUpgradedToOurVersion1_1: 207</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1262</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToResponses: 6021</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHigher1_XProtocolVersionsDowngradeTo1_1: 144</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheMissOnGETUsesOriginResponse: 88</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptCharsetHeadersIsPreservedOnRequests: 339</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1988</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptEncodingHeadersIsPreservedOnRequests: 346</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInLocationHeader: 4779x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWWWAuthenticateHeadersIsPreservedOnResponses: 495</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCachedResponsesWithMissingDateHeadersShouldBeAssignedOne: 5802</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5873, 5874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToOriginResponse: 3611</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1646</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSubrangeGETMustUseStrongComparisonForCachedResponse: 3108</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWarningHeadersIsPreservedOnRequests: 425</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateIsNotCacheableBySharedCache: 5496</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnRequests: 411</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1740</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3990, 3991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationHeaderFromOrigin: 3358</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnResponses: 488</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidationEvenWithContraryIndications: 5581</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCachedResponseDoesNotHaveCacheValidator: 4282</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2689, 2692</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeaderValuesIsPreserved: 5706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToConditionalRangeRequestDoesNotIncludeOtherEntityHeaders: 1502</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1328</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyAllowHeaderWithUnknownMethods: 5011</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInLocationHeader: 4755x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnRequestsAreForwarded: 570</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleCacheControlHeadersIsPreservedOnRequests: 371</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5HeaderFromOrigin: 3363</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3233, 3234</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfIncomingRequestDoesNotHaveCacheValidator: 4228</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnResponses: 481</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheValidatorsDoNotStronglyMatch: 4174</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOrigin: 3594</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToAHEADRequestMustNotHaveABody: 925</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationToOriginResponse: 3391</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3731, 3732</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5ToOriginResponse: 3396</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1294</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4599x2, 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1958</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testForwardsUnknownHeadersOnRequestsFromHigherProtocolVersions: 256</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5222</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1923</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotServeFromCacheForVaryStar: 4521</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToOriginResponseWithNoTransformIfNotPresent: 3754</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingsInSingleHeadersIsPreserved: 5940</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInContentLocationHeader: 4749x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStripsBadlyDatedWarningsFromStoredResponses: 6301</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfIncomingResponseDoesNotHaveACacheValidator: 4069</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingHeadersIsPreserved: 5911</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToOriginResponseWithNoTransformIfNotPresent: 3742</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderFromOriginResponseWithNoTransform: 3682</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentLanguageHeadersIsPreservedOnResponses: 474</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedToOriginResponse: 3406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedHeaderFromOrigin: 3374</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3946, 3947</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInLocationHeader: 4791x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatchEvenIfResponsesOutOfOrder: 4392</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForRelativeUriInContentLocationHeader: 4797x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderFromOriginResponseWithNoTransform: 3666</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransferCodingsAreNotSentToAnHTTP_1_0Client: 281</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2194, 2195</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateOnFieldIsNotReturnedBySharedCache: 5522</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2271, 2272</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidation: 5556</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testVaryStarIsNotGeneratedByProxy: 5980x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testViaHeaderOnRequestProperlyRecordsClientProtocol: 6109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRetainsWarningHeadersReceivedFromUpstream: 6160</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInContentLocationHeader: 4767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToRequests: 6008</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4486x2, 4487</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleParametersInContentEncodingHeaderIsPreserved: 5734</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1452x2, 1453x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustNotNormallyCacheAuthorizedResponses: 5077</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2975</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagHeaderFromOrigin: 3368</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToA1_0RequestShouldUse1_1: 226</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptLanguageHeadersIsPreservedOnRequests: 353</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToOriginResponseWithNoTransformIfNotPresent: 3748</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheDoesNotAssumeContentLocationHeaderIndicatesAnotherCacheableResource: 5781, 5782</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1380</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3897, 3898</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustNotUseMultipartByteRangeContentTypeOnCacheGenerated416Responses: 2431</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>215</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l58s0'>        }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheEntryDoesNotHaveACacheValidator: 4121</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeadersIsPreservedOnResponses: 467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3269</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3158, 3159</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransmitsAgeHeaderIfIncomingAgeHeaderTooBig: 4991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnRequests: 418</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddEtagToOriginResponse: 3401</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1551, 1552</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2055x2, 2056x2, 2057x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6201, 6202</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarnDatesAreAddedToWarningsOnLowerProtocolVersions: 6237</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardCachedPartialResponseIfCacheValidatorsDoNotStronglyMatchAndDateHeadersAreEqual: 4446</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpect100ContinueIsNotSentIfThereIsNoRequestBody: 704</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnResponsesAreForwarded: 591</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRequestsWithLowerProtocolVersionsGetUpgradedTo1_1: 175</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptHeaderValuesIsPreservedOnRequests: 332</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyServerResponseHeader: 5892</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatch: 4337</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRemovesWarningHeaderIfAllWarnValuesAreBadlyDated: 6320</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInContentLocationHeader: 4785x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2761, 2764</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3634</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testLowerOriginResponsesUpgradedToOurVersion1_1: 207</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1262</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToResponses: 6021</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHigher1_XProtocolVersionsDowngradeTo1_1: 144</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheMissOnGETUsesOriginResponse: 88</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptCharsetHeadersIsPreservedOnRequests: 339</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1988</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptEncodingHeadersIsPreservedOnRequests: 346</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInLocationHeader: 4779x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWWWAuthenticateHeadersIsPreservedOnResponses: 495</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCachedResponsesWithMissingDateHeadersShouldBeAssignedOne: 5802</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5873, 5874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToOriginResponse: 3611</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1646</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSubrangeGETMustUseStrongComparisonForCachedResponse: 3108</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWarningHeadersIsPreservedOnRequests: 425</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateIsNotCacheableBySharedCache: 5496</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnRequests: 411</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1740</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3990, 3991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationHeaderFromOrigin: 3358</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnResponses: 488</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidationEvenWithContraryIndications: 5581</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCachedResponseDoesNotHaveCacheValidator: 4282</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2689, 2692</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeaderValuesIsPreserved: 5706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToConditionalRangeRequestDoesNotIncludeOtherEntityHeaders: 1502</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1328</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyAllowHeaderWithUnknownMethods: 5011</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInLocationHeader: 4755x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnRequestsAreForwarded: 570</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleCacheControlHeadersIsPreservedOnRequests: 371</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5HeaderFromOrigin: 3363</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3233, 3234</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfIncomingRequestDoesNotHaveCacheValidator: 4228</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnResponses: 481</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheValidatorsDoNotStronglyMatch: 4174</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOrigin: 3594</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToAHEADRequestMustNotHaveABody: 925</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationToOriginResponse: 3391</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3731, 3732</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5ToOriginResponse: 3396</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1294</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4599x2, 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1958</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testForwardsUnknownHeadersOnRequestsFromHigherProtocolVersions: 256</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5222</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1923</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotServeFromCacheForVaryStar: 4521</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToOriginResponseWithNoTransformIfNotPresent: 3754</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingsInSingleHeadersIsPreserved: 5940</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInContentLocationHeader: 4749x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStripsBadlyDatedWarningsFromStoredResponses: 6301</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfIncomingResponseDoesNotHaveACacheValidator: 4069</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingHeadersIsPreserved: 5911</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToOriginResponseWithNoTransformIfNotPresent: 3742</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderFromOriginResponseWithNoTransform: 3682</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentLanguageHeadersIsPreservedOnResponses: 474</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedToOriginResponse: 3406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedHeaderFromOrigin: 3374</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3946, 3947</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInLocationHeader: 4791x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatchEvenIfResponsesOutOfOrder: 4392</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForRelativeUriInContentLocationHeader: 4797x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderFromOriginResponseWithNoTransform: 3666</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransferCodingsAreNotSentToAnHTTP_1_0Client: 281</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2194, 2195</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateOnFieldIsNotReturnedBySharedCache: 5522</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2271, 2272</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidation: 5556</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testVaryStarIsNotGeneratedByProxy: 5980x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testViaHeaderOnRequestProperlyRecordsClientProtocol: 6109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRetainsWarningHeadersReceivedFromUpstream: 6160</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInContentLocationHeader: 4767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToRequests: 6008</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4486x2, 4487</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleParametersInContentEncodingHeaderIsPreserved: 5734</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1452x2, 1453x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustNotNormallyCacheAuthorizedResponses: 5077</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2975</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagHeaderFromOrigin: 3368</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToA1_0RequestShouldUse1_1: 226</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptLanguageHeadersIsPreservedOnRequests: 353</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToOriginResponseWithNoTransformIfNotPresent: 3748</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheDoesNotAssumeContentLocationHeaderIndicatesAnotherCacheableResource: 5781, 5782</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1380</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3897, 3898</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustNotUseMultipartByteRangeContentTypeOnCacheGenerated416Responses: 2431</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>215</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheEntryDoesNotHaveACacheValidator: 4121</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeadersIsPreservedOnResponses: 467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3269</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3158, 3159</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransmitsAgeHeaderIfIncomingAgeHeaderTooBig: 4991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnRequests: 418</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddEtagToOriginResponse: 3401</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1551, 1552</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2055x2, 2056x2, 2057x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6201, 6202</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarnDatesAreAddedToWarningsOnLowerProtocolVersions: 6237</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardCachedPartialResponseIfCacheValidatorsDoNotStronglyMatchAndDateHeadersAreEqual: 4446</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpect100ContinueIsNotSentIfThereIsNoRequestBody: 704</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnResponsesAreForwarded: 591</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRequestsWithLowerProtocolVersionsGetUpgradedTo1_1: 175</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptHeaderValuesIsPreservedOnRequests: 332</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyServerResponseHeader: 5892</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatch: 4337</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRemovesWarningHeaderIfAllWarnValuesAreBadlyDated: 6320</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInContentLocationHeader: 4785x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2761, 2764</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3634</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testLowerOriginResponsesUpgradedToOurVersion1_1: 207</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1262</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToResponses: 6021</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHigher1_XProtocolVersionsDowngradeTo1_1: 144</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheMissOnGETUsesOriginResponse: 88</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptCharsetHeadersIsPreservedOnRequests: 339</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1988</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptEncodingHeadersIsPreservedOnRequests: 346</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInLocationHeader: 4779x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWWWAuthenticateHeadersIsPreservedOnResponses: 495</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCachedResponsesWithMissingDateHeadersShouldBeAssignedOne: 5802</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5873, 5874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToOriginResponse: 3611</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1646</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSubrangeGETMustUseStrongComparisonForCachedResponse: 3108</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleWarningHeadersIsPreservedOnRequests: 425</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateIsNotCacheableBySharedCache: 5496</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnRequests: 411</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1740</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3990, 3991</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationHeaderFromOrigin: 3358</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleViaHeadersIsPreservedOnResponses: 488</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidationEvenWithContraryIndications: 5581</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCachedResponseDoesNotHaveCacheValidator: 4282</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2689, 2692</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentEncodingHeaderValuesIsPreserved: 5706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToConditionalRangeRequestDoesNotIncludeOtherEntityHeaders: 1502</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1328</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyAllowHeaderWithUnknownMethods: 5011</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInLocationHeader: 4755x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUnknownHeadersOnRequestsAreForwarded: 570</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleCacheControlHeadersIsPreservedOnRequests: 371</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5HeaderFromOrigin: 3363</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3233, 3234</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfIncomingRequestDoesNotHaveCacheValidator: 4228</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultiplePragmaHeadersIsPreservedOnResponses: 481</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfCacheValidatorsDoNotStronglyMatch: 4174</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOrigin: 3594</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToAHEADRequestMustNotHaveABody: 925</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationToOriginResponse: 3391</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3731, 3732</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5ToOriginResponse: 3396</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1294</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4599x2, 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1958</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testForwardsUnknownHeadersOnRequestsFromHigherProtocolVersions: 256</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5222</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1923</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotServeFromCacheForVaryStar: 4521</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToOriginResponseWithNoTransformIfNotPresent: 3754</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingsInSingleHeadersIsPreserved: 5940</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutInvalidatesCacheForThatUriInContentLocationHeader: 4749x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInRelativeContentLocationHeader: 4773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStripsBadlyDatedWarningsFromStoredResponses: 6301</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotCombinePartialResponseIfIncomingResponseDoesNotHaveACacheValidator: 4069</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleTransferEncodingHeadersIsPreserved: 5911</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToOriginResponseWithNoTransformIfNotPresent: 3742</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderFromOriginResponseWithNoTransform: 3682</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleContentLanguageHeadersIsPreservedOnResponses: 474</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedToOriginResponse: 3406</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedHeaderFromOrigin: 3374</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3946, 3947</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForThatUriInLocationHeader: 4791x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustDiscardLeastRecentPartialResponseIfCacheValidatorsDoNotStronglyMatchEvenIfResponsesOutOfOrder: 4392</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostInvalidatesCacheForRelativeUriInContentLocationHeader: 4797x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderFromOriginResponseWithNoTransform: 3666</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testTransferCodingsAreNotSentToAnHTTP_1_0Client: 281</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2194, 2195</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheControlPrivateOnFieldIsNotReturnedBySharedCache: 5522</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2271, 2272</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNoCacheCannotSatisfyASubsequentRequestWithoutRevalidation: 5556</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testVaryStarIsNotGeneratedByProxy: 5980x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testViaHeaderOnRequestProperlyRecordsClientProtocol: 6109</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testRetainsWarningHeadersReceivedFromUpstream: 6160</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteInvalidatesCacheForThatUriInContentLocationHeader: 4767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testProperlyFormattedViaHeaderIsAddedToRequests: 6008</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4486x2, 4487</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleParametersInContentEncodingHeaderIsPreserved: 5734</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1452x2, 1453x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustNotNormallyCacheAuthorizedResponses: 5077</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2975</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagHeaderFromOrigin: 3368</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseToA1_0RequestShouldUse1_1: 226</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testOrderOfMultipleAcceptLanguageHeadersIsPreservedOnRequests: 353</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToOriginResponseWithNoTransformIfNotPresent: 3748</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheDoesNotAssumeContentLocationHeaderIndicatesAnotherCacheableResource: 5781, 5782</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1380</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3897, 3898</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMustNotUseMultipartByteRangeContentTypeOnCacheGenerated416Responses: 2431</li>
+          <li>org.apache.http.impl.client.cache.memcached.TestMemcachedCacheEntryImpl#canBeReconstitutedFromByteArray: 88x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public HttpCacheEntry readFrom(final InputStream is) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>202</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l63s0'>        final ObjectInputStream ois = new ObjectInputStream(is);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3270x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3159x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1552x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x6, 2057x6</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6202x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1407x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2764x2, 2765x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3635x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1989x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5874x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1647, 1648x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1741, 1742x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3991x2, 3992x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2692x2, 2693x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3234x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3732x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1295x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1959x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5223x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1924x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2110x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3947x2, 3948x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2195x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2272x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1453x4, 1454x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2976x2, 2977x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1381x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3898x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>202</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>            return (HttpCacheEntry) ois.readObject();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3270x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3159x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1552x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x6, 2057x6</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6202x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1407x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2764x2, 2765x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3635x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1989x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5874x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1647, 1648x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1741, 1742x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3991x2, 3992x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2692x2, 2693x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3234x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3732x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1295x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1959x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5223x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1924x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2110x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3947x2, 3948x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2195x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2272x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1453x4, 1454x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2976x2, 2977x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1381x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3898x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l66s0'>        } catch (final ClassNotFoundException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>            throw new HttpCacheEntrySerializationException("Class not found: " + ex.getMessage(), ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>202</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>            ois.close();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithCacheControlPublic: 5112x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfCannotRevalidateAMustRevalidateEntry: 5432x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereAllValidatorsMatchMayBeServedFromCache: 3270x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentMD5FieldMakeACacheEntryStale: 1002x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testValidationMustUseETagIfProvidedByOriginServer: 3159x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithCacheControlNoCache: 5320x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseToIfRangeWithStrongValidatorReturnsAllEntityHeaders: 1552x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x6, 2057x6</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatesWarningHeadersOnValidation: 6202x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsContentLocationIfA200ResponseWouldHaveIncludedIt: 1407x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentTypeHeaderToCachedResponseWithNoTransformIfNotPresent: 3773x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentEncodingHeaderToCachedResponseWithNoTransformIfNotPresent: 3761x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test2xxWarningsAreNotDeletedAfterSuccessfulRevalidation: 2764x2, 2765x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderMatchesDateIfAddedToCacheHit: 3635x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveContentRangeOrMultipartByteRangesContentType: 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithMustRevalidate: 5177x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4856x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesContentLocationIfOriginResponseDid: 1989x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedLastModifiedFieldMakeACacheEntryStale: 1018x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresHeaderEqualToDateHeaderIsTreatedAsStale: 5874x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfETagDoesNotMatch: 1647, 1648x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustRevalidateAuthorizedResponsesWhenSMaxAgeIsZero: 5095x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIsNotCombinedWithPreviousContentIfLastModifiedDoesNotMatch: 1741, 1742x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4862x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMultiHeadersAreSuccessfullyReplacedOn304Validation: 3991x2, 3992x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test1xxWarningsAreDeletedAfterSuccessfulRevalidation: 2692x2, 2693x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentRangeHeaderToCachedResponseWithNoTransformIfNotPresent: 3767x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentEncodingHeaderOnCachedResponseWithNoTransform: 3706x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveDateHeader: 1329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithMustRevalidateIsNotUsedWithoutRevalidatingWithOrigin: 5393x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMustUseNewRequestHeadersWhenRevalidatingAuthorizedResponsesWithSMaxAge: 5164x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentLocationFromOriginOnCacheHit: 3434x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyLastModifiedFromOriginOnCacheHit: 3450x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testConditionalRequestWhereNotAllValidatorsMatchCannotBeServedFromCache: 3234x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheIsNotUsedWhenRespondingToRequestWithPragmaNoCache: 5329x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testExpiresZeroHeaderIsTreatedAsStale: 5846x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedContentLengthFieldMakeACacheEntryStale: 997x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentRangeHeaderOnCachedResponseWithNoTransform: 3732x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddETagHeaderOnCacheHit: 3485x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseGeneratedFromCacheMustHaveABodyThatMatchesContentLengthHeaderIfPresent: 1295x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4868x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesEtagIfOriginResponseDid: 1959x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testWarning110IsAddedToStaleResponses: 5223x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testGenerates504IfSharedCacheCannotRevalidateAProxyRevalidateEntry: 5467x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testMalformedExpiresHeaderIsTreatedAsStale: 5840x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesDateHeader: 1924x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithMustRevalidate: 5104x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testStaleEntryWithProxyRevalidateOnSharedCacheIsNotUsedWithoutRevalidatingWithOrigin: 5452x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4888x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304GeneratedFromCacheOnWeakValidatorDoesNotIncludeOtherEntityHeaders: 2110x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testHEADResponseWithUpdatedETagFieldMakeACacheEntryStale: 1009x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostDoesNotInvalidateCacheForUriInLocationHeadersFromOtherHosts: 4874x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteToUriInvalidatesCacheForThatUri: 4691</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testUpdatedEndToEndHeadersFrom304ArePassedOnResponseAndUpdatedInCacheEntry: 3947x2, 3948x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentMD5FromOriginOnCacheHit: 3439x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentLocationHeaderOnCacheHit: 3475x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddContentMD5HeaderOnCacheHit: 3480x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPostToUriInvalidatesCacheForThatUri: 4697</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDeleteDoesNotInvalidateCacheForUriInContentLocationHeadersFromOtherHosts: 4881x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNotModifiedOfNonCachedEntityShouldRevalidateWithUnconditionalGET: 2195x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyExpiresHeaderFromOriginOnCacheHit: 3601x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCacheEntryIsUpdatedWithNewFieldValuesIn304Response: 2272x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyContentTypeHeaderOnCachedResponseWithNoTransform: 3711x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotModifyEtagFromOriginOnCacheHit: 3444x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testPutToUriInvalidatesCacheForThatUri: 4685</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x5</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testDoesNotAddLastModifiedHeaderOnCacheHit: 3490x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ResponseIncludesVariantHeadersIfValueMightDiffer: 1453x4, 1454x3</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testKeepsMostRecentDateHeaderForFreshResponse: 2976x2, 2977x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testSharedCacheMayCacheAuthorizedResponsesWithSMaxAgeHeader: 5086x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test206ContainsETagIfA200ResponseWouldHaveIncludedIt: 1381x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testResponseIncludesCacheEntryEndToEndHeadersForResponseAfter304Validation: 3898x2</li>
+          <li>org.apache.http.impl.client.cache.TestHttpCacheEntrySerializers#canSerializeEntriesWithVariantMaps: 67</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AsynchronousValidator.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/AsynchronousValidator.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.Closeable;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.RejectedExecutionException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.cache.HttpCacheEntry;
+import org.apache.http.client.methods.HttpExecutionAware;
+import org.apache.http.client.methods.HttpRequestWrapper;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.conn.routing.HttpRoute;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Class used for asynchronous revalidations to be used when the "stale-
+ * while-revalidate" directive is present
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>class AsynchronousValidator implements Closeable {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final SchedulingStrategy schedulingStrategy;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final Set&lt;String> queued;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final CacheKeyGenerator cacheKeyGenerator;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final FailureCache failureCache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l54s0'>    private final Log log = LogFactory.getLog(getClass());</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Create AsynchronousValidator which will make revalidation requests
+     * using an {@link ImmediateSchedulingStrategy}. Its thread
+     * pool will be configured according to the given {@link CacheConfig}.
+     * @param config specifies thread pool settings. See
+     * {@link CacheConfig#getAsynchronousWorkersMax()},
+     * {@link CacheConfig#getAsynchronousWorkersCore()},
+     * {@link CacheConfig#getAsynchronousWorkerIdleLifetimeSecs()},
+     * and {@link CacheConfig#getRevalidationQueueSize()}.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public AsynchronousValidator(final CacheConfig config) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>        this(new ImmediateSchedulingStrategy(config));</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>66</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Create AsynchronousValidator which will make revalidation requests
+     * using the supplied {@link SchedulingStrategy}. Closing the validator
+     * will also close the given schedulingStrategy.
+     * @param schedulingStrategy used to maintain a pool of worker threads and
+     *                           schedules when requests are executed
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>    AsynchronousValidator(final SchedulingStrategy schedulingStrategy) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>        this.schedulingStrategy = schedulingStrategy;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l79s0'>        this.queued = new HashSet&lt;String>();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l80s0'>        this.cacheKeyGenerator = new CacheKeyGenerator();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>        this.failureCache = new DefaultFailureCache();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>83</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 204</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 132</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 84</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 180</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 117</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 98</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 147</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#setUp: 140x62</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFiveFailedAttempts: 119</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithThreeFailedAttempts: 97</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithSixFailedAttempts: 130</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithOneFailedAttempt: 75</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithFourFailedAttempts: 108</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithMaxNumberOfFailedAttempts: 141</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithTwoFailedAttempts: 86</li>
+          <li>org.apache.http.impl.client.cache.TestExponentialBackingOffSchedulingStrategy#testScheduleWithoutPreviousError: 64</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 335</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testHTTPCLIENT1470: 371</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 423</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 380</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void close() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>        schedulingStrategy.close();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 206</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#stop: 126</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l87s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testSchedulingStrategyShutdownOnClose: 206</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#stop: 126</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Schedules an asynchronous revalidation
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public synchronized void revalidateCacheEntry(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final CachingExec cachingExec,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpRoute route,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpRequestWrapper request,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpClientContext context,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpExecutionAware execAware,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpCacheEntry entry) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // getVariantURI will fall back on getURI if no variants exist</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>12</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l100s0'>        final String uri = cacheKeyGenerator.getVariantURI(context.getTargetHost(), request, entry);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136, 137</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>12</td>
+      <td><pre class='prettyprint jmp'>        <span id='l102s0' title='Executions: 12' class='covered cp' onclick='showHide(this,0)'>if (!queued.contains(uri))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136, 137</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l103s0'>            final int consecutiveFailedAttempts = failureCache.getErrorCount(uri);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>            final AsynchronousValidationRequest revalidationRequest =</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new AsynchronousValidationRequest(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        this, cachingExec, route, request, context, execAware, entry, uri, consecutiveFailedAttempts);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>108</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>                schedulingStrategy.schedule(revalidationRequest);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>                queued.add(uri);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l111s0'>            } catch (final RejectedExecutionException ree) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>                log.debug("Revalidation for [" + uri + "] not scheduled: " + ree);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l113s0'>            }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>12</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 136, 137</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 88</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 186</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 122</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 102</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 163, 164</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleEntryWithWarning: 353</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testCanAlsoServeStale304sWhileRevalidating: 442</li>
+          <li>org.apache.http.impl.client.cache.TestRFC5861Compliance#testStaleWhileRevalidateReturnsStaleNonRevalidatableEntryWithWarning: 397</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#testStaleWhileRevalidate: 171</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Removes an identifier from the internal list of revalidation jobs in
+     * progress.  This is meant to be called by
+     * {@link AsynchronousValidationRequest#run()} once the revalidation is
+     * complete, using the identifier passed in during constructions.
+     * @param identifier
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    synchronized void markComplete(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l125s0'>        queued.remove(identifier);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 110</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l126s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 110</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * The revalidation job was successful thus the number of consecutive
+     * failed attempts will be reset to zero. Should be called by
+     * {@link AsynchronousValidationRequest#run()}.
+     * @param identifier the revalidation job's unique identifier
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    void jobSuccessful(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l135s0'>        failureCache.resetErrorCount(identifier);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l136s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * The revalidation job did fail and thus the number of consecutive failed
+     * attempts will be increased. Should be called by
+     * {@link AsynchronousValidationRequest#run()}.
+     * @param identifier the revalidation job's unique identifier
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    void jobFailed(final String identifier) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l145s0'>        failureCache.increaseErrorCount(identifier);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l146s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    Set&lt;String> getScheduledIdentifiers() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td class='count'>7</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l149s0'>        return Collections.unmodifiableSet(queued);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryProperlyCollapsesRequest: 142</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntrySchedulesExecutionAndPopulatesIdentifier: 93</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryEndToEnd: 198</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testRevalidateCacheEntryDoesNotPopulateIdentifierOnRejectedExecutionException: 126</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testMarkCompleteRemovesIdentifier: 108, 112</li>
+          <li>org.apache.http.impl.client.cache.TestAsynchronousValidator#testVariantsBothRevalidated: 170</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

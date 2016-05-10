@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CachingHttpClientBuilder.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/CachingHttpClientBuilder.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.Closeable;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.http.client.cache.HttpCacheInvalidator;
+import org.apache.http.client.cache.HttpCacheStorage;
+import org.apache.http.client.cache.ResourceFactory;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.execchain.ClientExecChain;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Builder for {@link org.apache.http.impl.client.CloseableHttpClient}
+ * instances capable of client-side caching.
+ *
+ * @since 4.3
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class CachingHttpClientBuilder extends HttpClientBuilder {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private ResourceFactory resourceFactory;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private HttpCacheStorage storage;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private File cacheDir;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private CacheConfig cacheConfig;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private SchedulingStrategy schedulingStrategy;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private HttpCacheInvalidator httpCacheInvalidator;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private boolean deleteCache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public static CachingHttpClientBuilder create() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l56s0'>        return new CachingHttpClientBuilder();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected CachingHttpClientBuilder() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l60s0'>        super();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l61s0'>        this.deleteCache = true;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setResourceFactory(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final ResourceFactory resourceFactory) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l66s0'>        this.resourceFactory = resourceFactory;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setHttpCacheStorage(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpCacheStorage storage) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l72s0'>        this.storage = storage;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l73s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setCacheDir(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final File cacheDir) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l78s0'>        this.cacheDir = cacheDir;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l79s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setCacheConfig(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final CacheConfig cacheConfig) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l84s0'>        this.cacheConfig = cacheConfig;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>        return this;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 99</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setSchedulingStrategy(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final SchedulingStrategy schedulingStrategy) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l90s0'>        this.schedulingStrategy = schedulingStrategy;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l91s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public final CachingHttpClientBuilder setHttpCacheInvalidator(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            final HttpCacheInvalidator cacheInvalidator) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l96s0'>        this.httpCacheInvalidator = cacheInvalidator;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l97s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public CachingHttpClientBuilder setDeleteCache(final boolean deleteCache) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l101s0'>        this.deleteCache = deleteCache;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l102s0'>        return this;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    protected ClientExecChain decorateMainExec(final ClientExecChain mainExec) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l107s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>final CacheConfig config = this.cacheConfig != null</span> ? <span id='l107s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>this.cacheConfig</span> : <span id='l107s2' title='Executions: 1' class='covered cp' onclick='showHide(this,2)'>CacheConfig.DEFAULT;</span></pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // We copy the instance fields to avoid changing them, and rename to avoid accidental use of the wrong version</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l109s0'>        ResourceFactory resourceFactoryCopy = this.resourceFactory;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l110s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (resourceFactoryCopy == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>            <span id='l111s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (this.cacheDir == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>                resourceFactoryCopy = new HeapResourceFactory();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l114s0'>                resourceFactoryCopy = new FileResourceFactory(cacheDir);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l117s0'>        HttpCacheStorage storageCopy = this.storage;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l118s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (storageCopy == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>            <span id='l119s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (this.cacheDir == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l120s0'>                storageCopy = new BasicHttpCacheStorage(config);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l122s0'>                final ManagedHttpCacheStorage managedStorage = new ManagedHttpCacheStorage(config);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>                <span id='l123s0' title='Executions: 0' class='uncovered'>if (this.deleteCache)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l124s0'>                    addCloseable(new Closeable() {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        public void close() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l128s0'>                            managedStorage.shutdown();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l129s0'>                        }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    });</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l133s0'>                    addCloseable(managedStorage);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l135s0'>                storageCopy = managedStorage;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l138s0'>        final AsynchronousValidator revalidator = createAsynchronousRevalidator(config);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l139s0'>        final CacheKeyGenerator uriExtractor = new CacheKeyGenerator();</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l141s0'>        HttpCacheInvalidator cacheInvalidator = this.httpCacheInvalidator;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l142s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (cacheInvalidator == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>            cacheInvalidator = new CacheInvalidator(uriExtractor, storageCopy);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>146</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l146s0'>        return new CachingExec(mainExec,</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                new BasicHttpCache(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        resourceFactoryCopy,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        storageCopy, config,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        uriExtractor,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                        cacheInvalidator), config, revalidator);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private AsynchronousValidator createAsynchronousRevalidator(final CacheConfig config) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>        <span id='l155s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if (config.getAsynchronousWorkersMax() > 0)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l156s0'>            final SchedulingStrategy configuredSchedulingStrategy = createSchedulingStrategy(config);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l157s0'>            final AsynchronousValidator revalidator = new AsynchronousValidator(</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>                    configuredSchedulingStrategy);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l159s0'>            addCloseable(revalidator);</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l160s0'>            return revalidator;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>        return null;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testAsynchronousWorkersMax0: 40</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private SchedulingStrategy createSchedulingStrategy(final CacheConfig config) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l166s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>return schedulingStrategy != null</span> ? <span id='l166s1' title='Executions: 0' class='uncovered'>schedulingStrategy</span> : <span id='l166s2' title='Executions: 2' class='covered cp' onclick='showHide(this,2)'>new ImmediateSchedulingStrategy(config);</span></pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestCachingHttpClientBuilder#testNullCacheConfig: 45</li>
+          <li>org.apache.http.impl.client.cache.TestStaleWhileRevalidationReleasesConnection#start: 112</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

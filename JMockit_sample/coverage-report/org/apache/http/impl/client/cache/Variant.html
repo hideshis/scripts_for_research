@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Variant.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>httpclient-cache/src/main/java/org/apache/http/impl/client/cache/Variant.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/*
+ * ====================================================================
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * &lt;http://www.apache.org/>.
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.apache.http.impl.client.cache;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.apache.http.client.cache.HttpCacheEntry;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='comment'>/** Records a set of information describing a cached variant. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>class Variant {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String variantKey;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final String cacheKey;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final HttpCacheEntry entry;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l38s0'>    public Variant(final String variantKey, final String cacheKey, final HttpCacheEntry entry) {</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x2</li>
+          <li>org.apache.http.impl.client.cache.TestBasicHttpCache#testGetVariantCacheEntriesReturnsAllVariants: 494x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1283, 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantMissServerIfReturns304CacheReturns200: 1213, 1215x2</li>
+          <li>org.apache.http.impl.client.cache.TestConditionalRequestBuilder#testBuildConditionalRequestFromVariants: 319, 320, 321</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1262, 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#variantNegotiationsDoNotIncludeEtagsForPartialResponses: 1363, 1364</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testSendsAllVariantEtagsInConditionalRequest: 1190, 1191x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l39s0'>        this.variantKey = variantKey;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x2</li>
+          <li>org.apache.http.impl.client.cache.TestBasicHttpCache#testGetVariantCacheEntriesReturnsAllVariants: 494x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1283, 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantMissServerIfReturns304CacheReturns200: 1213, 1215x2</li>
+          <li>org.apache.http.impl.client.cache.TestConditionalRequestBuilder#testBuildConditionalRequestFromVariants: 319, 320, 321</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1262, 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#variantNegotiationsDoNotIncludeEtagsForPartialResponses: 1363, 1364</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testSendsAllVariantEtagsInConditionalRequest: 1190, 1191x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l40s0'>        this.cacheKey = cacheKey;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x2</li>
+          <li>org.apache.http.impl.client.cache.TestBasicHttpCache#testGetVariantCacheEntriesReturnsAllVariants: 494x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1283, 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantMissServerIfReturns304CacheReturns200: 1213, 1215x2</li>
+          <li>org.apache.http.impl.client.cache.TestConditionalRequestBuilder#testBuildConditionalRequestFromVariants: 319, 320, 321</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1262, 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#variantNegotiationsDoNotIncludeEtagsForPartialResponses: 1363, 1364</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testSendsAllVariantEtagsInConditionalRequest: 1190, 1191x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l41s0'>        this.entry = entry;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x2</li>
+          <li>org.apache.http.impl.client.cache.TestBasicHttpCache#testGetVariantCacheEntriesReturnsAllVariants: 494x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1283, 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantMissServerIfReturns304CacheReturns200: 1213, 1215x2</li>
+          <li>org.apache.http.impl.client.cache.TestConditionalRequestBuilder#testBuildConditionalRequestFromVariants: 319, 320, 321</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1262, 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#variantNegotiationsDoNotIncludeEtagsForPartialResponses: 1363, 1364</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testSendsAllVariantEtagsInConditionalRequest: 1190, 1191x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l42s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#test304ResponseGeneratedFromCacheIncludesExpiresCacheControlAndOrVaryIfResponseMightDiffer: 2056x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testCannotUseVariantCacheEntryIfNotAllSelectingRequestHeadersMatch: 4487x2</li>
+          <li>org.apache.http.impl.client.cache.TestBasicHttpCache#testGetVariantCacheEntriesReturnsAllVariants: 494x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1283, 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantMissServerIfReturns304CacheReturns200: 1213, 1215x2</li>
+          <li>org.apache.http.impl.client.cache.TestConditionalRequestBuilder#testBuildConditionalRequestFromVariants: 319, 320, 321</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1262, 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#variantNegotiationsDoNotIncludeEtagsForPartialResponses: 1363, 1364</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testSendsAllVariantEtagsInConditionalRequest: 1190, 1191x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getVariantKey() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l45s0'>        return variantKey;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public String getCacheKey() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l49s0'>        return cacheKey;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x4</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public HttpCacheEntry getEntry() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>10</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l53s0'>        return entry;</pre>
+        <ol style='display:none'>
+          <li>org.apache.http.impl.client.cache.TestProtocolRequirements#testNonmatchingVariantCannotBeServedFromCacheUnlessConditionallyValidated: 4600x4</li>
+          <li>org.apache.http.impl.client.cache.TestCachingExecChain#testVariantsMissServerReturns304CacheReturns304: 1285x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsUpdatesEntry: 1263x2</li>
+          <li>org.apache.http.impl.client.cache.TestProtocolRecommendations#testResponseToExistingVariantsIsCachedForFutureResponses: 1305x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
