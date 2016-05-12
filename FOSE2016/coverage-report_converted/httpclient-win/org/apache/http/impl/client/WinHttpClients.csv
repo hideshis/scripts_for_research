@@ -1,4 +1,0 @@
-57,fully covered,org.apache.http.impl.auth.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#91
-58,partially covered,org.apache.http.impl.auth.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#91
-59,fully covered,org.apache.http.impl.auth.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#91
-66,fully covered,org.apache.http.impl.auth.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#91

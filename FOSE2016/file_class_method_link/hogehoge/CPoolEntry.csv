@@ -1,0 +1,7 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#markRouteComplete():void	59	61
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#isRouteComplete():boolean	63	65
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#closeConnection():void	67	70
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#shutdownConnection():void	72	75
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#isExpired(long):boolean	77	84
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#isClosed():boolean	86	90
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPoolEntry.java	org.apache.hc.client5.http.impl.io.CPoolEntry#close():void	92	99

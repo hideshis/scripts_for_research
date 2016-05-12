@@ -1,0 +1,7 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#cancel(boolean):boolean	56	63
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#scheduledTime():long	68	70
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#startedTime():long	75	77
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#endedTime():long	82	88
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#requestDuration():long	94	100
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#taskDuration():long	105	111
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestFutureTask.java	org.apache.hc.client5.http.impl.sync.HttpRequestFutureTask#toString():String	113	116

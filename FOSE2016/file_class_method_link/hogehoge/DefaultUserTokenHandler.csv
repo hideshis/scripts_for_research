@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/protocol/DefaultUserTokenHandler.java	org.apache.hc.client5.http.impl.protocol.DefaultUserTokenHandler#getUserToken(HttpRoute,HttpContext):Object	62	89
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/protocol/DefaultUserTokenHandler.java	org.apache.hc.client5.http.impl.protocol.DefaultUserTokenHandler#getAuthPrincipal(AuthExchange):Principal	91	97

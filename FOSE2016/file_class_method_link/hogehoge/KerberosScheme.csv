@@ -1,0 +1,3 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/KerberosScheme.java	org.apache.hc.client5.http.impl.auth.KerberosScheme#getName():String	59	62
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/KerberosScheme.java	org.apache.hc.client5.http.impl.auth.KerberosScheme#generateToken(byte[],String,String):byte[]	64	67
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/KerberosScheme.java	org.apache.hc.client5.http.impl.auth.KerberosScheme#isConnectionBased():boolean	69	72

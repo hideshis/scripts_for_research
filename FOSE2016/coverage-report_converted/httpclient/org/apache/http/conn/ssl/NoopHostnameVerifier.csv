@@ -1,3 +1,0 @@
-42,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testSSLTrustVerification#209
-44,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testSSLTrustVerification#209
-48,fully covered,org.apache.http.conn.ssl.TestSSLSocketFactory#testSSLTrustVerificationOverride#248

@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/SystemDefaultDnsResolver.java	org.apache.hc.client5.http.SystemDefaultDnsResolver#resolve(String):InetAddress[]	41	44
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/SystemDefaultDnsResolver.java	org.apache.hc.client5.http.SystemDefaultDnsResolver#resolveCanonicalHostname(String):String	46	57

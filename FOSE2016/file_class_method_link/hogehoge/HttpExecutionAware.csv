@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/methods/HttpExecutionAware.java	org.apache.hc.client5.http.methods.HttpExecutionAware#isAborted():boolean	40	40
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/methods/HttpExecutionAware.java	org.apache.hc.client5.http.methods.HttpExecutionAware#setCancellable(Cancellable):void	45	45

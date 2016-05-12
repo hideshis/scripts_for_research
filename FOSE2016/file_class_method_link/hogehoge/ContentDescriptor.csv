@@ -1,0 +1,6 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getMimeType():String	43	43
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getMediaType():String	52	52
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getSubType():String	60	60
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getCharset():String	73	73
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getTransferEncoding():String	80	80
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ContentDescriptor.java	org.apache.hc.client5.http.entity.mime.ContentDescriptor#getContentLength():long	87	87

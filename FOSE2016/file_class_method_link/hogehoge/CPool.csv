@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPool.java	org.apache.hc.client5.http.impl.io.CPool#createEntry(HttpRoute,ManagedHttpClientConnection):CPoolEntry	61	65
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/CPool.java	org.apache.hc.client5.http.impl.io.CPool#validate(CPoolEntry):boolean	67	70

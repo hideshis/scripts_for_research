@@ -1,0 +1,4 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/AuthCache.java	org.apache.hc.client5.http.auth.AuthCache#put(HttpHost,AuthScheme):void	40	40
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/AuthCache.java	org.apache.hc.client5.http.auth.AuthCache#get(HttpHost):AuthScheme	42	42
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/AuthCache.java	org.apache.hc.client5.http.auth.AuthCache#remove(HttpHost):void	44	44
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/AuthCache.java	org.apache.hc.client5.http.auth.AuthCache#clear():void	46	46

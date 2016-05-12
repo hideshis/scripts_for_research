@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ByteArrayBody.java	org.apache.hc.client5.http.entity.mime.ByteArrayBody#getFilename():String	74	77
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ByteArrayBody.java	org.apache.hc.client5.http.entity.mime.ByteArrayBody#writeTo(OutputStream):void	79	82
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ByteArrayBody.java	org.apache.hc.client5.http.entity.mime.ByteArrayBody#getCharset():String	84	87
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ByteArrayBody.java	org.apache.hc.client5.http.entity.mime.ByteArrayBody#getTransferEncoding():String	89	92
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/ByteArrayBody.java	org.apache.hc.client5.http.entity.mime.ByteArrayBody#getContentLength():long	94	97

@@ -1,0 +1,3 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/psl/PublicSuffixList.java	org.apache.hc.client5.http.psl.PublicSuffixList#getType():DomainType	67	69
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/psl/PublicSuffixList.java	org.apache.hc.client5.http.psl.PublicSuffixList#getRules():List<String>	71	73
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/psl/PublicSuffixList.java	org.apache.hc.client5.http.psl.PublicSuffixList#getExceptions():List<String>	75	77

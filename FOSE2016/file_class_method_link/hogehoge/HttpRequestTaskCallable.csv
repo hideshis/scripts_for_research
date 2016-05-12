@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestTaskCallable.java	org.apache.hc.client5.http.impl.sync.HttpRequestTaskCallable#getScheduled():long	69	71
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestTaskCallable.java	org.apache.hc.client5.http.impl.sync.HttpRequestTaskCallable#getStarted():long	73	75
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestTaskCallable.java	org.apache.hc.client5.http.impl.sync.HttpRequestTaskCallable#getEnded():long	77	79
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestTaskCallable.java	org.apache.hc.client5.http.impl.sync.HttpRequestTaskCallable#call():V	81	112
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpRequestTaskCallable.java	org.apache.hc.client5.http.impl.sync.HttpRequestTaskCallable#cancel():void	114	119

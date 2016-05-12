@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/protocol/RedirectStrategy.java	org.apache.hc.client5.http.protocol.RedirectStrategy#isRedirected(HttpRequest,HttpResponse,HttpContext):boolean	60	63
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/protocol/RedirectStrategy.java	org.apache.hc.client5.http.protocol.RedirectStrategy#getRedirect(HttpRequest,HttpResponse,HttpContext):HttpUriRequest	76	79

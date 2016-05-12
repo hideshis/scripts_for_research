@@ -1,0 +1,4 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieStore.java	org.apache.hc.client5.http.cookie.CookieStore#addCookie(Cookie):void	47	47
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieStore.java	org.apache.hc.client5.http.cookie.CookieStore#getCookies():List<Cookie>	54	54
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieStore.java	org.apache.hc.client5.http.cookie.CookieStore#clearExpired(Date):boolean	62	62
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieStore.java	org.apache.hc.client5.http.cookie.CookieStore#clear():void	67	67

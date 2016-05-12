@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/NoopHostnameVerifier.java	org.apache.hc.client5.http.ssl.NoopHostnameVerifier#verify(String,SSLSession):boolean	46	49
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/NoopHostnameVerifier.java	org.apache.hc.client5.http.ssl.NoopHostnameVerifier#toString():String	51	54

@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/LoggingOutputStream.java	org.apache.hc.client5.http.impl.io.LoggingOutputStream#write(int):void	52	60
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/LoggingOutputStream.java	org.apache.hc.client5.http.impl.io.LoggingOutputStream#write(byte[]):void	62	71
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/LoggingOutputStream.java	org.apache.hc.client5.http.impl.io.LoggingOutputStream#write(byte[],int,int):void	73	82
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/LoggingOutputStream.java	org.apache.hc.client5.http.impl.io.LoggingOutputStream#flush():void	84	92
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/io/LoggingOutputStream.java	org.apache.hc.client5.http.impl.io.LoggingOutputStream#close():void	94	102

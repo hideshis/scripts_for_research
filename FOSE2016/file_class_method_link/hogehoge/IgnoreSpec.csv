@@ -1,0 +1,3 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/IgnoreSpec.java	org.apache.hc.client5.http.impl.cookie.IgnoreSpec#parse(Header,CookieOrigin):List<Cookie>	47	51
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/IgnoreSpec.java	org.apache.hc.client5.http.impl.cookie.IgnoreSpec#match(Cookie,CookieOrigin):boolean	53	56
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/IgnoreSpec.java	org.apache.hc.client5.http.impl.cookie.IgnoreSpec#formatCookies(List<Cookie>):List<Header>	58	61

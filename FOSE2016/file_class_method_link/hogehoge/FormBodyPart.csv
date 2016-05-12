@@ -1,0 +1,4 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/FormBodyPart.java	org.apache.hc.client5.http.entity.mime.FormBodyPart#getName():String	54	56
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/FormBodyPart.java	org.apache.hc.client5.http.entity.mime.FormBodyPart#getBody():ContentBody	58	60
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/FormBodyPart.java	org.apache.hc.client5.http.entity.mime.FormBodyPart#getHeader():Header	62	64
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/FormBodyPart.java	org.apache.hc.client5.http.entity.mime.FormBodyPart#addField(String,String):void	66	69

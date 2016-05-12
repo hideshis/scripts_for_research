@@ -1,0 +1,1 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/protocol/AuthenticationStrategy.java	org.apache.hc.client5.http.protocol.AuthenticationStrategy#select(ChallengeType,Map<String,AuthChallenge>,HttpContext):List<AuthScheme>	60	63

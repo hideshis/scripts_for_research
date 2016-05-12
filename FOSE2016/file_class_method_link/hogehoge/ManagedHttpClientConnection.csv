@@ -1,0 +1,4 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/ManagedHttpClientConnection.java	org.apache.hc.client5.http.io.ManagedHttpClientConnection#getId():String	51	51
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/ManagedHttpClientConnection.java	org.apache.hc.client5.http.io.ManagedHttpClientConnection#bind(Socket):void	61	61
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/ManagedHttpClientConnection.java	org.apache.hc.client5.http.io.ManagedHttpClientConnection#getSocket():Socket	66	66
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/ManagedHttpClientConnection.java	org.apache.hc.client5.http.io.ManagedHttpClientConnection#getSSLSession():SSLSession	77	77

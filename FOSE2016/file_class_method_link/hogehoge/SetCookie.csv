@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/SetCookie.java	org.apache.hc.client5.http.cookie.SetCookie#setValue(String):void	43	43
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/SetCookie.java	org.apache.hc.client5.http.cookie.SetCookie#setExpiryDate(Date):void	56	56
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/SetCookie.java	org.apache.hc.client5.http.cookie.SetCookie#setDomain(String):void	65	65
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/SetCookie.java	org.apache.hc.client5.http.cookie.SetCookie#setPath(String):void	75	75
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/SetCookie.java	org.apache.hc.client5.http.cookie.SetCookie#setSecure(boolean):void	89	89

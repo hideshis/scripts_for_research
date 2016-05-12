@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/StringBody.java	org.apache.hc.client5.http.entity.mime.StringBody#getReader():Reader	63	68
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/StringBody.java	org.apache.hc.client5.http.entity.mime.StringBody#writeTo(OutputStream):void	70	80
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/StringBody.java	org.apache.hc.client5.http.entity.mime.StringBody#getTransferEncoding():String	82	85
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/StringBody.java	org.apache.hc.client5.http.entity.mime.StringBody#getContentLength():long	87	90
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/StringBody.java	org.apache.hc.client5.http.entity.mime.StringBody#getFilename():String	92	95

@@ -1,3 +1,0 @@
-43,fully covered,org.apache.http.conn.ssl.TestHostnameVerifier#testVerify#51x2
-45,fully covered,org.apache.http.conn.ssl.TestHostnameVerifier#testVerify#51
-53,fully covered,"org.apache.http.conn.ssl.TestHostnameVerifier#testVerify#64, 65, 66, 180"

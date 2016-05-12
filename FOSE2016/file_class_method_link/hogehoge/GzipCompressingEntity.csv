@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/GzipCompressingEntity.java	org.apache.hc.client5.http.entity.GzipCompressingEntity#getContentEncoding():String	79	82
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/GzipCompressingEntity.java	org.apache.hc.client5.http.entity.GzipCompressingEntity#getContentLength():long	84	87
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/GzipCompressingEntity.java	org.apache.hc.client5.http.entity.GzipCompressingEntity#isChunked():boolean	89	93
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/GzipCompressingEntity.java	org.apache.hc.client5.http.entity.GzipCompressingEntity#getContent():InputStream	95	98
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/GzipCompressingEntity.java	org.apache.hc.client5.http.entity.GzipCompressingEntity#writeTo(OutputStream):void	100	108

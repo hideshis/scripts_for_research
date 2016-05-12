@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/utils/InetAddressUtils.java	org.apache.hc.client5.http.utils.InetAddressUtils#isIPv4Address(String):boolean	80	82
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/utils/InetAddressUtils.java	org.apache.hc.client5.http.utils.InetAddressUtils#isIPv4MappedIPv64Address(String):boolean	84	86
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/utils/InetAddressUtils.java	org.apache.hc.client5.http.utils.InetAddressUtils#isIPv6StdAddress(String):boolean	94	96
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/utils/InetAddressUtils.java	org.apache.hc.client5.http.utils.InetAddressUtils#isIPv6HexCompressedAddress(String):boolean	104	112
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/utils/InetAddressUtils.java	org.apache.hc.client5.http.utils.InetAddressUtils#isIPv6Address(String):boolean	120	122

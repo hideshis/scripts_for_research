@@ -1,0 +1,6 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#getName():String	73	76
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#getDomain():String	78	80
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#getUsername():String	82	84
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#hashCode():int	86	92
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#equals(Object):boolean	94	107
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/auth/NTUserPrincipal.java	org.apache.hc.client5.http.auth.NTUserPrincipal#toString():String	109	112

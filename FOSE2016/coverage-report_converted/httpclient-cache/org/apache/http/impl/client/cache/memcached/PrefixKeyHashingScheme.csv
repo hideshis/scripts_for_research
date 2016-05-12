@@ -1,5 +1,0 @@
-50,fully covered,org.apache.http.impl.client.cache.memcached.TestPrefixKeyHashingScheme#setUp#51
-51,fully covered,org.apache.http.impl.client.cache.memcached.TestPrefixKeyHashingScheme#setUp#51
-52,fully covered,org.apache.http.impl.client.cache.memcached.TestPrefixKeyHashingScheme#setUp#51
-53,fully covered,org.apache.http.impl.client.cache.memcached.TestPrefixKeyHashingScheme#setUp#51
-57,fully covered,org.apache.http.impl.client.cache.memcached.TestPrefixKeyHashingScheme#addsPrefixToBackingScheme#56

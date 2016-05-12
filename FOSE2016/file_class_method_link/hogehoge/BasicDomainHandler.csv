@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/BasicDomainHandler.java	org.apache.hc.client5.http.impl.cookie.BasicDomainHandler#parse(SetCookie,String):void	53	70
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/BasicDomainHandler.java	org.apache.hc.client5.http.impl.cookie.BasicDomainHandler#validate(Cookie,CookieOrigin):void	72	91
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/BasicDomainHandler.java	org.apache.hc.client5.http.impl.cookie.BasicDomainHandler#domainMatch(String,String):boolean	93	109
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/BasicDomainHandler.java	org.apache.hc.client5.http.impl.cookie.BasicDomainHandler#match(Cookie,CookieOrigin):boolean	111	131
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/cookie/BasicDomainHandler.java	org.apache.hc.client5.http.impl.cookie.BasicDomainHandler#getAttributeName():String	133	136

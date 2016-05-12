@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/sync/ServiceUnavailableRetryStrategy.java	org.apache.hc.client5.http.sync.ServiceUnavailableRetryStrategy#retryRequest(HttpResponse,int,HttpContext):boolean	53	53
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/sync/ServiceUnavailableRetryStrategy.java	org.apache.hc.client5.http.sync.ServiceUnavailableRetryStrategy#getRetryInterval(HttpResponse,HttpContext):long	58	58

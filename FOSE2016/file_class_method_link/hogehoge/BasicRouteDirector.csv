@@ -1,0 +1,4 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/BasicRouteDirector.java	org.apache.hc.client5.http.impl.routing.BasicRouteDirector#nextStep(RouteInfo,RouteInfo):int	54	70
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/BasicRouteDirector.java	org.apache.hc.client5.http.impl.routing.BasicRouteDirector#firstStep(RouteInfo):int	80	84
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/BasicRouteDirector.java	org.apache.hc.client5.http.impl.routing.BasicRouteDirector#directStep(RouteInfo,RouteInfo):int	96	124
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/BasicRouteDirector.java	org.apache.hc.client5.http.impl.routing.BasicRouteDirector#proxiedStep(RouteInfo,RouteInfo):int	136	182

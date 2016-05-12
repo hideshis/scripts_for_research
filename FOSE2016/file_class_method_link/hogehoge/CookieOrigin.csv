@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieOrigin.java	org.apache.hc.client5.http.cookie.CookieOrigin#getHost():String	64	66
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieOrigin.java	org.apache.hc.client5.http.cookie.CookieOrigin#getPath():String	68	70
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieOrigin.java	org.apache.hc.client5.http.cookie.CookieOrigin#getPort():int	72	74
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieOrigin.java	org.apache.hc.client5.http.cookie.CookieOrigin#isSecure():boolean	76	78
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieOrigin.java	org.apache.hc.client5.http.cookie.CookieOrigin#toString():String	80	93

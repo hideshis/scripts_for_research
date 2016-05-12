@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/sync/ConnectionBackoffStrategy.java	org.apache.hc.client5.http.sync.ConnectionBackoffStrategy#shouldBackoff(Throwable):boolean	51	51
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/sync/ConnectionBackoffStrategy.java	org.apache.hc.client5.http.sync.ConnectionBackoffStrategy#shouldBackoff(HttpResponse):boolean	63	63

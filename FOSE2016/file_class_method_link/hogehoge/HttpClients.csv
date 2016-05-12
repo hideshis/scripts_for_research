@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpClients.java	org.apache.hc.client5.http.impl.sync.HttpClients#custom():HttpClientBuilder	49	51
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpClients.java	org.apache.hc.client5.http.impl.sync.HttpClients#createDefault():CloseableHttpClient	57	59
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpClients.java	org.apache.hc.client5.http.impl.sync.HttpClients#createSystem():CloseableHttpClient	65	67
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpClients.java	org.apache.hc.client5.http.impl.sync.HttpClients#createMinimal():CloseableHttpClient	73	75
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/HttpClients.java	org.apache.hc.client5.http.impl.sync.HttpClients#createMinimal(HttpClientConnectionManager):CloseableHttpClient	81	83

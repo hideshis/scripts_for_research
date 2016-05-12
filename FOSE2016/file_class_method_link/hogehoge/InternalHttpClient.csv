@@ -1,0 +1,5 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/InternalHttpClient.java	org.apache.hc.client5.http.impl.sync.InternalHttpClient#determineRoute(HttpHost,HttpRequest,HttpContext):HttpRoute	104	109
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/InternalHttpClient.java	org.apache.hc.client5.http.impl.sync.InternalHttpClient#setupContext(HttpClientContext):void	111	127
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/InternalHttpClient.java	org.apache.hc.client5.http.impl.sync.InternalHttpClient#doExecute(HttpHost,HttpRequest,HttpContext):CloseableHttpResponse	129	156
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/InternalHttpClient.java	org.apache.hc.client5.http.impl.sync.InternalHttpClient#getConfig():RequestConfig	158	161
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/InternalHttpClient.java	org.apache.hc.client5.http.impl.sync.InternalHttpClient#close():void	163	174

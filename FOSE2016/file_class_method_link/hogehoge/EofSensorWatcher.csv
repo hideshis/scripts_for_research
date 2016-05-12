@@ -1,0 +1,3 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/EofSensorWatcher.java	org.apache.hc.client5.http.io.EofSensorWatcher#eofDetected(InputStream):boolean	53	54
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/EofSensorWatcher.java	org.apache.hc.client5.http.io.EofSensorWatcher#streamClosed(InputStream):boolean	71	72
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/io/EofSensorWatcher.java	org.apache.hc.client5.http.io.EofSensorWatcher#streamAbort(InputStream):boolean	93	94

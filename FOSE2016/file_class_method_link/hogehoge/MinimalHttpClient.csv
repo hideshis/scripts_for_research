@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/MinimalHttpClient.java	org.apache.hc.client5.http.impl.sync.MinimalHttpClient#doExecute(HttpHost,HttpRequest,HttpContext):CloseableHttpResponse	74	101
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/MinimalHttpClient.java	org.apache.hc.client5.http.impl.sync.MinimalHttpClient#close():void	103	106

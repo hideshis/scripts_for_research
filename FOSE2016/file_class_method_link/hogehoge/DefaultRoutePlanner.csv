@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/DefaultRoutePlanner.java	org.apache.hc.client5.http.impl.routing.DefaultRoutePlanner#determineRoute(HttpHost,HttpRequest,HttpContext):HttpRoute	64	100
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/routing/DefaultRoutePlanner.java	org.apache.hc.client5.http.impl.routing.DefaultRoutePlanner#determineProxy(HttpHost,HttpRequest,HttpContext):HttpHost	107	112

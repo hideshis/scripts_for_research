@@ -1,0 +1,3 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieAttributeHandler.java	org.apache.hc.client5.http.cookie.CookieAttributeHandler#parse(SetCookie,String):void	50	51
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieAttributeHandler.java	org.apache.hc.client5.http.cookie.CookieAttributeHandler#validate(Cookie,CookieOrigin):void	60	61
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookieAttributeHandler.java	org.apache.hc.client5.http.cookie.CookieAttributeHandler#match(Cookie,CookieOrigin):boolean	71	71

@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookiePriorityComparator.java	org.apache.hc.client5.http.cookie.CookiePriorityComparator#getPathLength(Cookie):int	47	50
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/cookie/CookiePriorityComparator.java	org.apache.hc.client5.http.cookie.CookiePriorityComparator#compare(Cookie,Cookie):int	52	65

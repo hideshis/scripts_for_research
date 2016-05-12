@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/NullBackoffStrategy.java	org.apache.hc.client5.http.impl.sync.NullBackoffStrategy#shouldBackoff(Throwable):boolean	40	43
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/sync/NullBackoffStrategy.java	org.apache.hc.client5.http.impl.sync.NullBackoffStrategy#shouldBackoff(HttpResponse):boolean	45	48

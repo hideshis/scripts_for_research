@@ -1,0 +1,2 @@
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/HttpBrowserCompatibleMultipart.java	org.apache.hc.client5.http.entity.mime.HttpBrowserCompatibleMultipart#getBodyParts():List<FormBodyPart>	53	56
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/mime/HttpBrowserCompatibleMultipart.java	org.apache.hc.client5.http.entity.mime.HttpBrowserCompatibleMultipart#formatMultipartHeader(FormBodyPart,OutputStream):void	61	76
