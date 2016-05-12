@@ -9,7 +9,8 @@
   - This script identifies file, lines, and revision of each bugs.
 1. ./bug_location/buggy_commit_list_getter.sh
   - This script lists up commits which induced bug(s).
-1. ./JPsample/src/main/java/JPexample/JPsample/App.java
+1. ./file_class_method_link/JPsample.jar
+  - Usage: java -jar JPsample.jar (full path of the directory which you want to analyze) (full path of the file which you want to output the result)
   - This script lists classes and methods of each Java files. It also identifies start line and end line of each methods.
 1. ./dependency/df_xml_parser.py
   - This script formats the result of DependencyFinder.
