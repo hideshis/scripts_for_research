@@ -68,8 +68,13 @@ public class App
         	return;
         }
         for (TypeDeclaration typeDec : typeDeclarations) {
-        	//System.out.println("Class," + typeDec.getName() + "," + Integer.toString(typeDec.getBeginLine()) + "," + Integer.toString(typeDec.getEndLine()));
         	String ClassName = typeDec.getName();
+    		String[] OutputInfo = {FileName, ClassName, Integer.toString(typeDec.getBeginLine()), Integer.toString(typeDec.getEndLine())};
+    		File file = new File(outputFilePath + "/file_class.csv");
+    		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+    		pw.println(String.join("|", OutputInfo));
+    		pw.close();
+
         	List<BodyDeclaration> members = typeDec.getMembers();
         	if (members == null){
         		continue;
@@ -96,7 +101,7 @@ public class App
 			String BeginLine, String EndLine) throws Exception {
 		ArrayList paramList = getParameters(parameters);
 		String[] OutputInfo = {FileName, ClassName, MethodName, String.join(",", paramList), BeginLine, EndLine};
-		File file = new File(outputFilePath);
+		File file = new File(outputFilePath + "/file_class_method.csv");
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
 		pw.println(String.join("|", OutputInfo));
 		pw.close();
