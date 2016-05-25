@@ -7,15 +7,20 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.TypeParameter;
 import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.body.Parameter;
 import com.github.javaparser.ast.body.TypeDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
@@ -30,57 +35,9 @@ public class App
     {
     	readFolder(new File(args[0]), args[1]);
     	System.out.println("Done!!");
-    	/*
-        FileInputStream in = new FileInputStream("/Users/hideshi-s/Documents/workspace/JPsample/src/main/java/JPexample/JPsample/Ctest1.java");
-        CompilationUnit cu;
-        try {
-    	    cu = JavaParser.parse(in);
-        } finally {
-    	    in.close();
-        }
-        ClassGetter(cu);
-        
-        System.out.println("---------- On the Constructor ----------");
-        ConstructorGetter(cu);
-        System.out.println("---------- On the Method ----------");
-        new MethodVisitor().visit(cu, null);
-        */
     }
-    
-    public static void ClassGetter(CompilationUnit cu, String FileName, String outputFilePath) throws Exception {
-        List<TypeDeclaration> typeDeclarations = cu.getTypes();
-        if (typeDeclarations == null) {
-        	return;
-        }
-        for (TypeDeclaration typeDec : typeDeclarations) {
-        	//System.out.println("Class," + typeDec.getName() + "," + Integer.toString(typeDec.getBeginLine()) + "," + Integer.toString(typeDec.getEndLine()));
-        	String ClassName = typeDec.getName();
-        	List<BodyDeclaration> members = typeDec.getMembers();
-        	if (members == null){
-        		continue;
-        	}
-        	for (BodyDeclaration member : members){
-    			if (member instanceof ConstructorDeclaration){
-    				ConstructorDeclaration unko = (ConstructorDeclaration) member;
-    				String[] OutputInfo = {FileName, ClassName, unko.getName(), Integer.toString(unko.getBeginLine()), Integer.toString(unko.getEndLine())}; 
-    				File file = new File(outputFilePath);
-    				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
-    				pw.println(String.join(",", OutputInfo));
-    				pw.close();
-
-        		} else if (member instanceof MethodDeclaration){
-    				MethodDeclaration unko = (MethodDeclaration) member;
-    				String[] OutputInfo = {FileName, ClassName, unko.getName(), Integer.toString(unko.getBeginLine()), Integer.toString(unko.getEndLine())};
-    				File file = new File(outputFilePath);
-    				PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
-    				pw.println(String.join(",", OutputInfo));
-    				pw.close();
-    			}
-        	}
-        }
-    }
-    
-    static void readFolder(File dir, String outputFilePath) throws Exception {
+	
+	static void readFolder(File dir, String outputFilePath) throws Exception {
     	File[] files = dir.listFiles();
     	if (files ==null) {
     		return;
@@ -103,36 +60,66 @@ public class App
     		}
     	}
     	return;
-    }
-
-    /*
-    public static void ConstructorGetter(CompilationUnit cu) {
+    }	
+	
+    public static void ClassGetter(CompilationUnit cu, String FileName, String outputFilePath) throws Exception {
         List<TypeDeclaration> typeDeclarations = cu.getTypes();
+        if (typeDeclarations == null) {
+        	return;
+        }
         for (TypeDeclaration typeDec : typeDeclarations) {
+        	//System.out.println("Class," + typeDec.getName() + "," + Integer.toString(typeDec.getBeginLine()) + "," + Integer.toString(typeDec.getEndLine()));
+        	String ClassName = typeDec.getName();
         	List<BodyDeclaration> members = typeDec.getMembers();
-        	if (members != null){
-        		for (BodyDeclaration member : members) {
-        			if (member instanceof ConstructorDeclaration) {
-        				ConstructorDeclaration constructor = (ConstructorDeclaration) member;
-        				System.out.println(constructor.getName());
-        				System.out.println(constructor.getBeginLine());
-        				System.out.println(constructor.getEndLine());
-        			}
-        		}
+        	if (members == null){
+        		continue;
+        	}
+        	for (BodyDeclaration member : members){
+    			if (member instanceof ConstructorDeclaration){
+    				ConstructorDeclaration unko = (ConstructorDeclaration) member;
+    				System.out.println(FileName + "," + unko.getName());
+    				System.out.println(unko.getParameters().toString());
+    				fileOutput(outputFilePath, FileName, ClassName, unko.getName(), 
+    						unko.getParameters(), Integer.toString(unko.getBeginLine()), Integer.toString(unko.getEndLine()));
+        		} else if (member instanceof MethodDeclaration){
+    				MethodDeclaration unko = (MethodDeclaration) member;
+    				System.out.println(FileName + "," + unko.getName());
+    				System.out.println(unko.getParameters().toString());
+    				fileOutput(outputFilePath, FileName, ClassName, unko.getName(), 
+    						unko.getParameters(), Integer.toString(unko.getBeginLine()), Integer.toString(unko.getEndLine()));
+    			}
         	}
         }
     }
     
-    private static class MethodVisitor extends VoidVisitorAdapter {
-    	@Override
-    	public void visit(MethodDeclaration n, Object arg) {
-    		System.out.println(n.getName());
-    		System.out.println(n.getBeginLine());
-    		System.out.println(n.getEndLine());
-    		//System.out.println(n.getBody());
-    		//System.out.println(n.getOrphanComments());
-    		super.visit(n, arg);
-    	}
-    }
-    */
-}
+    private static void fileOutput(String outputFilePath, String FileName, String ClassName, String MethodName, List<Parameter> parameters,
+			String BeginLine, String EndLine) throws Exception {
+		ArrayList paramList = getParameters(parameters);
+		String[] OutputInfo = {FileName, ClassName, MethodName, String.join(",", paramList), BeginLine, EndLine};
+		File file = new File(outputFilePath);
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+		pw.println(String.join("|", OutputInfo));
+		pw.close();
+	}
+    
+	public static ArrayList getParameters(List<Parameter> ParameterList) {
+		ArrayList paramList = new ArrayList();
+		for (Parameter param: ParameterList) {
+			String paramString = param.toString();
+			if (paramString.startsWith("final ")) {
+				paramString = paramString.replace("final ", "");
+			}
+			paramString = paramString.split(" ")[0];
+			if (paramString.contains("<")) {
+				paramString = paramString.replaceFirst("<.*", "");
+			}
+			if (paramString.endsWith("...")) {
+				System.out.println("oppai");
+				paramString= paramString.replace("...", "[]");
+			}
+			paramList.add(paramString);
+		}
+		System.out.println(paramList.toString());
+		return paramList;		
+	}
+  }
