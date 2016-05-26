@@ -154,7 +154,7 @@ java.lang,java.lang.UnsupportedOperationException,java.lang.UnsupportedOperation
 java.lang.ref,java.lang.ref.SoftReference,java.lang.ref.SoftReference.SoftReference(Object)
 java.lang.ref,java.lang.ref.SoftReference,java.lang.ref.SoftReference.get()
 java.lang.reflect,java.lang.reflect.UndeclaredThrowableException,java.lang.reflect.UndeclaredThrowableException.UndeclaredThrowableException(Throwable)
-java.net,java.net.Authenticator,"java.net.Authenticator.requestPasswordAuthentication(String,InetAddress,int,String,String,String,URL,Authenticator$RequestorType)"
+java.net,java.net.Authenticator,"java.net.Authenticator.requestPasswordAuthentication(String,InetAddress,int,String,String,String,URL,RequestorType)"
 java.net,java.net.Authenticator$RequestorType,java.net.Authenticator$RequestorType.PROXY
 java.net,java.net.Authenticator$RequestorType,java.net.Authenticator$RequestorType.SERVER
 java.net,java.net.ConnectException,java.net.ConnectException.ConnectException(String)
@@ -505,10 +505,10 @@ org.apache.hc.client5.http,org.apache.hc.client5.http.HttpHostConnectException,o
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpHostConnectException,org.apache.hc.client5.http.HttpHostConnectException.serialVersionUID
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost)
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,boolean)"
-org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,List,boolean,RouteInfo$TunnelType,RouteInfo$LayerType)"
+org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,List,boolean,TunnelType,LayerType)"
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,HttpHost,boolean)"
-org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,HttpHost,boolean,RouteInfo$TunnelType,RouteInfo$LayerType)"
-org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,HttpHost[],boolean,RouteInfo$TunnelType,RouteInfo$LayerType)"
+org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,HttpHost,boolean,TunnelType,LayerType)"
+org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,InetAddress,HttpHost[],boolean,TunnelType,LayerType)"
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,"org.apache.hc.client5.http.HttpRoute.HttpRoute(HttpHost,HttpHost)"
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,org.apache.hc.client5.http.HttpRoute.clone()
 org.apache.hc.client5.http,org.apache.hc.client5.http.HttpRoute,org.apache.hc.client5.http.HttpRoute.equals(Object)
@@ -619,7 +619,7 @@ org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.reset()
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.select(AuthScheme)
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.setOptions(Queue)
-org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.setState(AuthExchange$State)
+org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.setState(State)
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.state
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange,org.apache.hc.client5.http.auth.AuthExchange.toString()
 org.apache.hc.client5.http.auth,org.apache.hc.client5.http.auth.AuthExchange$State,org.apache.hc.client5.http.auth.AuthExchange$State.$VALUES
@@ -1631,7 +1631,7 @@ org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.System
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.SystemDefaultCredentialsProvider()
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.clear()
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.getCredentials(AuthScope)
-org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,"org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.getSystemCreds(AuthScope,Authenticator$RequestorType)"
+org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,"org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.getSystemCreds(AuthScope,RequestorType)"
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.internal
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,"org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.setCredentials(AuthScope,Credentials)"
 org.apache.hc.client5.http.impl.auth,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider,org.apache.hc.client5.http.impl.auth.SystemDefaultCredentialsProvider.static {}
@@ -1773,7 +1773,7 @@ org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RF
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpec,"org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpec.validate(Cookie,CookieOrigin)"
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecBase,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecBase.RFC6265CookieSpecBase(CommonCookieAttributeHandler[])
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.RFC6265CookieSpecProvider()
-org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,"org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.RFC6265CookieSpecProvider(RFC6265CookieSpecProvider$CompatibilityLevel,PublicSuffixMatcher)"
+org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,"org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.RFC6265CookieSpecProvider(CompatibilityLevel,PublicSuffixMatcher)"
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.RFC6265CookieSpecProvider(PublicSuffixMatcher)
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.compatibilityLevel
 org.apache.hc.client5.http.impl.cookie,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider,org.apache.hc.client5.http.impl.cookie.RFC6265CookieSpecProvider.cookieSpec
@@ -2086,7 +2086,7 @@ org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHtt
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData.setDefaultSocketConfig(SocketConfig)
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData,"org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData.setSocketConfig(HttpHost,SocketConfig)"
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$ConfigData.socketConfigMap
-org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory,"org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory.PoolingHttpClientConnectionManager$InternalConnectionFactory(PoolingHttpClientConnectionManager$ConfigData,HttpConnectionFactory)"
+org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory,"org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory.PoolingHttpClientConnectionManager$InternalConnectionFactory(ConfigData,HttpConnectionFactory)"
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory.configData
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory.connFactory
 org.apache.hc.client5.http.impl.io,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory,org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionFactory.create(Object)

@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -119,8 +120,13 @@ public class App
 				paramString = paramString.replaceFirst("<.*", "");
 			}
 			if (paramString.endsWith("...")) {
-				System.out.println("oppai");
 				paramString= paramString.replace("...", "[]");
+			}
+			if (paramString.contains(".")) {
+				paramString = paramString.split("\\.")[paramString.split("\\.").length - 1];
+			}
+			if (paramString.length() == 1) {
+				paramString = "Object";
 			}
 			paramList.add(paramString);
 		}

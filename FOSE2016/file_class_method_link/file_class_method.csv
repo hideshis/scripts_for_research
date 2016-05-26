@@ -384,7 +384,7 @@
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/UrlEncodedFormEntity.java|UrlEncodedFormEntity|UrlEncodedFormEntity|Iterable,Charset|57|63
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/UrlEncodedFormEntity.java|UrlEncodedFormEntity|UrlEncodedFormEntity|List|71|73
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/entity/UrlEncodedFormEntity.java|UrlEncodedFormEntity|UrlEncodedFormEntity|Iterable|83|86
-/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/HttpConnectionFactory.java|HttpConnectionFactory|create|T,ConnectionConfig|39|39
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/HttpConnectionFactory.java|HttpConnectionFactory|create|Object,ConnectionConfig|39|39
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/HttpHostConnectException.java|HttpHostConnectException|HttpHostConnectException|IOException,HttpHost,InetAddress[]|55|67
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/HttpHostConnectException.java|HttpHostConnectException|getHost||69|71
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/HttpRoute.java|HttpRoute|HttpRoute|HttpHost,InetAddress,List,boolean,TunnelType,LayerType|71|88
@@ -546,7 +546,7 @@
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|translateScheme|String|66|72
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|SystemDefaultCredentialsProvider||79|82
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|setCredentials|AuthScope,Credentials|84|87
-/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|getSystemCreds|AuthScope,Authenticator.RequestorType|89|106
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|getSystemCreds|AuthScope,RequestorType|89|106
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|getCredentials|AuthScope|108|154
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/SystemDefaultCredentialsProvider.java|SystemDefaultCredentialsProvider|clear||156|159
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/impl/auth/UnsupportedDigestAlgorithmException.java|UnsupportedDigestAlgorithmException|UnsupportedDigestAlgorithmException||46|48
@@ -1466,8 +1466,8 @@
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|SSLContext|190|192
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|SSLContext,HostnameVerifier|197|201
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|SSLContext,String[],String[],HostnameVerifier|206|213
-/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|javax.net.ssl.SSLSocketFactory,HostnameVerifier|218|222
-/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|javax.net.ssl.SSLSocketFactory,String[],String[],HostnameVerifier|227|236
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|SSLSocketFactory,HostnameVerifier|218|222
+/Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|SSLConnectionSocketFactory|SSLSocketFactory,String[],String[],HostnameVerifier|227|236
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|prepareSocket|SSLSocket|246|247
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|createSocket|HttpContext|249|252
 /Users/hideshi-s/Desktop/httpclient/httpclient5/src/main/java/org/apache/hc/client5/http/ssl/SSLConnectionSocketFactory.java|SSLConnectionSocketFactory|connectSocket|int,Socket,HttpHost,InetSocketAddress,InetSocketAddress,HttpContext|254|293

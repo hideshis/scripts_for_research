@@ -33,6 +33,7 @@ for e_package in root.findall('package'):
                         for param in e_feature_parameter.split(','): # foo.var.fuga, piyo -> [fuga, piyo]
                             param = param.replace(' ', '')
                             param = param.split('.')[-1]
+                            param = param.split('$')[-1]
                             e_feature_parameter_list.append(param)
                         e_feature_name = e_feature_name + '(' + ','.join(e_feature_parameter_list) + ')'
                     else:
