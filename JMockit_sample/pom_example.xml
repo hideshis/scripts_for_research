@@ -26,30 +26,48 @@
  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpcomponents-client</artifactId>
-    <version>4.5</version>
+    <groupId>org.apache.httpcomponents.client5</groupId>
+    <artifactId>httpclient5-parent</artifactId>
+    <version>5.0-alpha2-SNAPSHOT</version>
   </parent>
-  <artifactId>httpclient-cache</artifactId>
-  <name>Apache HttpClient Cache</name>
-  <inceptionYear>2010</inceptionYear>
-  <description>
-   Apache HttpComponents HttpClient - Cache
-  </description>
+  <artifactId>httpclient5</artifactId>
+  <name>Apache HttpClient</name>
+  <description>Apache HttpComponents Client</description>
   <url>http://hc.apache.org/httpcomponents-client</url>
   <packaging>jar</packaging>
 
+  <!-- starts here -->
   <properties>
-   <!-- starts here -->
-   <jmockit.version>1.23</jmockit.version>
-   <!-- ends here -->
- </properties>
+    <jmockit.version>1.23</jmockit.version>
+  </properties>
+  <!-- ends here -->
+  <!-- starts here -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jmockit</groupId><artifactId>jmockit</artifactId>
+        <version>${jmockit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jmockit</groupId><artifactId>jmockit-coverage</artifactId>
+        <version>${jmockit.version}</version>
+        <scope>runtime</scope>
+        <optional>true</optional>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <!-- ends here -->
 
   <dependencies>
+    <!-- starts here -->
     <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${project.version}</version>
+      <groupId>org.jmockit</groupId><artifactId>jmockit</artifactId>
+    </dependency>
+    <!-- ends here -->
+    <dependency>
+      <groupId>org.apache.httpcomponents.core5</groupId>
+      <artifactId>httpcore5</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -58,28 +76,10 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>net.sf.ehcache</groupId>
-      <artifactId>ehcache-core</artifactId>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
       <scope>compile</scope>
-      <optional>true</optional>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-jcl</artifactId>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>net.spy</groupId>
-      <artifactId>spymemcached</artifactId>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <!-- starts here -->
-    <dependency>
-      <groupId>org.jmockit</groupId><artifactId>jmockit</artifactId>
-    </dependency>
-    <!-- ends here -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -90,29 +90,12 @@
       <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymock</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymockclassextension</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
     <!-- starts here -->
     <dependency>
        <groupId>org.jmockit</groupId><artifactId>jmockit-coverage</artifactId>
     </dependency>
     <!-- ends here -->
-</dependencies>
+  </dependencies>
 
   <build>
     <resources>
@@ -127,36 +110,32 @@
     <plugins>
       <!-- starts here -->
       <plugin>
-        <artifactId>maven-surefire-plugin</artifactId><version>2.17</version>
+        <artifactId>maven-surefire-plugin</artifactId><version>2.18.1</version>
         <configuration>
-          <!--
-          <argLine>
-            -javaagent:"${settings.localRepository}"/org/jmockit/jmockit-coverage/${jmockit.version}/jmockit-coverage-${jmockit.version}.jar
-          </argLine>
-        -->
+          <disableXmlReport>true</disableXmlReport>
           <systemPropertyVariables>
-             <coverage-output>html</coverage-output>
-             <!-- Default value coverage-maxCallPoints seems to be 10. -->
+            <coverage-output>html</coverage-output>
+             <coverage-outputDir>${project.build.directory}/coverage-report</coverage-outputDir>
              <coverage-maxCallPoints>10000</coverage-maxCallPoints>
           </systemPropertyVariables>
         </configuration>
       </plugin>
       <!-- ends here -->
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.8</version>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>1.2.0</version>
         <executions>
           <execution>
-            <id>add-source</id>
+            <id>download-public-suffix-list</id>
             <phase>generate-sources</phase>
             <goals>
-              <goal>add-source</goal>
+              <goal>wget</goal>
             </goals>
             <configuration>
-              <sources>
-                <source>src/main/java-deprecated</source>
-              </sources>
+              <url>https://publicsuffix.org/list/effective_tld_names.dat</url>
+              <outputDirectory>${project.build.outputDirectory}/mozilla</outputDirectory>
+              <outputFileName>public-suffix-list.txt</outputFileName>
             </configuration>
           </execution>
         </executions>
@@ -188,7 +167,6 @@
           <links>
             <link>http://docs.oracle.com/javase/6/docs/api/</link>
             <link>http://hc.apache.org/httpcomponents-core-ga/httpcore/apidocs/</link>
-            <link>http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/</link>
           </links>
         </configuration>
         <reportSets>
@@ -227,5 +205,23 @@
 
     </plugins>
   </reporting>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.googlecode.maven-download-plugin</groupId>
+            <artifactId>download-maven-plugin</artifactId>
+            <configuration>
+              <overwrite>true</overwrite>
+              <skipCache>true</skipCache>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
