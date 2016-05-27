@@ -12,7 +12,7 @@ def dependencies_end_lineNo_getter(pom):
         result_list.pop()
         print result_list
         if len(result_list) == 1: # <dependencyManagement>直下にのみ，<dependencies>が存在している
-            result = subprocess.check_output('grep -n "</project>" ' + pon, shell=True)
+            result = subprocess.check_output('grep -n "</project>" ' + pom, shell=True)
             dependencies_lineNo = result.split(':')[0]
             return dependencies_lineNo
         elif len(result_list) == 2: # <dependencyManagement>直下以外にも，<dependencies>が存在している
@@ -37,7 +37,7 @@ def dependencies_end_lineNo_getter(pom):
                 print 'there are two or more "</dependencies>" tags while there is not "</dependencyManagement>" tag.'
                 sys.exit()
         except subprocess.CalledProcessError: # <dependencies>がpom.xmlにない場合
-            result = subprocess.check_output('grep -n "</project>" ' + pon, shell=True)
+            result = subprocess.check_output('grep -n "</project>" ' + pom, shell=True)
             dependencies_lineNo = result.split(':')[0]
             return dependencies_lineNo
     print 'some error has occurred.'
@@ -52,16 +52,16 @@ def dependencies_begin_lineNo_getter(pom):
         result_list.pop()
         print result_list
         if len(result_list) == 1: # <dependencyManagement>直下にのみ，<dependencies>が存在している
-            result = subprocess.check_output('grep -n "</project>" ' + pon, shell=True)
+            result = subprocess.check_output('grep -n "</project>" ' + pom, shell=True)
             dependencies_lineNo = result.split(':')[0]
-            return dependencies_lineNo
+            return 'dependencies does not exist', dependencies_lineNo
         elif len(result_list) == 2: # <dependencyManagement>直下以外にも，<dependencies>が存在している
             for var in result_list:
                 dependencies_lineNo = var.split(':')[0]
                 if (int(dependencies_lineNo)-1) == int(dM_lineNo):
                     continue
                 else:
-                    return str(int(dependencies_lineNo)+1)
+                    return 'dependencies exists', str(int(dependencies_lineNo)+1)
         else:
             print 'there are three or more "<dependencies>" tags.'
             sys.exit()
@@ -72,24 +72,31 @@ def dependencies_begin_lineNo_getter(pom):
             result_list.pop()
             # <dependencies>がpom.xmlにある場合
             if len(result_list) == 1:
-                return str(int(result.split(':')[0])+1)
+                return 'dependencies exists', str(int(result.split(':')[0])+1)
             else:
                 print 'there are two or more "<dependencies>" tags while there is not "<dependencyManagement>" tag.'
                 sys.exit()
         except subprocess.CalledProcessError: # <dependencies>がpom.xmlにない場合
-            result = subprocess.check_output('grep -n "</project>" ' + pon, shell=True)
+            result = subprocess.check_output('grep -n "</project>" ' + pom, shell=True)
             dependencies_lineNo = result.split(':')[0]
-            return dependencies_lineNo
+            return 'dependencies does not exist', dependencies_lineNo
     print 'some error has occurred.'
     sys.exit()
 
 def pom_edit(pom):
     os.system('./pom_edit_properties.sh ' + pom)
     os.system('./pom_edit_dependencyManagement.sh ' + pom)
-    dependencies_begin_lineNo = dependencies_begin_lineNo_getter(pom)
+    msg, dependencies_begin_lineNo = dependencies_begin_lineNo_getter(pom)
     print dependencies_begin_lineNo
+    if msg == 'dependencies exists':
+        param_list = [pom, dependencies_begin_lineNo, 'yes']
+    else:
+        param_list = [pom, dependencies_begin_lineNo, 'no']
+    os.system('./pom_edit_dependency_begin.sh ' + ' '.join(param_list))
     dependencies_end_lineNo = dependencies_end_lineNo_getter(pom)
     print dependencies_end_lineNo
+    param_list = [pom, dependencies_end_lineNo]
+    os.system('./pom_edit_dependency_end.sh ' + ' '.join(param_list))
     return
 
 pjt_path = '/Users/hideshi-s/Desktop/httpclient'
