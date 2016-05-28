@@ -35,26 +35,6 @@
   <description>Apache HttpComponents Client</description>
   <url>http://hc.apache.org/httpcomponents-client</url>
   <packaging>jar</packaging>
-  <properties>
-    <jmockit.version>1.23</jmockit.version>
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.jmockit</groupId>
-        <artifactId>jmockit</artifactId>
-        <version>${jmockit.version}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.jmockit</groupId>
-        <artifactId>jmockit-coverage</artifactId>
-        <version>${jmockit.version}</version>
-        <scope>runtime</scope>
-        <optional>true</optional>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.jmockit</groupId>
@@ -208,4 +188,24 @@
       </build>
     </profile>
   </profiles>
+  <properties>
+    <jmockit.version>1.23</jmockit.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jmockit</groupId>
+        <artifactId>jmockit</artifactId>
+        <version>${jmockit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jmockit</groupId>
+        <artifactId>jmockit-coverage</artifactId>
+        <version>${jmockit.version}</version>
+        <scope>runtime</scope>
+        <optional>true</optional>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>

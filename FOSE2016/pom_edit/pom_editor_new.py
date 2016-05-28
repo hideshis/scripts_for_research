@@ -113,9 +113,10 @@ dependencyManagement_tag = 'dependencyManagement'
 dependencies_tag = 'dependencies'
 build_tag = 'build'
 for i in range(len(root_children_list)):
-    if ET.tostring(root_children_list[i]).startswith('<packaging'):
-        insert_location = i+1
-    elif ET.tostring(root_children_list[i]).startswith('<properties'):
+    #if ET.tostring(root_children_list[i]).startswith('<packaging'):
+    #    insert_location = i+1
+    #elif ET.tostring(root_children_list[i]).startswith('<properties'):
+    if ET.tostring(root_children_list[i]).startswith('<properties'):
         properties_tag = root_children_list[i].tag
     elif ET.tostring(root_children_list[i]).startswith('<dependencyManagement'):
         dependencyManagement_tag = root_children_list[i].tag
