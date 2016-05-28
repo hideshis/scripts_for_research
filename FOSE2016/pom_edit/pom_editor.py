@@ -3,6 +3,26 @@ import subprocess
 import sys
 import os
 
+def hoge(pom):
+    try:
+        result = subprocess.check_output('grep -n "<build>" ' + pom, shell=True)
+        build_begin_lineNo = int(result.split(':')[0]) # <build> exists in pom.xml
+        result = subprocess.check_output('grep -n "</build>" ' + pom, shell=True)
+        build_end_lineNo = int(result.split(':')[0])
+        try:
+            result = subprocess.check_output('grep -n "<plugins>" ' + pom, shell=True)
+            plugins_lineNo_list = [var.split(':')[0] for var in result.split('\n') if var != ""]
+            for plugins_lineNo in plugins_lineNo_list:
+                if (build_begin_lineNo < int(plugins_lineNo)) and (int(plugins_lineNo) < build_end_lineNo):
+                    return 'build and plugins', str(int(plugins_lineNo)+1) # <plugins> exists between <build> and </build>
+            return 'build but no plugins', str(build_end_lineNo) # <plugins> does not exist between <build> and </build>
+        except subprocess.CalledProcessError: # <plugins> does not exist in pom.xml
+            return 'build but no plugins', str(build_end_lineNo) # <plugins> does not exist between <build> and </build>
+    except subprocess.CalledProcessError: # <build> does not exist in pom.xml
+        result = subprocess.check_output('grep -n "</project>" ' + pom, shell=True)
+        plugins_lineNo = result.split(':')[0]
+        return 'no build', plugins_lineNo
+
 def dependencies_end_lineNo_getter(pom):
     try:
         result = subprocess.check_output('grep -n "</dependencyManagement>" ' + pom, shell=True)
@@ -97,6 +117,15 @@ def pom_edit(pom):
     print dependencies_end_lineNo
     param_list = [pom, dependencies_end_lineNo]
     os.system('./pom_edit_dependency_end.sh ' + ' '.join(param_list))
+    msg, plugins_lineNo = hoge(pom)
+    print plugins_lineNo
+    if msg == 'build and plugins':
+        param_list = [pom, plugins_lineNo, 'build_and_plugins']
+    elif msg == 'build but no plugins':
+        param_list = [pom, plugins_lineNo, 'build_but_no_plugins']
+    else:
+        param_list = [pom, plugins_lineNo, 'no_build']
+    os.system('./pom_edit_plugins.sh ' + ' '.join(param_list))
     return
 
 pjt_path = '/Users/hideshi-s/Desktop/httpclient'
