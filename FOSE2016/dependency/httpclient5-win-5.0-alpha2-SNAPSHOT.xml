@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE dependencies SYSTEM "http://depfind.sourceforge.net/dtd/dependencies.dtd">
+
+<dependencies>
+    <package confirmed="no">
+        <name>com.sun.jna</name>
+        <class confirmed="no">
+            <name>com.sun.jna.Pointer</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>com.sun.jna.platform.win32</name>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Secur32</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32.AcquireCredentialsHandle(java.lang.String, java.lang.String, int, com.sun.jna.platform.win32.WinNT$LUID, com.sun.jna.Pointer, com.sun.jna.Pointer, com.sun.jna.Pointer, com.sun.jna.platform.win32.Sspi$CredHandle, com.sun.jna.platform.win32.Sspi$TimeStamp)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32.DeleteSecurityContext(com.sun.jna.platform.win32.Sspi$CtxtHandle)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32.FreeCredentialsHandle(com.sun.jna.platform.win32.Sspi$CredHandle)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32.INSTANCE</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32.InitializeSecurityContext(com.sun.jna.platform.win32.Sspi$CredHandle, com.sun.jna.platform.win32.Sspi$CtxtHandle, java.lang.String, int, int, int, com.sun.jna.platform.win32.Sspi$SecBufferDesc, int, com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, com.sun.jna.ptr.IntByReference, com.sun.jna.platform.win32.Sspi$TimeStamp)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Secur32Util</name>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Secur32Util.getUserNameEx(int)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getCurrentUsername()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Sspi$CredHandle</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$CredHandle.Sspi$CredHandle()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$CredHandle.isNull()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Sspi$CtxtHandle</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.sspiContext</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$CtxtHandle.Sspi$CtxtHandle()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$CtxtHandle.isNull()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Sspi$SecBufferDesc</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$SecBufferDesc.Sspi$SecBufferDesc(int, byte[])</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$SecBufferDesc.Sspi$SecBufferDesc(int, int)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$SecBufferDesc.getBytes()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Sspi$TimeStamp</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Sspi$TimeStamp.Sspi$TimeStamp()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.Win32Exception</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.platform.win32.Win32Exception.Win32Exception(int)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>com.sun.jna.platform.win32.WinNT$LUID</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>com.sun.jna.ptr</name>
+        <class confirmed="no">
+            <name>com.sun.jna.ptr.IntByReference</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <feature confirmed="no">
+                <name>com.sun.jna.ptr.IntByReference.IntByReference()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>java.lang</name>
+        <class confirmed="no">
+            <name>java.lang.CharSequence</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.Class</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.Exception</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.IllegalStateException</name>
+            <feature confirmed="no">
+                <name>java.lang.IllegalStateException.IllegalStateException(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.Object</name>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory</inbound>
+            <feature confirmed="no">
+                <name>java.lang.Object.Object()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.WinHttpClients()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.WindowsNTLMSchemeFactory(java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.WindowsNegotiateSchemeFactory(java.lang.String)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.Object.finalize()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.finalize()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.Object.getClass()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.RuntimeException</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.String</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.WindowsNTLMSchemeFactory(java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.servicePrincipalName</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.challenge</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getCurrentUsername()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getName()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getPrincipal()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getRealm()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.scheme</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.servicePrincipalName</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.WindowsNegotiateSchemeFactory(java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.servicePrincipalName</inbound>
+            <feature confirmed="no">
+                <name>java.lang.String.contains(java.lang.CharSequence)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.String.isEmpty()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.String.toLowerCase(java.util.Locale)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.StringBuilder</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>java.lang.StringBuilder.StringBuilder()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.StringBuilder.append(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>java.lang.StringBuilder.toString()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.System</name>
+            <feature confirmed="no">
+                <name>java.lang.System.getProperty(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>java.lang.Throwable</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.finalize()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>java.security</name>
+        <class confirmed="no">
+            <name>java.security.Principal</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getPrincipal()</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>java.util</name>
+        <class confirmed="no">
+            <name>java.util.Locale</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            <feature confirmed="no">
+                <name>java.util.Locale.ROOT</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.commons.codec.binary</name>
+        <class confirmed="no">
+            <name>org.apache.commons.codec.binary.Base64</name>
+            <feature confirmed="no">
+                <name>org.apache.commons.codec.binary.Base64.decodeBase64(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.commons.codec.binary.Base64.encodeBase64String(byte[])</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.commons.logging</name>
+        <class confirmed="no">
+            <name>org.apache.commons.logging.Log</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.log</inbound>
+            <feature confirmed="no">
+                <name>org.apache.commons.logging.Log.debug(java.lang.Object)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.commons.logging.Log.isDebugEnabled()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.commons.logging.LogFactory</name>
+            <feature confirmed="no">
+                <name>org.apache.commons.logging.LogFactory.getLog(java.lang.Class)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.client5.http</name>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.RouteInfo</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.RouteInfo.getTargetHost()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.client5.http.auth</name>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.AuthChallenge</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.auth.AuthChallenge.getValue()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.AuthScheme</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.AuthSchemeProvider</name>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.AuthenticationException</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isResponseReady(org.apache.hc.core5.http.HttpHost, org.apache.hc.client5.http.auth.CredentialsProvider, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.auth.AuthenticationException.AuthenticationException(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.auth.AuthenticationException.AuthenticationException(java.lang.String, java.lang.Throwable)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.BasicUserPrincipal</name>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.auth.BasicUserPrincipal.BasicUserPrincipal(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getPrincipal()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.CredentialsProvider</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isResponseReady(org.apache.hc.core5.http.HttpHost, org.apache.hc.client5.http.auth.CredentialsProvider, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.auth.MalformedChallengeException</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.auth.MalformedChallengeException.MalformedChallengeException(java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.client5.http.impl.auth</name>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.impl.auth.BasicSchemeFactory</name>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.auth.BasicSchemeFactory.BasicSchemeFactory()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.impl.auth.DigestSchemeFactory</name>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.auth.DigestSchemeFactory.DigestSchemeFactory()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.client5.http.impl.sync</name>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.impl.sync.CloseableHttpClient</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createDefault()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.impl.sync.HttpClientBuilder</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createDefault()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.custom()</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.sync.HttpClientBuilder.build()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createDefault()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.sync.HttpClientBuilder.create()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.sync.HttpClientBuilder.setDefaultAuthSchemeRegistry(org.apache.hc.core5.http.config.Lookup)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.impl.sync.HttpClientBuilder.useSystemProperties()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="yes">
+        <name>org.apache.hc.client5.http.impl.win</name>
+        <class confirmed="yes">
+            <name>org.apache.hc.client5.http.impl.win.WinHttpClients</name>
+            <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.WinHttpClients()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</name>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.auth.BasicSchemeFactory.BasicSchemeFactory()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.auth.DigestSchemeFactory.DigestSchemeFactory()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder.create()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder.setDefaultAuthSchemeRegistry(org.apache.hc.core5.http.config.Lookup)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.WindowsNTLMSchemeFactory(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.WindowsNegotiateSchemeFactory(java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.config.Lookup</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.config.Registry</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.config.RegistryBuilder</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.core5.http.config.RegistryBuilder.build()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.core5.http.config.RegistryBuilder.create()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.core5.http.config.RegistryBuilder.register(java.lang.String, java.lang.Object)</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createDefault()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.custom()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.createDefault()</name>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.CloseableHttpClient</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder.build()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.createSystem()</name>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.CloseableHttpClient</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder.build()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder.useSystemProperties()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.custom()</name>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.impl.sync.HttpClientBuilder</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WinHttpClients.isWinAuthAvailable()</name>
+                <outbound type="class" confirmed="no">java.lang.CharSequence</outbound>
+                <outbound type="class" confirmed="no">java.lang.Exception</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="no">java.lang.String.contains(java.lang.CharSequence)</outbound>
+                <outbound type="feature" confirmed="no">java.lang.String.toLowerCase(java.util.Locale)</outbound>
+                <outbound type="feature" confirmed="no">java.lang.System.getProperty(java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">java.util.Locale</outbound>
+                <outbound type="feature" confirmed="no">java.util.Locale.ROOT</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory</name>
+            <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthSchemeProvider</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.core5.annotation.Immutable</outbound>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.WindowsNTLMSchemeFactory(java.lang.String)</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.servicePrincipalName</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthScheme</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.servicePrincipalName</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.servicePrincipalName</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.WindowsNTLMSchemeFactory(java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme</name>
+            <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthScheme</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.core5.annotation.NotThreadSafe</outbound>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</name>
+                <outbound type="class" confirmed="no">java.lang.Class</outbound>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <outbound type="feature" confirmed="no">java.lang.Object.getClass()</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="class" confirmed="no">java.lang.StringBuilder</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.StringBuilder()</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.append(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.toString()</outbound>
+                <outbound type="class" confirmed="no">org.apache.commons.logging.Log</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.logging.Log.debug(java.lang.Object)</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.logging.Log.isDebugEnabled()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.logging.LogFactory.getLog(java.lang.Class)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.log</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.scheme</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.servicePrincipalName</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.challenge</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</name>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.failAuthCleanup()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isChallengeComplete()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</name>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Secur32</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.DeleteSecurityContext(com.sun.jna.platform.win32.Sspi$CtxtHandle)</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.FreeCredentialsHandle(com.sun.jna.platform.win32.Sspi$CredHandle)</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.INSTANCE</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle.isNull()</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle.isNull()</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Win32Exception.Win32Exception(int)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.sspiContext</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.failAuthCleanup()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.finalize()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.failAuthCleanup()</name>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.finalize()</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.finalize()</outbound>
+                <outbound type="class" confirmed="no">java.lang.Throwable</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">com.sun.jna.Pointer</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Secur32</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.AcquireCredentialsHandle(java.lang.String, java.lang.String, int, com.sun.jna.platform.win32.WinNT$LUID, com.sun.jna.Pointer, com.sun.jna.Pointer, com.sun.jna.Pointer, com.sun.jna.platform.win32.Sspi$CredHandle, com.sun.jna.platform.win32.Sspi$TimeStamp)</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.INSTANCE</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle.Sspi$CredHandle()</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$SecBufferDesc</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$SecBufferDesc.Sspi$SecBufferDesc(int, byte[])</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$TimeStamp</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$TimeStamp.Sspi$TimeStamp()</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Win32Exception</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Win32Exception.Win32Exception(int)</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.WinNT$LUID</outbound>
+                <outbound type="class" confirmed="no">java.lang.RuntimeException</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="no">java.lang.String.isEmpty()</outbound>
+                <outbound type="class" confirmed="no">java.lang.StringBuilder</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.StringBuilder()</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.append(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.toString()</outbound>
+                <outbound type="class" confirmed="no">java.lang.Throwable</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.codec.binary.Base64.decodeBase64(java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthenticationException</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.auth.AuthenticationException.AuthenticationException(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.auth.AuthenticationException.AuthenticationException(java.lang.String, java.lang.Throwable)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.challenge</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.failAuthCleanup()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getCurrentUsername()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.scheme</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.sspiContext</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.HttpHost</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.HttpRequest</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getCurrentUsername()</name>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32Util.getUserNameEx(int)</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getPrincipal()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getName()</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.scheme</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getPrincipal()</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="class" confirmed="no">java.security.Principal</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.auth.BasicUserPrincipal.BasicUserPrincipal(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getCurrentUsername()</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getRealm()</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="class" confirmed="no">java.lang.StringBuilder</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.StringBuilder()</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.append(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="no">java.lang.StringBuilder.toString()</outbound>
+                <outbound type="class" confirmed="no">org.apache.commons.logging.Log</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.logging.Log.debug(java.lang.Object)</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.logging.Log.isDebugEnabled()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.RouteInfo</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.RouteInfo.getTargetHost()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.log</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.servicePrincipalName</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.protocol.HttpClientContext</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.protocol.HttpClientContext.adapt(org.apache.hc.core5.http.protocol.HttpContext)</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.protocol.HttpClientContext.getHttpRoute()</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.protocol.HttpClientContext.getTargetHost()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.HttpHost</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.core5.http.HttpHost.getHostName()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</name>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Secur32</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.INSTANCE</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Secur32.InitializeSecurityContext(com.sun.jna.platform.win32.Sspi$CredHandle, com.sun.jna.platform.win32.Sspi$CtxtHandle, java.lang.String, int, int, int, com.sun.jna.platform.win32.Sspi$SecBufferDesc, int, com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, com.sun.jna.ptr.IntByReference, com.sun.jna.platform.win32.Sspi$TimeStamp)</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle.Sspi$CtxtHandle()</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$SecBufferDesc</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$SecBufferDesc.Sspi$SecBufferDesc(int, int)</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Sspi$SecBufferDesc.getBytes()</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$TimeStamp</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.platform.win32.Win32Exception.Win32Exception(int)</outbound>
+                <outbound type="class" confirmed="no">com.sun.jna.ptr.IntByReference</outbound>
+                <outbound type="feature" confirmed="no">com.sun.jna.ptr.IntByReference.IntByReference()</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="no">org.apache.commons.codec.binary.Base64.encodeBase64String(byte[])</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.sspiContext</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isChallengeComplete()</name>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isConnectionBased()</name>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isResponseReady(org.apache.hc.core5.http.HttpHost, org.apache.hc.client5.http.auth.CredentialsProvider, org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthenticationException</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.CredentialsProvider</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.HttpHost</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.log</name>
+                <outbound type="class" confirmed="no">org.apache.commons.logging.Log</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CredHandle</outbound>
+                <outbound type="feature" confirmed="no">java.lang.IllegalStateException.IllegalStateException(java.lang.String)</outbound>
+                <outbound type="class" confirmed="no">java.lang.Object</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="no">java.lang.String.isEmpty()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthChallenge</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.auth.AuthChallenge.getValue()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.MalformedChallengeException</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.client5.http.auth.MalformedChallengeException.MalformedChallengeException(java.lang.String)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.challenge</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.clientCred</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.continueNeeded</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+                <outbound type="feature" confirmed="no">org.apache.hc.core5.util.Args.notNull(java.lang.Object, java.lang.String)</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.scheme</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getName()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.servicePrincipalName</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.sspiContext</name>
+                <outbound type="class" confirmed="no">com.sun.jna.platform.win32.Sspi$CtxtHandle</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.dispose()</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getToken(com.sun.jna.platform.win32.Sspi$CtxtHandle, com.sun.jna.platform.win32.Sspi$SecBufferDesc, java.lang.String)</inbound>
+            </feature>
+        </class>
+        <class confirmed="yes">
+            <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory</name>
+            <outbound type="class" confirmed="no">java.lang.Object</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthSchemeProvider</outbound>
+            <outbound type="class" confirmed="no">org.apache.hc.core5.annotation.Immutable</outbound>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.WindowsNegotiateSchemeFactory(java.lang.String)</name>
+                <outbound type="feature" confirmed="no">java.lang.Object.Object()</outbound>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.servicePrincipalName</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.client5.http.auth.AuthScheme</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.WindowsNegotiateScheme(java.lang.String, java.lang.String)</outbound>
+                <outbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.servicePrincipalName</outbound>
+                <outbound type="class" confirmed="no">org.apache.hc.core5.http.protocol.HttpContext</outbound>
+            </feature>
+            <feature confirmed="yes">
+                <name>org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.servicePrincipalName</name>
+                <outbound type="class" confirmed="no">java.lang.String</outbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.WindowsNegotiateSchemeFactory(java.lang.String)</inbound>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.client5.http.protocol</name>
+        <class confirmed="no">
+            <name>org.apache.hc.client5.http.protocol.HttpClientContext</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.protocol.HttpClientContext.adapt(org.apache.hc.core5.http.protocol.HttpContext)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.protocol.HttpClientContext.getHttpRoute()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.client5.http.protocol.HttpClientContext.getTargetHost()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.core5.annotation</name>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.annotation.Immutable</name>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory</inbound>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.annotation.NotThreadSafe</name>
+            <inbound type="class" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.core5.http</name>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.HttpHost</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isResponseReady(org.apache.hc.core5.http.HttpHost, org.apache.hc.client5.http.auth.CredentialsProvider, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.core5.http.HttpHost.getHostName()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.HttpRequest</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.core5.http.config</name>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.config.Lookup</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.config.Registry</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+        </class>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.config.RegistryBuilder</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            <feature confirmed="no">
+                <name>org.apache.hc.core5.http.config.RegistryBuilder.build()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.core5.http.config.RegistryBuilder.create()</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+            <feature confirmed="no">
+                <name>org.apache.hc.core5.http.config.RegistryBuilder.register(java.lang.String, java.lang.Object)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WinHttpClients.createBuilder()</inbound>
+            </feature>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.core5.http.protocol</name>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.http.protocol.HttpContext</name>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNTLMSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.generateAuthResponse(org.apache.hc.core5.http.HttpHost, org.apache.hc.core5.http.HttpRequest, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.getServicePrincipalName(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.isResponseReady(org.apache.hc.core5.http.HttpHost, org.apache.hc.client5.http.auth.CredentialsProvider, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateSchemeFactory.create(org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+        </class>
+    </package>
+    <package confirmed="no">
+        <name>org.apache.hc.core5.util</name>
+        <class confirmed="no">
+            <name>org.apache.hc.core5.util.Args</name>
+            <feature confirmed="no">
+                <name>org.apache.hc.core5.util.Args.notNull(java.lang.Object, java.lang.String)</name>
+                <inbound type="feature" confirmed="yes">org.apache.hc.client5.http.impl.win.WindowsNegotiateScheme.processChallenge(org.apache.hc.client5.http.auth.AuthChallenge, org.apache.hc.core5.http.protocol.HttpContext)</inbound>
+            </feature>
+        </class>
+    </package>
+</dependencies>

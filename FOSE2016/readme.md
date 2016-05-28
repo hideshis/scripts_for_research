@@ -17,3 +17,4 @@
   - This script formats the result of DependencyFinder.
 1. ./coverage_report/coverage-report_converter.py
   - This script converts original JMockit coverage report (.html file) into .csv file.
+1. ./pom_edit/pom_editor_new.py

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from xml.etree import ElementTree
 import sys
 import csv

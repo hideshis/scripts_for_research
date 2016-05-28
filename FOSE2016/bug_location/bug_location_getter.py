@@ -5,7 +5,11 @@ import sys
 import csv
 import re
 
-def tag_list_getter(git_repo_path, script_path):
+"""
+This script identifies buggy files and lines and the revision which the bug was injected.
+"""
+
+def tag_list_getter(git_repo_path, script_path): # obtain the list of tags. Each tag indicates the revision which the bug was injected.
     os.chdir(git_repo_path)
     result = subprocess.check_output('git tag | grep "^_BUG"', shell=True)
     result = result.replace('\r', '')
@@ -28,7 +32,7 @@ def buggy_file_list_getter_sub(buggy_file_candidate_list, tag):
             continue
     return buggy_file_list
 
-def buggy_file_list_getter(git_repo_path, script_path, tag):
+def buggy_file_list_getter(git_repo_path, script_path, tag): # obtain the list of buggy files.
     os.chdir(git_repo_path)
     buggy_file_str = subprocess.check_output('git show --pretty=format:"" --name-only ' + tag + ' | egrep "^@@.+@@@@$"', shell=True)
     buggy_file_str = buggy_file_str.replace('\r', '').replace('\n', '')
@@ -45,10 +49,10 @@ def buggy_area_list_getter(git_repo_path, script_path, tag, buggy_file):
     result_list = result.split('\n')
     result_list.pop()
     buggy_area_list = []
-    for var in result_list:
-        buggy_area_str = var.split(' ')[2][1:]
-        start_line = int(buggy_area_str.split(',')[0])
-        end_line = start_line + int(buggy_area_str.split(',')[1])
+    for var in result_list: # ex) var="@@ -113,9 +113,10 @@ dependencyManagement_tag = 'dependencyManagement'" / in "-L1,R1 +L2,R2", +L2,R2 means bug-injected line (L2) and range (R2)
+        buggy_area_str = var.split(' ')[2][1:] # ex) var.split(' ')[2]='+113,10', buggy_area_str='113,10'
+        start_line = int(buggy_area_str.split(',')[0]) # ex) start_line=113
+        end_line = start_line + int(buggy_area_str.split(',')[1]) # end_line=113+10=123
         buggy_area = [start_line, end_line]
         buggy_area_list.extend(buggy_area)
     os.chdir(script_path)
