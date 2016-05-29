@@ -1,0 +1,4 @@
+44|fully covered|org.apache.hc.client5.http.impl.TestAbstractResponseHandler#testUnsuccessfulResponse#84|org.apache.hc.client5.http.impl.TestBasicResponseHandler#testUnsuccessfulResponse#75
+45|fully covered|org.apache.hc.client5.http.impl.TestAbstractResponseHandler#testUnsuccessfulResponse#84|org.apache.hc.client5.http.impl.TestBasicResponseHandler#testUnsuccessfulResponse#75
+46|fully covered|org.apache.hc.client5.http.impl.TestAbstractResponseHandler#testUnsuccessfulResponse#84|org.apache.hc.client5.http.impl.TestBasicResponseHandler#testUnsuccessfulResponse#75
+49|fully covered|org.apache.hc.client5.http.impl.TestAbstractResponseHandler#testUnsuccessfulResponse#87|org.apache.hc.client5.http.impl.TestBasicResponseHandler#testUnsuccessfulResponse#78

@@ -1,0 +1,13 @@
+46|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#342|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#350|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeInvalidInput#367|org.apache.hc.client5.http.protocol.TestRequestAddCookies#testAddCookiesUsingExplicitCookieSpec#244
+47|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#342|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#350|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeInvalidInput#367|org.apache.hc.client5.http.protocol.TestRequestAddCookies#testAddCookiesUsingExplicitCookieSpec#244
+52|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#352,358|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeInvalidInput#369
+53|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#352,358
+54|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#358
+58|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#352
+59|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#352
+60|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParseInvalid#352
+62|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343
+63|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343
+67|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343
+68|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicMaxAgeParse#343
+72|fully covered|org.apache.hc.client5.http.protocol.TestRequestAddCookies#testAddCookiesUsingExplicitCookieSpec#244

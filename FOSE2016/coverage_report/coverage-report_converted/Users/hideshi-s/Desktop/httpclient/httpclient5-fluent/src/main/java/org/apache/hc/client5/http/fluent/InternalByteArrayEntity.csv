@@ -1,0 +1,16 @@
+45|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+46|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+47|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+48|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+49|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+50|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148
+51|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+53|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#135,139
+71|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148
+72|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148
+80|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136,140
+85|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148x3|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136x3,140x3
+95|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136,140
+96|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136,140
+97|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136,140
+98|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testContentAsStringWithCharset#148|org.apache.hc.client5.http.fluent.TestFluent#testPostRequest#136,140

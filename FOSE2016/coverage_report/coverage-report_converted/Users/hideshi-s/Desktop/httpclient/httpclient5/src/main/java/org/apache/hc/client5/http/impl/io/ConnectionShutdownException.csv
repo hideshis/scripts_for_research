@@ -1,0 +1,2 @@
+47|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testExecConnectionShutDown#558|org.apache.hc.client5.http.impl.sync.TestMinimalClientExec#testExecConnectionShutDown#289
+48|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testExecConnectionShutDown#558|org.apache.hc.client5.http.impl.sync.TestMinimalClientExec#testExecConnectionShutDown#289

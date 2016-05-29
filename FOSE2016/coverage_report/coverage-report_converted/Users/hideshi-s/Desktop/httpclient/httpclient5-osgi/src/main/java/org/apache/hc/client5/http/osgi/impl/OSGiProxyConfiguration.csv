@@ -1,0 +1,15 @@
+40|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+47|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+61|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+83|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+85|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+89|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#50
+128|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+129|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+130|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+131|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+132|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+133|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+134|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#51
+138|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#53x2
+139|fully covered|org.apache.hc.client5.http.osgi.impl.OSGiProxyConfigurationTest#testToString#53

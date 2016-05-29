@@ -1,0 +1,16 @@
+72|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+74|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+83|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+85|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+86|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+88|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+90|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+91|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+92|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+93|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+94|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+95|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+96|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+97|fully covered|org.apache.hc.client5.http.fluent.TestFluent#testGetRequestByName#111
+259|fully covered|org.apache.hc.client5.http.fluent.TestFluent#shutDown#95x7
+260|fully covered|org.apache.hc.client5.http.fluent.TestFluent#shutDown#95x7

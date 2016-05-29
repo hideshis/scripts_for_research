@@ -1,0 +1,8 @@
+58|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+59|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+60|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+61|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+62|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+76|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+91|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#68
+96|fully covered|org.apache.hc.client5.http.entity.mime.TestMultipartEntityBuilder#testAddBodyParts#70

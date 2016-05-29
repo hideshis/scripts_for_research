@@ -1,0 +1,2 @@
+34|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryFactoryImpl#createsMemcachedCacheEntryImpls#42
+38|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryFactoryImpl#createsMemcachedCacheEntryImpls#43

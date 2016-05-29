@@ -1,0 +1,4 @@
+71|fully covered|org.apache.hc.client5.http.impl.protocol.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#347
+72|fully covered|org.apache.hc.client5.http.impl.protocol.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#347
+73|fully covered|org.apache.hc.client5.http.impl.protocol.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#347
+77|fully covered|org.apache.hc.client5.http.impl.protocol.TestDefaultRedirectStrategy#testGetRedirectRequestForTemporaryRedirect#347x2

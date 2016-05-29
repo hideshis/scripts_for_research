@@ -2,14 +2,16 @@
 from xml.etree import ElementTree
 import sys
 import csv
+import subprocess
+import os
 
-XMLFILE = 'df_httpclient5-5.0-alpha2-SNAPSHOT.xml'
-
-f = open('feature_list.csv', 'w')
-csvWriter = csv.writer(f, lineterminator='\n')
-tree = ElementTree.parse(XMLFILE)
+argvs = sys.argv
+xml_file = argvs[1]
+output_file = argvs[2]
+f = open(output_file, 'w')
+csvWriter = csv.writer(f, lineterminator='\n', delimiter='|')
+tree = ElementTree.parse(xml_file)
 root = tree.getroot()
-print root.tag
 for e_package in root.findall('package'):
     e_package_name = e_package.find('name').text
     if e_package_name == None:
@@ -22,7 +24,6 @@ for e_package in root.findall('package'):
         #print e_package_name + ',' + e_class_name
         for e_feature in e_class.findall('feature'):
             tmp = e_feature.find('name').text
-            print e_package_name + ',' + e_class_name + ',' + tmp
             if tmp == None:
                 e_feature_name = 'no_feature_name'
             else:
