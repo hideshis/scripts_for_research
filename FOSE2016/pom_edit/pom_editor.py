@@ -107,7 +107,7 @@ def edit_build(build):
     systemPropertyVariables = configuration.find('systemPropertyVariables')
     new_tag_append(systemPropertyVariables, 'coverage-output', 'html', {})
     new_tag_append(systemPropertyVariables, 'coverage-outputDir', '${project.build.directory}/coverage-report', {})
-    new_tag_append(systemPropertyVariables, 'coverage-maxCallPoints', '10000', {})
+    new_tag_append(systemPropertyVariables, 'coverage-maxCallPoints', '20000', {})
     return
 
 argvs = sys.argv
