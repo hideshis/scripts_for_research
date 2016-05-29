@@ -1,6 +1,6 @@
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCantHashStorageKey#256
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#597
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutFailsSilentlyWhenWeCannotHashAKey#110
-40|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCantHashStorageKey#256
-40|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#597
-40|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutFailsSilentlyWhenWeCannotHashAKey#110
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCantHashStorageKey#256
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#597
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutFailsSilentlyWhenWeCannotHashAKey#110
+40|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCantHashStorageKey#256
+40|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#597
+40|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutFailsSilentlyWhenWeCannotHashAKey#110

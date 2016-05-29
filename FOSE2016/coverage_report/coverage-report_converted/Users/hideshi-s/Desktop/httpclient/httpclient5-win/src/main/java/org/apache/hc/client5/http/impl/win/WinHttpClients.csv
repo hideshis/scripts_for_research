@@ -1,6 +1,6 @@
-55|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
-56|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
-56|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
-57|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
-57|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
-64|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+55|normal|1|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+56|branch_condition_1|1|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+56|branch_condition_2|1|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+57|branch_condition_1|1|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+57|branch_condition_2|1|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+64|normal|1|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89

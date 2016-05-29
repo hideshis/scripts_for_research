@@ -1,2 +1,2 @@
-49|fully covered|org.apache.hc.client5.http.impl.auth.TestRequestAuthCache#testAuthCacheEmpty#173x2
-65|fully covered|org.apache.hc.client5.http.impl.auth.TestRequestAuthCache#testAuthCacheEmpty#173x2
+49|normal|2|fully covered|org.apache.hc.client5.http.impl.auth.TestRequestAuthCache#testAuthCacheEmpty#173x2
+65|normal|2|fully covered|org.apache.hc.client5.http.impl.auth.TestRequestAuthCache#testAuthCacheEmpty#173x2

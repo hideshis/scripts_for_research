@@ -1,8 +1,8 @@
-58|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate1#81,88
-58|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate2#106
-58|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate4#131
-58|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicPathValidate#309
-59|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate1#81,88
-59|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate2#106
-59|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate4#131
-59|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicPathValidate#309
+58|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate1#81,88
+58|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate2#106
+58|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate4#131
+58|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicPathValidate#309
+59|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate1#81,88
+59|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate2#106
+59|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicDomainValidate4#131
+59|normal|5|fully covered|org.apache.hc.client5.http.impl.cookie.TestBasicCookieAttribHandlers#testBasicPathValidate#309

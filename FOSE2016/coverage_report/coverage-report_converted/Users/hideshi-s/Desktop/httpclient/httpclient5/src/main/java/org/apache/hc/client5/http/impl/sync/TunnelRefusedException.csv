@@ -1,4 +1,4 @@
-47|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
-48|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
-49|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
-52|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#728
+47|normal|1|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
+48|normal|1|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
+49|normal|1|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#726
+52|normal|1|fully covered|org.apache.hc.client5.http.impl.sync.TestMainClientExec#testEstablishRouteViaProxyTunnelFailure#728

@@ -1,4 +1,4 @@
-50|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
-51|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
-52|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
-63|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#testDefaultProxyDirect#68
+50|normal|2|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
+51|normal|2|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
+52|normal|2|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#setup#58x2
+63|normal|1|fully covered|org.apache.hc.client5.http.impl.routing.TestDefaultProxyRoutePlanner#testDefaultProxyDirect#68

@@ -1,6 +1,6 @@
-43|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#38
-45|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#38
-49|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
-50|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
-51|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
-56|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
+43|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#38
+45|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#38
+49|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
+50|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
+51|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39
+56|normal|1|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestSHA256HashingScheme#canHash#39

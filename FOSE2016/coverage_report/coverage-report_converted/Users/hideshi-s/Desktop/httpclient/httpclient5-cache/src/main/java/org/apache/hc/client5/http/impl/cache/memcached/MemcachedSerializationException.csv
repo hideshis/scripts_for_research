@@ -1,6 +1,6 @@
-38|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryImpl#cannotReconstituteFromGarbage#94
-38|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutThrowsIOExceptionIfCannotSerializeEntry#155
-38|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCannotReconstituteEntry#241
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryImpl#cannotReconstituteFromGarbage#94
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutThrowsIOExceptionIfCannotSerializeEntry#155
-39|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCannotReconstituteEntry#241
+38|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryImpl#cannotReconstituteFromGarbage#94
+38|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutThrowsIOExceptionIfCannotSerializeEntry#155
+38|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCannotReconstituteEntry#241
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedCacheEntryImpl#cannotReconstituteFromGarbage#94
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCachePutThrowsIOExceptionIfCannotSerializeEntry#155
+39|normal|3|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testTreatsAsCacheMissIfCannotReconstituteEntry#241

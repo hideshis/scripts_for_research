@@ -1,8 +1,8 @@
-53|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#156
-53|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#186
-54|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#156
-54|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#186
-62|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#171x3
-62|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#202x3
-67|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#171
-67|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#202
+53|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#156
+53|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#186
+54|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#156
+54|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#186
+62|normal|6|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#171x3
+62|normal|6|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#202x3
+67|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testDontTryToAuthenticateEndlessly#171
+67|normal|2|fully covered|org.apache.hc.client5.http.impl.integration.TestSPNegoScheme#testNoTokenGeneratedError#202
