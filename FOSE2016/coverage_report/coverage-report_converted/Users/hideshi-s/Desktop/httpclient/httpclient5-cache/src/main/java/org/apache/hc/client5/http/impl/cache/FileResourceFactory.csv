@@ -8,7 +8,8 @@
 60|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124,143
 61|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x17,143x2
 62|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x16,143
-63|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x16,143|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x4,143
+63|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x16,143
+63|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x4,143
 64|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x12
 66|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124x4,143
 69|fully covered|org.apache.hc.client5.http.impl.cache.TestHttpCacheJiraNumber1147#testIssue1147#124,143

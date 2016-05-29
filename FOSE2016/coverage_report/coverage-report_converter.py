@@ -34,7 +34,7 @@ def html_convertor(file_path, file_name, file_name_original):
     global prettyprint_covered_list
     global branch_list
     for tr in tr_list:
-        cover_list = []
+        #cover_list = []
         # Each of tds contains detail information of one line of code
         for td in tr:
             try:
@@ -42,6 +42,7 @@ def html_convertor(file_path, file_name, file_name_original):
                 if td.attrib['class'] == 'line':
                     lineNo = str(td.text)
             except KeyError:
+                covering_test_list = []
                 # get test cases which tests the line of code
                 if (td.find('pre') != None):
                     pre_class_list.append(td.find('pre').attrib['class'])
@@ -51,11 +52,13 @@ def html_convertor(file_path, file_name, file_name_original):
                         prettyprint_covered_counter += 1
                 if (td.find('pre') != None) and (td.find('pre').attrib['class'] == 'prettyprint covered cp'):
                     ol = td.find('ol')
-                    cover_list.append(lineNo)
-                    cover_list.append('fully covered')
+                    #cover_list.append(lineNo)
+                    #cover_list.append('fully covered')
+                    cover_status = 'fully covered'
                     # Each of lis contains name of test case.
                     for li in ol:
-                        cover_list.append(li.text.replace(': ', '#').replace(' ',''))
+                        covering_test_list.append(li.text.replace(': ', '#').replace(' ',''))
+                        #cover_list.append(li.text.replace(': ', '#').replace(' ',''))
                 elif (td.find('pre') != None) and (td.find('pre').attrib['class'] == 'prettyprint jmp'):
                     span_list = td.find('pre')
                     ol_list = td.findall('ol')
@@ -64,29 +67,38 @@ def html_convertor(file_path, file_name, file_name_original):
                         for span, ol in zip(span_list, ol_list):
                             if span.attrib['class'] == 'covered cp':
                                 covered_flag += 1
+                                """
                                 if len(cover_list) == 0:
                                     cover_list.append(lineNo)
                                     cover_list_child = []
                                 #   status_flag = 'fully covered'
+                                """
                                 for li in list(ol):
-                                    cover_list_child.append(li.text.replace(': ', '#').replace(' ',''))
+                                    covering_test_list.append(li.text.replace(': ', '#').replace(' ',''))
+                                    #cover_list_child.append(li.text.replace(': ', '#').replace(' ',''))
                             #else:
                             #   status_flag = 'partially covered'
                         if covered_flag >= 1:
                             if covered_flag == len(span_list):
-                                status_flag = 'fully covered'
+                                #status_flag = 'fully covered'
+                                cover_status = 'fully covered'
                             else:
-                                status_flag = 'partially covered'
-                            cover_list_child = list(set(cover_list_child))
-                            cover_list.append(status_flag)
-                            cover_list.extend(cover_list_child)
+                                #status_flag = 'partially covered'
+                                cover_status = 'partially covered'
+                            #cover_list_child = list(set(cover_list_child))
+                            #cover_list.append(status_flag)
+                            #cover_list.extend(cover_list_child)
                     else:
                         print len(span_list), len(ol_list)
                         sys.exit()
         # if len(cover_list) > 0 is True, it means that one or more test cases
         # cover the line of code.
-        if len(cover_list) > 0:
-            csvWriter.writerow(cover_list)
+        if len(covering_test_list) > 0:
+            #csvWriter.writerow(cover_list)
+            for covering_test in covering_test_list:
+                covering_test_info = [lineNo, cover_status, covering_test]
+                csvWriter.writerow(covering_test_info)
+
     f.close()
     f_write.close()
     return

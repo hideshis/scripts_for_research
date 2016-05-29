@@ -1,4 +1,14 @@
 47|fully covered|org.apache.hc.client5.http.impl.auth.TestHttpAuthenticator#testAuthChallengeStateMultipleOption#421
 48|fully covered|org.apache.hc.client5.http.impl.auth.TestHttpAuthenticator#testAuthChallengeStateMultipleOption#421
-56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationUnknownAlgo#422|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopIntOnlyNonRepeatableEntity#705|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoNonce#256|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoRealm#238|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationMD5SessUnknownQop#387|org.apache.hc.client5.http.impl.integration.TestClientAuthenticationFallBack#testBasicAuthenticationSuccess#144
-57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationUnknownAlgo#422|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopIntOnlyNonRepeatableEntity#705|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoNonce#256|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoRealm#238|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationMD5SessUnknownQop#387|org.apache.hc.client5.http.impl.integration.TestClientAuthenticationFallBack#testBasicAuthenticationSuccess#144
+56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationUnknownAlgo#422
+56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopIntOnlyNonRepeatableEntity#705
+56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoNonce#256
+56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoRealm#238
+56|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationMD5SessUnknownQop#387
+56|fully covered|org.apache.hc.client5.http.impl.integration.TestClientAuthenticationFallBack#testBasicAuthenticationSuccess#144
+57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationUnknownAlgo#422
+57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationQopIntOnlyNonRepeatableEntity#705
+57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoNonce#256
+57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationNoRealm#238
+57|fully covered|org.apache.hc.client5.http.impl.auth.TestDigestScheme#testDigestAuthenticationMD5SessUnknownQop#387
+57|fully covered|org.apache.hc.client5.http.impl.integration.TestClientAuthenticationFallBack#testBasicAuthenticationSuccess#144

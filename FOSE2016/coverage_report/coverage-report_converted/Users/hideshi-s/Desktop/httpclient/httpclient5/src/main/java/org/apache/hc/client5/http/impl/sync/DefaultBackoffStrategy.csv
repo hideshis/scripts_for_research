@@ -1,3 +1,6 @@
 43|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#setUp#51x6
-47|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForConnectionTimeouts#66|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForSocketTimeouts#61|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#doesNotBackOffForConnectionManagerTimeout#71
-53|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForServiceUnavailable#78|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#doesNotBackOffForNon503StatusCodes#89x499
+47|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#doesNotBackOffForConnectionManagerTimeout#71
+47|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForConnectionTimeouts#66
+47|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForSocketTimeouts#61
+53|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#backsOffForServiceUnavailable#78
+53|fully covered|org.apache.hc.client5.http.impl.sync.TestDefaultBackoffStrategy#doesNotBackOffForNon503StatusCodes#89x499

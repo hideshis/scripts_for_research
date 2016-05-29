@@ -1,4 +1,6 @@
 55|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
 56|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+56|partially covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
+57|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
 57|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89
 64|fully covered|org.apache.hc.client5.http.impl.win.TestWindowsNegotiateScheme#testNoInfiniteLoopOnSPNOutsideDomain#89

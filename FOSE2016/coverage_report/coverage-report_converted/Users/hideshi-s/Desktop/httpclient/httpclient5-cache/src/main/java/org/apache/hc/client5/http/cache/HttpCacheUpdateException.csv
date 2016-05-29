@@ -1,2 +1,6 @@
-40|fully covered|org.apache.hc.client5.http.impl.cache.ehcache.TestEhcacheHttpCacheStorage#testCacheUpdateFail#238|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCacheUpdateThrowsExceptionsIfCASFailsEnoughTimes#483|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#601
-41|fully covered|org.apache.hc.client5.http.impl.cache.ehcache.TestEhcacheHttpCacheStorage#testCacheUpdateFail#238|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCacheUpdateThrowsExceptionsIfCASFailsEnoughTimes#483|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#601
+40|fully covered|org.apache.hc.client5.http.impl.cache.ehcache.TestEhcacheHttpCacheStorage#testCacheUpdateFail#238
+40|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCacheUpdateThrowsExceptionsIfCASFailsEnoughTimes#483
+40|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#601
+41|fully covered|org.apache.hc.client5.http.impl.cache.ehcache.TestEhcacheHttpCacheStorage#testCacheUpdateFail#238
+41|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testCacheUpdateThrowsExceptionsIfCASFailsEnoughTimes#483
+41|fully covered|org.apache.hc.client5.http.impl.cache.memcached.TestMemcachedHttpCacheStorage#testThrowsExceptionOnUpdateIfCannotHashStorageKey#601
