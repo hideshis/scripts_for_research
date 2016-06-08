@@ -8,4 +8,5 @@ if __name__ == "__main__":
     for line in f.readlines():
         caller = caller_method.caller_method(line.replace('\r', '').replace('\n', '').split('|'))
         print caller.method_name
+        print caller.begin_line
         sys.exit()
