@@ -9,4 +9,5 @@ if __name__ == "__main__":
         caller = caller_method.caller_method(line.replace('\r', '').replace('\n', '').split('|'))
         print caller.method_name
         print caller.begin_line
+        print caller.end_line
         sys.exit()
