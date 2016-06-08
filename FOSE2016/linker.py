@@ -12,4 +12,5 @@ if __name__ == "__main__":
         print caller.end_line
         print "test"
         print "test2"
+        print "test3"
         sys.exit()
