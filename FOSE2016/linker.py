@@ -10,4 +10,5 @@ if __name__ == "__main__":
         print caller.method_name
         print caller.begin_line
         print caller.end_line
+        print "test"
         sys.exit()
