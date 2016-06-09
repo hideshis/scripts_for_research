@@ -6,11 +6,21 @@ import csv
 
 class base_method:
     def __init__(self, method_name):
+        self.java_name = ""
         self.method_name = method_name
         self.begin_line = 0
         self.end_line = 0
         self.buggy = False
         self.covered = False
+
+    @property
+    def java_name(self):
+        return self.java_name
+
+    @java_name.setter
+    def java_name(self, java_name):
+        self.java_name = java_name
+        return
 
     @property
     def begin_line(self):
@@ -35,5 +45,6 @@ class base_method:
         return
 
     def is_covered(self):
+
         self.covered = False
         return
