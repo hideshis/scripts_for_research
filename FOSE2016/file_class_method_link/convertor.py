@@ -12,7 +12,6 @@ writer = csv.writer(f_write, lineterminator='\n', delimiter='|')
 line = f.readline()
 line = line.replace('\r', '')
 line = line.replace('\n', '')
-print 'hoge'
 while line:
     line_factor = line.split('|')
     java_name = line_factor[0]
