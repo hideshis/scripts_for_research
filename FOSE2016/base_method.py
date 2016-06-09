@@ -40,8 +40,22 @@ class base_method:
         self.end_line = end_line
         return
 
-    def is_buggy(self):
-        self.buggy = False
+    def is_buggy(self, git_tag_name):
+        try:
+            result = subprocess.check_output('grep "' + self.method_name + '" ./bug_location/bug_location_info.csv | grep "' + git_tag_name + '"', shell=True)
+            result = result.replace('\r', '')
+            result_list = result.split('\n')
+            result_list.pop()
+            for bug_info in result_list:
+                bug_begin_line = int(bug_info.split(',')[-2])
+                bug_end_line = int(bug_info.split(',')[-3])
+                if ((bug_begin_line > self.end_line) or (bug_end_line < self.begin_line)):
+                    self.buggy = False
+                else:
+                    self.buggy = True
+                    break
+        except subprocess.CalledProcessError:
+            self.buggy = False
         return
 
     def is_covered(self):
