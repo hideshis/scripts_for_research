@@ -11,4 +11,5 @@ if __name__ == "__main__":
         print caller.caller_method_info.java_name
         print caller.caller_method_info.method_name
         print caller.caller_method_info.begin_line, caller.caller_method_info.end_line
-        sys.exit()
+        caller.caller_method_info.is_covered()
+        #sys.exit()
