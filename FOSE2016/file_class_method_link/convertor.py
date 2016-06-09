@@ -18,7 +18,7 @@ while line:
     java_name_path_list = java_name.split('/')
     org_index = java_name_path_list.index('org')
     file_path = '.'.join(java_name_path_list[org_index:-1])
-    java_name = file_path + '.' + java_name_path_list[-1]
+    java_name = '/'.join(java_name_path_list[1:])
     class_name = file_path + '.' + line_factor[1]
     method_name = class_name + '.' + line_factor[2] + '(' + line_factor[3] + ')'
     begin_line = line_factor[4]
