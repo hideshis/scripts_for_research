@@ -20,3 +20,5 @@ class caller_method:
 
     def get_callee_method(self):
         return
+
+    def output_file(self):

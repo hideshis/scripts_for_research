@@ -8,10 +8,8 @@ def commitHash(git_repo_path):
     output_file_path = '/Users/hideshi-s/Desktop/scripts_for_research/FOSE2016/tag_commitHash_link/commitHash.csv'
     os.system('rm ' + output_file_path)
     os.chdir(git_repo_path)
-    result = subprocess.check_output('git log --pretty=format:%\H', shell=True)
+    result = subprocess.check_output('git log --pretty=format:%H', shell=True)
     result = result.replace('\r', '')
-    result = result.replace('refs/tags/', '')
-    result = result.replace(' ', ',')
     for line in result.split('\n'):
         os.system('echo ' + line + '>> ' + output_file_path)
     return
