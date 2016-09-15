@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Request.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../logo.png'/>
+  <script type='text/javascript' src='../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/exquery/ns/Request.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.exquery.ns;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.*;
+import java.util.*;
+
+import javax.servlet.http.*;
+
+import org.basex.http.*;
+import org.basex.query.*;
+import org.basex.query.value.*;
+import org.basex.query.value.item.*;
+import org.basex.query.value.seq.*;
+import org.basex.util.hash.*;
+import org.basex.util.list.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This module contains functions for handling servlet requests.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l22s0'>public final class Request extends QueryModule {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the method of a request.
+   * @return method
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str method() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l30s0'>    return Str.get(request().getMethod());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the Scheme component of a request.
+   * @return scheme
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str scheme() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l40s0'>    return Str.get(request().getScheme());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the Hostname fragment of a request.
+   * @return host name
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str hostname() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l50s0'>    return Str.get(request().getServerName());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the Port fragment of a request.
+   * @return port
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int port() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l60s0'>    return Int.get(request().getServerPort());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the path of the request.
+   * @return path
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str path() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l70s0'>    return Str.get(request().getRequestURI());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the query string of a request.
+   * @return query string
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str query() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l80s0'>    final String query = request().getQueryString();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l81s0' title='Executions: 1' class='covered'>return query == null</span> ? <span id='l81s1' title='Executions: 0' class='uncovered'>null</span> : <span id='l81s2' title='Executions: 1' class='covered'>Str.get(query);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the URI of a request.
+   * @return URI
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Uri uri() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l91s0'>    return Uri.uri(request().getRequestURL().toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the context path of a request.
+   * @return context path
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str contextPath() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l101s0'>    return Str.get(request().getContextPath());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the address of a request.
+   * @return address
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str address() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l111s0'>    return Str.get(request().getLocalAddr());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the remote host name of a request.
+   * @return host name
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str remoteHostname() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l121s0'>    return Str.get(request().getRemoteHost());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the remote address of a request.
+   * @return remote address
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str remoteAddress() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l131s0'>    return Str.get(request().getRemoteAddr());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the remote port of a request.
+   * @return remote port
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int remotePort() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l141s0'>    return Int.get(request().getRemotePort());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the names of all query parameters.
+   * @return parameter names
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Value parameterNames() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l152s0'>      final HTTPParams params = context().params;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l153s0'>      final TokenSet cache = new TokenSet();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>      <span id='l154s0' title='Executions: 3' class='covered'>for(final String name</span> : <span id='l154s1' title='Executions: 5' class='covered'>params.query().keySet())</span> cache.add(name);</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>      <span id='l155s0' title='Executions: 3' class='covered'>for(final String name</span> : <span id='l155s1' title='Executions: 0' class='uncovered'>params.form(queryContext.context.options).keySet())</span> cache.add(name);</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l156s0'>      final TokenList names = new TokenList(cache.size());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>      <span id='l157s0' title='Executions: 3' class='covered'>for(final byte[] name</span> : <span id='l157s1' title='Executions: 5' class='covered'>cache)</span> names.add(name);</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l158s0'>      return StrSeq.get(names);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l159s0'>    } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l160s0'>      throw new QueryException(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific query parameter.
+   * @param key key to be requested
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Value parameter(final Str key) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l172s0'>    return parameter(key, null);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific query parameter.
+   * @param key key to be requested
+   * @param def default value
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Value parameter(final Str key, final Value def) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l185s0'>      final String name = key.toJava();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l186s0'>      final HTTPParams params = context().params;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l187s0'>      final Value query = params.query().get(name);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered' id='l188s0'>      final Value form = params.form(queryContext.context.options).get(name);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>189</td><td class='count'>4</td>
+      <td><pre class='prettyprint jmp'>      <span id='l189s0' title='Executions: 4' class='covered'>if(query == null</span> && <span id='l189s1' title='Executions: 1' class='covered'>form == null)</span> <span id='l189s2' title='Executions: 0' class='uncovered'>return def;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>190</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>      <span id='l190s0' title='Executions: 3' class='covered'>if(query == null)</span> <span id='l190s1' title='Executions: 0' class='uncovered'>return form;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>191</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>      <span id='l191s0' title='Executions: 3' class='covered'>if(form == null)</span> <span id='l191s1' title='Executions: 3' class='covered'>return query;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>192</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l192s0'>      return new ValueBuilder().add(query).add(form).value();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>193</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l193s0'>    } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>194</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l194s0'>      throw new QueryException(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>195</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the names of all header parameters.
+   * @return parameter names
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>203</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>204</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Value headerNames() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>205</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l205s0'>    final TokenList tl = new TokenList();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l206s0'>    final Enumeration&lt;String> en = request().getHeaderNames();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td class='count'>5</td>
+      <td><pre class='prettyprint jmp'>    <span id='l207s0' title='Executions: 5' class='covered'>while(en.hasMoreElements())</span> <span id='l207s1' title='Executions: 4' class='covered'>tl.add(en.nextElement());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l208s0'>    return StrSeq.get(tl);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific header parameter.
+   * @param key key to be requested
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>217</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str header(final Str key) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>219</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l219s0'>    return header(key, null);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific header parameter.
+   * @param key key to be requested
+   * @param def default value
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>229</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>230</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str header(final Str key, final Str def) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>231</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l231s0'>    final String val = request().getHeader(key.toJava());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>232</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l232s0' title='Executions: 2' class='covered'>return val == null</span> ? <span id='l232s1' title='Executions: 1' class='covered'>def</span> : <span id='l232s2' title='Executions: 1' class='covered'>Str.get(val);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>233</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns all cookie names.
+   * @return parameter names
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Value cookieNames() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>242</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l242s0'>    final TokenList tl = new TokenList();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>243</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l243s0' title='Executions: 1' class='covered'>for(final Cookie c</span> : <span id='l243s1' title='Executions: 0' class='uncovered'>request().getCookies())</span> tl.add(c.getName());</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>244</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l244s0'>    return StrSeq.get(tl);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>245</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific cookie.
+   * @param key key to be requested
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>253</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>254</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str cookie(final Str key) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l255s0'>    return cookie(key, null);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific cookie.
+   * @param key key to be requested
+   * @param def default value
+   * @return parameter value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>266</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str cookie(final Str key, final Str def) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l267s0'>    final String k = key.toJava();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>268</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l268s0' title='Executions: 1' class='covered'>for(final Cookie c</span> : <span id='l268s1' title='Executions: 0' class='uncovered'>request().getCookies())</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>269</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l269s0' title='Executions: 0' class='uncovered'>if(c.getName().equals(k))</span> <span id='l269s1' title='Executions: 0' class='uncovered'>return Str.get(c.getValue());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>270</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>271</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l271s0'>    return def;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>272</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the value of a specific attribute.
+   * @param key key to be requested
+   * @return attribute value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>280</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>281</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str attribute(final Str key) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>282</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l282s0'>    final Object query = request().getAttribute(key.toJava());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>283</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l283s0' title='Executions: 0' class='uncovered'>return query == null</span> ? <span id='l283s1' title='Executions: 0' class='uncovered'>null</span> : <span id='l283s2' title='Executions: 0' class='uncovered'>Str.get(query.toString());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>284</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>286</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // PRIVATE FUNCTIONS ============================================================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the servlet request instance.
+   * @return request
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>293</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private HttpServletRequest request() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>294</td><td class='count'>13</td>
+      <td><pre class='prettyprint covered' id='l294s0'>    return context().req;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>295</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the servlet HTTP context.
+   * @return context
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>302</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private HTTPContext context() throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>303</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>    <span id='l303s0' title='Executions: 20' class='covered'>if(queryContext.http != null)</span> <span id='l303s1' title='Executions: 20' class='covered'>return (HTTPContext) queryContext.http;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>304</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l304s0'>    throw new QueryException("Servlet context required.");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>305</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>306</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

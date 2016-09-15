@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RESTQuery.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/rest/RESTQuery.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http.rest;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.*;
+import java.util.*;
+import java.util.Map.Entry;
+
+import org.basex.core.*;
+import org.basex.core.cmd.*;
+import org.basex.http.*;
+import org.basex.query.value.type.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Evaluate queries via REST.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>18</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>class RESTQuery extends RESTCmd {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** External variables. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final Map&lt;String, String[]> vars;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Optional context value. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final String value;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   * @param session REST Session
+   * @param vars external variables
+   * @param value context value
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  RESTQuery(final RESTSession session, final Map&lt;String, String[]> vars, final String value) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l31s0'>    super(session);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l32s0'>    this.vars = vars;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l33s0'>    this.value = value;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l34s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  protected void run0() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l38s0'>    query(session.context.soptions.get(StaticOptions.WEBPATH));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l39s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Evaluates the specified query.
+   * @param path query path
+   * @throws HTTPException REST exception
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final void query(final String path) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // set base path and serialization parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l49s0'>    final HTTPContext http = session.http;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l50s0'>    context.options.set(MainOptions.QUERYPATH, path);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l51s0'>    context.options.set(MainOptions.SERIALIZER, http.sopts());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l52s0'>    http.initResponse();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>    <span id='l54s0' title='Executions: 20' class='covered'>for(final Command cmd</span> : <span id='l54s1' title='Executions: 21' class='covered'>session.commands)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>21</td>
+      <td><pre class='prettyprint jmp'>      <span id='l55s0' title='Executions: 21' class='covered'>if(cmd instanceof XQuery)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l56s0'>        final XQuery xq = (XQuery) cmd;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // create query instance</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>        <span id='l58s0' title='Executions: 20' class='covered'>if(value != null)</span> <span id='l58s1' title='Executions: 0' class='uncovered'>xq.bind(null, value, NodeType.DOC.toString());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // bind HTTP context and external variables</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l61s0'>        xq.http(http);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>        <span id='l62s0' title='Executions: 20' class='covered'>for(final Entry&lt;String, String[]> e</span> : <span id='l62s1' title='Executions: 6' class='covered'>vars.entrySet())</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l63s0'>          final String key = e.getKey();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l64s0'>          final String[] val = e.getValue();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>          <span id='l65s0' title='Executions: 6' class='covered'>if(val.length == 2)</span> <span id='l65s1' title='Executions: 0' class='uncovered'>xq.bind(key, val[0], val[1]);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>          <span id='l66s0' title='Executions: 6' class='covered'>if(val.length == 1)</span> <span id='l66s1' title='Executions: 6' class='covered'>xq.bind(key, val[0]);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l67s0'>        }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // initializes the response with query serialization options</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l70s0'>        http.sopts().assign(xq.parameters(context));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l71s0'>        http.initResponse();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // run command</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered' id='l74s0'>      run(cmd, http.res.getOutputStream());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered' id='l75s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l76s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Creates a new instance of this command.
+   * @param session REST session
+   * @param query query
+   * @param vars external variables
+   * @param val context value
+   * @return command
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @SuppressWarnings("unused")</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  static RESTQuery get(final RESTSession session, final String query,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Map&lt;String, String[]> vars, final String val) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l90s0'>    return new RESTQuery(session.add(new XQuery(query)), vars, val);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RestXqFunction.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/restxq/RestXqFunction.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http.restxq;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static org.basex.http.restxq.RestXqText.*;
+import static org.basex.query.QueryError.*;
+import static org.basex.query.ann.Annotation.*;
+import static org.basex.util.Token.*;
+
+import java.io.*;
+import java.util.*;
+import java.util.Map.*;
+import java.util.Set;
+import java.util.regex.*;
+
+import javax.servlet.http.*;
+
+import org.basex.build.csv.*;
+import org.basex.build.html.*;
+import org.basex.build.json.*;
+import org.basex.build.text.*;
+import org.basex.core.*;
+import org.basex.http.*;
+import org.basex.io.serial.*;
+import org.basex.query.*;
+import org.basex.query.ann.*;
+import org.basex.query.expr.*;
+import org.basex.query.expr.path.*;
+import org.basex.query.expr.path.Test.*;
+import org.basex.query.func.*;
+import org.basex.query.value.*;
+import org.basex.query.value.item.*;
+import org.basex.query.value.seq.*;
+import org.basex.query.value.type.*;
+import org.basex.query.var.*;
+import org.basex.util.*;
+import org.basex.util.http.*;
+import org.basex.util.list.*;
+import org.basex.util.options.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This class represents a single RESTXQ function.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class RestXqFunction implements Comparable&lt;RestXqFunction> {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Single template pattern. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final Pattern TEMPLATE = Pattern.compile("\\s*\\{\\s*\\$(.+?)\\s*\\}\\s*");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** EQName pattern. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final Pattern EQNAME = Pattern.compile("^Q\\{(.*?)\\}(.*)$");</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Query parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final ArrayList&lt;RestXqParam> queryParams = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Form parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final ArrayList&lt;RestXqParam> formParams = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Header parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final ArrayList&lt;RestXqParam> headerParams = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Returned media types. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final ArrayList&lt;MediaType> produces = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Supported methods. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final Set&lt;String> methods = new HashSet&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Serialization parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final SerializerOptions output;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Associated function. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final StaticFunc function;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Associated module. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final RestXqModule module;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Query parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final ArrayList&lt;RestXqParam> errorParams = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Cookie parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final ArrayList&lt;RestXqParam> cookieParams = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Consumed media types. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final ArrayList&lt;MediaType> consumes = new ArrayList&lt;>();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Path. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  RestXqPath path;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Function key for single instances. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  String key;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Error. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private RestXqError error;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Post/Put variable. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private QNm requestBody;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   * @param function associated user function
+   * @param qc query context
+   * @param module associated module
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  RestXqFunction(final StaticFunc function, final QueryContext qc, final RestXqModule module) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    this.function = function;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    this.module = module;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    output = qc.serParams();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Processes the HTTP request.
+   * Parses new modules and discards obsolete ones.
+   * @param http HTTP context
+   * @param exc optional query exception
+   * @throws Exception exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  void process(final HTTPContext http, final QueryException exc) throws Exception {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      module.process(http, this, exc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } catch(final QueryException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(ex.file() == null) ex.info(function.info);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw ex;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks a function for RESTFful annotations.
+   * @param ctx database context
+   * @return {@code true} if module contains relevant annotations
+   * @throws Exception exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  boolean parse(final Context ctx) throws Exception {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // parse all annotations</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final boolean[] declared = new boolean[function.args.length];</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    boolean found = false;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final MainOptions options = ctx.options;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final Ann ann : function.anns) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Annotation sig = ann.sig;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(sig == null) continue;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      found |= eq(sig.uri, QueryText.REST_URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Item[] args = ann.args();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(sig == _REST_PATH) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          path = new RestXqPath(toString(args[0]), ann.info);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } catch(final IllegalArgumentException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          throw error(ann.info, ex.getMessage());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        for(final QNm v : path.vars()) checkVariable(v, AtomType.AAT, declared);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_ERROR) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        error(ann);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_CONSUMES) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        strings(ann, consumes);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_PRODUCES) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        strings(ann, produces);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_QUERY_PARAM) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        queryParams.add(param(ann, declared));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_FORM_PARAM) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        formParams.add(param(ann, declared));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_HEADER_PARAM) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        headerParams.add(param(ann, declared));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_COOKIE_PARAM) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        cookieParams.add(param(ann, declared));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_ERROR_PARAM) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        errorParams.add(param(ann, declared));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_METHOD) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final String mth = toString(args[0]).toUpperCase(Locale.ENGLISH);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final Item body = args.length > 1 ? args[1] : null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        addMethod(mth, body, declared, ann.info);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _REST_SINGLE) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        key = "\u0000" + (args.length > 0 ? toString(args[0]) :</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          (function.info.path() + ':' + function.info.line()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(eq(sig.uri, QueryText.REST_URI)) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final Item body = args.length == 0 ? null : args[0];</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        addMethod(string(sig.local()), body, declared, ann.info);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _INPUT_CSV) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final CsvParserOptions opts = new CsvParserOptions(options.get(MainOptions.CSVPARSER));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        options.set(MainOptions.CSVPARSER, parse(opts, ann));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _INPUT_JSON) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final JsonParserOptions opts = new JsonParserOptions(options.get(MainOptions.JSONPARSER));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        options.set(MainOptions.JSONPARSER, parse(opts, ann));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _INPUT_HTML) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final HtmlOptions opts = new HtmlOptions(options.get(MainOptions.HTMLPARSER));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        options.set(MainOptions.HTMLPARSER, parse(opts, ann));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(sig == _INPUT_TEXT) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final TextOptions opts = new TextOptions(options.get(MainOptions.TEXTPARSER));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>175</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        options.set(MainOptions.TEXTPARSER, parse(opts, ann));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(eq(sig.uri, QueryText.OUTPUT_URI)) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>177</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // serialization parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          output.assign(string(sig.local()), toString(args[0]));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } catch(final BaseXException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          throw error(ann.info, UNKNOWN_SER, sig.local());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>186</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(found) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(path == null && error == null)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        throw error(function.info, ANN_MISSING, '%', PATH, '%', ERROR);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>190</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final int dl = declared.length;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>191</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      for(int d = 0; d &lt; dl; d++) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>192</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(declared[d]) continue;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>193</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        throw error(function.info, VAR_UNDEFINED, function.args[d].name.string());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>194</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>195</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return found;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Assigns annotation values as options.
+   * @param &lt;O> option type
+   * @param opts options instance
+   * @param ann annotation
+   * @return options instance
+   * @throws Exception any exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static &lt;O extends Options> O parse(final O opts, final Ann ann) throws Exception {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final Item arg : ann.args()) opts.assign(string(arg.string(ann.info)));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return opts;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Add a HTTP method to the list of supported methods by this RESTXQ function.
+   * @param method HTTP method as a string
+   * @param body variable to which the HTTP request body to be bound (optional)
+   * @param declared variable declaration flags
+   * @param ii input info
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private void addMethod(final String method, final Item body, final boolean[] declared,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>221</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final InputInfo ii) throws QueryException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>223</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(body != null && !body.isEmpty()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>224</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final HttpMethod m = HttpMethod.get(method);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(m != null && !m.body) throw error(ii, METHOD_VALUE, m);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>226</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(requestBody != null) throw error(ii, ANN_BODYVAR);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>227</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      requestBody = checkVariable(toString(body), declared);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>228</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>229</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(methods.contains(method)) throw error(ii, ANN_TWICE, "%", method);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>230</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    methods.add(method);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>231</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if an HTTP request matches this function and its constraints.
+   * @param http http context
+   * @param err error code
+   * @return result of check
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  boolean matches(final HTTPContext http, final QNm err) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // check method, consumed and produced media type, and path or error</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return (methods.isEmpty() || methods.contains(http.method)) && consumes(http) &&</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>242</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        produces(http) && (err == null ? path != null && path.matches(http) :</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>243</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          error != null && error.matches(err));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>244</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Binds the annotated variables.
+   * @param http http context
+   * @param arg argument array
+   * @param err optional query error
+   * @param qc query context
+   * @throws QueryException query exception
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  void bind(final HTTPContext http, final Expr[] arg, final QueryException err,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final QueryContext qc) throws QueryException, IOException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>258</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind variables from segments</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>259</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(path != null) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>260</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      for(final Entry&lt;QNm, String> entry : path.values(http).entrySet()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>261</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final QNm qnm = new QNm(entry.getKey().string(), function.sc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(function.sc.elemNS != null && eq(qnm.uri(), function.sc.elemNS)) qnm.uri(EMPTY);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>263</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        bind(qnm, arg, new Atm(entry.getValue()), qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>264</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>267</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind request body in the correct format</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>268</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final MainOptions mo = http.context(false).options;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>269</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(requestBody != null) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>270</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>271</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        bind(requestBody, arg, HttpPayload.value(http.params.body(), mo, http.contentType()), qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>272</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } catch(final IOException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>273</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        throw error(INPUT_CONV, ex);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>274</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>275</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>277</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind query and form parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>278</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final RestXqParam rxp : queryParams) bind(rxp, arg, http.params.query().get(rxp.name), qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>279</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final RestXqParam rxp : formParams) bind(rxp, arg, http.params.form(mo).get(rxp.name), qc);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>281</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind header parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>282</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final RestXqParam rxp : headerParams) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>283</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final TokenList tl = new TokenList();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>284</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Enumeration&lt;?> en =  http.req.getHeaders(rxp.name);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>285</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      while(en.hasMoreElements()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>286</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        for(final String s : en.nextElement().toString().split(", *")) tl.add(s);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>288</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      bind(rxp, arg, StrSeq.get(tl), qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>289</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>291</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind cookie parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>292</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Cookie[] ck = http.req.getCookies();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>293</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final RestXqParam rxp : cookieParams) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>294</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      Value val = Empty.SEQ;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>295</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(ck != null) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>296</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        for(final Cookie c : ck) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>297</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          if(rxp.name.equals(c.getName())) val = Str.get(c.getValue());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>298</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>299</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      bind(rxp, arg, val, qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>303</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // bind errors</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>304</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Map&lt;String, Value> errs = new HashMap&lt;>();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>305</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(err != null) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>306</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Value[] values = Catch.values(err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>307</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final QNm[] names = Catch.NAMES;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>308</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final int nl = names.length;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>309</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      for(int n = 0; n &lt; nl; n++) errs.put(string(names[n].local()), values[n]);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>310</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>311</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final RestXqParam rxp : errorParams) bind(rxp, arg, errs.get(rxp.name), qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>312</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Creates an exception with the specified message.
+   * @param msg message
+   * @param ext error extension
+   * @return exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>320</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  QueryException error(final String msg, final Object... ext) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>321</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return error(function.info, msg, ext);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>322</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Creates an exception with the specified message.
+   * @param ii input info
+   * @param msg message
+   * @param ext error extension
+   * @return exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>331</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static QueryException error(final InputInfo ii, final String msg, final Object... ext) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>332</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return BASX_RESTXQ_X.get(ii, Util.info(msg, ext));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>333</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>335</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>336</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public int compareTo(final RestXqFunction rxf) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>337</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return path == null ? error.compareTo(rxf.error) : path.compareTo(rxf.path);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>338</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>340</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // PRIVATE METHODS ====================================================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks the specified template and adds a variable.
+   * @param tmp template string
+   * @param declared variable declaration flags
+   * @return resulting variable
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>349</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private QNm checkVariable(final String tmp, final boolean... declared) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>350</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return checkVariable(tmp, AtomType.ITEM, declared);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>351</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks the specified template and adds a variable.
+   * @param tmp template string
+   * @param type allowed type
+   * @param declared variable declaration flags
+   * @return resulting variable
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>361</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private QNm checkVariable(final String tmp, final Type type, final boolean... declared)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>362</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws QueryException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>364</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Matcher m = TEMPLATE.matcher(tmp);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>365</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(!m.find()) throw error(INV_TEMPLATE, tmp);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>366</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final byte[] vn = token(m.group(1));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>367</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(!XMLToken.isQName(vn)) throw error(INV_VARNAME, vn);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>368</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final QNm name = new QNm(vn);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>369</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return checkVariable(name, type, declared);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>370</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if the specified variable exists in the current function.
+   * @param name variable
+   * @param type allowed type
+   * @param declared variable declaration flags
+   * @return resulting variable
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>380</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private QNm checkVariable(final QNm name, final Type type, final boolean[] declared)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>381</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws QueryException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>383</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(name.hasPrefix()) name.uri(function.sc.ns.uri(name.prefix()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>384</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    int a = -1;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>385</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Var[] args = function.args;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>386</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final int al = args.length;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>387</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    while(++a &lt; al && !args[a].name.eq(name));</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>389</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(a == args.length) throw error(UNKNOWN_VAR, name.string());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>390</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(declared[a]) throw error(VAR_ASSIGNED, name.string());</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>392</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final SeqType st = args[a].declaredType();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>393</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(args[a].checksType() && !st.type.instanceOf(type))</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>394</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw error(INV_VARTYPE, name.string(), type);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>396</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    declared[a] = true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>397</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return name;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>398</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if the consumed content type matches.
+   * @param http http context
+   * @return result of check
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>405</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private boolean consumes(final HTTPContext http) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>406</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // return true if no type is given</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>407</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(consumes.isEmpty()) return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>408</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // return true if no content type is specified by the user</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>409</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final MediaType type = http.contentType();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>410</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(type.type().isEmpty()) return true;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>412</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // check if any combination matches</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>413</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final MediaType consume : consumes) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>414</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(consume.matches(type)) return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>415</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>416</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return false;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>417</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if the produced media type matches.
+   * @param http http context
+   * @return result of check
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>424</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private boolean produces(final HTTPContext http) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>425</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // return true if no type is given</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>426</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(produces.isEmpty()) return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>427</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // check if any combination matches</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>428</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final MediaType accept : http.accepts()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>429</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      for(final MediaType produce : produces) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>430</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(produce.matches(accept)) return true;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>431</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>432</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>433</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return false;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>434</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Binds the specified parameter to a variable.
+   * @param rxp parameter
+   * @param args argument array
+   * @param value values to be bound; the parameter's default value is assigned
+   *        if the argument is {@code null} or empty
+   * @param qc query context
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>445</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private void bind(final RestXqParam rxp, final Expr[] args, final Value value,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>446</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final QueryContext qc) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>447</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    bind(rxp.var, args, value == null || value.isEmpty() ? rxp.value : value, qc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>448</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Binds the specified value to a variable.
+   * @param name variable name
+   * @param args argument array
+   * @param value value to be bound
+   * @param qc query context
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>458</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private void bind(final QNm name, final Expr[] args, final Value value, final QueryContext qc)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>459</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws QueryException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>461</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // skip nulled values</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>462</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(value == null) return;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>464</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Var[] fargs = function.args;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>465</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final int fl = fargs.length;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>466</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(int f = 0; f &lt; fl; f++) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>467</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Var var = fargs[f];</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>468</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(var.name.eq(name)) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>469</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // casts and binds the value</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>470</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final SeqType decl = var.declaredType();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>471</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final Value val = value.seqType().instanceOf(decl) ? value :</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>472</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          decl.cast(value, qc, function.sc, null);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>473</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        args[f] = var.checkType(val, qc, false);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>474</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        break;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>475</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>476</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>477</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the specified item as a string.
+   * @param item item
+   * @return string
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>484</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static String toString(final Item item) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>485</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return ((Str) item).toJava();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>486</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Adds items to the specified list.
+   * @param ann annotation
+   * @param list list to add values to
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>493</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static void strings(final Ann ann, final ArrayList&lt;MediaType> list) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>494</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final Item it : ann.args()) list.add(new MediaType(toString(it)));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>495</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a parameter.
+   * @param ann annotation
+   * @param declared variable declaration flags
+   * @return parameter
+   * @throws QueryException HTTP exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>504</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private RestXqParam param(final Ann ann, final boolean... declared) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>505</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // name of parameter</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>506</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Item[] args = ann.args();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>507</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final String name = toString(args[0]);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>508</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // variable template</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>509</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final QNm var = checkVariable(toString(args[1]), declared);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>510</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // default value</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>511</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final int al = args.length;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>512</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final ValueBuilder vb = new ValueBuilder();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>513</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(int a = 2; a &lt; al; a++) vb.add(args[a]);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>514</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return new RestXqParam(var, name, vb.value());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>515</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns an error.
+   * @param ann annotation
+   * @throws QueryException HTTP exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>522</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private void error(final Ann ann) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>523</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(error == null) error = new RestXqError();</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>525</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // name of parameter</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>526</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    NameTest last = error.get(0);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>527</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final Item arg : ann.args()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>528</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final String err = toString(arg);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>529</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final Kind kind;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>530</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      QNm qnm = null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>531</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(err.equals("*")) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>532</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        kind = Kind.WILDCARD;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>533</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(err.startsWith("*:")) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>534</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final byte[] local = token(err.substring(2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>535</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(!XMLToken.isNCName(local)) throw error(INV_CODE, err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>536</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        qnm = new QNm(local);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>537</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        kind = Kind.NAME;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>538</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else if(err.endsWith(":*")) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>539</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final byte[] prefix = token(err.substring(0, err.length() - 2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>540</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(!XMLToken.isNCName(prefix)) throw error(INV_CODE, err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>541</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        qnm = new QNm(concat(prefix, COLON), function.sc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>542</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        kind = Kind.URI;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>543</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>544</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final Matcher m = EQNAME.matcher(err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>545</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        if(m.matches()) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>546</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          final byte[] uri = token(m.group(1));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>547</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          final byte[] local = token(m.group(2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>548</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          if(local.length == 1 && local[0] == '*') {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>549</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            qnm = new QNm(COLON, uri);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>550</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            kind = Kind.URI;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>551</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>552</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            if(!XMLToken.isNCName(local) || !Uri.uri(uri).isValid()) throw error(INV_CODE, err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>553</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            qnm = new QNm(local, uri);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>554</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>            kind = Kind.URI_NAME;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>555</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>556</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>557</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          final byte[] nm = token(err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>558</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          if(!XMLToken.isQName(nm)) throw error(INV_CODE, err);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>559</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          qnm = new QNm(nm, function.sc);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>560</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          kind = Kind.URI_NAME;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>561</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>562</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>563</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // message</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>564</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(qnm != null && qnm.hasPrefix() && !qnm.hasURI()) throw error(INV_NONS, qnm);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>565</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final NameTest test = new NameTest(qnm, kind, false, null);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>566</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(last != null && last.kind != kind) throw error(INV_PRIORITY, last, test);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>567</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(!error.add(test)) throw error(INV_ERR_SAME, last);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>568</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      last = test;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>569</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>570</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>571</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

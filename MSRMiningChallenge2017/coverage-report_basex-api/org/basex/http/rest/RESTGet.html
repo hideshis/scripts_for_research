@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RESTGet.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/rest/RESTGet.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http.rest;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static org.basex.http.rest.RESTText.*;
+
+import java.io.*;
+import java.util.*;
+import java.util.Map.Entry;
+
+import org.basex.http.*;
+import org.basex.io.serial.*;
+import org.basex.util.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This class processes GET requests sent to the REST server.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>final class RESTGet {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Private constructor. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l21s0'>  private RESTGet() { }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Creates and returns a REST command.
+   * @param session REST session
+   * @return code
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static RESTCmd get(final RESTSession session) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l30s0'>    final Map&lt;String, String[]> vars = new HashMap&lt;>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // parse query string</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l33s0'>    String op = null, input = null, value = null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l34s0'>    final HTTPContext http = session.http;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l35s0'>    final SerializerOptions sopts = http.sopts();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>    <span id='l36s0' title='Executions: 20' class='covered'>for(final Entry&lt;String, String[]> param</span> : <span id='l36s1' title='Executions: 26' class='covered'>http.params.map().entrySet())</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l37s0'>      final String key = param.getKey();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l38s0'>      final String[] vals = param.getValue();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l39s0'>      final String val = vals[0];</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>26</td>
+      <td><pre class='prettyprint jmp'>      <span id='l41s0' title='Executions: 26' class='covered'>if(Strings.eqic(key, COMMAND, QUERY, RUN))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>        <span id='l42s0' title='Executions: 20' class='covered'>if(op != null</span> || <span id='l42s1' title='Executions: 20' class='covered'>vals.length > 1)</span> <span id='l42s2' title='Executions: 0' class='uncovered'>throw HTTPCode.ONEOP.get();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l43s0'>        op = key;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>20</td>
+      <td><pre class='prettyprint covered' id='l44s0'>        input = val;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>      <span id='l45s0' title='Executions: 6' class='covered'>}</span> else if(key.equalsIgnoreCase(CONTEXT)) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // context parameter</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l47s0'>        value = val;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>      <span id='l48s0' title='Executions: 6' class='covered'>}</span> else if(sopts.option(key) != null) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // serialization parameters</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l50s0' title='Executions: 0' class='uncovered'>for(final String v</span> : <span id='l50s1' title='Executions: 0' class='uncovered'>vals)</span> <span id='l50s2' title='Executions: 0' class='uncovered'>sopts.assign(key, v);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>      <span id='l51s0' title='Executions: 6' class='covered'>}</span> else if(!RESTCmd.parseOption(session, param, false)) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // options or (if not found) external variables</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l53s0'>        vars.put(key, new String[] { val });</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered' id='l55s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>    <span id='l57s0' title='Executions: 20' class='covered'>if(op == null)</span> <span id='l57s1' title='Executions: 0' class='uncovered'>return RESTRetrieve.get(session);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>20</td>
+      <td><pre class='prettyprint jmp'>    <span id='l58s0' title='Executions: 20' class='covered'>if(op.equals(QUERY))</span> <span id='l58s1' title='Executions: 20' class='covered'>return RESTQuery.get(session, input, vars, value);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l59s0' title='Executions: 0' class='uncovered'>if(op.equals(RUN))</span> <span id='l59s1' title='Executions: 0' class='uncovered'>return RESTRun.get(session, input, vars, value);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l60s0'>    return RESTCommand.get(session, input);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

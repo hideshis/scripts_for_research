@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyClassLoader.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../logo.png'/>
+  <script type='text/javascript' src='../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>activejpa-core/src/main/java/org/activejpa/enhancer/MyClassLoader.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * 
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.activejpa.enhancer;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * A class loader that emulates the functionality of the agent. To be used for testing in an environment where loading agent is not possible
+ * 
+ * WARNING: Use it only for testing. Not recommended for production use. 
+ * 
+ * @author ganeshs
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public class MyClassLoader extends ClassLoader {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private DomainClassEnhancer enhancer;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private boolean initialzed;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l30s0'>	private List&lt;String> excludedPackages = new ArrayList&lt;String>(Arrays.asList("java.", "javax.", "sun.", "org.mockito"));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>32</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l32s0'>	private Logger logger = LoggerFactory.getLogger(MyClassLoader.class);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public MyClassLoader() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l35s0'>		this(Thread.currentThread().getContextClassLoader());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l36s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public MyClassLoader(ClassLoader loader) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l39s0'>		this(loader, null);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l40s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public MyClassLoader(ClassLoader loader, List&lt;String> excludedPackages) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l43s0'>		super(loader);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>		<span id='l44s0' title='Executions: 1' class='covered'>if (excludedPackages != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l45s0'>			this.excludedPackages.addAll(excludedPackages);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l47s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private void init() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l50s0'>		enhancer = new DomainClassEnhancer();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l51s0'>		initialzed = true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l52s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	@Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected Class&lt;?> loadClass(String name, boolean resolve) throws ClassNotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>1297</td>
+      <td><pre class='prettyprint jmp'>		<span id='l56s0' title='Executions: 1297' class='covered cp' onclick='showHide(this,0)'>if (! initialzed)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x75, 32x9</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x6</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46, 50, 52</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x180</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x148</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x34</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x16</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x5</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x120, 41</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x9</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x330</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2, 59x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l57s0'>			init();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td class='count'>1297</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l59s0'>		logger.trace("Loading the class " + name);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x75, 32x9</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x6</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46, 50, 52</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x180</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x148</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x34</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x16</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x5</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x120, 41</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x9</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x330</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2, 59x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>1297</td>
+      <td><pre class='prettyprint jmp'>		<span id='l60s0' title='Executions: 1297' class='covered cp' onclick='showHide(this,0)'>for (String excluded</span> : <span id='l60s1' title='Executions: 4889' class='covered cp' onclick='showHide(this,1)'>excludedPackages)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x75, 32x9</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x6</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46, 50, 52</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x180</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x148</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x34</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x32</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x16</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x16</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x5</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x120, 41</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x9</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x9</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x330</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2, 59x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x254, 32x17</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x19</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46x4, 50x2, 52x4</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x124</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x6</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x694</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104x5</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x642</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57x5</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x92</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x88</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x88</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x44</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x10</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x10</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x14</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x312, 41x4</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x24</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x10, 40x1490</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x40</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x10, 59x25</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x16</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x6</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51x5</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>4889</td>
+      <td><pre class='prettyprint jmp'>			<span id='l61s0' title='Executions: 4889' class='covered cp' onclick='showHide(this,0)'>if (name.startsWith(excluded))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x254, 32x17</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x19</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46x4, 50x2, 52x4</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x124</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x6</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x694</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104x5</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x642</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57x5</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x92</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x88</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x88</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x44</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x44</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x10</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x10</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x14</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x312, 41x4</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x24</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x24</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x10, 40x1490</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x40</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x10, 59x25</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x16</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x6</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51x5</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>532</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l62s0'>				return super.loadClass(name, resolve);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x36, 32x7</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x4</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46, 50, 52</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x3</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructInCriteriaQuery: 208</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x52</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x33</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x30</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x14</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x14</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x14</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x28</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x28</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x14</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x14</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x4</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x112, 41</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x7</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x7</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 40x40</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>4357</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l64s0'>		}</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x218, 32x10</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x15</li>
+          <li>org.activejpa.entity.ConditionTest#setup: 46x3, 50, 52x3</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x121</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x642</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104x5</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x609</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57x5</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x62</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x30</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x30</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x30</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x60</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x60</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x30</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x30</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x10</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x10</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41x10</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x200, 41x3</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x17</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x17</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x10, 40x1450</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x40</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x10, 59x25</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x15</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51x5</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>765</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>		Class&lt;?> clazz = findLoadedClass(name);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x39, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x24</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x128</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x115</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x2</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x8</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x2</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x290</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2, 59x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x3</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>765</td>
+      <td><pre class='prettyprint jmp'>		<span id='l66s0' title='Executions: 765' class='covered cp' onclick='showHide(this,0)'>if (clazz != null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x39, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x24</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x128</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x115</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x2</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x8</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x2</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x290</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2, 59x5</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x3</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>420</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l67s0'>			logger.trace("Class " + name + " is already loaded");</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x20</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x2</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x8</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x2</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x146</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>420</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l68s0'>			return clazz;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x20</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForEqQuery: 81</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGeQuery: 196</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForGtQuery: 150</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForInQuery: 220</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLeQuery: 173</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLikeQuery: 243</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForLtQuery: 127</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForNeQuery: 104</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionsInConstructor: 51x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditions: 152x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithPaginate: 159x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldCloneFilterWithConditionsWithoutPaginate: 168x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaDeleteQuery: 95x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldConstructCriteriaQuery: 81x4</li>
+          <li>org.activejpa.entity.FilterTest#shouldNotPageIfPerPageIsNotSet: 177x2</li>
+          <li>org.activejpa.entity.FilterTest#shouldPageIfPerPageIsSet: 183x2</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.jpa.JPAContextTest#setup: 41</li>
+          <li>org.activejpa.jpa.JPATest#setup: 38x8</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultEntityManagerFactory: 75x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitUsingName: 54x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddDefaultPersistenceUnitWithProperties: 89x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddEntityManagerFactory: 68x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddNonDefaultPersistenceUnitUsingName: 61x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitUsingName: 47x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldAddPersistenceUnitWithProperties: 82x2</li>
+          <li>org.activejpa.jpa.JPATest#shouldClose: 97x2</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x146</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBeanWithMapOfStrings: 57x8</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetReadMethod: 35</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetReadMethod: 42</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnFalseIfTypeIsNotPrimitiveOrNotWrapper: 29</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldReturnTrueIfTypeIsPrimitiveOrWrapper: 24</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldSetPropertyWithValue: 51</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>345</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>		byte[] bytes = null;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>345</td>
+      <td><pre class='prettyprint jmp'>		<span id='l72s0' title='Executions: 345' class='covered cp' onclick='showHide(this,0)'>if (enhancer.canEnhance(name))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l73s0'>			bytes = enhancer.enhance(this, name);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		} else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>344</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>			InputStream classData = getResourceAsStream(name.replace('.', '/') + ".class");</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>344</td>
+      <td><pre class='prettyprint jmp'>			<span id='l76s0' title='Executions: 344' class='covered cp' onclick='showHide(this,0)'>if(classData == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l77s0'>	            return super.loadClass(name, resolve);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x7</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 40x14</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 59x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	        }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>80</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l81s0'>				bytes = toByteArray(classData);   </pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l82s0'>			} catch (Exception e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l83s0'>				logger.debug("Failed while converting classdata to bytes for the class " + name, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l84s0'>				return super.loadClass(name, resolve);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			} finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>318</td>
+      <td><pre class='prettyprint jmp'>				<span id='l86s0' title='Executions: 318' class='covered cp' onclick='showHide(this,0)'>if (classData != null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>					try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>						classData.close();</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l89s0'>					} catch (IOException e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td>&nbsp;</td>
+      <td><pre class='comment'>						// Ignore. Can't do much</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l91s0'>						logger.trace("Failed while closing the classData for the class " + name, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>					}</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>				}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>319</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l97s0'>		clazz = defineClass(name, bytes, 0, bytes.length);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>319</td>
+      <td><pre class='prettyprint jmp'>		<span id='l98s0' title='Executions: 319' class='covered cp' onclick='showHide(this,0)'>if (resolve)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l99s0'>			resolveClass(clazz);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>319</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l101s0'>		return clazz;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private static byte[] toByteArray(InputStream is) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l106s0'>		ByteArrayOutputStream os = new ByteArrayOutputStream();</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l107s0'>		byte[] bytes = new byte[4096];</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l108s0'>        int n = 0;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>870</td>
+      <td><pre class='prettyprint jmp'>        <span id='l109s0' title='Executions: 870' class='covered cp' onclick='showHide(this,0)'>while (-1 != (n = is.read(bytes)))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x63, 32x7</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27x2</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x26</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x6</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x165</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x178</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57x4</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44x2</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35x2</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39x2, 40x333</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57x2</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>552</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l110s0'>            os.write(bytes, 0, n);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x44, 32x5</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x14</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250x5</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x102</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x124</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57x3</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x203</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>112</td><td class='count'>318</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l112s0'>        return os.toByteArray();</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

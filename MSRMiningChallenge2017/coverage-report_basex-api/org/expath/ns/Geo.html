@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geo.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../logo.png'/>
+  <script type='text/javascript' src='../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/expath/ns/Geo.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.expath.ns;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static org.basex.query.QueryError.*;
+import static org.basex.util.Token.*;
+
+import java.io.*;
+
+import org.basex.build.*;
+import org.basex.build.xml.*;
+import org.basex.io.*;
+import org.basex.query.*;
+import org.basex.query.value.item.*;
+import org.basex.query.value.node.*;
+import org.basex.query.value.type.*;
+
+import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jts.io.*;
+import com.vividsolutions.jts.io.gml2.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This module contains geo spatial functions for the Geo module.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Masoumeh Seydi
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class Geo extends QueryModule {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** GML URI. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final byte[] URI = token("http://www.opengis.net/gml");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Prefix: "gml". */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final byte[] GML = token("gml");</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:Point. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_POINT = new QNm(GML, "Point", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:MultiPoint. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_MULTIPOINT = new QNm(GML, "MultiPoint", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:LineString. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_LINESTRING = new QNm(GML, "LineString", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:LinearRing. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_LINEARRING = new QNm(GML, "LinearRing", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:Polygon. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_POLYGON = new QNm(GML, "Polygon", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:MultiPolygon. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_MULTIPOLYGON = new QNm(GML, "MultiPolygon", URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** QName gml:MultiLineString. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm Q_GML_MULTILINESTRING = new QNm(GML, "MultiLineString", URI);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Array containing all QNames. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static final QNm[] QNAMES = {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    Q_GML_POINT, Q_GML_LINESTRING, Q_GML_POLYGON, Q_GML_MULTIPOINT,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    Q_GML_MULTILINESTRING, Q_GML_MULTIPOLYGON, Q_GML_LINEARRING</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  };</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the dimension of an item.
+   * @param node xml element containing gml object(s)
+   * @return dimension
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int dimension(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Int.get(checkGeo(node).getDimension());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the name of the geometry type in the GML namespace, or the empty sequence.
+   * @param node xml element containing gml object(s)
+   * @return geometry type
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public QNm geometryType(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return new QNm(GML, checkGeo(node).getGeometryType(), URI);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the name of the geometry type in the GML namespace, or the empty sequence.
+   * @param node xml element containing gml object(s)
+   * @return integer value of CRS of the geometry
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Uri srid(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Uri.uri(token(checkGeo(node).getSRID()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the gml:Envelope of the specified geometry.
+   * The envelope is the minimum bounding box of this geometry.
+   * @param node xml element containing gml object(s)
+   * @return envelop element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode envelope(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).getEnvelope());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the WKT format of a geometry.
+   * @param node xml element containing gml object(s)
+   * @return Well-Known Text geometry representation
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Str asText(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Str.get(new WKTWriter().write(checkGeo(node)));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the WKB format of a geometry.
+   * @param node xml element containing gml object(s)
+   * @return Well-Known Binary geometry representation
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public B64 asBinary(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return new B64(new WKBWriter().write(checkGeo(node)));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value which shows if the specified geometry is empty or not.
+   * @param node xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln isEmpty(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(node == null) return Bln.FALSE;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    checkGeo(node);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.TRUE;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value which shows if the specified geometry is simple or not,
+   * which has no anomalous geometric points, such as self intersection or self tangency.
+   * @param node xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln isSimple(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(checkGeo(node).isSimple());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the boundary of the geometry, in GML.
+   * The return value is a sequence of either gml:Point or gml:LinearRing elements.
+   * @param node xml element containing gml object(s)
+   * @return boundary element (geometry)
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode boundary(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).getBoundary());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if two geometries are equal or not.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln equals(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.equals(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry is disjoint to another geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln disjoint(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.disjoint(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry intersects another geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>192</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>193</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln intersects(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>194</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>195</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.intersects(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry touches the specified geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln touches(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.touches(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>211</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry crosses the specified geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>221</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln crosses(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>222</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>223</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>224</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.crosses(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry is within the specified geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>234</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>235</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln within(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>236</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>237</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>238</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.within(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry contains the specified geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>248</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>249</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln contains(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>250</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>251</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>252</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.contains(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>253</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if this geometry overlaps the specified geometry.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>263</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln overlaps(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>264</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>266</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo1.overlaps(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value that shows if whether relationships between the boundaries,
+   * interiors and exteriors of two geometries match
+   * the pattern specified in intersection-matrix-pattern.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @param intersectionMatrix intersection matrix for two geometries
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>279</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>280</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln relate(final ANode node1, final ANode node2, final Str intersectionMatrix)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>281</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>282</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>283</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>284</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>285</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      return Bln.get(geo1.relate(geo2, intersectionMatrix.toJava()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>286</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } catch(final IllegalArgumentException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw GeoErrors.illegalArg(intersectionMatrix);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>288</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>289</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the shortest distance in the units of the spatial reference system
+   * of geometry, between the geometries.
+   * The distance is the distance between a point on each of the geometries.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return distance double value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl distance(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>302</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>303</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>304</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(geo1.distance(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>305</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a polygon that represents all Points whose distance from this
+   * geometric object is less than or equal to distance.
+   * The returned element must be either gml:Polygon, gml:LineString or gml:Point.
+   * @param node xml element containing gml object(s)
+   * @param distance specific distance from the $geometry (the buffer width)
+   * @return buffer geometry as gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>316</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>317</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode buffer(final ANode node, final ANum distance) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>318</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).buffer(distance.dbl()));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>319</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the convex hull geometry of a geometry in GML, or the empty sequence.
+   * The returned element must be either gml:Polygon, gml:LineString or gml:Point.
+   * @param node xml element containing gml object(s)
+   * @return convex hull geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>328</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>329</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode convexHull(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>330</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).convexHull());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>331</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a geometric object representing the Point set intersection of two geometries.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return intersection geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>340</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>341</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode intersection(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>342</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>343</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>344</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(geo1.intersection(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>345</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a geometric object that represents the Point set union of two geometries.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return union geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>354</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>355</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode union(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>356</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>357</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>358</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(geo1.union(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>359</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a geometric object that represents the
+   * Point set difference of two geometries.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return difference geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>369</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>370</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode difference(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>371</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>372</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>373</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(geo1.difference(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>374</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a geometric object that represents the
+   * Point set symmetric difference of two geometries.
+   * @param node1 xml element containing gml object(s)
+   * @param node2 xml element containing gml object(s)
+   * @return symmetric difference geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>384</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>385</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode symDifference(final ANode node1, final ANode node2) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>386</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo1 = checkGeo(node1);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>387</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo2 = checkGeo(node2);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>388</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(geo1.symDifference(geo2));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>389</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns number of geometries in a geometry collection,
+   * or 1 if the input is not a collection.
+   * @param node xml element containing gml object(s)
+   * @return integer value of number of geometries
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>398</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>399</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int numGeometries(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>400</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Int.get(checkGeo(node).getNumGeometries());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>401</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the nth geometry of a geometry collection,
+   * or the geometry if the input is not a collection.
+   * @param node xml element containing gml object(s)
+   * @param number integer number as the index of nth geometry
+   * @return geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>411</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>412</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode geometryN(final ANode node, final Int number) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>413</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = checkGeo(node);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>414</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final long n = number.itr();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>415</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(n &lt; 1 || n > geo.getNumGeometries()) throw GeoErrors.outOfRangeIdx(number);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>416</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(geo.getGeometryN((int) n - 1));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>417</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the x-coordinate value for point.
+   * @param node xml element containing gml object(s)
+   * @return x double value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>425</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>426</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl x(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>427</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Point", Q_GML_POINT);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>428</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(geo.getCoordinate().x);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>429</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the y-coordinate value for point.
+   * @param node xml element containing gml object(s)
+   * @return y double value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>437</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>438</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl y(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>439</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Point", Q_GML_POINT);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>440</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(geo.getCoordinate().y);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>441</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the z-coordinate value for point.
+   * @param node xml element containing gml object(s)
+   * @return z double value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>449</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>450</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl z(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>451</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Point", Q_GML_POINT);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>452</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(geo.getCoordinate().z);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>453</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the length of this Geometry. Linear geometries return their length.
+   * Areal geometries return their parameter. Others return 0.0
+   * @param node xml element containing gml object(s)
+   * @return length double value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>462</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>463</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl length(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>464</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(checkGeo(node).getLength());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>465</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the start point of a line.
+   * @param node xml element containing gml object(s)
+   * @return start point geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>473</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>474</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode startPoint(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>475</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Line", Q_GML_LINEARRING, Q_GML_LINESTRING);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>476</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(((LineString) geo).getStartPoint());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>477</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the end point of a line.
+   * @param node xml element containing gml object(s)
+   * @return end point geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>485</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>486</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode endPoint(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>487</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Line", Q_GML_LINEARRING, Q_GML_LINESTRING);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>488</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(((LineString) geo).getEndPoint());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>489</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if the line is closed loop.
+   * That is, if the start Point is same with end Point.
+   * @param node xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>498</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>499</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln isClosed(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>500</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Line",</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>501</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        Q_GML_LINEARRING, Q_GML_LINESTRING, Q_GML_MULTILINESTRING);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>502</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(geo instanceof LineString ? ((LineString) geo).isClosed() :</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>503</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      ((MultiLineString) geo).isClosed());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>504</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Return a boolean value that shows weather the line is a ring or not.
+   * A line is a ring if it is closed and simple.
+   * @param node xml element containing gml object(s)
+   * @return boolean value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>513</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>514</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Bln isRing(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>515</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Line", Q_GML_LINEARRING, Q_GML_LINESTRING);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>516</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Bln.get(((LineString) geo).isRing());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>517</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the number of points in a geometry.
+   * @param node xml element containing gml object(s)
+   * @return number of points int value
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>525</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>526</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int numPoints(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>527</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Int.get(checkGeo(node).getNumPoints());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>528</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the nth point of a line.
+   * @param node xml element containing gml object(s)
+   * @param number index of i-th point
+   * @return n-th point as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>537</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>538</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode pointN(final ANode node, final Int number) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>539</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Line", Q_GML_LINEARRING, Q_GML_LINESTRING);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>540</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final int max = geo.getNumPoints();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>541</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final long n = number.itr();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>542</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(n &lt; 1 || n > max) throw GeoErrors.outOfRangeIdx(number);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>543</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(((LineString) geo).getPointN((int) n - 1));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>544</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the area of a Geometry. Areal Geometries have a non-zero area.
+   * Returns zero for Point and Lines.
+   * @param node xml element containing gml object(s)
+   * @return geometry area as a double vaue
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>553</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>554</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Dbl area(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>555</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Dbl.get(checkGeo(node).getArea());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>556</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the mathematical centroid of the geometry as a gml:Point.
+   * The point is not guaranteed to be on the surface.
+   * @param node xml element containing gml object(s)
+   * @return centroid geometry as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>565</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>566</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode centroid(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>567</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).getCentroid());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>568</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a gml:Point that is interior of this geometry.
+   * If it cannot be inside the geometry, then it will be on the boundary.
+   * @param node xml element containing gml object(s)
+   * @return a point as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>577</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>578</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode pointOnSurface(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>579</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(checkGeo(node).getInteriorPoint());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>580</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the outer ring of a polygon, in GML.
+   * @param node xml element containing gml object(s)
+   * @return exterior ring geometry (LineString) as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>588</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>589</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode exteriorRing(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>590</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Polygon", Q_GML_POLYGON);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>591</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(((Polygon) geo).getExteriorRing());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>592</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the number of interior rings in a polygon.
+   * @param node xml element containing gml object(s)
+   * @return integer number of interior rings
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>600</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>601</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Int numInteriorRing(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>602</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Polygon", Q_GML_POLYGON);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>603</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return Int.get(((Polygon) geo).getNumInteriorRing());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>604</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the nth geometry of a geometry collection.
+   * @param node xml element containing gml object(s)
+   * @param number index of i-th interior ring
+   * @return n-th interior ring geometry (LineString) as a gml element
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>613</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Deterministic @Requires(Permission.NONE)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>614</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public ANode interiorRingN(final ANode node, final Int number) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>615</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, "Polygon", Q_GML_POLYGON);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>616</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final long n = number.itr();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>617</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final int max = ((Polygon) geo).getNumInteriorRing();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>618</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(n &lt; 1 || n > max) throw GeoErrors.outOfRangeIdx(number);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>619</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return toElement(((Polygon) geo).getInteriorRingN((int) n - 1));</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>620</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>622</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // PRIVATE METHODS (hidden from user of module) ========================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Reads an element as a gml node. Returns a geometry element
+   * or throws an exception if the element is of the wrong type.
+   * @param node xml node containing gml object(s)
+   * @return geometry
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>631</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static Geometry checkGeo(final ANode node) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>632</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, QNAMES);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>633</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(geo == null) throw GeoErrors.unrecognizedGeo(node.qname().local());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>634</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return geo;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>635</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Reads an element as a gml node. Returns a geometry element or raises an error if the element
+   * does not match one of the specified types.
+   * @param node xml node containing gml object(s)
+   * @param type expected type (can be {@code null})
+   * @param names allowed geometry types
+   * @return geometry, or {@code null}
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>646</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static Geometry geo(final ANode node, final String type, final QNm... names)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>647</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws QueryException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>649</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final Geometry geo = geo(node, names);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>650</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(geo == null) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>651</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      checkGeo(node);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>652</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw GeoErrors.geoType(node.qname().local(), type);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>653</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>654</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return geo;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>655</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Reads an element as a gml node. Returns a geometry element or {@code null}.
+   * @param node xml node containing gml object(s)
+   * @param names allowed geometry types
+   * @return geometry, or {@code null}
+   * @throws QueryException query exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>664</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static Geometry geo(final ANode node, final QNm... names) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>665</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    if(node.type != NodeType.ELM) throw castError(node, NodeType.ELM, null);</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>667</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final QNm qname = node.qname();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>668</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    for(final QNm geo : names) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>669</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      if(!qname.eq(geo)) continue;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>670</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // type found... create reader and geometry element</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>671</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>672</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final String input = node.serialize().toString();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>673</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final GMLReader gmlReader = new GMLReader();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>674</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        final GeometryFactory geoFactory = new GeometryFactory();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>675</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        return gmlReader.read(input, geoFactory);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>676</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } catch(final Throwable ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>677</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        throw GeoErrors.gmlReaderErr(ex);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>678</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>679</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>680</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    return null;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>681</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Writes an geometry and returns a new element.
+   * @param geometry geometry
+   * @return DBNode database node
+   * @throws QueryException exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>689</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private ANode toElement(final Geometry geometry) throws QueryException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>690</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final String geo;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>691</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>692</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // write geometry and add namespace declaration</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>693</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      geo = new GMLWriter().write(geometry).replaceAll(</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>694</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          "^&lt;gml:(.*?)>", "&lt;gml:$1 xmlns:gml='" + string(URI) + "'>");</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>695</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } catch(final Exception ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>696</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw GeoErrors.gmlWriterErr(ex);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>697</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>699</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>700</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final XMLParser parser = new XMLParser(new IOContent(geo), queryContext.context.options);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>701</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      return new DBNode(MemBuilder.build(parser)).children().next();</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>702</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } catch(final IOException ex) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>703</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throw IOERR_X.get(null, ex);</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>704</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>705</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>706</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

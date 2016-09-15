@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BaseXHTTP.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../logo.png'/>
+  <script type='text/javascript' src='../../coverage.js'></script>
+  <script type='text/javascript' src='../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/BaseXHTTP.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static org.basex.core.Text.*;
+import static org.basex.http.HTTPText.*;
+
+import java.io.*;
+import java.net.*;
+
+import javax.net.ssl.*;
+
+import org.basex.core.*;
+import org.basex.http.*;
+import org.basex.io.*;
+import org.basex.server.*;
+import org.basex.server.Log.LogType;
+import org.basex.util.*;
+import org.basex.util.options.*;
+import org.eclipse.jetty.server.*;
+import org.eclipse.jetty.server.nio.*;
+import org.eclipse.jetty.server.ssl.*;
+import org.eclipse.jetty.webapp.*;
+import org.eclipse.jetty.xml.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * This is the main class for the starting the database HTTP services.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ * @author Dirk Kirsten
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class BaseXHTTP extends Main {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>32</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Database context. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final Context context;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** HTTP server. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final Server jetty;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** HTTP port. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private int httpPort;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Start as daemon. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private boolean service;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Quiet flag. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private boolean quiet;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Stop flag. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private boolean stop;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Main method, launching the HTTP services.
+   * Command-line arguments are listed with the {@code -h} argument.
+   * @param args command-line arguments
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static void main(final String... args) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l52s0'>      new BaseXHTTP(args);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l53s0'>    } catch(final Exception ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l54s0'>      Util.errln(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l55s0'>      System.exit(1);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l56s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l57s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   * @param args command-line arguments
+   * @throws Exception exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public BaseXHTTP(final String... args) throws Exception {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l65s0'>    super(args);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l66s0'>    parseArgs();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // context must be initialized after parsing of arguments</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l69s0'>    context = HTTPContext.init();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>71</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // create jetty instance and set default context to HTTP path</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>    final StaticOptions sopts = context.soptions;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l73s0'>    final String webapp = sopts.get(StaticOptions.WEBPATH);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l74s0'>    final WebAppContext wac = new WebAppContext(webapp, "/");</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l75s0'>    jetty = (Server) new XmlConfiguration(initJetty(webapp).inputStream()).configure();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l76s0'>    jetty.setHandler(wac);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>78</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l78s0'>    final Connector[] conns = jetty.getConnectors();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l79s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(conns == null</span> || <span id='l79s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>conns.length == 0)</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l80s0'>      throw new BaseXException("No Jetty connector defined in " + JETTYCONF + ".");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l82s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(httpPort != 0)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l83s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>for(final Connector conn</span> : <span id='l83s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>conns)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l84s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(conn instanceof SelectChannelConnector)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l85s0'>          conn.setPort(httpPort);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>          break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>91</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // info strings</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l92s0'>    final String startX = HTTP + ' ' + SRV_STARTED_PORT_X;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l93s0'>    final String stopX = HTTP + ' ' + SRV_STOPPED_PORT_X;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>95</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l95s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(stop)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l96s0'>      stop();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l97s0' title='Executions: 0' class='uncovered'>if(!quiet)</span> <span id='l97s1' title='Executions: 0' class='uncovered'>for(final Connector conn</span> : <span id='l97s2' title='Executions: 0' class='uncovered'>conns)</span> Util.outln(stopX, conn.getPort());</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // keep message visible for a while</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l99s0'>      Performance.sleep(1000);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l100s0'>      return;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>103</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // start web server in a new process</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l104s0'>    final Connector conn1 = conns[0];</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l105s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(service)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l106s0'>      start(conn1.getPort(), conn1 instanceof SslSelectChannelConnector, args);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l107s0' title='Executions: 0' class='uncovered'>if(!quiet)</span> <span id='l107s1' title='Executions: 0' class='uncovered'>for(final Connector conn</span> : <span id='l107s2' title='Executions: 0' class='uncovered'>conns)</span> Util.outln(startX, conn.getPort());</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // keep message visible for a while</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l109s0'>      Performance.sleep(1000);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l110s0'>      return;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // request password on command line if only the user was specified</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l114s0'>    final String user = Prop.get(StaticOptions.USER);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l115s0'>    String pw = Prop.get(StaticOptions.PASSWORD);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l116s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(user != null</span> && <span id='l116s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>!user.isEmpty())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l117s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>while(pw == null</span> || <span id='l117s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>pw.isEmpty())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l118s0'>        Util.out(PASSWORD + COLS);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l119s0'>        pw = Util.password();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l120s0'>        Prop.put(StaticOptions.PASSWORD, pw);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>124</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // start web server</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l125s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(!quiet)</span> <span id='l125s1' title='Executions: 0' class='uncovered'>Util.outln(header());</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l127s0'>      jetty.start();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l128s0'>    } catch(final BindException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l129s0'>      Util.debug(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l130s0'>      throw new BaseXException(HTTP + ' ' + SRV_RUNNING_X, conn1.getPort());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l131s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // throw cached exception that did not break the servlet architecture</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l133s0'>    final IOException ex = HTTPContext.exception();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l134s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(ex != null)</span> <span id='l134s1' title='Executions: 0' class='uncovered'>throw ex;</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // show start message</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l137s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(!quiet)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l138s0' title='Executions: 0' class='uncovered'>for(final Connector conn</span> : <span id='l138s1' title='Executions: 0' class='uncovered'>conns)</span> Util.outln(startX, conn.getPort());</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>141</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // initialize web.xml settings, assign system properties and run database server.</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // the call of this function may already have been triggered during the start of jetty</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l143s0'>    HTTPContext.init(wac.getServletContext());</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>145</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // start daemon for stopping web server</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>146</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l146s0'>    final int port = sopts.get(StaticOptions.STOPPORT);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l147s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(port >= 0)</span> <span id='l147s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>new StopServer(sopts.get(StaticOptions.SERVERHOST), port).start();</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // show info when HTTP server is aborted. needs to be called in constructor:</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // otherwise, it may only be called if the JVM process is already shut down</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l151s0'>    Runtime.getRuntime().addShutdownHook(new Thread() {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      public void run() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l154s0' title='Executions: 0' class='uncovered'>if(!quiet)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>          <span id='l155s0' title='Executions: 0' class='uncovered'>for(final Connector conn</span> : <span id='l155s1' title='Executions: 0' class='uncovered'>conns)</span> Util.outln(stopX, conn.getPort());</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l157s0'>        final Log l = context.log;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l158s0' title='Executions: 0' class='uncovered'>if(l != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>          <span id='l159s0' title='Executions: 0' class='uncovered'>for(final Connector conn</span> : <span id='l159s1' title='Executions: 0' class='uncovered'>conns)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>160</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l160s0'>            l.writeServer(LogType.OK, Util.info(stopX, conn.getPort()));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l163s0'>        context.close();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l164s0'>      }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    });</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // log server start at very end (logging flag could have been updated by web.xml)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l168s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>for(final Connector conn</span> : <span id='l168s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>conns)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l169s0'>      context.log.writeServer(LogType.OK, Util.info(startX, conn.getPort()));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l171s0'>  }</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Stops the server.
+   * @throws Exception exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>177</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void stop() throws Exception {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // notify the jetty monitor to stop</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l179s0'>    final StaticOptions sopts = context.soptions;</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l180s0'>    final int port = num(StaticOptions.STOPPORT, sopts);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l181s0'>    final String host = sopts.get(StaticOptions.SERVERHOST);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l182s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(port >= 0)</span> <span id='l182s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>stop(host.isEmpty()</span> ? <span id='l182s2' title='Executions: 0' class='uncovered'>S_LOCALHOST</span> : <span id='l182s3' title='Executions: 1' class='covered cp' onclick='showHide(this,3)'>host, port);</span></pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>184</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // server has been started in a separate process and needs to be stopped</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>185</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l185s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(!bool(StaticOptions.HTTPLOCAL, sopts))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>186</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l186s0'>      BaseXServer.stop(host, num(StaticOptions.SERVERPORT, sopts));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l188s0'>  }</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a numeric value for the specified option.
+   * @param option option to be retrieved
+   * @param sopts static options
+   * @return numeric value
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static int num(final NumberOption option, final StaticOptions sopts) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l197s0'>    final String val = Prop.get(option);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>198</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l198s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>return val == null</span> || <span id='l198s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>val.isEmpty()</span> ? <span id='l198s2' title='Executions: 0' class='uncovered'>sopts.get(option)</span> : <span id='l198s3' title='Executions: 0' class='uncovered'>Strings.toInt(val);</span></pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>199</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a boolean value for the specified option.
+   * @param option option to be retrieved
+   * @param sopts static options
+   * @return boolean value
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static boolean bool(final BooleanOption option, final StaticOptions sopts) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l208s0'>    final String val = Prop.get(option);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l209s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>return val == null</span> || <span id='l209s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>val.isEmpty()</span> ? <span id='l209s2' title='Executions: 0' class='uncovered'>sopts.get(option)</span> : <span id='l209s3' title='Executions: 0' class='uncovered'>Boolean.parseBoolean(val);</span></pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a reference to the Jetty configuration file.
+   * @param root target root directory
+   * @return input stream
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static IOFile initJetty(final String root) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>219</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l219s0'>    locate(WEBCONF, root);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l220s0'>    return locate(JETTYCONF, root);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>221</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Locates the specified configuration file.
+   * @param file file to be copied
+   * @param root target root directory
+   * @return reference to created file
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>230</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static IOFile locate(final String file, final String root) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>231</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l231s0'>    final IOFile trg = new IOFile(root, file);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>232</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l232s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>final boolean create = !trg.exists();</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>234</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // try to locate file from development branch</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>235</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l235s0'>    final IO in = new IOFile("src/main/webapp", file);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>236</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    final byte[] data;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>237</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l237s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if(in.exists())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>238</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l238s0'>      data = in.read();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // check if resource path exists</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l240s0'>      IOFile res = new IOFile("src/main/resources");</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>      <span id='l241s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if(res.exists())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>242</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l242s0'>        res = new IOFile(res, file);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>243</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // update file in resource path if it has changed</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>244</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>        <span id='l244s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if(!res.exists()</span> || <span id='l244s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>!Token.eq(data, res.read()))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>245</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l245s0'>          Util.errln("Updating " +  res);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>246</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l246s0'>          res.parent().md();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>247</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l247s0'>          res.write(in.read());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>248</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>249</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>250</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l250s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>}</span> else if(create) {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>251</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // try to locate file from resource path</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>252</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l252s0'>      try(final InputStream is = BaseXHTTP.class.getResourceAsStream('/' + file)) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>253</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l253s0' title='Executions: 0' class='uncovered'>if(is == null)</span> <span id='l253s1' title='Executions: 0' class='uncovered'>throw new BaseXException(in + " not found.");</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>254</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l254s0'>        data = new IOStream(is).read();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l255s0' title='Executions: 0' class='uncovered'>}</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>257</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l257s0'>      return trg;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>258</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>260</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l260s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if(create)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>261</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // create configuration file</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l262s0'>      Util.errln("Creating " +  trg);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>263</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l263s0'>      trg.parent().md();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>264</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l264s0'>      trg.write(data);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>266</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l266s0'>    return trg;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>269</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>270</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  protected void parseArgs() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /* command-line properties will be stored in system properties;
+     * this way, they will not be overwritten by the settings specified in web.xml. */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>273</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l273s0'>    final MainParser arg = new MainParser(this);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>274</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l274s0'>    boolean serve = true;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>275</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>    <span id='l275s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>while(arg.more())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x9</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>276</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>      <span id='l276s0' title='Executions: 8' class='covered cp' onclick='showHide(this,0)'>if(arg.dash())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>277</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l277s0'>        switch(arg.next()) {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x8</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>278</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'c': // use client mode</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>279</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l279s0'>            Prop.put(StaticOptions.HTTPLOCAL, Boolean.toString(false));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>280</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l280s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>281</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'd': // activate debug mode</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>282</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l282s0'>            Prop.put(StaticOptions.DEBUG, Boolean.toString(true));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>283</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l283s0'>            Prop.debug = true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>284</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l284s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>285</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'D': // hidden flag: daemon mode</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>286</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l286s0'>            serve = false;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l287s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>288</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'h': // parse HTTP port</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>289</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l289s0'>            httpPort = arg.number();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>290</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l290s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>291</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'l': // use local mode</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>292</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l292s0'>            Prop.put(StaticOptions.HTTPLOCAL, Boolean.toString(true));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>293</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l293s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>294</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'n': // parse host name</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>295</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l295s0'>            final String n = arg.string();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>296</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l296s0'>            Prop.put(StaticOptions.HOST, n);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>297</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l297s0'>            Prop.put(StaticOptions.SERVERHOST, n);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>298</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l298s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>299</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'p': // parse server port</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l300s0'>            final int p = arg.number();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l301s0'>            Prop.put(StaticOptions.PORT, Integer.toString(p));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>302</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l302s0'>            Prop.put(StaticOptions.SERVERPORT, Integer.toString(p));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>303</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l303s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>304</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'P': // specify password</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>305</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l305s0'>            Prop.put(StaticOptions.PASSWORD, arg.string());</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>306</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l306s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>307</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'q': // quiet flag (hidden)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>308</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l308s0'>            quiet = true;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>309</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l309s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>310</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 's': // parse stop port</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>311</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l311s0'>            Prop.put(StaticOptions.STOPPORT, Integer.toString(arg.number()));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>312</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l312s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>313</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'S': // set service flag</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>314</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l314s0'>            service = serve;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>315</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l315s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>316</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'U': // specify user name</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>317</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l317s0'>            Prop.put(StaticOptions.USER, arg.string());</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>318</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l318s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>319</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          case 'z': // suppress logging</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>320</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l320s0'>            Prop.put(StaticOptions.LOG, Boolean.toString(false));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>321</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l321s0'>            break;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>322</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          default:</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>323</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l323s0'>            throw arg.usage();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>324</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>325</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>326</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l326s0' title='Executions: 0' class='uncovered'>if(!"stop".equalsIgnoreCase(arg.string()))</span> <span id='l326s1' title='Executions: 0' class='uncovered'>throw arg.usage();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>327</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l327s0'>        stop = true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>328</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>329</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>330</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l330s0'>  }</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>332</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // STATIC METHODS ===========================================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Starts the HTTP server in a separate process.
+   * @param port server port
+   * @param ssl encryption via HTTPS
+   * @param args command-line arguments
+   * @throws BaseXException database exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>341</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static void start(final int port, final boolean ssl, final String... args)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>342</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      throws BaseXException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>344</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // start server and check if it caused an error message</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>345</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l345s0'>    final String error = Util.error(Util.start(BaseXHTTP.class, args), 2000);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>346</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l346s0' title='Executions: 0' class='uncovered'>if(error != null)</span> <span id='l346s1' title='Executions: 0' class='uncovered'>throw new BaseXException(error.trim());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>348</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // try to connect to the new server instance</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>349</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l349s0' title='Executions: 0' class='uncovered'>if(!ping(S_LOCALHOST, port, ssl))</span> <span id='l349s1' title='Executions: 0' class='uncovered'>throw new BaseXException(CONNECTION_ERROR_X, port);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>350</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l350s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Generates a stop file for the specified port.
+   * @param port server port
+   * @return stop file
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>357</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static IOFile stopFile(final int port) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>358</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l358s0'>    return new IOFile(Prop.TMP, Util.className(BaseXHTTP.class) + port);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>359</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Stops the server.
+   * @param host server host
+   * @param port server port
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>367</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static void stop(final String host, final int port) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>368</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l368s0'>    final IOFile stopFile = stopFile(port);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>369</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>370</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l370s0'>      stopFile.touch();</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>371</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l371s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>try(final Socket s = new Socket(host, port)) { }</span></pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>372</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // give the notified process some time to quit</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>373</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l373s0'>      Performance.sleep(100);</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>374</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l374s0'>    } catch(final ConnectException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>375</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l375s0'>      throw new IOException(Util.info(CONNECTION_ERROR_X, port));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>376</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>377</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l377s0'>      stopFile.delete();</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>378</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l378s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>379</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l379s0'>  }</pre>
+        <ol style='display:none'>
+          <li>org.basex.http.HTTPTest#stop: 61</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Checks if a server is running.
+   * @param host host
+   * @param port server port
+   * @param ssl encryption via HTTPS
+   * @return boolean success
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>388</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static boolean ping(final String host, final int port, final boolean ssl) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>389</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l389s0' title='Executions: 0' class='uncovered'>try(final InputStream is = new IOUrl((ssl</span> ? <span id='l389s1' title='Executions: 0' class='uncovered'>"https://" : "http://") + host + ':' + port).</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>390</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l390s0'>      connection().getInputStream()) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>391</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // create connection</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>392</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l392s0'>      return true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>393</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l393s0' title='Executions: 0' class='uncovered'>} catch(final FileNotFoundException | SSLHandshakeException ex) {</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>394</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // if page is not found, server is running</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>395</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // if SSL handshake failed server is running, otherwise SSLException</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>396</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l396s0'>      return true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>397</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l397s0'>    } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>398</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l398s0'>      return false;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>399</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>400</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>402</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>403</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String header() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>404</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l404s0'>    return Util.info(S_CONSOLE_X, S_HTTP_SERVER);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>405</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>407</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>408</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String usage() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>409</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l409s0'>    return S_HTTPINFO;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>410</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>412</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Monitor for stopping the Jetty server. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>413</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final class StopServer extends Thread {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>414</td><td>&nbsp;</td>
+      <td><pre class='comment'>    /** Server socket. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>415</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final ServerSocket socket;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>416</td><td>&nbsp;</td>
+      <td><pre class='comment'>    /** Stop file. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>417</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    private final IOFile stopFile;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Constructor.
+     * @param host host address
+     * @param port stop port
+     * @throws IOException I/O exception
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>425</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l425s0'>    StopServer(final String host, final int port) throws IOException {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>426</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l426s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>final InetAddress addr = host.isEmpty()</span> ? <span id='l426s1' title='Executions: 1' class='covered cp' onclick='showHide(this,1)'>null</span> : <span id='l426s2' title='Executions: 0' class='uncovered'>InetAddress.getByName(host);</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>427</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l427s0'>      socket = new ServerSocket();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>428</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l428s0'>      socket.setReuseAddress(true);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>429</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l429s0'>      socket.bind(new InetSocketAddress(addr, port));</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>430</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l430s0'>      stopFile = stopFile(port);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>431</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l431s0'>      setDaemon(true);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>432</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l432s0'>    }</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>434</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>435</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    public void run() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>436</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>437</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        while(true) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>438</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>          <span id='l438s0' title='Executions: 1' class='covered'>try(final Socket s = socket.accept()) { }</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>439</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l439s0'>          if(stopFile.exists()) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>440</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l440s0'>            socket.close();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>441</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l441s0'>            stopFile.delete();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>442</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l442s0'>            jetty.stop();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>443</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l443s0'>            break;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>444</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>          }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>445</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>446</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l446s0'>      } catch(final Exception ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>447</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l447s0'>        Util.errln(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>448</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l448s0'>      }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>449</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l449s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>450</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>451</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

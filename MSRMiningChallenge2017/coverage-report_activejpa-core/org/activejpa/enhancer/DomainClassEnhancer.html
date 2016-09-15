@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DomainClassEnhancer.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../logo.png'/>
+  <script type='text/javascript' src='../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>activejpa-core/src/main/java/org/activejpa/enhancer/DomainClassEnhancer.java</caption>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * 
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.activejpa.enhancer;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.IOException;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javassist.CannotCompileException;
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtMethod;
+import javassist.CtNewMethod;
+import javassist.LoaderClassPath;
+import javassist.NotFoundException;
+
+import javax.persistence.Entity;
+
+import org.activejpa.entity.Filter;
+import org.activejpa.entity.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * @author ganeshs
+ *
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l34s0'>public class DomainClassEnhancer {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l36s0'>    private static final Logger logger = LoggerFactory.getLogger(DomainClassEnhancer.class);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l38s0'>    private static Map&lt;ClassLoader, Context> contextMap = new HashMap&lt;ClassLoader, Context>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public byte[] enhance(ClassLoader loader, String className) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l41s0'>		Context context = getContext(loader);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l42s0'>		className = className.replace("/", ".");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l44s0'>			logger.trace("Attempting to enhance the class - " + className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>			<span id='l45s0' title='Executions: 1' class='covered'>if (! context.isClassLoaded(className))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l46s0'>				CtClass ctClass = context.getCtClass(className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>				<span id='l47s0' title='Executions: 1' class='covered'>if (! canEnhance(context, ctClass))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l48s0'>					return null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>				}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l50s0'>				logger.info("Transforming the class - " + className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l51s0'>				ctClass.defrost();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l52s0'>				createModelMethods(context, ctClass);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l53s0'>				byte[] byteCode = ctClass.toBytecode();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l54s0'>				context.addClass(className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l55s0'>				return byteCode;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			} else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l57s0'>				logger.info("Class already enhanced - " + className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l58s0'>				return null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>59</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>60</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l60s0'>		} catch (NotFoundException e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='comment'>			// Can't do much. Just log and ignore</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l62s0'>			logger.trace("Failed while transforming the class " + className, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l63s0'>		} catch (Exception e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l64s0'>			logger.error("Failed while transforming the class " + className, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l65s0'>			throw new RuntimeException("Failed while transforming the class " + className, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l66s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l67s0'>		return null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public Context getContext(ClassLoader classLoader) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>71</td><td class='count'>348</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l71s0'>		Context context = contextMap.get(classLoader);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>72</td><td class='count'>348</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l72s0'>		Context parent = null;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>73</td><td class='count'>348</td>
+      <td><pre class='prettyprint jmp'>		<span id='l73s0' title='Executions: 348' class='covered cp' onclick='showHide(this,0)'>if (context == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>74</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>			<span id='l74s0' title='Executions: 3' class='covered'>if (classLoader != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>75</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>				<span id='l75s0' title='Executions: 3' class='covered'>if (classLoader.getParent() != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l76s0'>					parent = getContext(classLoader.getParent()); </pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>				}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>78</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l79s0'>			context = new Context(parent, classLoader);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l80s0'>			contextMap.put(classLoader, context);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>348</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l82s0'>		return context;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>83</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>85</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	public boolean canEnhance(String className) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>345</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l86s0'>		Context context = getContext(Thread.currentThread().getContextClassLoader());</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td class='count'>345</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l88s0'>			return canEnhance(context, context.getCtClass(className));</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>89</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l89s0'>		} catch (Exception e) {</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x7</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 40x14</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 59x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l90s0'>			logger.trace("Error while checking is the class can be enhanced", e);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x7</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 40x14</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 59x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>26</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l91s0'>			return false;</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x7</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 40x14</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 59x4</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>92</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>93</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected boolean canEnhance(Context context, CtClass ctClass) throws IOException, NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>320</td>
+      <td><pre class='prettyprint jmp'>		<span id='l96s0' title='Executions: 320' class='covered cp' onclick='showHide(this,0)'>return isEntity(ctClass)</span> && <span id='l96s1' title='Executions: 0' class='uncovered'>isExtendingModel(context, ctClass);</span></pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private void createModelMethods(Context context, CtClass ctClass) throws CannotCompileException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l100s0'>		createMethod(context, ctClass, "findById", Model.class.getName(), "java.io.Serializable id");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l101s0'>		createMethod(context, ctClass, "all", "java.util.List");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l102s0'>		createMethod(context, ctClass, "count", "long");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l103s0'>		createMethod(context, ctClass, "count", "long", Filter.class.getName() + " filter");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l104s0'>		createMethod(context, ctClass, "deleteAll", "void");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l105s0'>		createMethod(context, ctClass, "deleteAll", "void", Filter.class.getName() + " filter");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l106s0'>		createMethod(context, ctClass, "exists", "boolean", "java.io.Serializable id");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l107s0'>		createMethod(context, ctClass, "where", "java.util.List", "Object[] paramValues");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l108s0'>		createMethod(context, ctClass, "where", "java.util.List", Filter.class.getName() + " filter");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l109s0'>		createMethod(context, ctClass, "one", Model.class.getName(), "Object[] paramValues");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>110</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l110s0'>		createMethod(context, ctClass, "first", Model.class.getName(), "Object[] paramValues");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>111</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l111s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>113</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private void createMethod(Context context, CtClass ctClass, String methodName, String returnType, String... arguments) throws CannotCompileException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>114</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l114s0'>		logger.info("Creating the method - " + methodName + " under the class - " + ctClass.getName());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l115s0'>		StringWriter writer = new StringWriter();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l116s0'>		writer.append("public static ").append(returnType).append(" ").append(methodName).append("(");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>		<span id='l117s0' title='Executions: 11' class='covered'>if (arguments != null</span> && <span id='l117s1' title='Executions: 0' class='uncovered'>arguments.length > 0)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>			<span id='l118s0' title='Executions: 8' class='covered'>for (int i = 0</span>; i &lt; arguments.length - 1; i++) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l119s0'>				writer.append(arguments[i]).append(", ");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l121s0'>			writer.append(arguments[arguments.length - 1]);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l123s0'>		writer.append(") {");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>		<span id='l124s0' title='Executions: 11' class='covered'>if (! returnType.equals("void"))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered' id='l125s0'>			writer.append("return (" + returnType + ")");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l127s0'>		writer.append(methodName).append("(").append(ctClass.getName()).append(".class");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>		<span id='l128s0' title='Executions: 11' class='covered'>if (arguments != null</span> && <span id='l128s1' title='Executions: 0' class='uncovered'>arguments.length > 0)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>16</td>
+      <td><pre class='prettyprint jmp'>			<span id='l129s0' title='Executions: 16' class='covered'>for (int i = 0</span>; i &lt; arguments.length; i++) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l130s0'>				writer.append(", ").append(arguments[i].split(" ")[1]);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l133s0'>		writer.append(");}");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l135s0'>		CtMethod method = null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l137s0'>			method = getMethod(context, ctClass, methodName, arguments);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>			<span id='l138s0' title='Executions: 0' class='uncovered'>if (method != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l139s0'>				ctClass.removeMethod(method);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l141s0'>		} catch (NotFoundException e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l142s0'>			logger.trace("Failed to get the method " + methodName, e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td>&nbsp;</td>
+      <td><pre class='comment'>			// Just ignore if the method doesn't exist already</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l144s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>145</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l145s0'>		logger.debug("Method src - " + writer.toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>147</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l147s0'>		method = CtNewMethod.make(writer.toString(), ctClass);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l148s0'>        ctClass.addMethod(method);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l149s0'>	}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>151</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	private CtMethod getMethod(Context context, CtClass ctClass, String methodName, String... arguments) throws NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td class='count'>11</td>
+      <td><pre class='prettyprint covered' id='l152s0'>		List&lt;CtClass> paramTypes = new ArrayList&lt;CtClass>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>11</td>
+      <td><pre class='prettyprint jmp'>		<span id='l153s0' title='Executions: 11' class='covered'>if (arguments != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>16</td>
+      <td><pre class='prettyprint jmp'>			<span id='l154s0' title='Executions: 16' class='covered'>for (String argument</span> : <span id='l154s1' title='Executions: 0' class='uncovered'>arguments)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l155s0'>				paramTypes.add(context.getCtClass(argument.split(" ")[0]));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>156</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>157</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>158</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l158s0'>		return ctClass.getDeclaredMethod(methodName, paramTypes.toArray(new CtClass[0]));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>159</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected boolean isEntity(CtClass ctClass) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td class='count'>320</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l162s0'>		return ctClass.hasAnnotation(Entity.class);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x63</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x54</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x130</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>165</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected boolean isExtendingModel(Context context, CtClass ctClass) throws NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l166s0'>		return getSuperClasses(ctClass).contains(context.getCtClass(Model.class.getName()));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>	/**
+	 * Returns the super classes from top to bottom. The {@link Object} class name will always be returned at index 0.
+	 * 
+	 * @param className
+	 * @return
+	 * @throws IOException
+	 */</div><span>	/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>176</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected List&lt;CtClass> getSuperClasses(CtClass modelClass) throws NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>177</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l177s0'>		List&lt;CtClass> superClasses = new ArrayList&lt;CtClass>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>178</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l178s0'>		CtClass superClass = getSuperClass(modelClass);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>179</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>		<span id='l179s0' title='Executions: 8' class='covered'>if (superClass != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l180s0'>			superClasses.addAll(getSuperClasses(superClass));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l181s0'>			superClasses.add(superClass);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>183</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l183s0'>		return superClasses;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>184</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>186</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	protected CtClass getSuperClass(CtClass modelClass) throws NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>187</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l187s0'>		return modelClass.getSuperclass();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>190</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l190s0'>	public static class Context {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>192</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		private Context parent;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>194</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l194s0'>		private Set&lt;String> loadedClasses = new HashSet&lt;String>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>196</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		private ClassPool classPool;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>198</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l198s0'>		public Context(Context parent, ClassLoader loader) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>199</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l199s0'>			this.parent = parent;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>200</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>			<span id='l200s0' title='Executions: 3' class='covered'>if (parent == null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>201</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l201s0'>				classPool = ClassPool.getDefault();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>202</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			} else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>203</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l203s0'>				classPool =  new ClassPool(parent.classPool);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>204</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l204s0'>				classPool.appendClassPath(new LoaderClassPath(loader));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>205</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l206s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @return the parent
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>211</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public Context getParent() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>212</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l212s0'>			return parent;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>213</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @param parent the parent to set
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public void setParent(Context parent) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>219</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l219s0'>			this.parent = parent;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l220s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @return the loadedClasses
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public Set&lt;String> getLoadedClasses() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>226</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l226s0'>			return loadedClasses;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>227</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @param loadedClasses the loadedClasses to set
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>232</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public void setLoadedClasses(Set&lt;String> loadedClasses) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>233</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l233s0'>			this.loadedClasses = loadedClasses;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>234</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l234s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @return the classPool
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public ClassPool getClassPool() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l240s0'>			return classPool;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>		/**
+		 * @param classPool the classPool to set
+		 */</div><span>		/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>246</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public void setClassPool(ClassPool classPool) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>247</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l247s0'>			this.classPool = classPool;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>248</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l248s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>250</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public boolean isClassLoaded(String className) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>251</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>			<span id='l251s0' title='Executions: 3' class='covered'>if (loadedClasses.contains(className))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>252</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l252s0'>				return true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>253</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>254</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>			<span id='l254s0' title='Executions: 3' class='covered'>if (parent != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l255s0'>				return parent.isClassLoaded(className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>			}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>257</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l257s0'>			return false;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>258</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>260</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public CtClass getCtClass(String className) throws NotFoundException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>261</td><td class='count'>356</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l261s0'>			return classPool.get(className);</pre>
+        <ol style='display:none'>
+          <li>org.activejpa.enhancer.DomainClassEnhancerTest#setup: 31x19, 32x2</li>
+          <li>org.activejpa.enhancer.DomainClassFileTransformerTest#setup: 27</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenCriteriaQuery: 255x12</li>
+          <li>org.activejpa.entity.ConditionTest#shouldConstructBetweenQuery: 250</li>
+          <li>org.activejpa.entity.ConditionTest#shouldSetParametersForBetweenQuery: 267x64</li>
+          <li>org.activejpa.entity.EntityCollectionTest#beforeClass: 46x61</li>
+          <li>org.activejpa.entity.FilterTest#shouldAddConditionUsingNameValue: 57</li>
+          <li>org.activejpa.entity.SortFieldTest#shouldGetAscOrder: 44</li>
+          <li>org.activejpa.jpa.JPAConfigTest#setup: 35</li>
+          <li>org.activejpa.util.BeanUtilTest#shouldLoadBean: 39, 40x144</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldGetPropertyValue: 57, 59x4</li>
+          <li>org.activejpa.util.PropertyUtilTest#shouldNotGetPropertyValue: 65</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		}</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>264</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>		public void addClass(String className) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l265s0'>			loadedClasses.add(className);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>266</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l266s0'>		}</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>	}</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>268</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

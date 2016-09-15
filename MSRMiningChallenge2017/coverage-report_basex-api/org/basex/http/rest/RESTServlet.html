@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RESTServlet.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/rest/RESTServlet.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http.rest;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.io.*;
+
+import org.basex.core.*;
+import org.basex.core.cmd.*;
+import org.basex.http.*;
+import org.basex.util.http.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * &lt;p>This servlet receives and processes REST requests.&lt;/p>
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>16</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l16s0'>public final class RESTServlet extends BaseXServlet {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>17</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>18</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  protected void run(final HTTPContext http) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // open database if name was specified</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l20s0'>    final RESTSession session = new RESTSession(http, http.context(true));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l21s0'>    final String db = http.db(), path = http.dbpath();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l22s0' title='Executions: 22' class='covered'>if(!db.isEmpty())</span> <span id='l22s1' title='Executions: 3' class='covered'>session.add(new Open(db, path));</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>24</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // generate and run commands</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l25s0'>    final RESTCmd cmd = command(session);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l27s0'>      cmd.execute(session.context);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l28s0'>    } catch(final BaseXException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // ignore error if code was assigned (same error message)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>30</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l30s0' title='Executions: 0' class='uncovered'>if(cmd.code == null)</span> <span id='l30s1' title='Executions: 0' class='uncovered'>throw ex;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l31s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l33s0'>    final HTTPCode code = cmd.code;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l34s0' title='Executions: 22' class='covered'>if(code != null)</span> <span id='l34s1' title='Executions: 1' class='covered'>throw code.get(cmd.info());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered' id='l35s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Creates and returns a REST command.
+   * @param session session
+   * @return code
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static RESTCmd command(final RESTSession session) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l44s0'>    final String mth = session.http.method;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l45s0' title='Executions: 22' class='covered'>if(mth.equals(HttpMethod.GET.name()))</span>    <span id='l45s1' title='Executions: 20' class='covered'>return RESTGet.get(session);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l46s0' title='Executions: 2' class='covered'>if(mth.equals(HttpMethod.POST.name()))</span>   <span id='l46s1' title='Executions: 0' class='uncovered'>return RESTPost.get(session);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l47s0' title='Executions: 2' class='covered'>if(mth.equals(HttpMethod.PUT.name()))</span>    <span id='l47s1' title='Executions: 1' class='covered'>return RESTPut.get(session);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l48s0' title='Executions: 1' class='covered'>if(mth.equals(HttpMethod.DELETE.name()))</span> <span id='l48s1' title='Executions: 1' class='covered'>return RESTDelete.get(session);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l49s0'>    throw HTTPCode.NOT_IMPLEMENTED_X.get(session.http.req.getMethod());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

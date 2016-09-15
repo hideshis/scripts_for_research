@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RESTCmd.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/rest/RESTCmd.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http.rest;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static org.basex.util.Token.*;
+
+import java.io.*;
+import java.util.*;
+import java.util.Map.Entry;
+
+import org.basex.core.*;
+import org.basex.core.cmd.*;
+import org.basex.core.locks.*;
+import org.basex.core.users.*;
+import org.basex.http.*;
+import org.basex.io.out.*;
+import org.basex.query.value.item.*;
+import org.basex.query.value.node.*;
+import org.basex.util.*;
+import org.basex.util.list.*;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Abstract class for performing REST operations.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>abstract class RESTCmd extends Command {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** REST session. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>28</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final RESTSession session;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>30</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Return code (may be {@code null}). */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  HTTPCode code;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   * @param session REST session
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  RESTCmd(final RESTSession session) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l38s0'>    super(max(session.commands));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l39s0'>    this.session = session;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l40s0'>    job().type(RESTText.REST);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l41s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>43</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void databases(final LockResult lr) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l45s0' title='Executions: 22' class='covered'>for(final Command cmd</span> : <span id='l45s1' title='Executions: 24' class='covered'>session.commands)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // collect local locks and merge it with global lock list</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l47s0'>      final LockResult tmp = new LockResult();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l48s0'>      cmd.databases(tmp);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l49s0'>      lr.union(tmp);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l50s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l51s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>54</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public boolean updating(final Context ctx) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>55</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l55s0'>    boolean up = false;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l56s0' title='Executions: 22' class='covered'>for(final Command cmd</span> : <span id='l56s1' title='Executions: 24' class='covered'>session.commands)</span> up |= cmd.updating(ctx);</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l57s0'>    return up;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  @Override</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  protected final boolean run() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l63s0'>      run0();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>64</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l64s0'>      return true;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>65</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l65s0'>    } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l66s0'>      return error(ex.getMessage());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l68s0'>      new Close().run(context);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>69</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>70</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Runs the command.
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  protected abstract void run0() throws IOException;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Runs the specified command.
+   * @param cmd command
+   * @return string result
+   * @throws HTTPException HTTP exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>84</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final String run(final Command cmd) throws HTTPException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l85s0'>    final ArrayOutput ao = new ArrayOutput();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l86s0'>    run(cmd, ao);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>3</td>
+      <td><pre class='prettyprint covered' id='l87s0'>    return ao.toString();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>88</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Runs the specified command.
+   * @param cmd command
+   * @param os output stream
+   * @throws HTTPException HTTP exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  final void run(final Command cmd, final OutputStream os) throws HTTPException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l98s0'>      final boolean ok = pushJob(cmd).run(context, os);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // only return info of last command</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l100s0'>      final String info = cmd.info();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l101s0'>      error(info);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td class='count'>24</td>
+      <td><pre class='prettyprint jmp'>      <span id='l102s0' title='Executions: 24' class='covered'>if(!ok)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>103</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l103s0' title='Executions: 0' class='uncovered'>if(cmd instanceof Open)</span> <span id='l103s1' title='Executions: 0' class='uncovered'>code = HTTPCode.NOT_FOUND_X;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>104</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l104s0'>        throw HTTPCode.BAD_REQUEST_X.get(info);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } finally {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l107s0'>      popJob();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l108s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l109s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Lists the table contents.
+   * @param table table reference
+   * @param root root node
+   * @param header table header
+   * @param skip number of columns to skip
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>118</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  static void list(final Table table, final FElem root, final QNm header, final int skip) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>119</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l119s0' title='Executions: 0' class='uncovered'>for(final TokenList list</span> : <span id='l119s1' title='Executions: 0' class='uncovered'>table.contents)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l120s0'>      final FElem el = new FElem(header);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // don't show last attribute (input path)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l122s0'>      final int ll = list.size() - skip;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l123s0' title='Executions: 0' class='uncovered'>for(int l = 1</span>; l &lt; ll; l++) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l124s0'>        el.add(new QNm(lc(table.header.get(l))), list.get(l));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l126s0'>      el.add(list.get(0));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l127s0'>      root.add(el);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l128s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l129s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the maximum permission from the specified commands.
+   * @param cmds commands to be checked
+   * @return permission
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>136</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static Perm max(final ArrayList&lt;Command> cmds) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>137</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l137s0'>    Perm p = Perm.NONE;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>138</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l138s0' title='Executions: 22' class='covered'>for(final Command cmd</span> : <span id='l138s1' title='Executions: 24' class='covered'>cmds)</span> p = p.max(cmd.perm);</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>139</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l139s0'>    return p;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>140</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Parses and sets database options.
+   * Throws an exception if an option is unknown.
+   * @param session REST session
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>148</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  static void parseOptions(final RESTSession session) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l149s0' title='Executions: 2' class='covered'>for(final Entry&lt;String, String[]> param</span> : <span id='l149s1' title='Executions: 0' class='uncovered'>session.http.params.map().entrySet())</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l150s0'>      parseOption(session, param, true);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered' id='l151s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Parses and sets a single database option.
+   * @param session REST session
+   * @param param current parameter
+   * @param force force execution
+   * @return success flag, indicates if value was found
+   * @throws BaseXException database exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>161</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  static boolean parseOption(final RESTSession session, final Entry&lt;String, String[]> param,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      final boolean force) throws BaseXException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>164</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l164s0'>    final String key = param.getKey().toUpperCase(Locale.ENGLISH);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l165s0'>    final MainOptions options = session.context.options;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>166</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l166s0' title='Executions: 6' class='covered'>final boolean found = options.option(key) != null;</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>167</td><td class='count'>6</td>
+      <td><pre class='prettyprint jmp'>    <span id='l167s0' title='Executions: 6' class='covered'>if(found</span> || <span id='l167s1' title='Executions: 6' class='covered'>force)</span> <span id='l167s2' title='Executions: 0' class='uncovered'>options.assign(key, param.getValue()[0]);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered' id='l168s0'>    return found;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

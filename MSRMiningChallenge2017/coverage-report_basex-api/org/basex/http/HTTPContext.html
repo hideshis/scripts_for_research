@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTTPContext.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../logo.png'/>
+  <script type='text/javascript' src='../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>basex-api/src/main/java/org/basex/http/HTTPContext.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package org.basex.http;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import static javax.servlet.http.HttpServletResponse.*;
+import static org.basex.http.HTTPText.*;
+import static org.basex.util.Token.*;
+import static org.basex.util.http.HttpText.*;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import org.basex.*;
+import org.basex.core.*;
+import org.basex.core.StaticOptions.AuthMethod;
+import org.basex.core.users.*;
+import org.basex.io.*;
+import org.basex.io.out.*;
+import org.basex.io.serial.*;
+import org.basex.server.Log.LogType;
+import org.basex.server.*;
+import org.basex.util.*;
+import org.basex.util.http.*;
+import org.basex.util.http.HttpText.Request;
+</div><span>import ...</span></pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Bundles context-based information on a single HTTP operation.
+ *
+ * @author BaseX Team 2005-16, BSD License
+ * @author Christian Gruen
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>public final class HTTPContext {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Global static database context. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static Context context;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>37</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Initialization flag. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static boolean init;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Initialized failed. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>40</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static IOException exception;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>41</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Server instance. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>42</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static BaseXServer server;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>44</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Servlet request. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>45</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final HttpServletRequest req;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>46</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Servlet response. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>47</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final HttpServletResponse res;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>48</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Request method. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>49</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final String method;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>50</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Request method. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>51</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final HTTPParams params;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>52</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Authentication method. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>53</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final AuthMethod auth;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>55</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** User name. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>56</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String username;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>57</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Password (plain text). */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>58</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String password;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>60</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Performance. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>61</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l61s0'>  private final Performance perf = new Performance();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>62</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Path, starting with a slash. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>63</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private final String path;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>65</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Client database context. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>66</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private Context ctx;</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>67</td><td>&nbsp;</td>
+      <td><pre class='comment'>  /** Serialization parameters. */</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>68</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private SerializerOptions sopts;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Constructor.
+   * @param req request
+   * @param res response
+   * @param servlet calling servlet instance
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>76</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  HTTPContext(final HttpServletRequest req, final HttpServletResponse res,</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>77</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l77s0'>      final BaseXServlet servlet) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>79</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l79s0'>    this.req = req;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>80</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l80s0'>    this.res = res;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>81</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l81s0'>    params = new HTTPParams(this);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>82</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l82s0'>    method = req.getMethod();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>84</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l84s0'>    final StringBuilder uri = new StringBuilder(req.getRequestURL());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>85</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l85s0'>    final String qs = req.getQueryString();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>86</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l86s0' title='Executions: 22' class='covered'>if(qs != null)</span> <span id='l86s1' title='Executions: 20' class='covered'>uri.append('?').append(qs);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>87</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l87s0'>    context.log.write(address(), context.user(), LogType.REQUEST, '[' + method + "] " + uri, null);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>89</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // set UTF8 as default encoding (can be overwritten)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>90</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l90s0'>    res.setCharacterEncoding(Strings.UTF8);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>91</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l91s0'>    path = decode(normalize(req.getPathInfo()));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>93</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l93s0'>    final StaticOptions mprop = context.soptions;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>94</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l94s0' title='Executions: 22' class='covered'>if(servlet.username.isEmpty())</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>95</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // adopt existing servlet-specific credentials</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>96</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l96s0'>      username = mprop.get(StaticOptions.USER);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>97</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l97s0'>      password = mprop.get(StaticOptions.PASSWORD);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>98</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>99</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // otherwise, adopt global credentials</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>100</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l100s0'>      username = servlet.username;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>101</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l101s0'>      password = servlet.password;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>102</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>104</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // prefer safest authorization method</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>105</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l105s0'>    final String value = req.getHeader(AUTHORIZATION);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>106</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l106s0' title='Executions: 22' class='covered'>final String am = value == null</span> ? <span id='l106s1' title='Executions: 22' class='covered'>AuthMethod.BASIC.toString()</span> : <span id='l106s2' title='Executions: 0' class='uncovered'>Strings.split(value, ' ', 2)[0];</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>107</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l107s0' title='Executions: 22' class='covered'>auth = StaticOptions.AUTHMETHOD.get(am) == AuthMethod.DIGEST</span> ? <span id='l107s1' title='Executions: 0' class='uncovered'>AuthMethod.DIGEST</span> :</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>108</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l108s0'>      servlet.auth != null ? servlet.auth : mprop.get(StaticOptions.AUTHMETHOD);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>109</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l109s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Authorizes a request.
+   * @throws BaseXException database exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>115</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  void authorize() throws BaseXException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>116</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l116s0'>    final String value = req.getHeader(AUTHORIZATION);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>117</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l117s0' title='Executions: 22' class='covered'>if(value == null)</span> <span id='l117s1' title='Executions: 22' class='covered'>return;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>119</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // overwrite credentials with client data (basic or digest)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>120</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l120s0'>    final String[] ams = Strings.split(value, ' ', 2);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>121</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l121s0'>    final AuthMethod am = StaticOptions.AUTHMETHOD.get(ams[0]);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>122</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l122s0' title='Executions: 0' class='uncovered'>if(am == AuthMethod.BASIC)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>123</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l123s0' title='Executions: 0' class='uncovered'>final String details = ams.length > 1</span> ? <span id='l123s1' title='Executions: 0' class='uncovered'>ams[1]</span> : <span id='l123s2' title='Executions: 0' class='uncovered'>"";</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>124</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l124s0'>      final String[] cred = Strings.split(org.basex.util.Base64.decode(details), ':', 2);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>125</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l125s0' title='Executions: 0' class='uncovered'>if(cred.length != 2)</span> <span id='l125s1' title='Executions: 0' class='uncovered'>throw new BaseXException(NOUSERNAME);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>126</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l126s0'>      username = cred[0];</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>127</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l127s0'>      password = cred[1];</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>128</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l128s0' title='Executions: 0' class='uncovered'>}</span> else if(am == AuthMethod.DIGEST) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>129</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l129s0'>      final EnumMap&lt;Request, String> map = HttpClient.digestHeaders(value);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>130</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l130s0'>      username = map.get(Request.USERNAME);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>131</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l131s0'>      password = map.get(Request.RESPONSE);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>132</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>133</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // custom authorization</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>134</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>135</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l135s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the content type of a request, or an empty string.
+   * @return content type
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>141</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public MediaType contentType() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>142</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered' id='l142s0'>    final String ct = req.getContentType();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>143</td><td class='count'>8</td>
+      <td><pre class='prettyprint jmp'>    <span id='l143s0' title='Executions: 8' class='covered'>return new MediaType(ct == null</span> ? <span id='l143s1' title='Executions: 8' class='covered'>""</span> : <span id='l143s2' title='Executions: 0' class='uncovered'>ct);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>144</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Initializes the output. Sets the expected encoding and content type.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>149</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void initResponse() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>150</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // set content type and encoding</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>151</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l151s0'>    final SerializerOptions opts = sopts();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>152</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l152s0'>    final String enc = opts.get(SerializerOptions.ENCODING);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>153</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l153s0'>    res.setCharacterEncoding(enc);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>154</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l154s0'>    res.setContentType(new MediaType(mediaType(opts) + "; " + CHARSET + '=' + enc).toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>155</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l155s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the media type defined in the specified serialization parameters.
+   * @param sopts serialization parameters
+   * @return media type
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>162</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static MediaType mediaType(final SerializerOptions sopts) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>163</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // set content type</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>164</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l164s0'>    final String type = sopts.get(SerializerOptions.MEDIA_TYPE);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>165</td><td class='count'>40</td>
+      <td><pre class='prettyprint jmp'>    <span id='l165s0' title='Executions: 40' class='covered'>if(!type.isEmpty())</span> <span id='l165s1' title='Executions: 0' class='uncovered'>return new MediaType(type);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>167</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // determine content type dependent on output method</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>168</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l168s0'>    final SerialMethod sm = sopts.get(SerializerOptions.METHOD);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>169</td><td class='count'>40</td>
+      <td><pre class='prettyprint jmp'>    <span id='l169s0' title='Executions: 40' class='covered'>if(sm == SerialMethod.BASEX</span> || <span id='l169s1' title='Executions: 0' class='uncovered'>sm == SerialMethod.ADAPTIVE</span> || <span id='l169s2' title='Executions: 0' class='uncovered'>sm == SerialMethod.XML)</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>170</td><td class='count'>40</td>
+      <td><pre class='prettyprint covered' id='l170s0'>      return MediaType.APPLICATION_XML;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>171</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l171s0' title='Executions: 0' class='uncovered'>if(sm == SerialMethod.XHTML</span> || <span id='l171s1' title='Executions: 0' class='uncovered'>sm == SerialMethod.HTML)</span> <span id='l171s2' title='Executions: 0' class='uncovered'>return MediaType.TEXT_HTML;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>172</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l172s0' title='Executions: 0' class='uncovered'>if(sm == SerialMethod.JSON)</span> <span id='l172s1' title='Executions: 0' class='uncovered'>return MediaType.APPLICATION_JSON;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>173</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l173s0'>    return MediaType.TEXT_PLAIN;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>174</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the URL path. The path always starts with a slash.
+   * @return path path
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>180</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String path() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>181</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l181s0'>    return path;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>182</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the database path (i.e., all path entries except for the first).
+   * @return database path
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>188</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String dbpath() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>189</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l189s0'>    final int s = path.indexOf('/', 1);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>190</td><td class='count'>24</td>
+      <td><pre class='prettyprint jmp'>    <span id='l190s0' title='Executions: 24' class='covered'>return s == -1</span> ? <span id='l190s1' title='Executions: 24' class='covered'>""</span> : <span id='l190s2' title='Executions: 0' class='uncovered'>path.substring(s + 1);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>191</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the addressed database (i.e., the first path entry).
+   * @return database, or {@code null} if the root directory was specified.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>197</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String db() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>198</td><td class='count'>24</td>
+      <td><pre class='prettyprint covered' id='l198s0'>    final int s = path.indexOf('/', 1);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>199</td><td class='count'>24</td>
+      <td><pre class='prettyprint jmp'>    <span id='l199s0' title='Executions: 24' class='covered'>return path.substring(1, s == -1</span> ? <span id='l199s1' title='Executions: 24' class='covered'>path.length()</span> : <span id='l199s2' title='Executions: 0' class='uncovered'>s);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>200</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns all accepted media types.
+   * @return accepted media types
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>206</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public MediaType[] accepts() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>207</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l207s0'>    final String accept = req.getHeader(ACCEPT);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>208</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l208s0'>    final ArrayList&lt;MediaType> list = new ArrayList&lt;>();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>209</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l209s0' title='Executions: 0' class='uncovered'>if(accept == null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>210</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l210s0'>      list.add(MediaType.ALL_ALL);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>211</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>212</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l212s0' title='Executions: 0' class='uncovered'>for(final String produce</span> : <span id='l212s1' title='Executions: 0' class='uncovered'>accept.split("\\s*,\\s*"))</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>213</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // check if quality factor was specified</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>214</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l214s0'>        final MediaType type = new MediaType(produce);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>215</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l215s0'>        final String qf = type.parameters().get("q");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>216</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l216s0' title='Executions: 0' class='uncovered'>final double d = qf != null</span> ? <span id='l216s1' title='Executions: 0' class='uncovered'>toDouble(token(qf))</span> : <span id='l216s2' title='Executions: 0' class='uncovered'>1;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>217</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // only accept media types with valid double values</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>218</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l218s0' title='Executions: 0' class='uncovered'>if(d > 0</span> && <span id='l218s1' title='Executions: 0' class='uncovered'>d &lt;= 1)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>219</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l219s0'>          final StringBuilder sb = new StringBuilder();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>220</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l220s0'>          final String main = type.main(), sub = type.sub();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>221</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>          <span id='l221s0' title='Executions: 0' class='uncovered'>sb.append(main.isEmpty()</span> ? <span id='l221s1' title='Executions: 0' class='uncovered'>"*"</span> : <span id='l221s2' title='Executions: 0' class='uncovered'>main).append('/');</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>222</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>          <span id='l222s0' title='Executions: 0' class='uncovered'>sb.append(sub.isEmpty()</span> ? <span id='l222s1' title='Executions: 0' class='uncovered'>"*"</span> : <span id='l222s2' title='Executions: 0' class='uncovered'>sub).append("; q=").append(d);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>223</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l223s0'>          list.add(new MediaType(sb.toString()));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>224</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>225</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>226</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>227</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l227s0'>    return list.toArray(new MediaType[list.size()]);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>228</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Sets a status and sends an info message.
+   * @param code status code
+   * @param info info message (can be {@code null})
+   * @param error treat as error (use web server standard output)
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>237</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void status(final int code, final String info, final boolean error) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>238</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>239</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l239s0'>      log(code, info);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>240</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l240s0'>      res.resetBuffer();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>241</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l241s0' title='Executions: 1' class='covered'>if(code == SC_UNAUTHORIZED)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>242</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l242s0'>        final TokenBuilder header = new TokenBuilder(auth.toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>243</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l243s0'>        final String nonce = Strings.md5(Long.toString(System.nanoTime()));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>244</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l244s0' title='Executions: 0' class='uncovered'>if(auth == AuthMethod.DIGEST)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>245</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l245s0'>          header.add(" ");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>246</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l246s0'>          header.addExt(Request.REALM).add("=\"").add(Prop.NAME).add("\",");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>247</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l247s0'>          header.addExt(Request.QOP).add("=\"").add(AUTH).add(',').add(AUTH_INT).add("\",");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>248</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l248s0'>          header.addExt(Request.NONCE).add("=\"").add(nonce).add('"');</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>249</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>250</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l250s0'>        res.setHeader(WWW_AUTHENTICATE, header.toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>251</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>253</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l253s0' title='Executions: 1' class='covered'>final int c = code &lt; 0</span> || <span id='l253s1' title='Executions: 1' class='covered'>code > 999</span> ? <span id='l253s2' title='Executions: 0' class='uncovered'>500</span> : <span id='l253s3' title='Executions: 0' class='uncovered'>code;</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>254</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>      <span id='l254s0' title='Executions: 1' class='covered'>if(error</span> && <span id='l254s1' title='Executions: 0' class='uncovered'>code >= SC_BAD_REQUEST)</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>255</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l255s0'>        res.sendError(c, info);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>256</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>257</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l257s0'>        res.setStatus(c);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>258</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>        <span id='l258s0' title='Executions: 1' class='covered'>if(info != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>259</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l259s0'>          res.setContentType(MediaType.TEXT_PLAIN.toString());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>260</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l260s0'>          try(final ArrayOutput ao = new ArrayOutput()) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>261</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l261s0'>            ao.write(token(info));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>262</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l262s0'>            res.getOutputStream().write(ao.normalize().finish());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>263</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>          <span id='l263s0' title='Executions: 1' class='covered'>}</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>264</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>265</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>266</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l266s0'>    } catch(final IllegalStateException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>267</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l267s0'>      log(SC_INTERNAL_SERVER_ERROR, Util.message(ex));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>268</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l268s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>269</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered' id='l269s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Updates the credentials.
+   * @param user user
+   * @param pass password
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>276</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void credentials(final String user, final String pass) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>277</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l277s0'>    username = user;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>278</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l278s0'>    password = pass;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>279</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l279s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the client database context. Authenticates the user if necessary.
+   * @param authenticate authenticate user
+   * @return client database context
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>287</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public Context context(final boolean authenticate) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>288</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l288s0' title='Executions: 22' class='covered'>if(ctx == null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>289</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l289s0'>      ctx = new Context(context);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>290</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>      <span id='l290s0' title='Executions: 22' class='covered'>ctx.user(authenticate</span> ? <span id='l290s1' title='Executions: 22' class='covered'>authenticate()</span> : <span id='l290s2' title='Executions: 0' class='uncovered'>context.users.get(UserText.ADMIN));</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>291</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>292</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l292s0'>    return ctx;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>293</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Authenticates the user and returns a new client {@link Context} instance.
+   * @return user
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>300</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private User authenticate() throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>301</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l301s0'>    final byte[] address = token(req.getRemoteAddr());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>302</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>303</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>      <span id='l303s0' title='Executions: 22' class='covered'>if(username == null</span> || <span id='l303s1' title='Executions: 22' class='covered'>username.isEmpty())</span> <span id='l303s2' title='Executions: 0' class='uncovered'>throw new LoginException(NOUSERNAME);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>305</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l305s0'>      final User us = context.users.get(username);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>306</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>      <span id='l306s0' title='Executions: 22' class='covered'>if(us == null)</span> <span id='l306s1' title='Executions: 0' class='uncovered'>throw new LoginException();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>308</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>      <span id='l308s0' title='Executions: 22' class='covered'>if(auth == AuthMethod.BASIC)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>309</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>        <span id='l309s0' title='Executions: 22' class='covered'>if(password == null</span> || <span id='l309s1' title='Executions: 22' class='covered'>!us.matches(password))</span> <span id='l309s2' title='Executions: 0' class='uncovered'>throw new LoginException();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>310</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l310s0' title='Executions: 0' class='uncovered'>}</span> else if(auth == AuthMethod.DIGEST) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>311</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l311s0'>        final EnumMap&lt;Request, String> map = HttpClient.digestHeaders(req.getHeader(AUTHORIZATION));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>312</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l312s0'>        final String am = map.get(Request.AUTH_METHOD);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>313</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l313s0' title='Executions: 0' class='uncovered'>if(!AuthMethod.DIGEST.toString().equals(am))</span> <span id='l313s1' title='Executions: 0' class='uncovered'>throw new LoginException(DIGESTAUTH);</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>315</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l315s0'>        final String nonce = map.get(Request.NONCE), cnonce = map.get(Request.CNONCE);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>316</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l316s0'>        String ha1 = us.code(Algorithm.DIGEST, Code.HASH);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>317</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l317s0' title='Executions: 0' class='uncovered'>if(Strings.eq(map.get(Request.ALGORITHM), MD5_SESS))</span></pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>318</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l318s0'>          ha1 = Strings.md5(ha1 + ':' + nonce + ':' + cnonce);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>320</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l320s0'>        String h2 = method + ':' + map.get(Request.URI);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>321</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l321s0'>        final String qop = map.get(Request.QOP);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>322</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l322s0' title='Executions: 0' class='uncovered'>if(Strings.eq(qop, AUTH_INT))</span> <span id='l322s1' title='Executions: 0' class='uncovered'>h2 += ':' + Strings.md5(params.body().toString());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>323</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l323s0'>        final String ha2 = Strings.md5(h2);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>325</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l325s0'>        final StringBuilder rsp = new StringBuilder(ha1).append(':').append(nonce);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>326</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l326s0' title='Executions: 0' class='uncovered'>if(Strings.eq(qop, AUTH, AUTH_INT))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>327</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l327s0'>          rsp.append(':').append(map.get(Request.NC));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>328</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l328s0'>          rsp.append(':').append(cnonce);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>329</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l329s0'>          rsp.append(':').append(qop);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>330</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>331</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l331s0'>        rsp.append(':').append(ha2);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>333</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>        <span id='l333s0' title='Executions: 0' class='uncovered'>if(!Strings.md5(rsp.toString()).equals(password))</span> <span id='l333s1' title='Executions: 0' class='uncovered'>throw new LoginException();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>334</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>335</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // custom authorization</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>336</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>337</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l337s0'>      context.blocker.remove(address);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>338</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l338s0'>      return us;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>340</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l340s0'>    } catch(final LoginException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>341</td><td>&nbsp;</td>
+      <td><pre class='comment'>      // delay users with wrong passwords</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>342</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l342s0'>      context.blocker.delay(address);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>343</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l343s0'>      throw ex;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>344</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>345</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns an exception that may have been caught by the initialization of the database server.
+   * @return exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>351</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static IOException exception() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>352</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l352s0'>    return exception;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>353</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Assigns serialization parameters.
+   * @param opts serialization parameters.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>359</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void sopts(final SerializerOptions opts) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>360</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l360s0'>    sopts = opts;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>361</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l361s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns the serialization parameters.
+   * @return serialization parameters.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>367</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public SerializerOptions sopts() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>368</td><td class='count'>100</td>
+      <td><pre class='prettyprint jmp'>    <span id='l368s0' title='Executions: 100' class='covered'>if(sopts == null)</span> <span id='l368s1' title='Executions: 20' class='covered'>sopts = new SerializerOptions();</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>369</td><td class='count'>100</td>
+      <td><pre class='prettyprint covered' id='l369s0'>    return sopts;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>370</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Writes a log message.
+   * @param type log type
+   * @param info info string (can be {@code null})
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>377</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  void log(final int type, final String info) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>378</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l378s0'>    context.log.write(address(), context.user(), type, info, perf);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>379</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l379s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Sends a redirect.
+   * @param location location
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>386</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void redirect(final String location) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>387</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l387s0'>    res.sendRedirect(resolve(location));</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>388</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l388s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Normalizes a redirection location. Prefixes absolute locations with the request URI.
+   * @param location location
+   * @return normalized representation
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>395</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public String resolve(final String location) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>396</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l396s0'>    String loc = location;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>397</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l397s0' title='Executions: 0' class='uncovered'>if(location.startsWith("/"))</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>398</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l398s0'>      final String uri = req.getRequestURI(), info = req.getPathInfo();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>399</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l399s0' title='Executions: 0' class='uncovered'>if(info == null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>400</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l400s0'>        loc = uri + location;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>401</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>402</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l402s0'>        loc = uri.substring(0, uri.length() - info.length()) + location;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>403</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>404</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>405</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l405s0'>    return loc;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>406</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Sends a forward.
+   * @param location location
+   * @throws IOException I/O exception
+   * @throws ServletException servlet exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>414</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public void forward(final String location) throws IOException, ServletException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>415</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l415s0'>    req.getRequestDispatcher(resolve(location)).forward(req, res);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>416</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l416s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>418</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // STATIC METHODS =====================================================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Initializes the HTTP context.
+   * @return context;
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>424</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static synchronized Context init() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>425</td><td class='count'>2</td>
+      <td><pre class='prettyprint jmp'>    <span id='l425s0' title='Executions: 2' class='covered cp' onclick='showHide(this,0)'>if(context == null)</span> <span id='l425s1' title='Executions: 1' class='covered'>context = new Context();</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>426</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l426s0'>    return context;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>427</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Initializes the database context, based on the initial servlet context.
+   * Parses all context parameters and passes them on to the database context.
+   * @param sc servlet context
+   * @throws IOException I/O exception
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>435</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static synchronized void init(final ServletContext sc) throws IOException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>436</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // check if HTTP context has already been initialized</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>437</td><td class='count'>3</td>
+      <td><pre class='prettyprint jmp'>    <span id='l437s0' title='Executions: 3' class='covered cp' onclick='showHide(this,0)'>if(init)</span> <span id='l437s1' title='Executions: 2' class='covered cp' onclick='showHide(this,1)'>return;</span></pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24x2</li>
+        </ol>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>438</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l438s0'>    init = true;</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>440</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l440s0'>    final String webapp = sc.getRealPath("/");</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>441</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // system property (requested in Prop#homePath)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>442</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l442s0'>    System.setProperty(Prop.PATH, webapp);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>443</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // global option (will later be assigned to StaticOptions#WEBPATH)</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>444</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l444s0'>    Prop.put(StaticOptions.WEBPATH, webapp);</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>446</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // set all parameters that start with "org.basex." as global options</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>447</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l447s0'>    final Enumeration&lt;String> en = sc.getInitParameterNames();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>448</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l448s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>while(en.hasMoreElements())</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>449</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l449s0'>      final String key = en.nextElement();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>450</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l450s0'>      String val = sc.getInitParameter(key);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>451</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>      <span id='l451s0' title='Executions: 0' class='uncovered'>if(key.startsWith(Prop.DBPREFIX)</span> && <span id='l451s1' title='Executions: 0' class='uncovered'>key.endsWith("path")</span> && <span id='l451s2' title='Executions: 0' class='uncovered'>!new File(val).isAbsolute())</span> {</pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>452</td><td>&nbsp;</td>
+      <td><pre class='comment'>        // prefix relative path with absolute servlet path</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>453</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l453s0'>        Util.debug(key.toUpperCase(Locale.ENGLISH) + ": " + val);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>454</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l454s0'>        val = new IOFile(webapp, val).path();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>455</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>456</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l456s0'>      Prop.put(key, val);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>457</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l457s0'>    }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>459</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // create context, update options</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>460</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l460s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(context == null)</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>461</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l461s0'>      context = new Context(false);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>462</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>463</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l463s0'>      context.soptions.setSystem();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>464</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l464s0'>      context.options.setSystem();</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>465</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>467</td><td>&nbsp;</td>
+      <td><pre class='comment'>    // start server instance</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>468</td><td class='count'>1</td>
+      <td><pre class='prettyprint jmp'>    <span id='l468s0' title='Executions: 1' class='covered cp' onclick='showHide(this,0)'>if(!context.soptions.get(StaticOptions.HTTPLOCAL))</span> {</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>469</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>470</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l470s0'>        server = new BaseXServer(context, "-D");</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>471</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l471s0'>      } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>472</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l472s0'>        exception = ex;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>473</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l473s0'>        throw ex;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>474</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l474s0'>      }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>475</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>476</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l476s0'>  }</pre>
+        <ol style='display:none'>
+          <li>org.exquery.ns.RequestTest#start: 24</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Closes the database context.
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>481</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  static synchronized void close() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>482</td><td class='count'>0</td>
+      <td><pre class='prettyprint jmp'>    <span id='l482s0' title='Executions: 0' class='uncovered'>if(server != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>483</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>484</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l484s0'>        server.stop();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>485</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l485s0'>      } catch(final IOException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>486</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l486s0'>        Util.stack(ex);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>487</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l487s0'>      }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>488</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l488s0'>      server = null;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>489</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>490</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l490s0'>    context.close();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>491</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l491s0'>  }</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Decodes the specified path.
+   * @param path strings to be decoded
+   * @return argument
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>498</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public static String decode(final String path) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>499</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>500</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l500s0'>      return URLDecoder.decode(path, Prop.ENCODING);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>501</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l501s0'>    } catch(final UnsupportedEncodingException | IllegalArgumentException ex) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>502</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l502s0'>      return path;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>503</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>504</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>506</td><td>&nbsp;</td>
+      <td><pre class='comment'>  // PRIVATE METHODS ====================================================================</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Normalizes the specified path.
+   * @param path path, or {@code null}
+   * @return normalized path
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>513</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private static String normalize(final String path) {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>514</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l514s0'>    final TokenBuilder tmp = new TokenBuilder();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>515</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l515s0' title='Executions: 22' class='covered'>if(path != null)</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>516</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l516s0'>      final TokenBuilder tb = new TokenBuilder();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>517</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l517s0'>      final int pl = path.length();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>518</td><td class='count'>65</td>
+      <td><pre class='prettyprint jmp'>      <span id='l518s0' title='Executions: 65' class='covered'>for(int p = 0</span>; p &lt; pl; p++) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>519</td><td class='count'>43</td>
+      <td><pre class='prettyprint covered' id='l519s0'>        final char ch = path.charAt(p);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>520</td><td class='count'>43</td>
+      <td><pre class='prettyprint jmp'>        <span id='l520s0' title='Executions: 43' class='covered'>if(ch == '/')</span> {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>521</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>          <span id='l521s0' title='Executions: 22' class='covered'>if(tb.isEmpty())</span> continue;</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>522</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l522s0'>          tmp.add('/').add(tb.toArray());</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>523</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l523s0'>          tb.reset();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>524</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        } else {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>525</td><td class='count'>21</td>
+      <td><pre class='prettyprint covered' id='l525s0'>          tb.add(ch);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>526</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>        }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>527</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>528</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>      <span id='l528s0' title='Executions: 22' class='covered'>if(!tb.isEmpty())</span> <span id='l528s1' title='Executions: 3' class='covered'>tmp.add('/').add(tb.finish());</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>529</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>530</td><td class='count'>22</td>
+      <td><pre class='prettyprint jmp'>    <span id='l530s0' title='Executions: 22' class='covered'>if(tmp.isEmpty())</span> <span id='l530s1' title='Executions: 19' class='covered'>tmp.add('/');</span></pre>
+        <ol style='display:none'></ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>531</td><td class='count'>22</td>
+      <td><pre class='prettyprint covered' id='l531s0'>    return tmp.toString();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>532</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * Returns a string with the remote user address.
+   * @return user address
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>538</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  private String address() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>539</td><td class='count'>44</td>
+      <td><pre class='prettyprint covered' id='l539s0'>    return req.getRemoteAddr() + ':' + req.getRemotePort();</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>540</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>541</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>
