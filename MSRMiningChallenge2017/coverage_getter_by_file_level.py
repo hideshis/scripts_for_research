@@ -35,7 +35,7 @@ while pjt_name:
 		#pjt_path = '/Users/hideshi-s/Desktop/msrmc2017/' + pjt_name
 		continue
 	try:
-		result = subprocess.check_output('find ' + pjt_path + ' | grep "/target/site/jacoco/" | grep "\.html$" | grep -v "\.java\.html$" | grep -v "index\.html$" | grep -v "index\.source\.html$" | grep -v "jacoco-sessions\.html" | grep -v "\.sessions\.html"', shell=True)
+		result = subprocess.check_output('find ' + pjt_path + ' -type f | grep "/target/site/jacoco/" | grep "\.html$" | grep -v "\.java\.html$" | grep -v "index\.html$" | grep -v "index\.source\.html$" | grep -v "jacoco-sessions\.html" | grep -v "\.sessions\.html"', shell=True)
 		coverage_report_existence_flag = True
 	except subprocess.CalledProcessError:
 		coverage_report_existence_flag = False
