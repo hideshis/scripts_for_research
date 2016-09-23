@@ -10,7 +10,7 @@ import lxml.html
 import csv
 from lxml import etree
 
-f_write = open('coverage_info_by_class_level.csv', 'w')
+f_write = open('coverage_info_by_package_level.csv', 'w')
 csvWriter = csv.writer(f_write, lineterminator='\n')
 header = ['project', 'num_covered_instruction', 'num_uncovered_instruction', 'num_total_instruction', 'C0coverage']
 csvWriter.writerow(header)
@@ -35,7 +35,7 @@ while pjt_name:
 		#pjt_path = '/Users/hideshi-s/Desktop/msrmc2017/' + pjt_name
 		continue
 	try:
-		result = subprocess.check_output('find ' + pjt_path + ' -name "index\.html" -type f | grep -v "/jacoco/index\.html" | egrep "/jacoco/.+"', shell=True)
+		result = subprocess.check_output('find ' + pjt_path + ' -name "index\.html" -type f | grep "/site/jacoco/index\.html$"', shell=True)
 		coverage_report_existence_flag = True
 	except subprocess.CalledProcessError:
 		coverage_report_existence_flag = False
