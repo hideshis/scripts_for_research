@@ -1,0 +1,11 @@
+library(ggplot2)
+hoge = read.csv("data_name.csv")
+p <- ggplot(hoge, aes(x=Date, y=ID))
+p + geom_point(aes(colour=factor(Type))) + ggtitle("data_name")
+
+library(ggplot2)
+library(scales)
+hoge = read.csv("change_history_view.csv")
+hoge$Date <- as.POSIXct(hoge$Date)
+p <- ggplot(hoge, aes(x=Date, y=ID))
+p + geom_point(aes(colour=factor(Attribution)))  + ggtitle("Change History View") + scale_x_datetime(breaks=date_breaks("1 year")) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
